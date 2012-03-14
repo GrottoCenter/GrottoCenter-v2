@@ -1,0 +1,84 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+/*
+http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fclementronzon.free.fr%2Fgrottocenter%2Fcss%2Flegal_and_privacy.css&profile=css21&usermedium=all&warning=1
+<p>
+<a href="http://jigsaw.w3.org/css-validator/">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="CSS Valide !" />
+</a>
+</p>
+*/
+
+body
+{
+  padding:2px;
+	font-size:10pt;
+}
+
+div
+{
+  text-align:justify;
+}
+
+h1
+{
+	font-family:arial, sans-serif;
+	color:black;
+	font-weight:bold;
+	background-color:white;
+	font-size:24pt;
+	text-align:center;
+}
+
+h2
+{
+	font-family:arial, sans-serif;
+	color:#808080;
+	background-color:white;
+	font-size:16pt;
+	font-weight:bold;
+	text-align:left;
+	font-weight:normal;
+}
+
+h3
+{
+	font-family:arial, sans-serif;
+	color:#808080;
+	background-color:white;
+	font-size:12pt;
+	text-align:left;
+	font-weight:normal;
+	text-indent:1em;
+}
+
+p
+{
+  text-indent:1em;
+  padding:0 0 0 2em;
+}
+
+li
+{
+  margin:0 0 0 2em;
+}

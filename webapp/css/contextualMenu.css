@@ -1,0 +1,79 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+/*
+http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fclementronzon.free.fr%2Fgrottocenter%2Fcss%2FcontextualMenu.css&profile=css21&usermedium=all&warning=1
+<p>
+<a href="http://jigsaw.w3.org/css-validator/">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="CSS Valide !" />
+</a>
+</p>
+*/
+
+/*********************************************************************************************************************************/
+/*********************************************** MENU CONTEXTUEL **************************************************************/
+/*********************************************************************************************************************************/
+.menuclickdroit
+{
+	/* obligatoire */
+	z-index:100;
+	position:absolute;
+	visibility:hidden;
+	/* A changer suivant l'affichage voulu */
+	width:155px;/*150px;*/
+	padding:5px 0;
+	font-family:arial,sans-serif;
+	/*font-weight:bold;*/
+	font-size:9pt;
+	color:#34558A;
+	text-align:left;
+	line-height:16px;
+	background-color:white;
+	border:1px solid #34558A;
+	/* Un filtre d'affichage spécial non obligatoire*/
+	/*FILTER:progid:DXImageTransform.Microsoft.Shadow(direction=135,color=#303030,strength=3);*/
+	/*FILTER:progid:DXImageTransform.Microsoft.Gradient(gradientType=1,startColorStr=#CECECE,endColorStr=#C0C0C0);*/
+	/*FILTER:progid:DXImageTransform.Microsoft.Alpha( style=0,opacity=85);*/
+}
+.MenuBis
+{
+	background-image:url(../images/icons/puce.gif);
+	background-position:right center; /*135px 3px;*/
+	background-repeat:no-repeat;
+	padding:0px 15px 0px 1px;
+	cursor:pointer;
+	text-align:left;
+}
+.menuitems
+{
+	padding:0px 15px 0px 1px;
+	cursor:pointer;
+	background :transparent;
+	text-align:left;
+}
+
+hr
+{
+  color:#34558A;
+  background-color:#34558A;
+  border:0;
+}

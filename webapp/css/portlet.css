@@ -1,0 +1,187 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+body
+{
+  padding:0px 3px 0px 0px;
+}
+
+div.navigator img
+{
+  border:0px none;
+}
+
+div.navigator
+{
+  font-weight:bold;
+}
+
+div.navigator a
+{
+  font-weight:normal;
+}
+
+#result_table th,
+#result_table th:hover
+{
+  background-color:#E4EAEF;
+  padding:1px 14px 1px 4px;
+}
+
+#result_table th.ordered
+{
+  background-color:#D3DBE4;
+}
+
+#result_table th a
+{
+  background:none;
+  padding-right: 10px;
+}
+
+#result_table th a.nothing
+{
+  padding-right:0px;
+}
+
+#result_table th a:hover
+{
+  background: url(../images/icons/arrow_up_hover.png) no-repeat scroll right center;
+}
+
+#result_table th a.bg_asc
+{
+  background: url(../images/icons/arrow_up.png) no-repeat scroll right center;
+}
+
+#result_table th a.bg_asc:hover
+{
+  background: url(../images/icons/arrow_down_hover.png) no-repeat scroll right center;
+}
+
+#result_table th a.bg_desc
+{
+  background: url(../images/icons/arrow_down.png) no-repeat scroll right center;
+}
+
+#result_table th a.bg_desc:hover
+{
+  background: url(../images/icons/arrow_up_hover.png) no-repeat scroll right center;
+}
+
+#result_table th a.nothing:hover
+{
+  background:none;
+  padding-right:0px;
+}
+
+#result_table th img
+{
+  border:none;
+}
+
+#result_table
+{
+  background-color:#EAEAEA;
+}
+
+#result_table tr
+{
+  background-color:#FFFFFF;
+}
+
+#result_table tr:hover
+{
+  background-color:#F3F3E9;
+}
+
+#result_table td
+{
+  padding:1px 4px;
+  white-space:nowrap;
+}
+
+#result_table div.sub_cell_0
+{
+  
+}
+
+#result_table div.sub_cell_1,
+#result_table div.sub_cell_1 a
+{
+  color:black;
+  font-size:8pt;
+  border:0px none;
+  font-weight:bold;
+}
+
+#result_table div.sub_cell_2,
+#result_table div.sub_cell_2 a
+{
+  color:#808080;
+  font-size:7pt;
+  border:0px none;
+}
+
+#result_table div.sub_cell_3,
+#result_table div.sub_cell_3 a
+{
+  color:#808080;
+  font-size:7pt;
+  border:0px none;
+}
+
+#result_table .plt_warning
+{
+  background-color:#FFE2B5;
+}
+
+#filter_set>tbody
+{
+  vertical-align:top;
+  background-color:#F4F4F4;
+}
+
+#filter_set table
+{
+  background-color:#EAEAEA;
+}
+
+#filter_set table tr
+{
+  background-color:#FFFFFF;
+}
+
+#filter_set table td
+{
+  padding:1px 4px;
+}
+
+#filter_set table td.label
+{
+  background-color:#EEEEEE;
+  text-align:right;
+}
+
+#filter_set table td.field
+{
+  background-color:#FFFFFF;
+  text-align:left;
+}

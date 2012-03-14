@@ -1,0 +1,335 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+/*
+http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fclementronzon.free.fr%2Fgrottocenter%2Fcss%2Ffilter.css&profile=css21&usermedium=all&warning=1
+<p>
+<a href="http://jigsaw.w3.org/css-validator/">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="CSS Valide !" />
+</a>
+</p>
+*/
+
+body
+{
+  /*padding:0px 3px 3px 3px;*/
+  padding:0px 0px 0px 3px;
+  /*overflow-x:hidden;
+  overflow-y:hidden;*/
+}
+
+a.sign
+{
+  text-decoration:none;
+  border:none;
+}
+
+a.sign:hover
+{
+  border:none;
+}
+
+div.add_object
+{
+  margin-bottom:4px;
+}
+
+span.sign_plus,
+span.sign_minus,
+span.sign_plus_disabled,
+span.sign_minus_disabled
+{
+  padding:0px 7px;
+  vertical-align:middle;
+}
+
+span.sign_plus,
+span.sign_plus_disabled
+{
+  color:#0000FF;
+  font-size:11pt;
+  /*font-weight:bold;*/
+  background:transparent url(../images/icons/closed_folder.png) no-repeat scroll 0px 50%;
+}
+
+span.sign_minus,
+span.sign_minus_disabled
+{
+  color:#FF0000;
+  font-size:11pt; /*14*/
+  background:transparent url(../images/icons/open_folder.png) no-repeat scroll 0px 50%;
+  margin-right:4px;
+}
+
+span.sign_plus_disabled
+{
+  color:#C6C6C6;
+}
+
+span.sign_minus_disabled
+{
+  color:#C6C6C6;
+}
+
+img.link
+{
+  border:none;
+  position:relative;
+  bottom:3px;
+  margin:0px -1px;
+  
+}
+
+span.filter_head
+{
+  font-weight:bold;
+  vertical-align:middle;
+  cursor:pointer;
+}
+
+td.cell1
+{
+  padding:1px;
+}
+
+label
+{
+  /*white-space:nowrap;*/
+}
+
+/*
+label.label0,
+label.label1,
+label.label_img1,
+label.label2,
+label.label_img2,
+label.label3
+{
+  display:block;
+  margin:5px 0px;
+  min-height:20px;
+  font-size:9pt;
+}
+
+label
+{
+  background-color:transparent;
+}
+
+label:hover
+{
+  background-color:#FFD99E;
+}
+
+label.label0
+{
+  margin-left:4px;
+  white-space:nowrap;
+  width:0em;
+}
+
+label.label1,
+label.label_img1
+{
+  width:9em;
+}
+
+label.label_img1,
+label.label_img2
+{
+  height:5em;
+}
+
+label.label2,
+label.label_img2
+{
+  width:17em;
+}
+
+label.label3
+{
+  width:13em;
+}
+*/
+span.column0,
+span.column1,
+span.column2,
+span.column3,
+span.column4
+{
+  position:absolute;
+  white-space:nowrap;
+}
+
+span.column0
+{
+  left:9px;
+}
+
+span.column1
+{
+  left:10em;
+}
+
+span.column2
+{
+  left:18em;
+}
+
+span.column3
+{
+  left:13em;
+}
+
+span.column4
+{
+  left:13em;
+}
+
+img.status1
+{
+  width:1em;
+  height:1em;
+}
+
+input.buttonDis1
+{
+  border:2px solid #808080;
+  font-family:arial, sans-serif;
+  background-color:white;
+  color:#808080;
+  font-weight:bold;
+  font-size:9pt;
+}
+
+div.input_filter_div,
+div.filter_div
+{
+  /*position:relative;
+  left:14px;*/
+  /*padding-left:30px;*//*14px;*/
+  border-left:1px dotted #808080;
+  /*padding-left:20px;*/
+  margin-left:18px;
+  white-space:nowrap;
+}
+
+/*div.input_filter_div_clear
+{
+  padding:10px 0px 0px 50px;
+  margin:-10px 0px 0px -1px;
+  border-left:1px solid #C6C6C6;
+}*/
+
+div.input_filter_div
+{
+  padding-left:30px;
+  border:none;
+}
+
+div.nearMe
+{
+  margin-bottom:10px;
+}
+
+li.li_overview
+{
+  /*list-style-type: none;
+  background: url(puce.png) no-repeat 0% 65%
+  padding-left: 15px;*/
+  list-style-image: url(../images/icons/bullet_overview.png);
+}
+
+li.li_home
+{
+  list-style-image: url(../images/icons/bullet_home.png);
+}
+
+li.li_logout
+{
+  list-style-image: url(../images/icons/bullet_logout.png);
+}
+
+li.li_parameters
+{
+  list-style-image: url(../images/icons/bullet_parameters.png);
+}
+
+li.li_entry
+{
+  list-style-image: url(../images/icons/bullet_entry.png);
+}
+
+li.li_cave
+{
+  list-style-image: url(../images/icons/bullet_cave.png);
+}
+
+li.li_massif
+{
+  list-style-image: url(../images/icons/bullet_massif.png);
+}
+
+li.li_grotto
+{
+  list-style-image: url(../images/icons/bullet_grotto.png);
+}
+
+li.li_topography
+{
+  list-style-image: url(../images/icons/bullet_topography.png);
+}
+
+li.li_url
+{
+  list-style-image: url(../images/icons/bullet_url.png);
+}
+
+li.li_forum
+{
+  list-style-image: url(../images/icons/bullet_forum.png);
+}
+
+li.li_download
+{
+  list-style-image: url(../images/icons/bullet_download.png);
+}
+
+li.li_chat
+{
+  list-style-image: url(../images/icons/bullet_chat.png);
+}
+
+li.li_login
+{
+  list-style-image: url(../images/icons/bullet_login.png);
+}
+
+li.li_register
+{
+  list-style-image: url(../images/icons/bullet_register.png);
+}
+
+li.li_admin
+{
+  list-style-image: url(../images/icons/bullet_admin.png);
+}

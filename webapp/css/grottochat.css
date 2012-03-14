@@ -1,0 +1,112 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+div.grottochat
+{
+  margin:5px;
+  background:#FFFFFF;
+}
+
+div.grottochat .chatdialogs
+{
+	border:1px #000000 solid;
+	width:417px;
+	height:250px;
+	background:#FFFFFF;
+	overflow:auto;
+	float:left;
+	text-align:left;
+	padding-left:3px;
+	margin-bottom:10px;
+}
+
+div.grottochat .chatusers
+{
+	border:1px #000000 solid;
+	width:120px;
+	height:250px;
+	background:#FFFFFF;
+	overflow:auto;
+	float:left;
+	text-align:left;
+	padding-left:3px;
+	margin-left:10px;
+}
+
+div.grottochat .chatinputs
+{
+	clear:both;
+}
+
+div.grottochat .chatdialogs .usermessage
+{
+	color:black;
+	font-weight:none;
+}
+div.grottochat .chatdialogs .username
+{
+	color:#34558A;
+	font-weight:bold;
+}
+
+div.grottochat .chatusers .username
+{
+	color:#34558A;
+	font-weight:none;
+}
+
+div.grottochat .chatusers .username_myself
+{
+	color:#34558A;
+	font-weight:bold;
+}
+
+div.grottochat .chatusers .entering_username
+{
+	color:red;
+	font-weight:bold;
+}
+
+div.grottochat .chatusers .leaving_username
+{
+	color:black;
+	font-weight:none;
+	text-decoration: line-through;
+}
+
+div.grottochat .chatdialogs .lastdate
+{
+	color:#999999;
+	font-weight:none;
+}
+
+div.grottochat .chatdialogs hr
+{
+	clear:both;
+}
+
+div.grottochat .chatdialogs .avatar
+{
+  margin:0px 4px 6px 0px;
+  float:left;
+  width:50px;
+  border:1px dashed #808080;
+}
+

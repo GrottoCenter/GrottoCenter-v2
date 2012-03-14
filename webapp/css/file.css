@@ -1,0 +1,408 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+h1
+{
+  text-align:center;
+  font-size:20pt;
+  color:#34558A;
+}
+
+h2
+{
+  border-bottom:2px solid #FFA713;
+  color:#34558A;
+  font-weight:normal;
+  margin:0;
+}
+
+h3
+{
+}
+
+h4
+{
+}
+
+h5
+{
+}
+
+h6
+{
+}
+
+.toc_title
+{
+  padding-top:40px;
+}
+
+.TOC1
+{
+  
+}
+
+.TOC2
+{
+  font-weight:bold;
+  margin-left:20px;
+}
+
+.TOC3
+{
+  margin-left:40px;
+}
+
+.TOC4
+{
+  margin-left:60px;
+}
+
+.TOC5
+{
+  margin-left:80px;
+}
+
+.TOC6
+{
+  margin-left:100px;
+}
+
+#mailto img
+{
+  border:0px none;
+}
+
+.rigging_container
+{
+  width:100%;
+}
+
+.rigging_container tr
+{
+  width:100%;
+  background-color:white;
+}
+
+.rigging_container tr:hover
+{
+  background-color:#FFD99E;
+}
+
+.rigging_container span:hover
+{
+  background-color:white;
+}
+
+.rigging_container th
+{
+  
+}
+
+.rigging_container td
+{
+  text-align:left;
+  vertical-align:top;
+  /*width:25%;*/
+}
+
+.rigging_container tr > .rigging_buttons/*td:first-child*/
+{
+  width:16px;
+}
+
+.rigging_container img,
+img.rigging_button
+{
+  border:0px none;
+  width:16px;
+  cursor:pointer;
+  padding:1px 0px;
+}
+
+img.icon
+{
+  border:0px none;
+  width:20px;
+  padding:1px;
+}
+
+div.arrow_up
+{
+  cursor:pointer;
+  background:transparent url(../images/icons/arrow_up.png) no-repeat scroll center;
+  height:10px;  
+}
+
+div.arrow_up:hover
+{
+  background:#C0C0C0 url(../images/icons/arrow_up_hover.png) no-repeat scroll center;
+}
+
+label
+{
+  font-style:italic;
+  font-weight:normal;
+}
+
+span.generic_tools
+{
+  position:absolute;
+  right:31px;
+}
+
+div.tools,
+div.properties_tools
+{
+  /*padding:1px;
+  background-color:#DCDCDC;
+  border:1px solid #808080;*/
+}
+
+div.properties_tools
+{
+  margin-right:4px;
+}
+
+div.tools
+{
+  width:22px;
+  /*width:47px;*/
+  float:left;
+  /*position:absolute;
+  display:none;*/
+  margin-right:5px;
+}
+
+div.div_2_l,
+div.div_2_r 
+{
+  /*border:1px solid #808080;*/
+  padding:0px 10px;
+}
+
+div.div_2_l
+{
+  border:1px solid #808080;
+  margin:5px 10px 5px 0px;
+}
+
+div.div_2_r
+{
+  margin:5px 10px 5px 340px;
+}
+
+div.radar
+{
+  position:absolute;
+  right:50px;
+  top:-5px;
+}
+
+div.radar_user
+{
+  float:left;
+  margin:0px 4px 4px 0px;
+}
+
+div.radar_user img
+{
+  border:1px solid #808080;
+  margin:4px;
+  cursor:help;
+  width:50px;
+}
+
+div.radar_user img:hover
+{
+  width:150px;
+}
+
+#content
+{
+  /*border:1px dotted black;*/
+  padding-bottom:5px;
+}
+
+.input1
+{
+  width:100%;
+}
+
+.button1
+{
+  margin-right:4px;
+}
+
+#table_of_content
+{
+  border:0px none;
+}
+
+#properties div.menu
+{
+  background-color:white;
+  border:0px none;
+  margin-bottom:0px;
+  padding:0px;
+  text-align:left;
+}
+
+#map,
+#properties,
+#license
+{
+  float:left;
+  width:300px;
+}
+
+#properties,
+#license
+{
+  clear:both;
+}
+
+#license
+{
+  border:0px none;
+}
+
+span.details_label
+{
+  /*font-style:italic;*/
+}
+
+span.details_data,
+span.details_add,
+span.details_unit
+{
+  font-weight:bold;
+}
+
+div.detail_line
+{
+  /*border-bottom:2px solid white;*/
+}
+
+div.detail_line:hover
+{
+  background-color:graytext;
+}
+
+table.container
+{
+   width:100%;
+   margin:4px 0px;
+   border:1px solid #808080;
+   clear:right;
+}
+
+tr.container
+{
+  margin:4px 0px;
+  width:100%;
+}
+
+td.sub_prop
+{
+  padding:4px;
+  width:20%;
+  vertical-align:top;
+}
+
+td.sub_container
+{
+  vertical-align:top;
+  padding:4px;
+  border-left:1px solid #808080;
+}
+
+div.sub_title
+{
+  padding:4px;
+  font-weight:bold;
+  text-align:center;
+  width:100%;
+}
+
+div.sub_content
+{
+  padding:4px;
+  width:100%;
+}
+
+div.sub_content img
+{
+  border:0px none;
+  max-width:90%;/*100%;*/
+}
+
+#mailto
+{
+  width:100%;
+  text-align:center;
+}
+
+.new_content_license
+{
+  text-align:center;
+  border:1px solid red;
+  color:red;
+  font-size:8pt;
+  margin:10px 5px;
+}
+
+#content_license
+{
+  margin:5px 10px 5px 340px;
+}
+
+#input_area
+{
+  display:none;
+}
+
+div.comment_snipet
+{
+  background-color:white;
+  cursor:pointer;
+  border:1px solid #808080;
+  text-align:center;
+  position:relative;
+  top:5px;
+}
+
+div.comment_message
+{
+  background-color:white;
+}
+
+.topography
+{
+  border:0px none;
+  width:100%;
+  height:100%;
+}
+
+.who_when
+{
+  padding-left:27px;
+  font-size:8pt;
+}

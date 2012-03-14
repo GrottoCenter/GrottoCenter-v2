@@ -1,0 +1,136 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+body
+{
+  /*padding:0px 0px 3px 0px;*/
+  padding:0px 0px 0px 0px;
+  text-align:center;
+}
+
+.cell1
+{
+  padding:0px;
+}
+
+.map,
+.map_lines
+{
+  width:100%;
+  height:100%;
+}
+
+.map_lines
+{
+  cursor:pointer;
+}
+
+#button_container
+{
+  /*-moz-user-select:none;*/
+  font-size:small;
+  height:19px;
+  position:absolute;
+  right:286px;/*306px;*/
+  top:7px;/*10px;*/
+  width:266px;
+}
+
+#printer
+{
+  position:absolute;
+  /*right:5em;*/
+  right:65px;
+}
+
+#reload
+{
+  background-color:white;
+  border:1px solid black;
+  cursor:pointer;
+  position:absolute;
+  right:0em;
+  text-align:center;
+  /*width:5em;*/
+  width:65px;
+}
+
+#reload_button
+{
+  /*position:absolute;
+  right:285px;
+  top:11px;
+  border:1px solid black;
+  font-family:arial, sans-serif;
+  background-color:white;
+  color:black;
+  width:9em;
+  font-size:12px;
+  cursor :pointer;*/
+  border-bottom:1px solid #B0B0B0;
+  border-left:1px solid white;
+  border-right:1px solid #B0B0B0;
+  border-top:1px solid white;
+  font-size:12px;
+}
+
+#reload_button:active
+{
+  border-bottom:1px solid #6C9DDF;
+  border-left:1px solid #345684;
+  border-right:1px solid #6C9DDF;
+  border-top:1px solid #345684;
+  font-size:12px;
+  font-weight:bold;
+}
+
+#waitingSign
+{
+  width:50%;
+  /*line-height:50%;*/
+  /*height:50%;*/
+  position:absolute;
+  left:25%;
+  top:25%;
+  vertical-align:middle;
+  text-align:center;
+  padding:20px;
+}
+
+.caption
+{
+  white-space:nowrap;
+  /*line-height:2em;*/
+  color:#808080;
+  background-color:#E5F8FF;
+  border:1px solid #808080;
+  padding:10px;
+  /*filter:alpha(opacity=75);
+  -moz-opacity:0.75;
+  opacity:0.75;*/
+}
+
+.infoFrame
+{
+  /*width:320px;
+  height:220px;*/
+	width:320px;
+  height:208px;
+}

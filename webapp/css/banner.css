@@ -1,0 +1,122 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+body
+{
+  /*padding: 3px 3px 3px 3px;*/
+  padding: 0px 3px;
+}
+
+.h1
+{
+	font-family: arial, sans-serif;
+	color: #34558A;
+	font-weight: bold;
+	/*background-color: #FFFFFF;*/
+	font-size: 16pt;
+	text-align: left;
+	/*line-height: 100%;*/
+	cursor: help;
+	margin: 0px;
+}
+
+.h1 div
+{
+	font-size: 8pt;
+}
+/*a
+{
+  text-decoration: none;
+  color: #34558A;
+  border-bottom: 1px dotted #458EFF;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}*/
+
+/*a: hover
+{
+  border: 1px solid #FFA713;
+}*/
+
+/*table.bannerTable
+{
+  width: 100%;
+  height: 70px;
+  border: 1px dashed gray;
+}
+*/
+td.bannerCell1
+{
+	width: 50%;
+	text-align: left;
+	vertical-align: top;
+	font-size:7pt;
+}
+
+td.bannerCell2
+{
+	white-space: nowrap;
+	/*text-align: center;*/
+	vertical-align: bottom; /*middle*/
+	padding: 0px;
+	padding-bottom:6px;
+}
+
+td.bannerCell3
+{
+  /*height: 34%;*/
+	text-align: right;
+	vertical-align: top;
+	width: 50%;
+	font-size:7pt;
+}
+
+td.bannerCell4
+{
+	width: 50%;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+td.bannerCell5
+{
+  /*height: 33%;*/
+	text-align: right;
+	vertical-align: bottom;
+	width: 50%;
+}
+
+select.select1
+{
+  border: 1px solid #7F9DB9;
+  font-family: arial, sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 8pt;
+}
+
+div.banner_info
+{
+  position: absolute;
+  right: 10px;
+  top: 36px;/*38, 53*/
+  white-space: nowrap;
+  /*vertical-align:bottom;*/
+  line-height:20px;
+}

@@ -1,0 +1,146 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+html
+{
+  width:100%
+}
+
+body
+{
+  background-color:#fff;
+  color:#000;
+  /*font-size:12pt;*/
+}
+
+a
+{
+  color:#000;
+  border:0;
+}
+
+img
+{
+  border:0;
+}
+
+.noprint
+{
+  display:none;
+  visibility:hidden;
+}
+
+div.div_2_l,
+div.div_2_r,
+#content_license
+{
+  margin:4px;
+  padding:0px;
+  border:0px none;
+  clear:both;
+  page-break-inside:avoid;
+}
+
+#banner_options,
+#mailto,
+#license,
+.properties_tools,
+.generic_tools,
+.tools,
+.histo,
+.radar,
+.arrow_up
+{
+  display:none;
+  visibility:hidden;
+}
+
+#properties
+{
+  margin-left:4px;
+  font-size:8pt;
+  width:250px;
+  float:none;
+  clear:none;
+}
+
+#map
+{
+  float:right;
+  width:300px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+  page-break-before:auto;
+  color:#000;
+  margin:0px;
+  border:0;
+  padding:0px;
+}
+
+h1,
+h2
+{
+  font-size:12pt;
+}
+
+h3
+{
+  font-size:10pt;
+}
+
+h2.toc_title
+{
+  padding:0px;
+}
+
+p
+{
+  /*page-break-inside:avoid;*/
+}
+
+#input_area
+{
+  display:block;
+}
+
+td.sub_prop
+{
+  font-size:7pt;
+}
+
+#warnings,
+#help,
+#topo_bad_content
+{
+  display:none;
+  visibility:hidden;
+}
+
+.who_when
+{
+  padding-left:0px;
+}

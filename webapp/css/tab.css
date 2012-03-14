@@ -1,0 +1,32 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+.tab {overflow:hidden; background:#FFFFFF url(../images/borders/tabBackground.png) bottom repeat-x}
+.tab ul {float:left; margin:0px; padding:0px; list-style:none}
+.tab li {float:left; margin-left:3px}
+.tab a, .tab a:hover {border-bottom:1px solid #808080}
+.tab #actif span {border-bottom:1px solid #F4F4F4}
+.tab a,.tab #actif {float:left; text-decoration:none; padding-left:10px; background:url(../images/borders/tabLeftCorner.png) 0 -250px no-repeat}
+.tab span,.tab #actif span {float:left; padding:6px 10px 3px 0; background:url(../images/borders/tabRightCorner.png) 100% -250px no-repeat; color:black}
+.tab #actif {background-position:0 0}
+.tab #actif span {background-position:100% 0; color:black}
+.tab a:hover,.tab a:focus {background-position:0 -500px}
+.tab #actif a {background-position:0 0}
+.tab a:hover span,.tab a:focus span {background-position:100% -500px}

@@ -1,0 +1,127 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+body
+{
+  padding:0px 3px 0px 0px;
+}
+
+div.div_switcher
+{
+  border:1px solid black;
+}
+
+div.div_switcher_c .title,
+div.div_switcher_o .title
+{
+  cursor:pointer;
+  padding-right:15px;
+  font-weight:bold;
+}
+
+div.div_switcher_c .title
+{
+  background:transparent url(../images/icons/arrow_down.png) no-repeat scroll right center
+}
+
+div.div_switcher_c .title:hover
+{
+  background:transparent url(../images/icons/arrow_down_hover.png) no-repeat scroll right center
+}
+
+div.div_switcher_o .title
+{
+  background:transparent url(../images/icons/arrow_up.png) no-repeat scroll right center
+}
+
+div.div_switcher_o .title:hover
+{
+  background:transparent url(../images/icons/arrow_up_hover.png) no-repeat scroll right center
+}
+
+div.content
+{
+  background-color:#F3F3E9;
+  border:1px dashed #808080;
+  margin:4px 40px 4px 0px;
+  padding:4px;
+}
+
+div.content p
+{
+  text-align:justify;
+  text-indent:15px;
+}
+
+table.main_table
+{
+  width:100%;
+}
+
+table.main_table>td
+{
+  vertical-align:top;
+  padding-left:10px;
+}
+
+h2
+{
+  /*text-align:center;*/
+  text-align:left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+  color:#34558A;
+}
+
+.home_news
+{
+	border:1px solid #C3D9FF;
+	margin:10px;
+	padding:5px;
+	overflow-x:auto;
+	height:60px;
+}
+
+.news_topic
+{
+	padding:5px;
+}
+
+.topic_title
+{
+	font-weight:bold;
+}
+
+.topic_resume
+{
+	font-size:8pt;
+}
+
+.topic_pty
+{
+	font-style:italic;
+	font-size:7pt;
+}

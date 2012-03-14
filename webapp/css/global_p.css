@@ -1,0 +1,88 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+table.menu_box
+{
+  margin:0 auto;
+  width:100%;
+}
+
+table.menu_box td.mbtl,
+table.menu_box td.mbtr
+{
+  height:0px;
+  width:0px;
+}
+
+table.menu_box td.mbtm,
+table.menu_box td.mbtil,
+table.menu_box td.mbtim,
+table.menu_box td.mbtir
+{
+  background:#ffffff none repeat scroll 0 0;
+}
+
+table.menu_box div.mbcm
+{
+  padding:0px;
+}
+
+table.menu_box td.mbb,
+table.menu_box td.mbtir,
+table.menu_box td.mbcr,
+table.menu_box td.mbtil,
+table.menu_box td.mbcl,
+table.menu_box td.mbtm
+{
+  border-top:0px none;
+}
+
+table.menu_box td.mbtr,
+table.menu_box td.mbtl
+{
+  background:#ffffff none repeat scroll 0 0;
+}
+
+table.menu_box div.mbtitle
+{
+  display:none;
+  visibility:hidden;
+}
+
+table.frame td.frameTopLeft,
+table.frame td.frameTopRight,
+table.frame td.frameBotLeft,
+table.frame td.frameBotRight
+{
+  width:0px;
+  height:0px;
+}
+
+table.frame td.frameBotRight,
+table.frame td.frameBotCenter,
+table.frame td.frameBotLeft,
+table.frame td.frameMidRight,
+table.frame td.frameMidLeft,
+table.frame td.frameTopRight,
+table.frame td.frameTopCenter,
+table.frame td.frameTopLeft
+{
+  background:#ffffff none repeat scroll 0 0;
+}

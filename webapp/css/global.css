@@ -1,0 +1,929 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+img
+{
+	behavior: url(../scripts/iepngfix/iepngfix.htc);
+}
+
+html
+{
+  height: 100%;
+  /*background-color: #F0F0F0;*/
+}
+
+body
+{
+  font-family: arial, sans-serif;
+  font-size: 9pt;
+  background-color: white; 
+  color: black;
+	height: 100%;
+	vertical-align:top;
+}
+
+form
+{
+	display: inline;
+}
+
+table.table1
+{
+  width: 100%;
+  height: 100%;
+  /*border: solid 1px #808080;*/
+  margin: 0px;
+  padding: 0px;
+}
+
+td.cell1
+{
+  margin: 0px;
+	/*width: 100%;
+  height: 100%;*/
+  text-align: left;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px;
+}
+
+a
+{
+  text-decoration: none;
+  color: #34558A;
+  border-bottom: dotted 1px #458EFF;
+}
+
+a:hover
+{
+  color: #FFA713;
+  border-bottom: dotted 1px #FFA713;
+}
+
+a.nothing
+{
+  text-decoration: none;
+  color: #000000;
+  border: none;
+}
+
+a.nothing:hover
+{
+  border: none;
+}
+
+a.newFeatures
+{
+  text-decoration: none;
+  color: red;
+  border-bottom: dashed 1px red;
+}
+
+div.menu
+{
+  /*background-color: #DCDCDC; 
+  border: dashed 1px #808080;
+  padding: 2px;*/
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+div.menu > ul
+{
+  margin:0px;
+}
+
+.sub_menu
+{
+  margin-bottom: 5px;
+  color: #34558A;
+  /*background: url(../images/icons/puce0.png) center left no-repeat;
+  padding-left: 15px;*/
+}
+
+.sub_menu:hover
+{
+  color: #FFA713;
+}
+
+a.a_title
+{
+  text-decoration: none;
+  color: #34558A;
+  border: none;
+}
+
+a.a_title:hover
+{
+  color: #FFA713;
+  border: none;
+}
+
+span.title_pipe
+{
+  color: #FFA713;
+}
+
+div.frame_title
+{
+  border-bottom: solid 2px #FFA713;
+  font-weight: bold;
+  margin: 0px 23px 2px 0px;
+  /*margin: 0px 23px 10px 0px;*/
+}
+
+input,
+.input1
+{
+  border: solid 1px #7F9DB9;
+  font-family: arial, sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 9pt;
+  vertical-align: top;
+  /*vertical-align: middle;*/
+  margin:0px;
+}
+
+input:focus,
+.input1:focus
+{
+  border: solid 1px #FFA713;
+}
+
+input.button1
+{
+  /*border: solid 2px #7F9DB9;
+  color: #7F9DB9;*/
+  background:transparent url(../images/icons/buttonBg.png) repeat scroll 0%;
+  /*border:1px solid #808080;*/
+	border-color:#D0D0D0 #808080 #808080 #D0D0D0;
+	border-style:solid;
+	border-width:1px;
+  color: #808080;
+  vertical-align: top;
+  font-weight: bold;
+  cursor : pointer;
+}
+
+input.button1:hover
+{
+  /*border: solid 2px #FFA713;
+  color: #FFA713;*/
+  /*border:1px solid #34558A;*/
+	border-color:#808080 #D0D0D0 #D0D0D0 #808080;
+	border-style:solid;
+	border-width:1px;
+  color:#34558A;/*black;*/
+}
+
+select/*.select2*/
+{
+  border: solid 1px #7F9DB9;
+  font-family: arial, sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 9pt;
+}
+
+.close
+{
+  float: right;
+  text-align: right;
+}
+
+img.edit
+{
+  bottom: -4px;
+  position: relative;
+  width: 18px;
+  height: 16px;
+  border: 0px;
+}
+
+img.details
+{
+  bottom: -4px;
+  position: relative;
+  width: 12px;
+  height: 16px;
+  border: 0px;
+}
+
+img.properties
+{
+  bottom: -4px;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 0px;
+}
+
+img.delete
+{
+  bottom: -4px;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 0px;
+}
+
+img.entry_img
+{
+  width: 8px;
+  height: 16px;
+  padding:0 4px;
+}
+
+img.grotto_img
+{
+  width: 16px;
+  height: 16px;
+}
+
+img.edit_ctxt
+{
+  /*width: 13px;
+  height: 14px;*/
+  width: 17px;
+}
+
+img.details_ctxt
+{
+  /*width: 13px;
+  height: 16px;*/
+  width: 17px;
+}
+
+img.properties_ctxt
+{
+  /*width: 13px;
+  height: 13px;*/
+  width: 17px;
+}
+
+img.delete_ctxt
+{
+  /*width: 13px;
+  height: 13px;*/
+  width: 17px;
+}
+
+div.histo
+{
+}
+
+div.histo img
+{
+  border: solid 1px #808080;
+  margin: 4px;
+  cursor: help;
+  width: 50px;
+}
+
+div.histo img:hover
+{
+  width: 200px;
+}
+
+div.radar img
+{
+  cursor: help;
+}
+
+#suggestBoxElement
+{
+  border: 1px solid #8FABFF;
+  visibility:hidden;
+  text-align: left;
+  white-space: nowrap;
+  background-color: #EEEEEE;
+}
+
+.suggestions
+{
+  font-size:14px;
+  background-color:#eeeeee;
+  cursor:pointer;
+}
+
+.suggestions:hover
+{
+  background-color:#FFD99E;
+}
+
+/*.suggestionMouseOver
+{
+  font-size: 14px;
+  background-color: #3333ff;
+  color: white;
+  cursor:pointer;
+}*/
+
+.reference,
+.reference:hover
+{
+  border:none;
+}
+
+.content_license
+{
+  border:1px dashed #808080;
+  padding:10px;
+  text-align:center;
+}
+
+img.gross_avatar
+{
+  border:1px dashed #808080;
+  width:100px;
+}
+
+table.form_tbl
+{
+  background-color:#EAEAEA;
+}
+
+table.form_tbl tr
+{
+  background-color:#FFFFFF;
+}
+
+table.form_tbl td
+{
+  padding:1px 4px;
+}
+
+table.form_tbl td.label
+{
+  background-color:#EEEEEE;
+  text-align:right;
+}
+
+table.form_tbl td.field
+{
+  background-color:#FFFFFF;
+  text-align:left;
+  white-space:nowrap;
+}
+
+table.form_tbl td.field:hover
+{
+  background-color:#F3F3E9;
+}
+
+table.form_tbl th
+{
+  background-color:#EEEEEE;
+}
+
+.new_feature
+{
+  color:red;
+  font-size:7pt;
+  vertical-align:super;
+}
+
+table.frame
+{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+table.frame tr.frameTop
+{
+  /*height:4px;*/
+}
+
+table.frame td.frameTopLeft,
+table.frame td.frameTopRight,
+table.frame td.frameBotLeft,
+table.frame td.frameBotRight
+{
+  width:4px;
+  height:4px;
+}
+
+table.frame td.frameTopLeft
+{
+  background:transparent url(../images/borders/frameTopLeft.png) no-repeat scroll bottom left;
+}
+
+table.frame td.frameTopCenter
+{
+  background:transparent url(../images/borders/frameTop.png) repeat-x scroll bottom left;
+  /*height:4px;*/
+}
+
+table.frame td.frameTopRight
+{
+  background:transparent url(../images/borders/frameTopRight.png) no-repeat scroll bottom right;
+}
+
+table.frame tr.frameMid
+{
+}
+
+table.frame td.frameMidLeft
+{
+  /*width:4px;*/
+  background:transparent url(../images/borders/frameLeft.png) repeat-y scroll top left;
+}
+
+table.frame td.frameContent
+{
+  margin: 0px;
+  text-align: left;
+  vertical-align: top;
+  padding: 0px;
+  /*height: 100%;*/
+}
+
+table.frame td.frameMidRight
+{
+  /*width:4px;*/
+  background:transparent url(../images/borders/frameRight.png) repeat-y scroll top right;
+}
+
+table.frame tr.frameBot
+{
+  /*height:4px;*/
+}
+
+table.frame td.frameBotLeft
+{
+  background:transparent url(../images/borders/frameBotLeft.png) no-repeat scroll top left;
+}
+
+table.frame td.frameBotCenter
+{
+  background:transparent url(../images/borders/frameBot.png) repeat-x scroll top left;
+  /*height:4px;*/
+}
+
+table.frame td.frameBotRight
+{
+  background:transparent url(../images/borders/frameBotRight.png) no-repeat scroll top right;
+}
+
+div.error
+{
+  /*display: block;*/
+  font-weight: bold;
+  /*color: #FF0000;
+  padding: 2px;
+  border: dashed 1px #FF0000;
+  margin-bottom: 10px;*/
+  margin:5px 0;
+}
+
+div.warning
+{
+  /*display: block;
+  color: #0000FF;
+  padding: 2px;
+  border: dashed 1px #0000FF;
+  margin-bottom: 10px;*/
+  margin:5px 0;
+}
+
+table.bubble
+{
+  margin:0 auto;
+  border-collapse:collapse;
+}
+
+table.bubble td.btl,
+table.bubble td.btm,
+table.bubble td.btr,
+table.bubble td.bcl,
+table.bubble td.bcr,
+table.bubble td.bbl,
+table.bubble td.bbm,
+table.bubble td.bbr
+{
+  margin:0;
+  padding:0;
+  font-size:0;
+}
+
+table.bubble td.btl,
+table.bubble td.btr,
+table.bubble td.bbl,
+table.bubble td.bbr
+{
+  height:4px;
+  width:4px;
+}
+
+table.bubble td.bcm
+{
+  padding: 0px 5px;
+}
+
+div.grouplabel1 table.bubble td.btm,
+div.grouplabel1 table.bubble td.bcl,
+div.grouplabel1 table.bubble td.bcm,
+div.grouplabel1 table.bubble td.bcr,
+div.grouplabel1 table.bubble td.bbm
+{
+  background:#CC0000 none repeat scroll 0 0;
+  color: #FFE3E3;
+}
+
+div.grouplabel1 table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=CC0000) no-repeat scroll 0 0;
+}
+
+div.grouplabel1 table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=CC0000) no-repeat scroll -4px 0;
+}
+
+div.grouplabel1 table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=CC0000) no-repeat scroll 0 -4px;
+}
+
+div.grouplabel1 table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=CC0000) no-repeat scroll -4px -4px;
+}
+
+div.grouplabel2 table.bubble td.btm,
+div.grouplabel2 table.bubble td.bcl,
+div.grouplabel2 table.bubble td.bcm,
+div.grouplabel2 table.bubble td.bcr,
+div.grouplabel2 table.bubble td.bbm
+{
+  background:#EC7000 none repeat scroll 0 0;
+  color: #FFF0E1;
+}
+
+div.grouplabel2 table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EC7000) no-repeat scroll 0 0;
+}
+
+div.grouplabel2 table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EC7000) no-repeat scroll -4px 0;
+}
+
+div.grouplabel2 table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EC7000) no-repeat scroll 0 -4px;
+}
+
+div.grouplabel2 table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EC7000) no-repeat scroll -4px -4px;
+}
+
+div.grouplabel3 table.bubble td.btm,
+div.grouplabel3 table.bubble td.bcl,
+div.grouplabel3 table.bubble td.bcm,
+div.grouplabel3 table.bubble td.bcr,
+div.grouplabel3 table.bubble td.bbm
+{
+  background:#FFC900 none repeat scroll 0 0;
+  color: #FFF0E1;
+}
+
+div.grouplabel3 table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FFC900) no-repeat scroll 0 0;
+}
+
+div.grouplabel3 table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FFC900) no-repeat scroll -4px 0;
+}
+
+div.grouplabel3 table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FFC900) no-repeat scroll 0 -4px;
+}
+
+div.grouplabel3 table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FFC900) no-repeat scroll -4px -4px;
+}
+
+div.grouplabel4 table.bubble td.btm,
+div.grouplabel4 table.bubble td.bcl,
+div.grouplabel4 table.bubble td.bcm,
+div.grouplabel4 table.bubble td.bcr,
+div.grouplabel4 table.bubble td.bbm
+{
+  background:#64992C none repeat scroll 0 0;
+  color: #F9FFEF;
+}
+
+div.grouplabel4 table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=64992C) no-repeat scroll 0 0;
+}
+
+div.grouplabel4 table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=64992C) no-repeat scroll -4px 0;
+}
+
+div.grouplabel4 table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=64992C) no-repeat scroll 0 -4px;
+}
+
+div.grouplabel4 table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=64992C) no-repeat scroll -4px -4px;
+}
+
+div.error table.bubble td.btm,
+div.error table.bubble td.bcl,
+div.error table.bubble td.bcm,
+div.error table.bubble td.bcr,
+div.error table.bubble td.bbm
+{
+  background:#FF0000 none repeat scroll 0 0;
+  color: #FFFFFF;
+}
+
+div.error table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FF0000) no-repeat scroll 0 0;
+}
+
+div.error table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FF0000) no-repeat scroll -4px 0;
+}
+
+div.error table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FF0000) no-repeat scroll 0 -4px;
+}
+
+div.error table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=FF0000) no-repeat scroll -4px -4px;
+}
+
+div.warning table.bubble td.btm,
+div.warning table.bubble td.bcl,
+div.warning table.bubble td.bcm,
+div.warning table.bubble td.bcr,
+div.warning table.bubble td.bbm
+{
+  background:#0000FF none repeat scroll 0 0;
+  color: #FFFFFF;
+}
+
+div.warning table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=0000FF) no-repeat scroll 0 0;
+}
+
+div.warning table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=0000FF) no-repeat scroll -4px 0;
+}
+
+div.warning table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=0000FF) no-repeat scroll 0 -4px;
+}
+
+div.warning table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=0000FF) no-repeat scroll -4px -4px;
+}
+
+table.menu_box
+{
+  margin:0 auto;
+  width:100%;
+}
+
+table.menu_box td.mbtl,
+table.menu_box td.mbtm,
+table.menu_box td.mbtr,
+table.menu_box td.mbtil,
+table.menu_box td.mbtir,
+table.menu_box td.mbcl,
+table.menu_box td.mbcr,
+table.menu_box td.mbb
+{
+  margin:0;
+  padding:0;
+  font-size:0;
+}
+
+table.menu_box td.mbtl,
+table.menu_box td.mbtr
+{
+  height:6px;
+  width:6px;
+}
+
+table.menu_box td.mbtm,
+table.menu_box td.mbtil,
+table.menu_box td.mbtim,
+table.menu_box td.mbtir
+{
+  /*background:#DCDCDC none repeat scroll 0 0;*/
+  background:#EEDBA9 none repeat scroll 0 0;
+}
+
+table.menu_box div.mbcm
+{
+  padding:2px 0px;
+}
+
+table.menu_box div.mbcm > ul
+{
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+table.menu_box td.mbtm
+{
+  border-top:1px solid #808080;
+}
+
+table.menu_box td.mbtil,
+table.menu_box td.mbcl,
+table.menu_box td.mbb
+{
+  border-left:1px solid #808080;
+}
+
+table.menu_box td.mbtir,
+table.menu_box td.mbcr,
+table.menu_box td.mbb
+{
+  border-right:1px solid #808080;
+}
+
+table.menu_box td.mbb
+{
+  border-bottom:1px solid #808080;
+}
+
+table.menu_box td.mbtl
+{
+  background:transparent url(../images/borders/menu_corners.png) no-repeat scroll 0 0;
+}
+
+table.menu_box td.mbtr
+{
+  background:transparent url(../images/borders/menu_corners.png) no-repeat scroll -6px 0;
+}
+
+table.menu_box div.mbtitle
+{
+  position:relative;
+  top:-3px;
+}
+
+.notes
+{
+  /*padding: 2px;*/
+  font-size: 8pt;
+  /*border: dashed 1px #808080;
+  background-color:#EEDBA9;*/
+  margin-bottom: 10px;
+}
+
+div.notes table.bubble td.btm,
+div.notes table.bubble td.bcl,
+div.notes table.bubble td.bcm,
+div.notes table.bubble td.bcr,
+div.notes table.bubble td.bbm
+{
+  background:#EEDBA9 none repeat scroll 0 0;
+}
+
+div.notes table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EEDBA9) no-repeat scroll 0 0;
+}
+
+div.notes table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EEDBA9) no-repeat scroll -4px 0;
+}
+
+div.notes table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EEDBA9) no-repeat scroll 0 -4px;
+}
+
+div.notes table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=EEDBA9) no-repeat scroll -4px -4px;
+}
+
+.info
+{
+  /*padding: 2px;*/
+  font-size: 8pt;
+  /*border: dashed 1px #808080;
+  background-color: #D1FAFF;*/
+  margin-bottom: 10px;
+}
+
+div.info table.bubble td.btm,
+div.info table.bubble td.bcl,
+div.info table.bubble td.bcm,
+div.info table.bubble td.bcr,
+div.info table.bubble td.bbm
+{
+  background:#D1FAFF none repeat scroll 0 0;
+}
+
+div.info table.bubble td.btl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=D1FAFF) no-repeat scroll 0 0;
+}
+
+div.info table.bubble td.btr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=D1FAFF) no-repeat scroll -4px 0;
+}
+
+div.info table.bubble td.bbl
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=D1FAFF) no-repeat scroll 0 -4px;
+}
+
+div.info table.bubble td.bbr
+{
+  background:transparent url(../images/gen/getCorner.php?fgc=D1FAFF) no-repeat scroll -4px -4px;
+}
+
+.credit
+{
+  color:#808080;
+  font-style:italic;
+  font-size:8pt;
+}
+
+.warnsuggestions
+{
+  position:absolute;
+  width:250px;
+  height:60px;
+  overflow:auto;
+  border:1px solid #808080;
+  background-color:#F4F4F4;
+  color:#808080;
+}
+
+.box
+{
+  /*background-color:#EEEEEE;
+  border:1px solid black;*/
+  line-height:20pt;
+  /*padding:0px 10px;*/
+  margin-left:30px;
+  width:80%;
+}
+
+.help
+{
+
+}
+
+.loading_crs
+{
+	background-color:#D0D0D0;
+	border:1px solid;
+	font-weight:bold;
+	margin:5px;
+	padding:5px;
+	text-align:center;
+	vertical-align:middle;
+	width:230px;
+}

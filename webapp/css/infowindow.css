@@ -1,0 +1,268 @@
+/**
+ * This file is part of GrottoCenter.
+ *
+ * GrottoCenter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * GrottoCenter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @copyright Copyright (c) 2009-1912 Clément Ronzon
+ * @license http://www.gnu.org/licenses/agpl.txt
+ */
+
+#GC_IW_LOADING
+{
+  padding:0px;
+  text-align:left;
+}
+
+#GC_IW_LOADING label
+{
+  vertical-align:middle;
+}
+
+#GC_IW_LOADING input.inputIW
+{
+  vertical-align:middle;
+}
+
+#GC_IW_LOADING .value_comment
+{
+  background-image:url(../images/icons/comment_tiny.png);
+}
+
+#GC_IW_LOADING .caver
+{
+  background-image:url(../images/icons/caver2.png);
+}
+
+#GC_IW_LOADING .caver_connected
+{
+  background-image:url(../images/icons/caver2_connected.png);
+}
+
+#GC_IW_LOADING .referent_caver
+{
+  background-image:url(../images/icons/refcaver2.png);
+}
+
+#GC_IW_LOADING .referent_caver_connected
+{
+  background-image:url(../images/icons/refcaver2_connected.png);
+}
+
+#GC_IW_LOADING .cavers_clustered
+{
+  background-image:url(../images/icons/caver2_clust.png);
+}
+
+#GC_IW_LOADING .value_caver
+{
+  background-image:url(../images/icons/caver2_tiny.png);
+}
+
+#GC_IW_LOADING .entry
+{
+  background-image:url(../images/icons/entry2.png);
+}
+
+#GC_IW_LOADING .entries_clustered
+{
+  background-image:url(../images/icons/entry2_clust.png);
+}
+
+#GC_IW_LOADING .value_entry
+{
+  background-image:url(../images/icons/entry2_tiny.png);
+}
+
+#GC_IW_LOADING .grotto
+{
+  background-image:url(../images/icons/grotto1.png);
+}
+
+#GC_IW_LOADING .grottoes_clustered
+{
+  background-image:url(../images/icons/grotto1_clust.png);
+}
+
+#GC_IW_LOADING .value_grotto
+{
+  background-image:url(../images/icons/grotto1_tiny.png);
+}
+
+#GC_IW_LOADING .header,
+#GC_IW_LOADING .headercaver
+{
+  display:block;
+  position:relative;
+  top:-8px;
+  text-align:center;
+  min-height:32px;
+  height:32px;
+  /*line-height:32px;*/
+  background-repeat:no-repeat;
+  font-size:12pt;
+  font-weight:bold;
+}
+
+#GC_IW_LOADING .header
+{
+  line-height:32px;
+}
+
+#GC_IW_LOADING .footer
+{
+	display:block;
+	position:absolute;
+  bottom:1px;
+  /*width:94%;*/
+	width:100%;
+}
+
+#GC_IW_LOADING .footer table
+{
+  width:100%;
+  background-color:#EAEAEA
+}
+
+#GC_IW_LOADING .footer table td 
+{
+  vertical-align:bottom;
+}
+
+#GC_IW_LOADING .overflown_box
+{
+  height:45px;
+  overflow:auto;
+}
+
+#GC_IW_LOADING .content
+{
+  height:180px;
+  overflow:auto;
+}
+
+#GC_IW_LOADING .details
+{
+	position:absolute;
+	bottom:1px;
+  right:0px;
+}
+
+#GC_IW_LOADING .label
+{
+  display:block;
+  font-weight:normal;
+}
+
+#GC_IW_LOADING .value,
+#GC_IW_LOADING .value_caver,
+#GC_IW_LOADING .value_entry,
+#GC_IW_LOADING .value_grotto,
+#GC_IW_LOADING .value_comment
+{
+  font-weight:bold;
+}
+
+#GC_IW_LOADING .value_caver,
+#GC_IW_LOADING .value_entry,
+#GC_IW_LOADING .value_grotto,
+#GC_IW_LOADING .value_comment
+{
+  padding:0px 5px;
+}
+
+#GC_IW_LOADING .directions form
+{
+  display:inline;
+}
+
+#GC_IW_LOADING .directions
+{
+  /*margin:6px 0px;*/
+}
+
+#GC_IW_LOADING div.custom_message
+{
+  border:1px dashed black;
+  max-height:45px;
+  overflow-y:scroll;
+}
+
+#GC_IW_LOADING div.radar
+{
+  float:right
+}
+
+#GC_IW_LOADING div.radar img
+{
+  background-color:white;
+  border:1px solid #808080;
+  /*margin:4px;*/
+  cursor:help;
+  width:50px;
+}
+
+#GC_IW_LOADING div.radar img:hover
+{
+  position:absolute;
+  right:10px;
+  top:10px;
+  width:150px;
+}
+
+#GC_IW_LOADING div.avatar
+{
+  float:right
+}
+
+#GC_IW_LOADING div.avatar img
+{
+  /*border:1px dashed black;*/
+  width:50px;
+}
+
+#GC_IW_LOADING div.avatar img:hover
+{
+  position:absolute;
+  right:10px;
+  top:10px;
+  width:150px;
+  background-color:#FFFFFF;
+  border:1px solid #000000;
+}
+
+#GC_IW_LOADING input.button_add,
+#GC_IW_LOADING input.button_remove,
+#GC_IW_LOADING input.button_add:hover,
+#GC_IW_LOADING input.button_remove:hover,
+#GC_IW_LOADING input.button_add:focus,
+#GC_IW_LOADING input.button_remove:focus
+{
+  border:0px none;
+  font-weight:normal;
+  width:18px;
+  height:19px;
+  cursor:pointer;
+  bottom:-7px;
+  position:relative;
+}
+
+#GC_IW_LOADING input.button_add
+{
+  background:url(../images/icons/insert.png) no-repeat scroll center;
+}
+
+#GC_IW_LOADING input.button_remove
+{
+  background:url(../images/icons/remove.png) no-repeat scroll center;
+}
