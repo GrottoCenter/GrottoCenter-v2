@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 function resetConvertedFiles($filesArray)
@@ -100,7 +100,7 @@ function convertFile($sourceFile, $sourcePath, $destPath, $frame, $lang)
               if ($translation_supported) {
                 $data[$i] = "<?php if (allowAccess(translation_view_all)) { ?"."><span onclick=\"JavaScript:openWindow('translation_".$lang.".php?id=".$data[$i]."', '', 800, 600);\" class=\"translation_label\"><?php } ?".">".$labelArray[$data[$i]]."<?php if (allowAccess(translation_view_all)) { ?"."></span><?php } ?".">";
               } else {
-                $data[$i] = $labelArray[$data[$i]];
+                $data[$i] = isset($labelArray[$data[$i]]) ? $labelArray[$data[$i]] : null;
               }
             }
             //Fill the buffer
@@ -112,6 +112,8 @@ function convertFile($sourceFile, $sourcePath, $destPath, $frame, $lang)
       }
       fclose($handleR);
       fclose($handleW);
+    }else{
+        echo "error yiyi8797";
     }
   }
 }
@@ -138,7 +140,7 @@ function getHistoSrc($sql,$column)
     }
   }
   for($i=0;$i<=$max;$i++) {
-    if($data[$i] == ""){
+    if(empty($data[$i])){
       $data[$i] = 0;
     }
     $argData .= $data[$i]."|";
@@ -156,7 +158,7 @@ function getFileName($file)
 function getFileExtension($file)
 {
   $fileArray = explode(".",$file);
-  return $fileArray[1];
+  return isset($fileArray[1]) ? $fileArray[1] : null;
 }
 
 function fileExists($url)
@@ -497,7 +499,8 @@ function insertError($error, $file, $frame, $function, $comment)
   $comment = addslashes($comment);
   $sql = "INSERT INTO `".$_SESSION['Application_host']."`.`T_error` ";
   $sql .= "(`Id_caver`, `Date`, `Error`, `File`, `Frame`, `Function`, `Comment`) VALUES ";
-  $sql .= "(".returnDefault($_SESSION['user_id'],'text');
+  $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+  $sql .= "(".returnDefault($userId,'text');
   $sql .= ",Now(),";
   $sql .= returnDefault($error,'text').",";
   $sql .= returnDefault($file,'text').",";
@@ -777,7 +780,7 @@ function getDataFromSQL($sql, $file, $frame, $function)
   $connect_db = connect();
 //	$set_timeformat = "SET time_format = '".$_SESSION['user_timeformat']."';";
 	$set_timezone = "";
-	if ($_SESSION['user_utcoffset'] != "") {
+	if (isset($_SESSION['user_utcoffset']) && $_SESSION['user_utcoffset'] != "") {
 		$set_timezone = "SET time_zone = '".$_SESSION['user_utcoffset']."'";
 		$req = mysql_query($set_timezone) or die(reportError(mysql_error(), $file, $frame, $function, 'Erreur SQL : '.$sql));
 	}
@@ -1232,19 +1235,19 @@ function getSinceDate($sql, $labels)
   $return = "";
   $data = getDataFromSQL($sql, __FILE__, "function", __FUNCTION__);
   if ($data['Count'] > 0){
-    if ($year = $data[0]['YEAR'] > 0) {
+    if (isset($data[0]['YEAR']) && $data[0]['YEAR'] > 0) {
       $return = $data[0]['YEAR']." ".$labels[0];//"years ago";
-    } elseif($data[0]['MONTH'] > 0 ) {
+    } elseif(isset($data[0]['MONTH']) && $data[0]['MONTH'] > 0 ) {
       $return = $data[0]['MONTH']." ".$labels[1];//month(s) ago";
-    } elseif($data[0]['WEEK'] > 0 ) {
+    } elseif(isset($data[0]['WEEK']) && $data[0]['WEEK'] > 0 ) {
       $return = $data[0]['WEEK']." ".$labels[2];//week(s) ago";
-    } elseif($data[0]['DAY'] > 0 ) {
+    } elseif(isset($data[0]['DAY']) && $data[0]['DAY'] > 0 ) {
       $return = $data[0]['DAY']." ".$labels[3];//day(s) ago";
-    } elseif($data[0]['HOUR'] > 0 ) {
+    } elseif(isset($data[0]['HOUR']) && $data[0]['HOUR'] > 0 ) {
       $return = $data[0]['HOUR']." ".$labels[4];//hour(s) ago";
-    } elseif($data[0]['MINUTE'] > 0 ) {
+    } elseif(isset($data[0]['MINUTE']) && $data[0]['MINUTE'] > 0 ) {
       $return = $data[0]['MINUTE']." ".$labels[5];//minute(s) ago";
-    } elseif($data[0]['SECOND'] > 0 ) {
+    } elseif(isset($data[0]['SECOND']) && $data[0]['SECOND'] > 0 ) {
       $return = $data[0]['SECOND']." ".$labels[6];//second(s) ago";
     }
   }
@@ -1784,7 +1787,7 @@ function getMetaTags()
   $meta .= $revisitafterTag;
   $meta .= $ratingTag;
   $meta .= $robotsTag;
-	$meta .= $script_imagepngfix_Tag;
+	//$meta .= $script_imagepngfix_Tag;
   return $meta;
 }
 
@@ -2558,6 +2561,7 @@ function getWhereClause($POST_vars, $category="", $sql="") {
 
 function getRowsFromSQL($sql, $columns_params, $links, $records_by_page, $filter_form, $list_form, $POST_vars, $input_type, $style, $default_order, $enable_order, $enable_limit, $category="", $default_values=array(), $images=array())
 {
+    $resource = null;
 	$time_start = startMetro();
   //Stores the Group by statement
   $where_clause = "";
@@ -2725,10 +2729,10 @@ endMetro($time_start_b, __FUNCTION__." close db");
       $sql .= " LIMIT ".$from_record.", ".$to_record." ";
     }
     //Construction of data rows
-$time_start_b = startMetro();
-echo '<!--'.$sql.'-->';
+    $time_start_b = startMetro();
+    echo '<!--'.$sql.'-->';
     $values = getDataFromSQL($sql, __FILE__, "function", __FUNCTION__);
-endMetro($time_start_b, __FUNCTION__." values query"); //CHRONOPHAGE
+    endMetro($time_start_b, __FUNCTION__." values query"); //CHRONOPHAGE
     for($i=0;$i<$values["Count"];$i++) {
       //New Row
       $row_set .= "<tr>\n";
@@ -2859,16 +2863,17 @@ echo '</pre>';
       if ($do_replace) {
         //Link the value replacing the write parameters
         $link = $linkArray['link'];
-        $title = $linkArray['title'];
-        $target = $linkArray['target'];
-        $style = $linkArray['style'];
-        $class = $linkArray['class'];
+        $title = isset($linkArray['title']) ? $linkArray['title'] : null;
+        $target = isset($linkArray['target']) ? $linkArray['target'] : null;
+        $style = isset($linkArray['style']) ? $linkArray['style'] : null;
+        $class = isset($linkArray['class']) ? $linkArray['class'] : null;
         foreach($linkArray['parameters'] as $p_key => $p_value) {
-          $link = eregi_replace($p_key,$valueArray[$p_value],$link);
-          $title = eregi_replace($p_key,$valueArray[$p_value],$title);
-          $target = eregi_replace($p_key,$valueArray[$p_value],$target);
-          $style = eregi_replace($p_key,$valueArray[$p_value],$style);
-          $class = eregi_replace($p_key,$valueArray[$p_value],$class);
+            $p_key = "/" . $p_key . "/i";
+            $link = preg_replace($p_key,$valueArray[$p_value],$link);
+          $title = preg_replace($p_key,$valueArray[$p_value],$title);
+          $target = preg_replace($p_key,$valueArray[$p_value],$target);
+          $style = preg_replace($p_key,$valueArray[$p_value],$style);
+          $class = preg_replace($p_key,$valueArray[$p_value],$class);
         }
         $text_link = $this_value;
         $this_value = "<a ";
@@ -2880,13 +2885,13 @@ echo '</pre>';
 				if ($linkArray['target'] != "" && substr($linkArray['target'], 0, 2) != "on") {
           $this_value .= "target=\"".$target."\" ";
         }
-        if ($linkArray['title'] != "") {
+        if (isset($linkArray['title']) && $linkArray['title'] != "") {
           $this_value .= "title=\"".$title."\" ";
         }
-        if ($linkArray['style'] != "") {
+        if (isset($linkArray['style']) && $linkArray['style'] != "") {
           $this_value .= "style=\"".$style."\" ";
         }
-        if ($linkArray['class'] != "") {
+        if (isset($linkArray['class']) && $linkArray['class'] != "") {
           $this_value .= "class=\"".$class."\" ";
         }
         $this_value .= ">".$text_link."</a>";
@@ -2940,14 +2945,14 @@ function getImagedValue($value, $imageArray, $valueArray) {
 function replaceLinks($text)
 {
   // match protocol://address/path/
-  $text = ereg_replace("(((ftp://)|(http(s?)://)){1}([a-zA-Z0-9\%\.\?\=\#\_\:\&\/\~\+\@\,\;\-])+)", "<a href=\"\\0\" target=\"_blank\">\\0</a>", $text);
+  $text = preg_replace("#(((ftp://)|(http(s?)://)){1}([a-zA-Z0-9\%\.\?\=\#\_\:\&\/\~\+\@\,\;\-])+)#", "<a href=\"\\0\" target=\"_blank\">\\0</a>", $text);
   // match www.something
-  $text = ereg_replace("([^/]){1}(www\.[a-zA-Z0-9\%\.\?\=\#\_\:\&\/\~\+\@\,\;\-]+){1}", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $text);
+  $text = preg_replace("#([^/]){1}(www\.[a-zA-Z0-9\%\.\?\=\#\_\:\&\/\~\+\@\,\;\-]+){1}#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $text);
   // match email address
   $atom   = '[-a-z0-9!#$%&\'*+\\/=?^_`{|}~]';
   $domain = '([a-z0-9]([-a-z0-9]*[a-z0-9]+)?)';
-  $regex = '(^| )('.$atom.'+'.'(\.'.$atom.'+)*'.'@'.'('.$domain.'{1,63}\.)+'.$domain.'{2,63})';
-  $text = ereg_replace($regex, "\\1<a href=\"mailto:\\2\">\\2</a>", $text);
+  $regex = '/(^| )('.$atom.'+'.'(\.'.$atom.'+)*'.'@'.'('.$domain.'{1,63}\.)+'.$domain.'{2,63})/';
+  $text = preg_replace($regex, "\\1<a href=\"mailto:\\2\">\\2</a>", $text);
   
   return $text;
 }

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 //'([^']*)<convert>#label=([0-9]+)<convert>([^']*)'
@@ -71,6 +71,8 @@ if (!$isPublic && !USER_IS_CONNECTED) {
 	  <link rel="shortcut icon" type="image/png" href="<?php echo $_SESSION['Application_url']; ?>/favicon.png" />
     <title><?php echo $_SESSION['Application_title']; ?> <?php echo $entryName; ?></title>
 <?php
+    $is_change = true;
+    $save_failed = true;
     $contributionSaved = false;
     $contributionDeleted = false;
     if (!isset($_POST['print'])) {

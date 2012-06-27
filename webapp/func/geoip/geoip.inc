@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 
@@ -381,7 +381,7 @@ function geoip_country_id_by_addr($gi, $addr) {
 function geoip_country_code_by_addr($gi, $addr) {
   if ($gi->databaseType == GEOIP_CITY_EDITION_REV1) {
     $record = geoip_record_by_addr($gi,$addr);
-    return $record->country_code;
+    return isset($record->country_code) ? $record->country_code : null;
   } else {
     $country_id = geoip_country_id_by_addr($gi,$addr);
     if ($country_id !== false) {

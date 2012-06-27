@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 ob_start("ob_gzhandler");
-
+error_reporting(E_ALL ^ E_NOTICE);
 include("session.php");
 
 /*header("Cache-Control: no-cache, must-revalidate");
@@ -41,10 +41,10 @@ function logDBToFile($content, $filename)
 function connect()
 {
   //global $host_db,$user_db,$password_db,$bdd_db;
-  $host_db = ""; // nom de votre serveur
-  $user_db = ""; // nom d'utilisateur de connexion à votre bdd
-  $password_db = ""; // mot de passe de connexion à votre bdd
-  $bdd_db = ""; // nom de votre bdd
+  $host_db = "localhost"; // nom de votre serveur
+  $user_db = ""; // nom d'utilisateur de connexion ï¿½ votre bdd
+  $password_db = ""; // mot de passe de connexion ï¿½ votre bdd
+  $bdd_db = "grottoce"; // nom de votre bdd
   $connect_db = mysql_connect($host_db,$user_db,$password_db);
 $filename = "mysql";
 if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {

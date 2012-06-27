@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -222,7 +222,7 @@ if (false) {
             <!--<a href="portlet_<?php echo $_SESSION['language']; ?>.php?type=url" class="nothing"> --><img src="../images/icons/bullet_url.png" alt="<convert>#label=670<convert>" style="height:9pt;" /><!--</a>--> <a href="portlet_<?php echo $_SESSION['language']; ?>.php?type=url"><convert>#label=670<convert><!--Sites partenaires--> (<?php echo countByCategory("url"); ?>)</a>
           </li>
         </ul>
-<?php if ($newCaversStr != "") { ?>
+<?php if (isset($newCaversStr) && $newCaversStr != "") { ?>
         <h3><convert>#label=687<convert><!--Bienvenue aux inscrits du mois--></h3>
         <div class="box"><?php echo getTopBox("ffffff", "C3D9FF", "E4EAEF")."<div style=\"height:80px;overflow-x:auto;\">".$newCaversStr.".</div>".getBotBox(); ?></div>
 <?php } ?>

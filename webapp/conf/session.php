@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
-$real_path = realpath(__FILE__);
-$real_path = substr($real_path,0,strlen($real_path)-20);
-ini_set("session.save_path",$real_path."/sessions");
+//$real_path = realpath(__FILE__);
+//$real_path = substr($real_path,0,strlen($real_path)-20);
+//ini_set("session.save_path",$real_path."/sessions");
 session_start();
 ?>

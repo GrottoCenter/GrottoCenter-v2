@@ -15,11 +15,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 function getProperties($category,$id,$isConnected,$labelsBlank,$labelsSinceDate,$addTitle,$systemArray=array(),$for_printer=false,$opener)
 {
+    $innerHTML = "";
+    $entriesList = "";
   switch ($category) {
     case "entry":
       $AvgAe = getAvgAestheticism($id);
@@ -66,7 +68,6 @@ function getProperties($category,$id,$isConnected,$labelsBlank,$labelsSinceDate,
 			}
       $listSQL .= "ORDER BY e.Name ";
       $entryList = getDataFromSQL($listSQL, __FILE__, "function", __FUNCTION__);
-      $entriesList = "";
       for($index=0;$index<$entryList["Count"];$index++) {
         $entriesList .= "<a href=\"JavaScript:openMe(".$entryList[$index]['Id'].", 'entry', false);\">".$entryList[$index]['Name']."</a>, ";
       }
@@ -107,7 +108,7 @@ function getProperties($category,$id,$isConnected,$labelsBlank,$labelsSinceDate,
   }
   $data = getDataFromSQL($sql, __FILE__, $opener, __FUNCTION__);
   if ($data['Count'] > 0){
-    $is_public = $data[0]['Contact_is_public'];
+    $is_public = isset($data[0]['Contact_is_public']) ? $data[0]['Contact_is_public'] : false;
     $is_shown = ((($category == "caver") && ((($is_public == Contact_for_registered) && $isConnected) || ($is_public == Contact_for_everybody))) || ($category != "caver"));
     if ($addTitle) {
       if (isset($data[0]['Nickname'])) {
@@ -121,42 +122,58 @@ function getProperties($category,$id,$isConnected,$labelsBlank,$labelsSinceDate,
       $innerHTML .= getInnerLine($data[0]['Name'],$data[0]['Name'],"<convert>#label=199<convert> :");//Nom
     }
     $innerHTML .= getInnerLine($entriesList,$entriesList,"<convert>#label=384<convert> :");//Entrées :
-    $innerHTML .= getInnerLine($entriesStats[0]['Nb'],$entriesStats[0]['Nb'],"<convert>#label=384<convert> :");//Entrées :
-    $innerHTML .= getInnerLine($entriesStats[0]['Max_Depth'],round($entriesStats[0]['Max_Depth']),"<convert>#label=758<convert> :","","<convert>#label=268<convert>");//Prof. Max. ://m
-    $innerHTML .= getInnerLine($entriesStats[0]['Avg_Depth'],round($entriesStats[0]['Avg_Depth']),"<convert>#label=759<convert> :","","<convert>#label=268<convert>");//Prof. Moy. ://m
-    $innerHTML .= getInnerLine($entriesStats[0]['Std_Depth'],round($entriesStats[0]['Std_Depth']),"<convert>#label=760<convert> :","","<convert>#label=268<convert>");//E.Type Prof. ://m
-    $innerHTML .= getInnerLine($entriesStats[0]['Max_Length'],round($entriesStats[0]['Max_Length']),"<convert>#label=761<convert> :","","<convert>#label=268<convert>");//Dev. Max. ://m
-    $innerHTML .= getInnerLine($entriesStats[0]['Sum_Length'],round($entriesStats[0]['Sum_Length']),"<convert>#label=762<convert> :","","<convert>#label=268<convert>");//Dev. Total ://m
-    $innerHTML .= getInnerLine($entriesStats[0]['Avg_Length'],round($entriesStats[0]['Avg_Length']),"<convert>#label=763<convert> :","","<convert>#label=268<convert>");//Dev. Moy. ://m
-    $innerHTML .= getInnerLine($entriesStats[0]['Std_Length'],round($entriesStats[0]['Std_Length']),"<convert>#label=764<convert> :","","<convert>#label=268<convert>");//E.Type Dev. ://m
+    $entriesStatsNb = isset($entriesStats[0]['Nb']) ? $entriesStats[0]['Nb'] : "";
+    $innerHTML .= getInnerLine($entriesStatsNb,$entriesStatsNb,"<convert>#label=384<convert> :");//Entrées :
+    $entriesStatsMax_Depth = isset($entriesStats[0]['Max_Depth']) ? $entriesStats[0]['Max_Depth'] : "";
+    $innerHTML .= getInnerLine($entriesStatsMax_Depth,round($entriesStatsMax_Depth),"<convert>#label=758<convert> :","","<convert>#label=268<convert>");//Prof. Max. ://m
+    $entriesStatsAvg_Depth = isset($entriesStats[0]['Avg_Depth']) ? $entriesStats[0]['Avg_Depth'] : "";
+    $innerHTML .= getInnerLine($entriesStatsAvg_Depth,round($entriesStatsAvg_Depth),"<convert>#label=759<convert> :","","<convert>#label=268<convert>");//Prof. Moy. ://m
+    $entriesStatsStd_Depth = isset($entriesStats[0]['Std_Depth']) ? $entriesStats[0]['Std_Depth'] : "";
+    $innerHTML .= getInnerLine($entriesStatsStd_Depth,round($entriesStatsStd_Depth),"<convert>#label=760<convert> :","","<convert>#label=268<convert>");//E.Type Prof. ://m
+    $entriesStatsMax_Length = isset($entriesStats[0]['Max_Length']) ? $entriesStats[0]['Max_Length'] : "";
+    $innerHTML .= getInnerLine($entriesStatsMax_Length,round($entriesStatsMax_Length),"<convert>#label=761<convert> :","","<convert>#label=268<convert>");//Dev. Max. ://m
+    $entriesStatsSum_Length = isset($entriesStats[0]['Sum_Length']) ? $entriesStats[0]['Sum_Length'] : "";
+    $innerHTML .= getInnerLine($entriesStatsSum_Length,round($entriesStatsSum_Length),"<convert>#label=762<convert> :","","<convert>#label=268<convert>");//Dev. Total ://m
+    $entriesStatsAvg_Length = isset($entriesStats[0]['Avg_Length']) ? $entriesStats[0]['Avg_Length'] : "";
+    $innerHTML .= getInnerLine($entriesStatsAvg_Length,round($entriesStatsAvg_Length),"<convert>#label=763<convert> :","","<convert>#label=268<convert>");//Dev. Moy. ://m
+    $entriesStatsStd_Length = isset($entriesStats[0]['Std_Length']) ? $entriesStats[0]['Std_Length'] : "";
+    $innerHTML .= getInnerLine($entriesStatsStd_Length,round($entriesStatsStd_Length),"<convert>#label=764<convert> :","","<convert>#label=268<convert>");//E.Type Dev. ://m
     if ($isConnected) {
       $innerHTML .= getInnerLine($data[0]['Locked'],convertYN($data[0]['Locked'],"<convert>#label=441<convert>","<convert>#label=442<convert>"),"<convert>#label=443<convert> :");//Oui //Non //Est en cours de modification
       $innerHTML .= getInnerLine($data[0]['Is_public'],convertYN($data[0]['Is_public'],"<convert>#label=441<convert>","<convert>#label=442<convert>"),"<convert>#label=444<convert> :");//Est publique
     }
 		$innerHTML .= getInnerLine($data[0]['typeName'],$data[0]['typeName'],"<convert>#label=114<convert> :");//Type de sous-sol
     if ($is_shown) {
-      $innerHTML .= getInnerLine($data[0]['Surname'],$data[0]['Surname'],"<convert>#label=200<convert> :");//Prénom
+        $surname = isset($data[0]['Surname']) ? $data[0]['Surname'] : "";
+        $innerHTML .= getInnerLine($surname,$surname,"<convert>#label=200<convert> :");//Prénom
     }
-    $innerHTML .= getInnerLine($data[0]['Nickname'],$data[0]['Nickname'],"<convert>#label=34<convert> :");//Alias
+    $Nickname = isset($data[0]['Nickname']) ? $data[0]['Nickname'] : "";
+    $innerHTML .= getInnerLine($Nickname,$Nickname,"<convert>#label=34<convert> :");//Alias
     if ($is_shown) {
-      $innerHTML .= getInnerLine($data[0]['Date_birth'],timeToStr($data[0]['Date_birth']),"<convert>#label=445<convert> ","","<convert>#label=446<convert>",getSinceDateFromD(cDate($data[0]['Date_birth'],false),$labelsBlank),"","<convert>#label=447<convert>");//Né(e) le //(mm/jj/aaaa) //ans
+        $dateBirth = isset($data[0]['Date_birth']) ? $data[0]['Date_birth'] : "";
+        $innerHTML .= getInnerLine($dateBirth,timeToStr($dateBirth),"<convert>#label=445<convert> ","","<convert>#label=446<convert>",getSinceDateFromD(cDate($dateBirth,false),$labelsBlank),"","<convert>#label=447<convert>");//Né(e) le //(mm/jj/aaaa) //ans
     }
-    $innerHTML .= getInnerLine($data[0]['Year_discovery'],$data[0]['Year_discovery'],"<convert>#label=109<convert> :","","",getSinceDateFromD("01/01/".$data[0]['Year_discovery'],$labelsSinceDate));//Année de découverte
-    $innerHTML .= getInnerLine($data[0]['Year_birth'],$data[0]['Year_birth'],"<convert>#label=147<convert> :","","",getSinceDateFromD("01/01/".$data[0]['Year_birth'],$labelsSinceDate));//Année de fondation
+    $Year_discovery = isset($data[0]['Year_discovery']) ? $data[0]['Year_discovery'] : "";
+    $innerHTML .= getInnerLine($Year_discovery,$Year_discovery,"<convert>#label=109<convert> :","","",getSinceDateFromD("01/01/".$Year_discovery,$labelsSinceDate));//Année de découverte
+    $yearBirth = isset($data[0]['Year_birth']) ? $data[0]['Year_birth'] : "";
+    $innerHTML .= getInnerLine($yearBirth,$yearBirth,"<convert>#label=147<convert> :","","",getSinceDateFromD("01/01/".$yearBirth,$labelsSinceDate));//Année de fondation
     if ($is_shown) {
-      //$innerHTML .= getInnerLine($data[0]['Date_inscription'],"<br />".timeToStr($data[0]['Date_inscription']),"<convert>#label=448<convert> ".$_SESSION['Application_name']." :","","<convert>#label=446<convert><br />",getSinceDateFromD(cDate($data[0]['Date_inscription'],false),$labelsSinceDate));//Date d'inscription à //(mm/jj/aaaa)
-      $innerHTML .= getInnerLine($data[0]['Connection_counter'],$data[0]['Connection_counter'],"<convert>#label=449<convert> ","","<convert>#label=450<convert> ".$_SESSION['Application_name']);//S'est connecté //fois sur
-      //$innerHTML .= getInnerLine($data[0]['Date_last_connection'],"<br />".timeToStr($data[0]['Date_last_connection']),"<convert>#label=24<convert> :","","<convert>#label=446<convert><br />",getSinceDateFromDT(cDate($data[0]['Date_last_connection'],false),$labelsSinceDate));//Dernière connection //(mm/jj/aaaa)
+        //$innerHTML .= getInnerLine($data[0]['Date_inscription'],"<br />".timeToStr($data[0]['Date_inscription']),"<convert>#label=448<convert> ".$_SESSION['Application_name']." :","","<convert>#label=446<convert><br />",getSinceDateFromD(cDate($data[0]['Date_inscription'],false),$labelsSinceDate));//Date d'inscription à //(mm/jj/aaaa)
+        $Connection_counter = isset($data[0]['Connection_counter']) ? $data[0]['Connection_counter'] : "";
+        $innerHTML .= getInnerLine($Connection_counter,$Connection_counter,"<convert>#label=449<convert> ","","<convert>#label=450<convert> ".$_SESSION['Application_name']);//S'est connecté //fois sur
+        //$innerHTML .= getInnerLine($data[0]['Date_last_connection'],"<br />".timeToStr($data[0]['Date_last_connection']),"<convert>#label=24<convert> :","","<convert>#label=446<convert><br />",getSinceDateFromDT(cDate($data[0]['Date_last_connection'],false),$labelsSinceDate));//Dernière connection //(mm/jj/aaaa)
     }
     if ($isConnected) {
       //$innerHTML .= getInnerLine($data[0]['Date_reviewed'],"<br />".timeToStr($data[0]['Date_reviewed']),"<convert>#label=451<convert> :","","<convert>#label=446<convert><br />",getSinceDateFromDT(cDate($data[0]['Date_reviewed'],false),$labelsSinceDate));//Dernière modification //(mm/jj/aaaa)
     }
     if ($is_shown) {
-      $innerHTML .= getInnerLine($data[0]['Year_initiation'],$data[0]['Year_initiation'],"<convert>#label=204<convert> :");//Année d'initiation à la spéléo
+        $Year_initiation = isset($data[0]['Year_initiation']) ? $data[0]['Year_initiation'] : "";
+      $innerHTML .= getInnerLine($Year_initiation,$Year_initiation,"<convert>#label=204<convert> :");//Année d'initiation à la spéléo
+      $Contact = isset($data[0]['Contact']) ? $data[0]['Contact'] : "";
       if ($category == "entry") {
-				$innerHTML .= getInnerLine($data[0]['Contact'],$data[0]['Contact'],"<convert>#label=741<convert> :");//Contact
+				$innerHTML .= getInnerLine($Contact,$Contact,"<convert>#label=741<convert> :");//Contact
       } else {
-				$innerHTML .= getInnerLine($data[0]['Contact'],$data[0]['Contact'],"<convert>#label=146<convert> :","mailto:".$data[0]['Contact']);//Contact
+				$innerHTML .= getInnerLine($Contact,$Contact,"<convert>#label=146<convert> :","mailto:".$Contact);//Contact
       }
       if (isset($data[0]['City'])) {
         $innerHTML .= "<div class=\"detail_line\"><span class=\"details_label\"><convert>#label=102<convert> :</span><br />\n";//Adresse
