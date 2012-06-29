@@ -71,8 +71,8 @@ if (!$isPublic && !USER_IS_CONNECTED) {
 	  <link rel="shortcut icon" type="image/png" href="<?php echo $_SESSION['Application_url']; ?>/favicon.png" />
     <title><?php echo $_SESSION['Application_title']; ?> <?php echo $entryName; ?></title>
 <?php
-    $is_change = true;
-    $save_failed = true;
+    $is_change = false;
+    $save_failed = false;
     $contributionSaved = false;
     $contributionDeleted = false;
     if (!isset($_POST['print'])) {
