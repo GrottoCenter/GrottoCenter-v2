@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -233,6 +233,7 @@ $frame = "filter";
             $topography = $req['mysql_insert_id'];
             trackAction("insert_topography",$topography,"T_topography");
           } else {
+            $id = (isset($_GET['id'])) ? $_GET['id'] : '';
             $sql = "UPDATE `".$_SESSION['Application_host']."`.`T_request` ";
             $sql .= " SET ";
             $sql .= "Locked = 'NO', ";
