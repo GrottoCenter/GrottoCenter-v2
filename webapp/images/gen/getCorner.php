@@ -61,7 +61,7 @@ $matrix = array(array('x', 111, 37, 'y', 'y', 37, 111, 'x'),
                 array('y', 'y', 'y', 'y', 'y', 'y', 'y', 'y'),
                 array(33, 'y', 'y', 'y', 'y', 'y', 'y', 33),
                 array(107, 5, 'y', 'y', 'y', 'y', 5, 107),
-                array('x', 111, 37, 0, 0, 37, 111, 'x'));
+                array('x', 111, 37, 'y', 'y', 37, 111, 'x'));
 //Plot points
 for($y=0; $y<($height*2); $y++) {
   for($x=0; $x<($width*2); $x++) {
