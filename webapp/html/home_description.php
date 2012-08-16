@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 
@@ -90,8 +90,9 @@ switch($_SESSION['language']) {
       <li>Thomas Cabothiau : conseiller en ergonomie et fonctionnel</li>
       <li>Barbara Guzman : conseillère en ergonomie et traductrice Français-Espagnol</li>
       <li>Stéphane Lips : conseiller en ergonomie et fonctionnel, qualifieur</li>
-      <li>Clément Ronzon : developpeur, designer, concepteur fonctionnel et traducteur Anglais-Français</li>
+      <li>Clément Ronzon : développeur, designer, concepteur fonctionnel et traducteur Anglais-Français</li>
       <li>Vincent Routhieau : conseiller en ergonomie, concepteur fonctionnel, qualifieur</li>
+      <li>Benjamin Soufflet : développeur, administrateur système</li>
       <li>Norbert Weber : traducteur Français-Allemand.</li>
     </ul>
     <p>Si tu désires apporter ta pierre à l'édifice, n'hésite pas à prendre contact avec nous !</p>
@@ -223,6 +224,7 @@ switch($_SESSION['language']) {
       <li>Stéphane Lips: ergonomics advisor and functional advisor, tester</li>
       <li>Clément Ronzon: designer, ergonomics and functional analyst, English-French translations</li>
       <li>Vincent Routhieau: ergonomics advisor, functional analyst, tester</li>
+      <li>Benjamin Soufflet : developer, system administrator</li>
       <li>Norbert Weber : French-German translations.</li>
     </ul>
     <p>If you want to make your bit, feel free to contact us!</p>
@@ -356,6 +358,7 @@ switch($_SESSION['language']) {
       <li>Stéphane Lips : Consultor de diseño, funcionalidad y de ergonomía, así como probador.</li>
       <li>Clément Ronzon : Diseñador del código, funcionalidad, ergonomía, y traductor Francés-Inglés.</li>
       <li>Vincent Routhieau : Consultor de diseño, funcionalidad y de ergonomía, así como probador.</li>
+      <li>Benjamin Soufflet : Diseñador del código, administrador del sistema.</li>
       <li>Norbert Weber : Traductor Francés-Alemán.</li>
     </ul>
     <p>Si deseas participar a la construcción de <?php echo $_SESSION['Application_name']; ?>,
@@ -485,6 +488,7 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
       <li>Stéphane Lips : Beratung</li>
       <li>Clément Ronzon : Entwicklung, Design, Übersetzung Französisch-Englisch</li>
       <li>Vincent Routhieau : Beratung</li>
+      <li>Benjamin Soufflet : Entwicklung, Systemadministrator</li>
       <li>Norbert Weber : Übersetzung Französisch - Deutsch</li>
     </ul>
     <p>Wenn du uns helfen möchtest, schreib doch bitte eine Email, wir würden uns freuen!</p>
