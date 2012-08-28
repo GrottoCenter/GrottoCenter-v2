@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Clement Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -206,7 +206,7 @@ if (false) {
 <?php } } ?>
 			<tr><td>
         <h3><convert>#label=648<convert><!--Accèder au mode de vue "carte"-->: <a href="../index.php?home_page=overview" class="nothing" target="_top"><img src="../images/icons/overview.png" alt="<convert>#label=608<convert>" title="<convert>#label=608<convert>" style="border:0px none;" /></a></h3>
-        <h3><convert>#label=730<convert><!--S'abonner au flux RSS-->: <a href="../rss_<?php echo $_SESSION['language']; ?>.xml" class="nothing" target="_blank"><img src="../images/icons/rss.png" alt="<convert>#label=730<convert>" title="<convert>#label=730<convert>" style="border:0px none;height:18px;" /></a></h3>
+        <h3><convert>#label=730<convert><!--S'abonner au flux RSS-->: <a href="rss_<?php echo $_SESSION['language']; ?>.xml" class="nothing" target="_blank"><img src="../images/icons/rss.png" alt="<convert>#label=730<convert>" title="<convert>#label=730<convert>" style="border:0px none;height:18px;" /></a></h3>
         <h3><convert>#label=633<convert><!--Accèder à la liste des éléments de--> <?php echo $_SESSION['Application_name']; ?>:</h3>
         <ul>
           <li>

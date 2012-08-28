@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clement Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("conf/config.php");
@@ -57,7 +57,7 @@ if ($idComplement != "") {
 ?>
     <?php echo getMetaTags(); ?>
     <!-- RSS Flow -->
-    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php echo $_SESSION['Application_url']; ?>/rss_<?php echo $_SESSION['language']; ?>.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php echo $_SESSION['Application_url']; ?>/html/rss_<?php echo $_SESSION['language']; ?>.xml" />
 	  <!-- version IE //-->
 	  <link rel="shortcut icon" type="image/x-icon" href="<?php echo $_SESSION['Application_url']; ?>/favicon.ico" />
 	  <!-- version standart //-->

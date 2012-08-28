@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clement Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 /*
@@ -35,7 +35,7 @@ $app_prop = appProp();
 $today = date("D, d M Y H:i:s +0100");
 foreach($languagesArray as $shortLang => $largeLang) {
   $labelArray = getLabelArray("home", $shortLang);
-  $feedFileName = $app_prop['Url']."/rss_".$shortLang.".xml";
+  $feedFileName = $app_prop['Url']."/html/rss_".$shortLang.".xml";
   //header rss 2.0
   $xml = '<?xml version="1.0" encoding="UTF-8"?'.'><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
   $xml .= '<channel>';
@@ -140,7 +140,7 @@ foreach($languagesArray as $shortLang => $largeLang) {
   $xml .= '</channel>';
   $xml .= '</rss>';
   
-  $feedFileName = "../rss_".$shortLang.".xml";
+  $feedFileName = "rss_".$shortLang.".xml";
   $handleW = @fopen($feedFileName, 'wb');
   if ($handleW) {
     @fwrite($handleW, $xml);
