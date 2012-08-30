@@ -144,9 +144,9 @@ foreach($languagesArray as $shortLang => $largeLang) {
   $handleW = @fopen($feedFileName, 'wb');
   if ($handleW) {
     @fwrite($handleW, $xml);
+  }else{
+      reportError("Impossible to write $feedFileName...",__FILE__, "update_rss", "update_rss", '');
   }
   @fclose($handleW);
-  echo $feedFileName." generated at ".$today." !\n";
-  echo "Query: ".$sql."\n";
 }
 ?>
