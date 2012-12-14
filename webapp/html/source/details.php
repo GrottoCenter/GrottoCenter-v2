@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -429,6 +429,17 @@ if ($_SESSION['home_page'] == "overview") {
           <!--<li class ="sub_menu"> 
             <iframe src="http://www.google.com/talk/service/badge/Show?tk=<convert>#label=576<convert>&amp;w=251&amp;h=18&amp;linkcolor=34558A&amp;fontfamily=arial&amp;fontsize=12" allowtransparency="true" frameborder="0" height="18" width="251"></iframe>
           </li>-->
+          <li class ="sub_menu"> 
+            <?php 
+            $blogURL = "http://blog-" . strtolower($_SESSION['language']) . ".grottocenter.org";
+            if (!in_array(array("fr", "en"), strtolower($_SESSION['language']))) {
+                $blogURL = "http://blog-en.grottocenter.org";
+            }?>
+            <a href="<?php echo $blogURL;?>" target="_blank"><convert>#label=927<convert><!--Blog--></a>
+          </li>
+          <li class ="sub_menu"> 
+            <a href="https://www.facebook.com/GrottoCenter" target="_blank"><convert>#label=930<convert><!--Facebook--></a>
+          </li>
           <li class ="sub_menu">
             <a href="../phpBB3/viewforum.php?f=<?php echo $FAQPages[$_SESSION['language']]['home']; ?>" target="_blank"><convert>#label=315<convert><!--FAQ--></a>
           </li>

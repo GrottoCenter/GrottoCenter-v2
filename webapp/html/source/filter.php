@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -203,7 +203,7 @@ if (allowAccess(request_view_mine)) {
 ?>
         <li class ="sub_menu li_topography">
           <a href="JavaScript:openWindow('request_<?php echo $_SESSION['language']; ?>.php?type=menu', '<convert>#label=799<convert>', 1150, 600);">
-          <convert>#label=799<convert><!--Menu des topographies--></a><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span>
+          <convert>#label=799<convert><!--Menu des topographies--></a>
         </li>
 <?php
 }
@@ -235,11 +235,22 @@ if (allowAccess(layer_view_all) && false) {
 if (allowAccess(entry_export_all)) {
 ?>
         <li class ="sub_menu li_download">
-          <a href="export_<?php echo $_SESSION['language']; ?>.php"><convert>#label=765<convert><!--Télécharger un export pour GPS--></a><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span>
+          <a href="export_<?php echo $_SESSION['language']; ?>.php"><convert>#label=765<convert><!--Télécharger un export pour GPS--></a>
         </li>
 <?php
 }
 ?>
+        <li class ="sub_menu li_blog">
+        <?php 
+        $blogURL = "http://blog-" . strtolower($_SESSION['language']) . ".grottocenter.org";
+        if (!in_array(array("fr", "en"), strtolower($_SESSION['language']))) {
+            $blogURL = "http://blog-en.grottocenter.org";
+        }?>
+          <a href="<?php echo $blogURL; ?>" target="_blank"><convert>#label=928<convert><!--Blog de--></a><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span>
+        </li>
+        <li class ="sub_menu li_facebook">
+          <a href="https://www.facebook.com/GrottoCenter" target="_blank"><convert>#label=929<convert><!--Facebook--></a><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span>
+        </li>
         <li class ="sub_menu li_forum">
           <a href="../phpBB3/" target="_blank"><convert>#label=583<convert><!--Forum de--> <?php echo $_SESSION['Application_name']; ?></a>
         </li>
@@ -248,7 +259,7 @@ if (USER_IS_CONNECTED){
   if (allowAccess(chat_all)) {
 ?>
         <li class ="sub_menu li_chat">
-    	    <a href="JavaScript:openWindow('grottoChat_<?php echo $_SESSION['language']; ?>.php', '<convert>#label=727<convert>', '620px', '340px');" target="filter"><convert>#label=728<convert><!--Discutez sur le grottoChat !--></a><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span>
+    	    <a href="JavaScript:openWindow('grottoChat_<?php echo $_SESSION['language']; ?>.php', '<convert>#label=727<convert>', '620px', '340px');" target="filter"><convert>#label=728<convert><!--Discutez sur le grottoChat !--></a>
     	  </li>
 <?php
   }
