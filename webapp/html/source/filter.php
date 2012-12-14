@@ -243,7 +243,7 @@ if (allowAccess(entry_export_all)) {
         <li class ="sub_menu li_blog">
         <?php 
         $blogURL = "http://blog-" . strtolower($_SESSION['language']) . ".grottocenter.org";
-        if (!in_array(array("fr", "en"), strtolower($_SESSION['language']))) {
+        if (!in_array(strtolower($_SESSION['language']), array("fr", "en"))) {
             $blogURL = "http://blog-en.grottocenter.org";
         }?>
           <a href="<?php echo $blogURL; ?>" target="_blank"><convert>#label=928<convert><!--Blog de--></a><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span>
