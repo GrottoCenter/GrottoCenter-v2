@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 
@@ -307,6 +307,16 @@ li.li_url
 li.li_forum
 {
   list-style-image: url(../images/icons/bullet_forum.png);
+}
+
+li.li_blog
+{
+  list-style-image: url(../images/icons/bullet_blog.png);
+}
+
+li.li_facebook
+{
+  list-style-image: url(../images/icons/bullet_facebook.png);
 }
 
 li.li_download
