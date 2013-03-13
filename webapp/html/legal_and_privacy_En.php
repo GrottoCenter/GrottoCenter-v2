@@ -119,12 +119,4 @@
 $virtual_page = "legal_and_privacy/Fr";
 include_once "../func/suivianalytics.php" ?>
   </body>
-<!--
-http://validator.w3.org/check?uri=http%3A%2F%2Fclementronzon.free.fr%2Fgrottocenter%2Fhtml%2Flegal_and_privacy_Fr.php%3Flang%3DEn;ss=1;outline=1
-  <p>
-    <a href="http://validator.w3.org/check?uri=referer"><img
-        src="http://www.w3.org/Icons/valid-xhtml10-blue"
-        alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
-  </p>
--->
 </html>
