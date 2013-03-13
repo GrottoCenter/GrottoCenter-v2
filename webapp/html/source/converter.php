@@ -60,7 +60,6 @@ include("declaration.php");
     <link rel="stylesheet" type="text/css" href="../css/global_p.css" media="print" />
 <?php } ?>
 <?php if ($part == "js" || !$parted) { ?>
-		<script type="text/javascript" src="../scripts/lib/proj4js-combined.js"></script>
 		<script type="text/javascript" src="../scripts/lib/proj4js-combined.CRO.1.0.0.js"></script>
 		<!--script type="text/javascript" src="../scripts/converter.class.js"></script-->
 		<script type="text/javascript" src="../scripts/jquery-1.4.2.min.js"></script>
@@ -145,7 +144,7 @@ include("declaration.php");
 			convCallBack = function (WGS84) {
 				if (firstCallBack) {
 					firstCallBack = false;
-					callback();
+					if (typeof(callback) == 'function') callback();
 				} else {
 					convert_coords(WGS84);
 				}
