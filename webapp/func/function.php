@@ -184,13 +184,32 @@ function getScriptJS($localFile) {
   return $destPath;
 }
 
+/*
+Il est necessaire de configurer l'enregistrement de la table T_application pour que cela corresponde a votre environnement:
+UPDATE  `t_application` SET  `Is_current` =  'NO' WHERE  `Is_current` =  'YES';
+INSERT INTO `t_application` VALUES (
+NULL,
+'GrottoCenter Customized',
+'YES',
+'Cst',
+'htt://votre_url_ici',
+'email@contact',
+'host_de_votre_bdd',
+1,
+1,
+NOW(),
+'2008-07-28',
+NOW(),
+'',
+'',
+'',
+'',
+NULL
+);
+*/
 function appProp()
 {
-  if (strpos(__FILE__, 'clementronzon') !== false) {
-		$bdd = "clementronzon";
-	} else {
-		$bdd = "grottoce";
-	}
+	$bdd = "grottoce"; // nom de votre bdd
   $sql = "SELECT * FROM `".$bdd."`.`T_application` WHERE `Is_current` = 'YES'";
   $data = getDataFromSQL($sql, __FILE__, "function", __FUNCTION__);
   return $data[0];

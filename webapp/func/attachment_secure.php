@@ -19,7 +19,7 @@
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 //Test:
-//http://clementronzon.free.fr/grottocenter/upload/attachments/secure.php?file=u99-a-r9889a7e4db478152e11e2b7b0725a9d5-fr-ok.zip%3Ftest%3Dok%26t%3D5&d=3
+//http://localhost/upload/attachments/secure.php?file=u99-a-r9889a7e4db478152e11e2b7b0725a9d5-fr-ok.zip%3Ftest%3Dok%26t%3D5&d=3
 
 $file = (isset($_GET['file'])) ? $_GET['file'] : '';
 $type = (isset($_GET['type'])) ? $_GET['type'] : '';

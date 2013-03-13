@@ -25,6 +25,9 @@ $refreshCache = false;
 if (allowAccess(cache_refresh_all)) {
   $refreshCache = (isset($_GET['refreshCache'])) ? ($_GET['refreshCache'] == "True") : false;
 }
+if ($_SESSION['Application_host'] == 'localhost') {
+  $refreshCache=true;
+}
 if ($refreshCache) {
   if (file_exists("func/genScriptJS.php")) {
 		include("func/genScriptJS.php");
@@ -34,7 +37,7 @@ if ($refreshCache) {
   foreach ($langArray as $shortLang => $largeLang) {
   	convertFiles($shortLang, $ConvertedFilesArray);
   }
-  if ($_SESSION['Application_host'] == 'clementronzon') {
+  if ($_SESSION['Application_host'] == 'localhost') {
     //Refresh the JS cache
     refreshJSCache();
   }

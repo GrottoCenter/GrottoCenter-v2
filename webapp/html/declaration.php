@@ -137,12 +137,12 @@
   define ("Contact_for_nobody", "0", true);
   define ("Contact_for_registered", "1", true);
   define ("Contact_for_everybody", "2", true);
-  define ("Google_key","ABQIAAAABppewhix0m2aGtrxzFsM1hTUoYxFMVJ0pZ8eIP2qT6O2FCqTDBSrYiCqarW5lo9hEXEt4pCtZ6bVVA", true);//Prod GC.org
-  //define ("Google_key", "ABQIAAAA_X2bDeJ9Hz-baUkItUM1WRR3_bGeXu9IeK3h68EGQYvhxTHUcxT4zARumwZixHog6x37Ub3lv21KXg", true);//Dev
-  define ("Geoportal_key", "2228631060319443257", true);//Prod GC.org
-  //define ("Geoportal_key", "5068059327002471222", true);//Dev
-  define ("Analytics_key", "UA-4684361-2", true);//Prod GC.org
-  //define ("Analytics_key", "UA-4684361-1", true);//Dev
+  define ("Google_key","ABQIAAAABppewhix0m2aGtrxzFsM1hTUoYxFMVJ0pZ8eIP2qT6O2FCqTDBSrYiCqarW5lo9hEXEt4pCtZ6bVVA", true); //GMaps API Key for grottocenter.org
+  //define ("Google_key", "ABQIAAAA_X2bDeJ9Hz-baUkItUM1WRQODwNLvymVen2-L56iEshlhUPpFBShcyTJURuPJ0Mx3AIa8-nTBRJBXg", true); //GMaps API Key for localhost
+  define ("Geoportal_key", "2228631060319443257", true);//Geoportal API Key for grottocenter.org
+  //define ("Geoportal_key", "", true);//Geoportal API Key for localhost
+  define ("Analytics_key", "UA-4684361-2", true);//Analytics API Key for grottocenter.org
+  //define ("Analytics_key", "", true);//Analytics API Key for localhost
   
 	require("cst_declaration.php");
 	
