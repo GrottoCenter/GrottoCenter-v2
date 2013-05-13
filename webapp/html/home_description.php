@@ -562,128 +562,124 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
   break;
   case 'Bg':
 ?>
-
-<h2>Hi! Welcome on <?php echo $_SESSION['Application_name']; ?>!</h2>
-
-
+<h2>Здравейте! Добре дошли <?php echo $_SESSION['Application_name']; ?>!</h2>
 <div>
   <div id="about_s" onclick="JavaScript:switchMe('about');" class="div_switcher_c">
     <ul>
-      <li><span class="title">What is <?php echo $_SESSION['Application_name']; ?>?</span></li>
+      <li><span class="title">Какво е <?php echo $_SESSION['Application_name']; ?>?</span></li>
     </ul>
   </div>
   <div id="about" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> is a comunity database for
-    cavers based on a wiki-like system. Cavers fill the databes for cavers.<br />
-    Any interesting natural cavity can be added in the database!</p>
+    <p><?php echo $_SESSION['Application_name']; ?> е общнeствена  база данни за
+     пещерняци основава като уики-като система. Пещерняците предоставят данни за пещерняци. <br />
+     Всякакви интересни, природни подземни кухина може да се добавят в базата данни!</p>
   </div>
   
   <div id="howto_s" onclick="JavaScript:switchMe('howto');" class="div_switcher_c">
     <ul>
-      <li><span class="title">How to use <?php echo $_SESSION['Application_name']; ?>?</span></li>
+      <li><span class="title">Как да използвате <?php echo $_SESSION['Application_name']; ?>?</span></li>
     </ul>
   </div>
   <div id="howto" style="display:none;visibility:hidden;" class="content" >
-    <p>Navigation is through an embeded Google-Map. 
-    Cavers are represented by red helmets <img src="../images/icons/caver2.png" alt="" />,
-    entries by yellow packs <img src="../images/icons/entry2.png" alt="" /> and 
-    grottoes by blue houses <img src="../images/icons/grotto1.png" alt="" />.<br />
-    By clicking on any of those pictograms, an info-window appears showing its
-    properties (massif, length, depth, etc.).<br />
-    For the "entries" (yellow packs), the info-window allow you to access to
-    a detailed sheet containing:</p>
+    <p>Навигацията е посредством вградена Google-карта. Пещерняците са представени от червени каски <img src="../images/icons/caver2.png" alt="" />,
+    Входовете са означени с жълта прониквачка, <img src="../images/icons/entry2.png" alt="" /> а 
+    Клубовете са означени със сини къщички <img src="../images/icons/grotto1.png" alt="" />.<br />
+    С кликване върху някоя от тези пиктограми, се появява инфо-прозорец за състоянието на неговите
+     свойства (масив, дължина, дълбочина и др.)<br />
+    За "входове" (жълти прониквачки), инфо-прозорец ви позволява да осъществите достъп до
+     детайлен лист, който съдържа:</p>
     <ul>
-      <li>a description of the access to the cave</li>
-      <li>a cave description</li>
-      <li>a description of rigging and ropes needs</li>
-      <li>a reference to any linked web site</li>
-      <li>some comments (by cavers) with an evaluation of aestetics etc.</li>
+      <li>описание за достъп до пещерата</li>
+      <li>описание на пещерата</li>
+      <li>описание на необходимата екипировка и въжета</li>
+      <li>връзка към друг свързан уебсайт</li>
+      <li>някои коментари (от пещерняци) с оценка за естетиката (красотата) и т.н.</li>
     </ul>
   </div>
   
   <div id="why_s" onclick="JavaScript:switchMe('why');" class="div_switcher_c">
     <ul>
-      <li><span class="title">Why are you a key in the <?php echo $_SESSION['Application_name']; ?>'s project?</span></li>
+      <li><span class="title">Защо сте ключ (ключов) в  проекта на <?php echo $_SESSION['Application_name']; ?>'s ?</span></li>
     </ul>
   </div>
   <div id="why" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> works with caver's contributions 
-    (so your's), and we count on you to help us complete and rely this database.
-    You can access to the creation/modification menu with the left-hand panel
-    after you signed in.<br />
-    We remind you that you can add any interesting cave to <?php echo $_SESSION['Application_name']; ?>!<br />
-    Thanks.</p>
+    <p><?php echo $_SESSION['Application_name']; ?> Работи с приносите на пещерняците (както вашият), а ние се надяваме  
+    да ни помогнете за завършването на  тази база данни.
+    Можете да получите достъп до създаване / промяната менюто с панела вляво   
+    след като сте влезли в профила си<br />
+    Напомняме ви, че можете да добавите всяка интересна пещера в <?php echo $_SESSION['Application_name']; ?>!<br />
+    Благодарим Ви.</p>
   </div>
   
   <div id="who_s" onclick="JavaScript:switchMe('who');" class="div_switcher_c">
     <ul>
-      <li><span class="title">Who are we?</span></li>
+      <li><span class="title">Кои сме ние?</span></li>
     </ul>
   </div>
   <div id="who" style="display:none;visibility:hidden;" class="content" >
-    <p>Here is the "GrottoTeam", alphabetically by name:</p>
+    <p>Това е нашия "GrottoTeam":</p>
     <ul>
-      <li>Nathan Boinet: ergonomics advisor and functional analyst, tester</li>
-      <li>Thomas Cabothiau: ergonomics advisor and functional advisor</li>
-      <li>Barbara Guzman: ergonomics advisor and English-Spanish translations</li>
-      <li>Stéphane Lips: ergonomics advisor and functional advisor, tester</li>
-      <li>Clément Ronzon: designer, ergonomics and functional analyst, English-French translations</li>
-      <li>Vincent Routhieau: ergonomics advisor, functional analyst, tester</li>
-      <li>Benjamin Soufflet : developer, system administrator</li>
-      <li>Norbert Weber : German translations.</li>
-      <li>Vanyo Gyorev : Bulgarian translation.</li>
+      <li>Nathan Boinet: консултант ергономичност, функционален анализатор и тестер.</li>
+      <li>Thomas Cabothiau: ергономичност, функционален анализатор и тестер.</li>
+      <li>Barbara Guzman: ергономичност и преводач от Английски на Испански език.</li>
+      <li>Stéphane Lips: ергономичност, функционален анализатор и тестер.</li>
+      <li>Clément Ronzon: дизайнер, ергономичност и функционален анализатор, превод от Английски на Френски език.</li>
+      <li>Vincent Routhieau: ергономичност, функционален анализатор и тестер.</li>
+      <li>Benjamin Soufflet : програмист, системен администратор</li>
+      <li>Norbert Weber : превод на Немски език.</li>
+      <li>Vanyo Gyorev : превод на Български език.</li>
     </ul>
-    <p>If you want to make your bit, feel free to contact us!</p>
-    <p>A big thank to those people and all those who participated
-     and contributed to the project!</p>
+    <p>Ако желаете да се включите, не се колебайте да се свържете с нас!</p>
+    <p>Големи благодарности на тези хора, както и всички онези, които участват
+      и допринасят за проекта!</p>
   </div>
   
   <div id="license_s" onclick="JavaScript:switchMe('license');" class="div_switcher_c">
     <ul>
-      <li><span class="title">What are the term of use of the data?</span></li>
+      <li><span class="title">Какви са условията за ползване на данните?</span></li>
     </ul>
   </div>
   <div id="license" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> was designed in a spirit
-    totally apolitical. The site contains elements that constitute a work
-    protected by international treaties.</p>
+    <p><?php echo $_SESSION['Application_name']; ?> е създаден в духа
+    на пълна аполитичност. Сайтът съдържа елементи, които съставляват работа
+    защитена от международни договори.</p>
     <p><!--b>Copyright: The use of information contained on this page other than for
     private non-commercial use is strictly prohibited without permission from
     the authors.<b><br /-->
-    By content we mean: entries, cavers and clubs coordiantes
-    and all information presented in the detailed sheets, including attachments
-    (topos, photos ...).</p>
+    Под съдържание имаме предвид: записи, пещерняци и клубове, координати
+    както и цялата информация, представена в подробните описания, включително прикачени файлове
+    (карти, снимки ...).</p>
     <p><?php echo getLicense(1); ?></p>
   </div>
   
   <div id="sensitive_s" onclick="JavaScript:switchMe('sensitive');" class="div_switcher_c">
     <ul>
-      <li><span class="title">How to add a sensitive cavity?</span></li>
+      <li><span class="title">Как да добавите защитена пещера?</span></li>
     </ul>
   </div>
   <div id="sensitive" style="display:none;visibility:hidden;" class="content" >
-    <p>If you want to register a "sensitive" cavity there are two options
-    depending on the degree of protection desired.</p>
-    <ul><li>The cavity is easily accessible and you just whant to  <b>avoid
-    overcrowding</b> by non-caver people.<br />
-    In this case, just chosse the option <b>"Registered (sensitive cave and/or
-    regulated access)."</b> when adding the entry.<br />
-    In this way the cavity appears only to registered users who are connected.</li>
-    <li>The cavity is <b>very sensitive (concretions, archeology, paleontology, etc.)</b>
-    and it is essential to avoid access for non-caver people.<br />
-    In this case, chosse the option "Registered (sensitive cave and/or
-    regulated access).", and it is recommended to <b>distort the coordinates</b> of
-    the cavity within a radius of 1 km around its real place and <b>specify</b> in
-    the detailed sheet that the cavity is not pointing its exact location and
-    should not indicate access.<br />
-    In this way the cavers that wish to visit that cave will necessarily
-    contact with right peolple/organization concerned by this cavity. This option
-    is reserved for exceptional cases.</li></ul>
+    <p>Ако искате да регистрирате "защитена" пещера има два варианта
+    в зависимост от степента на желаната защита.</p>
+    <ul><li>Пещерата е лесно достъпна и вие искате <b>
+    да я предпазите от</b> не желан достъп.<br />
+    В този случай, изберете опцията <b>"Регистрирай (защитена пещера и/или
+    Регулиран достъп)."</b> когато добавяте данни за нея.<br />
+    При този подход пещерата се вижда само от регистрирани потребители.</li>
+    <li>Ако пещерата <b>е много "чувствителна" (биология, археология, палеонтология и т.н.)</b>
+    и е изключително важно да се ограничи достъпа до нея.<br />
+    В този случай, изберете опцията "Регистрирай (защитена пещера и/или
+    Регулиран достъп)", и препоръчваме <b>промяна на координатите</b> на 
+    пещерата в радиус от 1 км от реалната позиция <b>При оказване</b>на
+    информацията в детайли да не се оказва точно разположение за достъп
+    и подхода към входа на пещерата.<br />
+    По този начин пещерняците, които желаят да посетят пещерата задължително ще
+    се свържат с клуба / организация отговорни за нея. Тази опция
+    е запазена за извънредни случаи.</li></ul>
   </div>
   
   <div id="warning_s" onclick="JavaScript:switchMe('warning');" class="div_switcher_c">
     <ul>
-      <li><span class="title" style="color:red;">Warning</span></li>
+      <li><span class="title" style="color:red;">Предупреждение</span></li>
     </ul>
   </div>
   <div id="warning" style="display:none;visibility:hidden;" class="content" >

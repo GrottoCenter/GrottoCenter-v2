@@ -153,31 +153,27 @@ switch($_SESSION['language']) {
   break;
   case 'Bg':
 ?>
-<p><i>This site, although it may contain detailed information on caves,
-was not designed to facilitate the visit for none caver people.
-<b>Dangers</b> are not necessarily reported and information mentioned is
-not everytime verified.</i></p>
+<p><i>Този сайт, въпреки че може да съдържа детайлна информация за пещерите,
+не е замислен да улесни посещението за хората, които не са пещерняци.
+<b>Опасностите</b> не са задължително описани, а предоставената информация
+не винаги е проверена.</i></p>
 
-<p><i>Caving is a discipline with many facets: cultural,
-science and sports. In the latter capacity, it often requires a physical
-commitment. It is also not free of risks, and even <b>major risks</b>.
-These risks, if they can not be completely eliminated, are
-at least greatly reduced by a practice in the rules, practice
-which is fully understood when under a caving club (grotto).</i></p>
+<p><i>Пещернячеството е дисциплина, с много аспекти: културни,
+научни и спортни. В последния случай, често се изисква сериозно физическо
+натоварване. Съществуват различни рискове, които може да са<b>изключително опасни </b>.
+Тези рискове, ако не могат да бъдат напълно премахнати, то
+най-малко значително намаляват с практика и обучение в правилата, способите и
+техника за безопастност, преподавани в клубовете по пещерно дело (grotto).</i></p>
 
-<p><i>In any case <?php echo $_SESSION['Application_name']; ?> and its
-    team can not be held liable for a bad practice of
-    caving.</i></p>
-    
-    <p><i>The novice who would engage in underground exploration <b>is 
-    urged to contact a caving club</b>. The names and contact information can be
-    obtained among other to the IUS (International Union of Speleology), to 
-    <?php echo $_SESSION['Application_name']; ?> or to his national federation.
-    </i></p>
-    
-    <!--p><b>Copyright: The use of information contained on this page other than for
-    private non-commercial use is strictly prohibited without permission from the authors.
-    </b></p-->
+<p><i>В всеки случай <?php echo $_SESSION['Application_name']; ?>Екипа
+не носи отговорност за лошата практика в пещерното дело.</i></p>
+
+<p><i>За начинаещ, който ще участва в подземно проучване в друга държава <b>е
+задължително да се свърже с местен пещерен клуб</b>. Имената на клубовете и контактна информация в
+може да се намери в сайта на IUS (International Union of Speleology), в 
+<?php echo $_SESSION['Application_name']; ?> или друга национална федерация.
+</i></p>
+
 <?php
   break;
   case 'Pt':
