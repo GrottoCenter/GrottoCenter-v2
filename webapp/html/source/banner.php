@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -193,6 +193,9 @@ if ($_SESSION['home_page'] == "overview") {
 <?php
 }
 ?>
+                <div class="banner_fse">
+                    <a href="http://eurospeleo.org/" target="_blank"><convert>#label=931<convert><!-- Grottocenter bénéficie du soutien de la FSE --> <img src="../images/icons/fse-logo.png" alt="Logo FSE" /></a>
+                </div>
   			</td>
     	</tr>
     </table>

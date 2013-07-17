@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 body
@@ -114,9 +114,16 @@ select.select1
 div.banner_info
 {
   position: absolute;
-  right: 10px;
-  top: 36px;/*38, 53*/
+  right: 70px;
+  top: 24px;/*38, 53*/
   white-space: nowrap;
   /*vertical-align:bottom;*/
   line-height:20px;
+}
+
+div.banner_fse
+{
+  position: absolute;
+  right: 9px;
+  top:30px;
 }
