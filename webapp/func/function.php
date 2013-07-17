@@ -1631,26 +1631,26 @@ function getLicensePicture($imgType, $title="")
   $imgSrc = "";
   switch($imgType) {
     case 1:
-      $imgSource = "http://i.creativecommons.org/l/by-nc/3.0/88x31.png";
+      $imgSource = "http://i.creativecommons.org/l/by-sa/3.0/88x31.png";
       break;
     case 2:
       $imgSource = "http://creativecommons.org/images/public/somerights20.png";
       break;
     case 3:
     case 4:
-      $imgSource = "http://i.creativecommons.org/l/by-nc/3.0/80x15.png";
+      $imgSource = "http://i.creativecommons.org/l/by-sa/3.0/80x15.png";
       break;
   }
   switch($imgType) {
     case 1:
     case 2:
     case 3:
-      $licensePic = "<a href=\"http://creativecommons.org/licenses/by-nc/3.0/deed.".strtolower($_SESSION['language'])."\" class=\"nothing\" target=\"_blank\">";//rel=\"license\" 
+      $licensePic = "<a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.".strtolower($_SESSION['language'])."\" class=\"nothing\" target=\"_blank\">";//rel=\"license\" 
       $licensePic .= " <img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"".$imgSource."\"/>";
       $licensePic .= "</a>";
       break;
     case 4:
-      $licensePic = "<a href=\"http://creativecommons.org/licenses/by-nc/3.0/deed.".strtolower($_SESSION['language'])."\" title=\"".$title."\" class=\"nothing\" target=\"_blank\">";// rel=\"license\"
+      $licensePic = "<a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.".strtolower($_SESSION['language'])."\" title=\"".$title."\" class=\"nothing\" target=\"_blank\">";// rel=\"license\"
       $licensePic .= " <img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"".$imgSource."\"/>";
       $licensePic .= "</a>";
       break;

@@ -71,7 +71,7 @@ function getLicense($imgType = 1) {
       $license .= "<span>".$_SESSION['Application_name']."</span> ";
 			//$license .= "<convert>#label=507<convert> <a href=\"http://perso.apec.fr/clement_ronzon\" target=\"_blank\">".$_SESSION['Application_authors']."</a> "; //par
 			$license .= "<convert>#label=508<convert> ";// est mis à disposition selon les termes de la"
-      $license .= "<a href=\"http:/"."/creativecommons.org/licenses/by-nc/3.0/deed.".strtolower($_SESSION['language'])."\" target=\"_blank\"> <convert>#label=509<convert></a>";//licence Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a>."
+      $license .= "<a href=\"http:/"."/creativecommons.org/licenses/by-sa/3.0/deed.".strtolower($_SESSION['language'])."\" target=\"_blank\"> <convert>#label=509<convert></a>";//licence Creative Commons Attribution - Partage dans les Mêmes Conditions 3.0 non transposé.</a>."
       break;
   }
   $title = $_SESSION['Application_name'];
