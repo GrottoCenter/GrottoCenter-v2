@@ -110,12 +110,6 @@ switch($_SESSION['language']) {
     <p><?php echo $_SESSION['Application_name']; ?> a été élaboré dans un esprit
     totalement apolitique. Le site et les éléments qu'il contient constituent
     une oeuvre protégée par les traités internationaux.</p>
-    <p>Le contenu issu des contributions des spéléologues, est mis à disposition
-    uniquement dans le cadre d'une utilisation privée non commerciale. <!--b>L'utilisation
-    du contenu autre que pour un usage privé est strictement interdite sans
-    l'autorisation des auteurs.</b--> Par contenu est appelé : coordonnées des entrées,
-    des spéléos et des clubs ainsi que l'ensemble des informations présentent
-    dans les fiches détaillées, y compris les fichiers joints (topos, photos ...).</p>
     <p><?php echo getLicense(1); ?></p>
   </div>
   
@@ -243,12 +237,6 @@ switch($_SESSION['language']) {
     <p><?php echo $_SESSION['Application_name']; ?> was designed in a spirit
     totally apolitical. The site contains elements that constitute a work
     protected by international treaties.</p>
-    <p><!--b>Copyright: The use of information contained on this page other than for
-    private non-commercial use is strictly prohibited without permission from
-    the authors.<b><br /-->
-    By content we mean: entries, cavers and clubs coordiantes
-    and all information presented in the detailed sheets, including attachments
-    (topos, photos ...).</p>
     <p><?php echo getLicense(1); ?></p>
   </div>
   
@@ -377,13 +365,7 @@ switch($_SESSION['language']) {
   <div id="license" style="display:none;visibility:hidden;" class="content" >
     <p><?php echo $_SESSION['Application_name']; ?> fue desarrollado en un espíritu
     totalmente apolítico. El sitio y la información que contiene es una obra
-    protegida por tratados internacionales.</b>
-    <p>El contenido de las contribuciones de los espeleólogos se encuentra disponible
-    sólo a través de un uso privado y no comercial. <!--b>Copyright: El uso de la
-    información contenida en esta página otro que privado y no comercial está
-    estrictamente prohibida sin el permiso de los autores.</b--> El contenido es:
-    las coordenadas de las entradas, de los espeleólogos y los clubes y toda la información
-    presentada en las hojas detalladas, incluidos los archivos adjuntos (topos, fotos ...).</p>
+    protegida por tratados internacionales.</p>
     <p><?php echo getLicense(1); ?></p>
   </div>
   
@@ -642,8 +624,6 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
   </div>
   <div id="license" style="display:none;visibility:hidden;" class="content" >
     <p><?php echo $_SESSION['Application_name']; ?> е създаден в духа на пълна аполитичност. Сайтът съдържа елементи, които съставляват работа защитена от международни договори.</p>
-    <p>Под съдържание имаме предвид: записи, пещерняци и клубове, координати 
-както и цялата информация, представена в подробните описания, включително прикачени файлове (карти, снимки ...).</p>
     <p><?php echo getLicense(1); ?></p>
   </div>
   
