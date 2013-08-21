@@ -446,7 +446,17 @@ if ($_SESSION['home_page'] == "overview") {
           <li class ="sub_menu"> 
             <a href="http://www.wikicaves.org" target="_blank">Wikicaves</a>
           </li>
+          <li class ="sub_menu"> 
+            <?php if (strtolower($_SESSION['language']) == "fr") {?>
+              <a href="http://fr.wikicaves.org/partners-partenaires" target="_blank">Partenaires :</a>
+            <?php } else {?>
+              <a href="http://en.wikicaves.org/partners-partenaires" target="_blank">Partners:</a>
+            <?php }?>
+          </li>
         </ul>
+        <div style="text-align: center; border-bottom: 1px solid rgb(128, 128, 128);">
+            <a href="http://www.cds46.fr/" target="_blank"><img src="../images/icons/cds46.jpg" alt="CDS 46 Lot" /></a>
+        </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">

@@ -178,24 +178,24 @@ if ($_SESSION['home_page'] == "overview") {
           <?php echo getLicense(4);//getLicensePicture(3); ?> <a href="JavaScript:openLegalNPrivacy('<?php echo $_SESSION['language']; ?>');"><convert>#label=3<convert><!--Mentions légales &amp; Charte de confidentialité--></a>
   			</td>
   			<td class="bannerCell5">
+      			<div class="banner_fse">
+      			   <a href="http://eurospeleo.org/" target="_blank"><convert>#label=931<convert><!-- Grottocenter bénéficie du soutien de la FSE --> <img src="../images/icons/fse-logo.png" alt="Logo FSE" /></a>
+      			</div>
 <?php
 if ($_SESSION['home_page'] == "overview") {
 ?>
-          <div class="banner_info">
-            <form action="#" method="post" name="measurement" id="measurement">
-              <input type="button" class="button1" value="<convert>#label=28<convert>" id="measure_btn" name="measure_btn" style="font-size:8pt;" onclick="JavaScript:startMeasurement('<convert>#label=29<convert>','<convert>#label=28<convert>','<convert>#label=30<convert>');" /> <label for="measure" id="measure_label" style="visibility:hidden;display:none;">l=<input type="text" size="10" value="<convert>#label=29<convert>" id="measure" name="measure" style="font-size:8pt;color:#808080;" /> <a href="JavaScript:convertLength();" title="<convert>#label=31<convert>"><convert>#label=268<convert><!--m--></a>, </label>
-              <input type="button" class="button1" value="<convert>#label=31<convert>" id="convert_btn" name="convert_btn" style="font-size:8pt;" onclick="JavaScript:convertOnClick();" />
-              <br />
-              <label for="mouseLat">Lat=<input type="text" size="4" class="input1" value="" id="mouseLat" name="mouseLat" readonly="readonly" style="font-size:8pt;" /> <convert>#label=290<convert><!--°--><convert>#label=293<convert><!--N-->, </label>
-              <label for="mouseLng">Lng=<input type="text" size="4" class="input1" value="" id="mouseLng" name="mouseLng" readonly="readonly" style="font-size:8pt;" /> <convert>#label=290<convert><!--°--><convert>#label=294<convert><!--E--> </label>
-            </form>
-          </div>
+              <div class="banner_info">
+                <form action="#" method="post" name="measurement" id="measurement">
+                  <input type="button" class="button1" value="<convert>#label=28<convert>" id="measure_btn" name="measure_btn" style="font-size:8pt;" onclick="JavaScript:startMeasurement('<convert>#label=29<convert>','<convert>#label=28<convert>','<convert>#label=30<convert>');" /> <label for="measure" id="measure_label" style="visibility:hidden;display:none;">l=<input type="text" size="10" value="<convert>#label=29<convert>" id="measure" name="measure" style="font-size:8pt;color:#808080;" /> <a href="JavaScript:convertLength();" title="<convert>#label=31<convert>"><convert>#label=268<convert><!--m--></a>, </label>
+                  <input type="button" class="button1" value="<convert>#label=31<convert>" id="convert_btn" name="convert_btn" style="font-size:8pt;" onclick="JavaScript:convertOnClick();" />
+                  <br />
+                  <label for="mouseLat">Lat=<input type="text" size="4" class="input1" value="" id="mouseLat" name="mouseLat" readonly="readonly" style="font-size:8pt;" /> <convert>#label=290<convert><!--°--><convert>#label=293<convert><!--N-->, </label>
+                  <label for="mouseLng">Lng=<input type="text" size="4" class="input1" value="" id="mouseLng" name="mouseLng" readonly="readonly" style="font-size:8pt;" /> <convert>#label=290<convert><!--°--><convert>#label=294<convert><!--E--> </label>
+                </form>
+              </div>
 <?php
 }
 ?>
-                <div class="banner_fse">
-                    <a href="http://eurospeleo.org/" target="_blank"><convert>#label=931<convert><!-- Grottocenter bénéficie du soutien de la FSE --> <img src="../images/icons/fse-logo.png" alt="Logo FSE" /></a>
-                </div>
   			</td>
     	</tr>
     </table>
