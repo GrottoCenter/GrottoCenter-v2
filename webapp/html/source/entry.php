@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -1029,7 +1029,7 @@ function microtime_float()
 	      		<img src="../images/icons/FlagRequired.gif" alt="*" /><convert>#label=97<convert><!--Nom de l'entrÃ©e--><sup>1</sup>
 	      	</label>
         </td><td class="field">
-    		  <input class="input1" type="text" id="n_entry_name" name="n_entry_name" value="<?php echo $name; ?>" size="15" maxlength="100" onkeyup="JavaScript:checkThisName(this, 'name_pic', 'entry', entryNamesArray);" />
+    		  <input class="input1" type="text" id="n_entry_name" name="n_entry_name" value="<?php echo $name; ?>" maxlength="100" onkeyup="JavaScript:checkThisName(this, 'name_pic', 'entry', entryNamesArray);" style="width:100%;" /><br/>
     		  <img class="status1" name="name_pic" id="name_pic" src="../images/icons/wrong.png" alt="image" />
     		  <i><convert>#label=654<convert><!--Ex : Lascaux (Grotte de)--></i>
     		</td></tr><tr><td width="170" class="label">
