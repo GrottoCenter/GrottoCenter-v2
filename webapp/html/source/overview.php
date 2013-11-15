@@ -92,21 +92,21 @@ $frame = "overview";
     <link rel="stylesheet" type="text/css" href="../css/overview_p.css" media="print" />
 		<link rel="stylesheet" type="text/css" href="../css/global.css" />
     <link rel="stylesheet" type="text/css" href="../css/global_p.css" media="print" />
-		<link rel="stylesheet" type="text/css" href="../css/infowindow.css" />
-		<link rel="stylesheet" type="text/css" href="../css/contextualMenu.css" />
+		<link rel="stylesheet" type="text/css" href="../css/infowindow.css?v3" />
+		<link rel="stylesheet" type="text/css" href="../css/contextualMenu.css?v3" />
     <style type="txt/css">
       v\:* {behavior:url(#default#VML);}
     </style>
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=<?php echo $_SESSION['language']; ?>"></script>
-    <script type="text/javascript" src="../scripts/gmap-wms.js"></script>
+    <script type="text/javascript" src="../scripts/gmap-wms.js?v3"></script>
     <!-- <script type="text/javascript" src="../scripts/dragzoom.js"></script> -->
     <script type="text/javascript" src="../scripts/GCMap.js"></script>
     <!-- <script type="text/javascript" src="../scripts/lib/ExtDraggableObject.js"></script> -->
     <!-- <script type="text/javascript" src="../scripts/lib/CustomTileOverlay.js"></script> -->
     <!-- <script type="text/javascript" src="../scripts/opacity.js"></script> -->
     <!-- <script type="text/javascript" src="../scripts/GCControls.js"></script> -->
-    <script type="text/javascript" src="../scripts/ContextMenu.js"></script>
+    <script type="text/javascript" src="../scripts/ContextMenu.js?v3"></script>
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
     //Gona need functions: getTargetNode, convertMousePsn, copySelectedCoords, detailMarker, editMarker, deleteMarker, addMarker, xtdGetElementById,
