@@ -511,15 +511,15 @@ $frame = "filter";
       var oForm = document.new_entry;
       <?php if ($isNew == "True") { ?>
       if (oForm.n_entry_latitude.value != "" && oForm.n_entry_longitude.value != "") {
-        showMarker(new mySite.overview.GLatLng(strToFloat(oForm.n_entry_latitude.value), strToFloat(oForm.n_entry_longitude.value)));
+        showMarker(new mySite.overview.google.maps.LatLng(strToFloat(oForm.n_entry_latitude.value), strToFloat(oForm.n_entry_longitude.value)));
       } else {
-        getCoordsByDirection(getAddress('n_', 'entry', address_level), showMarker);
+        getCoordsByDirection(getAddress('n_', 'entry', address_level), showMarker2);
       }
       <?php } else { ?>        
       if (oForm.n_entry_latitude.value != "" && oForm.n_entry_longitude.value != "") {
-        moveMarker(new mySite.overview.GLatLng(strToFloat(oForm.n_entry_latitude.value), strToFloat(oForm.n_entry_longitude.value)));
+        moveMarker(new mySite.overview.google.maps.LatLng(strToFloat(oForm.n_entry_latitude.value), strToFloat(oForm.n_entry_longitude.value)));
       } else {
-        getCoordsByDirection(getAddress('n_', 'entry', address_level), moveMarker);
+        getCoordsByDirection(getAddress('n_', 'entry', address_level), moveMarker2);
       }
       <?php } ?>
     }
@@ -531,9 +531,15 @@ $frame = "filter";
       } else {
         if (address_level > 0) {
           address_level --;
-          getCoordsByDirection(getAddress('n_', 'entry', address_level), showMarker);
+          getCoordsByDirection(getAddress('n_', 'entry', address_level), showMarker2);
         }
       }
+    }
+
+    function showMarker2(geocoderResult) {
+        if (geocoderResult[0]) {
+            showMarker(geocoderResult[0].geometry.location);
+        }
     }
   
     function moveMarker(gLatLng) {
@@ -544,9 +550,15 @@ $frame = "filter";
       } else {
         if (address_level > 0) {
           address_level --;
-          getCoordsByDirection(getAddress('n_', 'entry', address_level), moveMarker);
+          getCoordsByDirection(getAddress('n_', 'entry', address_level), moveMarker2);
         }
       }
+    }
+
+    function moveMarker2(geocoderResult) {
+        if (geocoderResult[0]) {
+            moveMarker(geocoderResult[0].geometry.location);
+        }
     }
     
     function recieveLocation(lat, lng) {

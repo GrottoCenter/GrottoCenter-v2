@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -433,15 +433,15 @@ switch ($type) {
       var oForm = document.new_grotto;
       <?php if ($isNew == "True") { ?>
       if (byCoords) {
-        showMarker(new mySite.overview.GLatLng(strToFloat(oForm.n_grotto_latitude.value), strToFloat(oForm.n_grotto_longitude.value)));
+        showMarker(new mySite.overview.google.maps.LatLng(strToFloat(oForm.n_grotto_latitude.value), strToFloat(oForm.n_grotto_longitude.value)));
       } else {
-        getCoordsByDirection(getAddress('n_', 'grotto', address_level), showMarker);
+        getCoordsByDirection(getAddress('n_', 'grotto', address_level), showMarker2);
       }
       <?php } else { ?>
       if (byCoords) {
-        moveMarker(new mySite.overview.GLatLng(strToFloat(oForm.n_grotto_latitude.value), strToFloat(oForm.n_grotto_longitude.value)));
+        moveMarker(new mySite.overview.google.maps.LatLng(strToFloat(oForm.n_grotto_latitude.value), strToFloat(oForm.n_grotto_longitude.value)));
       } else {
-        getCoordsByDirection(getAddress('n_', 'grotto', address_level), moveMarker);
+        getCoordsByDirection(getAddress('n_', 'grotto', address_level), moveMarker2);
       }
       <?php } ?>
     }
@@ -453,9 +453,15 @@ switch ($type) {
       } else {
         if (address_level > 0) {
           address_level --;
-          getCoordsByDirection(getAddress('n_', 'grotto', address_level), showMarker);
+          getCoordsByDirection(getAddress('n_', 'grotto', address_level), showMarker2);
         }
       }
+    }
+
+    function showMarker2(geocoderResult) {
+        if (geocoderResult[0]) {
+            showMarker(geocoderResult[0].geometry.location);
+        }
     }
     
     function moveMarker(gLatLng) {
@@ -466,9 +472,15 @@ switch ($type) {
       } else {
         if (address_level > 0) {
           address_level --;
-          getCoordsByDirection(getAddress('n_', 'grotto', address_level), moveMarker);
+          getCoordsByDirection(getAddress('n_', 'grotto', address_level), moveMarker2);
         }
       }
+    }
+
+    function moveMarker2(geocoderResult) {
+        if (geocoderResult[0]) {
+            moveMarker(geocoderResult[0].geometry.location);
+        }
     }
     
     function recieveLocation(lat, lng) {

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -381,23 +381,29 @@ switch ($type) {
       address_level = 4; //Address = 4, City = 3, Region = 2, Country = 1
       var oForm = document.data_user;
       if (byCoords) {
-        moveMarker(new mySite.overview.GLatLng(strToFloat(oForm.p_caver_latitude.value), strToFloat(oForm.p_caver_longitude.value)));
+        moveMarker(new mySite.overview.google.maps.LatLng(strToFloat(oForm.p_caver_latitude.value), strToFloat(oForm.p_caver_longitude.value)));
       } else {
-      	getCoordsByDirection(getAddress('p_', 'caver', address_level), moveMarker);
+      	getCoordsByDirection(getAddress('p_', 'caver', address_level), moveMarker2);
       }
     }
     
-    function moveMarker(gLatLng) {
-      if (gLatLng) {
-        moveMarkerTo(<?php echo $_SESSION['user_id']; ?>, 'caver', gLatLng.lat(), gLatLng.lng());
+    function moveMarker(location) {
+      if (location) {
+        moveMarkerTo(<?php echo $_SESSION['user_id']; ?>, 'caver', location.lat(), location.lng());
         openMe(<?php echo $_SESSION['user_id']; ?>, "caver", false);
-        setLocations(gLatLng.lat(), gLatLng.lng());
+        setLocations(location.lat(), location.lng());
       } else {
         if (address_level > 0) {
           address_level --;
-          getCoordsByDirection(getAddress('p_', 'caver', address_level), moveMarker);
+          getCoordsByDirection(getAddress('p_', 'caver', address_level), moveMarker2);
         }
       }
+    }
+
+    function moveMarker2(geocoderResult) {
+        if (geocoderResult[0]) {
+            moveMarker(geocoderResult[0].geometry.location);
+        }
     }
 
     function recieveLocation(lat, lng) {

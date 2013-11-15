@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -40,19 +40,17 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
 		<link rel="stylesheet" type="text/css" href="../css/global.css" />
     <link rel="stylesheet" type="text/css" href="../css/global_p.css" media="print" />
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=<?php echo $_SESSION['language']; ?>"></script>
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
     //Gona need functions: getTargetNode
-    var map, geocoder, marker_user;
+    var map, geocoder, marker_user, GCinfoWindow;
     
     function loadMap() {
       var gLatLng, basicZoom, defaultZoom;
       basicZoom = 10;
-      if (google.maps.BrowserIsCompatible()) {
-        //Create the map
-        map = new google.maps.Map2(xtdGetElementById("map"));
         //Create the geocoder
-        geocoder = new google.maps.ClientGeocoder();
+        geocoder = new google.maps.Geocoder();
 <?php if ($latitude == "" || $longitude == "") { ?>
         //Get the client location
         gLatLng = getClientLatLng();
@@ -64,44 +62,36 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
         gLatLng = new google.maps.LatLng(<?php echo $latitude; ?>, <?php echo $longitude; ?>);
 <?php } ?>
         defaultZoom = basicZoom;
-        google.maps.Event.addListener(map, 'click', function (overlay, latlng) {
-          mapOnLeftClick(overlay, latlng);
+        map = new google.maps.Map(xtdGetElementById("map"),{
+            center: gLatLng,
+            zoom: defaultZoom,
+            scaleControl: true,
+            overviewMapControl: true,
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
         });
-  			map.addMapType(G_PHYSICAL_MAP);  			
-  			//Set the default position on the map
-        map.setCenter(gLatLng, defaultZoom);
-        //Add controls
-  			map.addControl(new google.maps.LargeMapControl3D());
-  			// /!\ WARNING: GENERATES A ERROR ON 3D MAP TYPE:
-        map.addControl(new google.maps.OverviewMapControl());
-        // /!\ END OF WARNING.
-  			map.addControl(new google.maps.ScaleControl());
-  			map.addControl(new google.maps.HierarchicalMapTypeControl());
-  			// bind a search control to the map, suppress result list
-        map.addControl(new google.elements.LocalSearch({"searchFormHint": "<convert>#label=487<convert>"}), new google.maps.ControlPosition(G_ANCHOR_BOTTOM_LEFT, new google.maps.Size(10, 35)));//Recherche google
-  			map.enableDoubleClickZoom();
-  			map.enableScrollWheelZoom();
-  			map.enableContinuousZoom();
-  			showMarkerUser(gLatLng, "<?php echo $category; ?>");
-      }
+        GCinfoWindow = new google.maps.InfoWindow();
+        google.maps.event.addListener(map, 'click', function (object) {
+          mapOnLeftClick(object.latLng);
+        });			
+
+  		showMarkerUser(gLatLng, "<?php echo $category; ?>");
     }
     
     function getCoordsByDirection(sDirection, callback) {
       if (sDirection != undefined) {
-        geocoder.getLatLng(sDirection, callback);
+        geocoder.geocode({address: sDirection}, callback);
       }
     }
     
-    function mapOnLeftClick(overlay, GLatLng) {
-      if(overlay) {
-        GLatLng = marker_user.getLatLng();
-      }
+    function mapOnLeftClick(GLatLng) {
       updateDisplay(GLatLng);
     }
     
-    function updateDisplay(GLatLng) {
-      showMarkerUser(GLatLng, "<?php echo $category; ?>");
-      updateLocation(GLatLng);
+    function updateDisplay(geocoderResult) {
+        if (geocoderResult[0]) {
+            showMarkerUser(geocoderResult[0].geometry.location, "<?php echo $category; ?>");
+            updateLocation(geocoderResult[0].geometry.location);
+        }
     }
 
     function showMarkerUser(gLatLng, category, doZoomIn) {
@@ -111,10 +101,10 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
       if (marker_user === undefined) {
         setMarkerUser(category, gLatLng);
       } else {
-        marker_user.setLatLng(gLatLng);
+        marker_user.setPosition(gLatLng);
       }
       map.setCenter(gLatLng);
-      //google.maps.Event.trigger(marker_user, 'click');
+      //google.maps.event.trigger(marker_user, 'click');
       openRGCInfoWindow(gLatLng, marker_user);
       if (doZoomIn) {
         map.setZoom(13);
@@ -122,21 +112,27 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
     }
     
     function setMarkerUser(category, point) {
-      var tinyIcon, titleHere;
-      tinyIcon = createIcon(category, false, "m");
+      var object, titleHere;
+      object = createIcon(category, false, "m");
       titleHere = getTitleTemp();
-      marker_user = new google.maps.Marker(point, {title: titleHere, draggable: true, bouncy: true, icon:tinyIcon});
-      google.maps.Event.addListener(marker_user, "dragstart", function () {
-        map.closeInfoWindow();
+      marker_user = new google.maps.Marker({
+          position: point, 
+          title: titleHere, 
+          draggable: true, 
+          bouncy: true, 
+          icon: object.image,
+          shadow: object.shadow});
+      google.maps.event.addListener(marker_user, "dragstart", function () {
+          GCinfoWindow.close();
       });
-      google.maps.Event.addListener(marker_user, "dragend", function (latLng) {
-        openRGCInfoWindow(latLng, marker_user);
-        updateLocation(latLng);
+      google.maps.event.addListener(marker_user, "dragend", function (object) {
+        openRGCInfoWindow(object.latLng, marker_user);
+        updateLocation(object.latLng);
       });
-      google.maps.Event.addListener(marker_user, "click", function (latLng) {
-        openRGCInfoWindow(latLng, marker_user);
+      google.maps.event.addListener(marker_user, "click", function (object) {
+        openRGCInfoWindow(object.latLng, marker_user);
       });
-      map.addOverlay(marker_user);
+      marker_user.setMap(map);
     }
     
     function updateLocation(latLng) {
@@ -146,69 +142,68 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
     }
     
     function createIcon(category, isConnected, icon_type) {
-      var tinyIcon;
+        var image = {}, shadow = {};
       if (isConnected === undefined || isConnected === "false") {
         isConnected = false;
       }
-      tinyIcon = new google.maps.Icon();
       switch (category) {
       case "entry":
         if (icon_type === "m") {
-          tinyIcon.iconSize = new google.maps.Size(10.67, 21.33);//16,32
-          tinyIcon.shadowSize = new google.maps.Size(18, 21.33);//27,32
-          tinyIcon.iconAnchor = new google.maps.Point(4, 21.33);//6,32
-          tinyIcon.infoWindowAnchor = new google.maps.Point(5.33, 1);//8,2
-          tinyIcon.image = "../images/icons/entry2.png";
-          tinyIcon.shadow = "../images/icons/entry2_shadow.png";
+            image.scaledSize = new google.maps.Size(10.67, 21.33);//16,32
+            shadow.scaledSize = new google.maps.Size(18, 21.33);//27,32
+          //tinyIcon.iconAnchor = new google.maps.Point(4, 21.33);//6,32
+          //tinyIcon.infoWindowAnchor = new google.maps.Point(5.33, 1);//8,2
+          image.url = "../images/icons/entry2.png";
+          shadow.url = "../images/icons/entry2_shadow.png";
         } else {
-          tinyIcon.iconSize = new google.maps.Size(17.34, 28);
-          tinyIcon.shadowSize = new google.maps.Size(26.67, 20);
-          tinyIcon.iconAnchor = new google.maps.Point(8.67, 28);
-          tinyIcon.infoWindowAnchor = new google.maps.Point(7.33, 2.5);
-          tinyIcon.image = "../images/icons/entry2_clust.png";
-          tinyIcon.shadow = "../images/icons/entry2_clust_shadow.png";
+            image.scaledSize = new google.maps.Size(17.34, 28);
+          shadow.scaledSize = new google.maps.Size(26.67, 20);
+          //tinyIcon.iconAnchor = new google.maps.Point(8.67, 28);
+          //tinyIcon.infoWindowAnchor = new google.maps.Point(7.33, 2.5);
+          image.url = "../images/icons/entry2_clust.png";
+          shadow.url = "../images/icons/entry2_clust_shadow.png";
         }
         break;          
       case "caver":
         if (icon_type === "m") {
-          tinyIcon.iconSize = new google.maps.Size(21.33, 20.67);//32,31
-          tinyIcon.shadowSize =  new google.maps.Size(28, 21.33);//42,32
-          tinyIcon.iconAnchor = new google.maps.Point(13.33, 21.33);//20,32
-          tinyIcon.infoWindowAnchor = new google.maps.Point(18, 8);//14, 1
+            image.scaledSize = new google.maps.Size(21.33, 20.67);//32,31
+          shadow.scaledSize =  new google.maps.Size(28, 21.33);//42,32
+          //tinyIcon.iconAnchor = new google.maps.Point(13.33, 21.33);//20,32
+          //tinyIcon.infoWindowAnchor = new google.maps.Point(18, 8);//14, 1
           if (isConnected) {
-            tinyIcon.image = "../images/icons/caver2_connected.png";
+            image.url = "../images/icons/caver2_connected.png";
           } else {
-            tinyIcon.image = "../images/icons/caver2.png";
+            image.url = "../images/icons/caver2.png";
           }
-          tinyIcon.shadow = "../images/icons/caver2_shadow.png";
+          shadow.url = "../images/icons/caver2_shadow.png";
         } else {
-          tinyIcon.iconSize = new google.maps.Size(28, 27.13);
-          tinyIcon.shadowSize = new google.maps.Size(36, 21.33);
-          tinyIcon.iconAnchor = new google.maps.Point(14, 28);
-          tinyIcon.infoWindowAnchor = new google.maps.Point(23.63, 10.5);
-          tinyIcon.image = "../images/icons/caver2_clust.png";
-          tinyIcon.shadow = "../images/icons/caver2_clust_shadow.png";
+            image.scaledSize = new google.maps.Size(28, 27.13);
+          shadow.scaledSize = new google.maps.Size(36, 21.33);
+          //tinyIcon.iconAnchor = new google.maps.Point(14, 28);
+          //tinyIcon.infoWindowAnchor = new google.maps.Point(23.63, 10.5);
+          image.url = "../images/icons/caver2_clust.png";
+          shadow.url = "../images/icons/caver2_clust_shadow.png";
         }
         break;
       case "grotto":
         if (icon_type === "m") {
-          tinyIcon.iconSize = new google.maps.Size(21.33, 21.33);//32,32
-          tinyIcon.shadowSize = new google.maps.Size(26.67, 21.33);//40,32
-          tinyIcon.iconAnchor = new google.maps.Point(10.67, 21.33);//16,32
-          tinyIcon.infoWindowAnchor = new google.maps.Point(14.67, 3.33);//22,5
-          tinyIcon.image = "../images/icons/grotto1.png";
-          tinyIcon.shadow = "../images/icons/grotto1_shadow.png";
+            image.scaledSize = new google.maps.Size(21.33, 21.33);//32,32
+          shadow.scaledSize = new google.maps.Size(26.67, 21.33);//40,32
+          //tinyIcon.iconAnchor = new google.maps.Point(10.67, 21.33);//16,32
+          //tinyIcon.infoWindowAnchor = new google.maps.Point(14.67, 3.33);//22,5
+          image.url = "../images/icons/grotto1.png";
+          shadow.url = "../images/icons/grotto1_shadow.png";
         } else {
-          tinyIcon.iconSize = new google.maps.Size(28, 28);
-          tinyIcon.shadowSize = new google.maps.Size(36, 19.33);
-          tinyIcon.iconAnchor = new google.maps.Point(14, 28);
-          tinyIcon.infoWindowAnchor = new google.maps.Point(14.67, 3.33);
-          tinyIcon.image = "../images/icons/grotto1_clust.png";
-          tinyIcon.shadow = "../images/icons/grotto1_clust_shadow.png";
+            image.scaledSize = new google.maps.Size(28, 28);
+          shadow.scaledSize = new google.maps.Size(36, 19.33);
+          //tinyIcon.iconAnchor = new google.maps.Point(14, 28);
+          //tinyIcon.infoWindowAnchor = new google.maps.Point(14.67, 3.33);
+          image.url = "../images/icons/grotto1_clust.png";
+          shadow.url = "../images/icons/grotto1_clust_shadow.png";
         }
         break;
       }
-      return tinyIcon;
+      return {image: image, shadow: shadow};
     }
     
     function getTitleTemp() {
@@ -217,20 +212,20 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
     
     function openRGCInfoWindow(latLng, marker) {
       if (latLng) {
-        geocoder.getLocations(latLng, function(addresses) {
+        geocoder.geocode({location: latLng}, function(addresses, status) {
           var myHtml, address, title;
           title = getTitleTemp();
-          if(addresses.Status.code != 200) {
+          if (status != google.maps.GeocoderStatus.OK) {
             myHtml = title;
           }
           else {
-            address = addresses.Placemark[0];
-            myHtml = title + "<br />\n<b>" + address.address + "</b>";
+            myHtml = title + "<br />\n<b>" + addresses[0].formatted_address + "</b>";
           }
+          GCinfoWindow.setContent(myHtml);
           if (marker) {
-            marker.openInfoWindow(myHtml);
+              GCinfoWindow.open(map, marker);
           } else {
-            map.openInfoWindow(myHtml);
+              GCinfoWindow.open(map);
           }
         });
       }
@@ -249,19 +244,12 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
       loadMap();
     }
     
-    function unload() {
-      google.maps.Unload();
-      isLoaded = false;
-    }
-    
-    google.load("maps", "2", {"language" : "<?php echo $_SESSION['language']; ?>"});
-    google.load("elements", "1", {packages : ["localsearch"], "language" : "<?php echo $_SESSION['language']; ?>"});
     google.setOnLoadCallback(loadContext, true);
 
     <?php echo getCDataTag(false); ?>
     </script>
   </head>
-  <body onunload="JavaScript:unload();">
+  <body>
     <?php echo getTopFrame(true, "height:100%;"); ?>
     <?php echo getNoScript("<convert>#label=22<convert>","<convert>#label=23<convert>"); ?>
     <div id="map" class="map"></div>

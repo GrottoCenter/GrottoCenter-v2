@@ -431,7 +431,8 @@ if (!$isPublic && !USER_IS_CONNECTED) {
   	$defaultBibliography = ($bibliographies['Count']>0) ? $checkedAttribute : "";
   	$defaultComment = "";
 ?>
-    <script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<?php echo Google_key; ?>&amp;hl=<?php echo $_SESSION['language']; ?>"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=<?php echo $_SESSION['language']; ?>"></script>
     <!--script type="text/javascript" src="../scripts/classeGCTest.js"></script-->
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
@@ -732,16 +733,42 @@ if ($allowed_to_lock) {
     }
     
     function loadMap() {
-      if (GBrowserIsCompatible()) {
-        var map = new GMap2(xtdGetElementById("map"));
+        var point = new google.maps.LatLng(<?php echo getMapParams($id); ?>);
+        
+        var map = new google.maps.Map(xtdGetElementById("map"),{
+            center: point,
+            zoom: 10,
+            scaleControl: true,
+            overviewMapControl: true,
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
+        });
+        var maxZoomService = new google.maps.MaxZoomService();
+        maxZoomService.getMaxZoomAtLatLng(
+      		  point,
+      		  function(response) {
+      		    if (response.status == google.maps.MaxZoomStatus.OK) {
+      		      map.setZoom(response.zoom-2);
+      		    } else {
+      		      console.log("Error in Max Zoom Service.");
+      		    }
+      		    map.panTo(point);
+        });
+        var marker = new google.maps.Marker({
+            position: point, 
+            map: map, 
+            draggable: false, 
+            bouncy: false,
+        });
+
+        
+        /*var map = new GMap2(xtdGetElementById("map"));
         map.addMapType(G_PHYSICAL_MAP);
         var point = new GLatLng(<?php echo getMapParams($id); ?>);
         map.setCenter(point);
         map.setMapType(G_PHYSICAL_MAP);
         map.setZoom(map.getCurrentMapType().getMaximumResolution()-2);
         var marker = new GMarker(point);
-        map.addOverlay(marker);
-      }
+        map.addOverlay(marker);*/
     }
     
     function concatFieldsByName(sName,sSeparator) {

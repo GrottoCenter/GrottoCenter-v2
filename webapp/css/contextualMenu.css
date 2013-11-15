@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 
@@ -38,7 +38,7 @@
 	line-height:16px;
 	background-color:white;
 	border:1px solid #34558A;
-	/* Un filtre d'affichage spécial non obligatoire*/
+	/* Un filtre d'affichage spï¿½cial non obligatoire*/
 	/*FILTER:progid:DXImageTransform.Microsoft.Shadow(direction=135,color=#303030,strength=3);*/
 	/*FILTER:progid:DXImageTransform.Microsoft.Gradient(gradientType=1,startColorStr=#CECECE,endColorStr=#C0C0C0);*/
 	/*FILTER:progid:DXImageTransform.Microsoft.Alpha( style=0,opacity=85);*/
@@ -66,3 +66,24 @@ hr
   background-color:#34558A;
   border:0;
 }
+
+
+
+/*  start styles for the ContextMenu    */
+.context_menu{
+    background-color:white;
+    border:1px solid gray;
+}
+.context_menu_item{
+    padding:3px 6px;
+}
+.context_menu_item:hover{
+    background-color:#CCCCCC;
+}
+.context_menu_separator{
+    background-color:gray;
+    height:1px;
+    margin:0;
+    padding:0;
+}
+/*  end styles for the ContextMenu  */

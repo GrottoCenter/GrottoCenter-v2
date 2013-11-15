@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 $got_part = (isset($_GET['p'])) ? $_GET['p'] : '';
@@ -122,17 +122,24 @@ include("declaration.php");
       var point;
 			if (lat != undefined && lng != undefined) {
 				point = new mySite.overview.google.maps.LatLng(lat, lng);
-        mySite.overview.geocoder.getLocations(point, function (response) {
-					var places, place, iso;
-					places = response.Placemark;
-					if (places != undefined) {
+				mySite.overview.geocoder.geocode({location: point}, function(places, status) {
+				    var place, iso;
+					if (places[0] != undefined) {
 						place = places[0];
-						iso = place.AddressDetails.Country.CountryNameCode;
-						countryOnChange(iso);
+						for (var i = 0; i < place.address_components.length; i++) {
+						    if ($.inArray("country", place.address_components[i].types)) {
+						        iso = place.address_components[i].short_name;
+						        break;
+						    }
+						}
+						
+					}
+					if (iso) {
+					    countryOnChange(iso);
 					} else {
 						countryOnChange('<?php echo Select_default; ?>');
 					}
-        });
+				});
       }
     }
 <?php } ?>

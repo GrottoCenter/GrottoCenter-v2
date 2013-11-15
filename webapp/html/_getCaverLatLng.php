@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -54,6 +54,7 @@ include("declaration.php");
       v\:* {behavior:url(#default#VML);}
     </style>
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=<?php echo $_SESSION['language']; ?>"></script>
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
     var map, geocoder, nameArray, idArray, latArray, lngArray, index, counter;
@@ -64,21 +65,9 @@ include("declaration.php");
     index = 0;
     
     function loadMap() {
-      if (google.maps.BrowserIsCompatible()) {
-        //Create the map
-        map = new google.maps.Map2(document.getElementById("map"));
+        map = new google.maps.Map(document.getElementById("map"));
         //Create the geocoder
-        geocoder = new google.maps.ClientGeocoder();
-        /*//Add layers
-    		map.addMapType(G_PHYSICAL_MAP);
-    		map.addMapType(G_SATELLITE_3D_MAP);
-  			//Set the default position on the map
-        map.setCenter(new google.maps.LatLng(0, 0), 4);
-        map.setMapType(G_PHYSICAL_MAP);
-  			map.enableDoubleClickZoom();
-  			map.enableScrollWheelZoom();
-  			map.enableContinuousZoom();*/
-      }
+        geocoder = new google.maps.Geocoder();
     }
     
     function loadAddresses() {
@@ -139,8 +128,6 @@ include("declaration.php");
       google.maps.Unload();
       isLoaded = false;
     }
-    
-    google.load("maps", "2.x", {"language" : "<?php echo $_SESSION['language']; ?>", "other_params":"sensor=true"});
     google.setOnLoadCallback(loadContext, true);
 
     <?php echo getCDataTag(false); ?>
