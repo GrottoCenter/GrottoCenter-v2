@@ -33,9 +33,10 @@ switch($_SESSION['language']) {
     du moins largement réduits par une pratique dans les règles de l'art, pratique 
     qui s'exerce pleinement dans le cadre d'un club de spéléologie.</i></p>
     
-    <p><i>En aucun cas le site <?php echo $_SESSION['Application_name']; ?> et son
-    équipe ne peuvent être tenus pour responsable d'une mauvaise pratique de la 
-    spéléologie.</i></p>
+    <p><i>Le site <?php echo $_SESSION['Application_name']; ?>, ses représentants et ses 
+    contributeurs ne peuvent être tenus pour responsable d'une mauvaise pratique de la 
+    spéléologie ou pour tout accident ou dégradation qui pourrait survenir dans 
+    les grottes présentées sur ce site web.</i></p>
     
     <p><i>Le lecteur néophyte qui souhaiterait s'engager dans une exploration 
     souterraine, est <b>vivement encouragé à se mettre en rapport avec un club 
@@ -63,9 +64,9 @@ switch($_SESSION['language']) {
      at least greatly reduced by a practice in the rules, practice
      which is fully understood when under a caving club (grotto).</i></p>
     
-    <p><i>In any case <?php echo $_SESSION['Application_name']; ?> and its
-    team can not be held liable for a bad practice of
-    caving.</i></p>
+    <p><i><?php echo $_SESSION['Application_name']; ?>, its representatives and 
+    its contributors cannot be held liable for a bad practice of caving, or for 
+    any accident or deterioration that might occur in the caves displayed on this web site.</i></p>
     
     <p><i>The novice who would engage in underground exploration <b>is 
     urged to contact a caving club</b>. The names and contact information can be
@@ -91,9 +92,10 @@ switch($_SESSION['language']) {
     si no se práctican las normas necesarias para visitar una gruta. Las visitas
     son más seguras cuando se realiza con un club de espeleología.</i></p>
     
-    <p><i>En cualquier caso, el sitio <?php echo $_SESSION['Application_name']; ?>
-    y su equipo no puede ser considerado responsable de una mala práctica de
-    la espeleología.</i></p>
+    <p><i>El sitio <?php echo $_SESSION['Application_name']; ?>, sus representantes 
+    y sus contribuidores no pueden ser considerados responsables de una mala práctica 
+    de la espeleología o de cualquier accidente o deterioración que pudiera ocurrir en 
+    las cavidades presentadas en este sitio web.</i></p>
     
     <p><i>Si existe un neófito que quisiera involucrarse en una exploración
     subterránea se le <b>recomienda a comunicarse con un club de espeleología</b>
