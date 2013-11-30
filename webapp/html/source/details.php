@@ -457,6 +457,7 @@ if ($_SESSION['home_page'] == "overview") {
         <div style="text-align: center; border-bottom: 1px solid rgb(128, 128, 128);">
             <a href="http://www.cds46.fr/" target="_blank"><img src="../images/icons/cds46.jpg" alt="CDS 46 Lot" /></a>
             <a href="http://cdspeleo11.free.fr/" target="_blank"><img src="../images/icons/cds11.jpg" alt="CDS 11 Aude" /></a>
+            <a href="http://www.gsbm.fr/" target="_blank"><img src="../images/icons/gsbm.jpg" alt="Groupe Speleo Bagnols Marcoule" /></a>
         </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
