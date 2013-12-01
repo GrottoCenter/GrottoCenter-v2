@@ -111,7 +111,7 @@ $frame = "overview";
     <?php echo getCDataTag(true); ?>
     //Gona need functions: getTargetNode, convertMousePsn, copySelectedCoords, detailMarker, editMarker, deleteMarker, addMarker, xtdGetElementById,
 		//											showRelationList
-    var isLoaded, jg, map, geocoder, gdir, measurementLine, is_over_measurement_line, lineStarted, measurement_handler_updated,
+    var isLoaded, jg, map, geocoder, directionsService, directionsDisplay, measurementLine, is_over_measurement_line, lineStarted, measurement_handler_updated,
         measurement_handler_over, measurement_handler_out, converter_handler, drawMode, posn1, marker_user, marker_converter,
         allMarkers, allLines, idForShownLines, typeForShownLines, caversLayer, entriesLayer, grottosLayer, linksLayer, mousePosnIsFrozen,
         mouseLatLng, doResetEnvironement, userConnected, counterForAfterLoad, callBackFunction, clusteringLimit, categoryVisibility,
@@ -184,7 +184,7 @@ $frame = "overview";
 
         //BS google.maps.event.addListener(map, 'moveend', loadFromXML);
         //BS google.maps.event.addListener(map, 'viewchangeend', loadFromXML);
-      //BS setGDir();
+            initDirections();
   			GCinfoWindow = new google.maps.InfoWindow();
   			google.maps.event.addListener(GCinfoWindow, 'closeclick', function() {
   	          loadMarkers();
@@ -1424,29 +1424,34 @@ $frame = "overview";
     }
     
     function setDirections(fromAddress, toAddress, locale) {
-      if (google.maps.BrowserIsCompatible()) {
-        gdir.load("from: " + fromAddress + " to: " + toAddress, {"locale": locale});
+        var directionsRequest = {
+                origin: fromAddress,
+                destination: toAddress,
+                provideRouteAlternatives: false,
+                travelMode: google.maps.TravelMode.DRIVING,
+                region: locale
+        };
+        directionsService.route(directionsRequest, function(result, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setMap(map);
+                directionsDisplay.setDirections(result);
+                $("#directions").show();
+            }
+        });
+    }
+    
+    function clearDirections() {
+      if (directionsDisplay) {
+          directionsDisplay.setMap(null);
+          $("#directions").hide();
       }
     }
     
-    function displayDirections() {
-      mySite.details.xtdGetElementById("directions").innerHTML = xtdGetElementById("directions").innerHTML;
-      mySite.details.showId('directions_div');
-    }
-    
-    function clearGDir() {
-      if (gdir) {
-        gdir.clear();
-      }
-    }
-    
-    function setGDir() {
-      var div_container;
-      if (!gdir) {
-        div_container = xtdGetElementById("directions");
-        gdir = new google.maps.Directions(map, div_container);
-        google.maps.event.addListener(gdir, "error", handleErrors);
-        google.maps.event.addListener(gdir, "addoverlay", displayDirections);
+    function initDirections() {
+      if (!directionsService) {
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsDisplay.setPanel(xtdGetElementById("directions"));
       }
     }
     
@@ -2080,7 +2085,8 @@ $frame = "overview";
         <img src="../images/icons/printer.png" alt="<convert>#label=525<convert>" style="border:0px none;height:19px" title="<convert>#label=525<convert>" />
       </a>
     </div>
-    <div id="directions" style="display:none;visibility:hidden;">
+    <div id="directions" style="display:none;background-color: #FFFFFF;height: 100%;overflow: scroll;position: absolute;right: 0px; top: 30px; width: 25%;">
+        <?php echo getCloseBtn("JavaScript:clearDirections();","<convert>#label=371<convert>")?>
     </div>
     <div id="clip">
     </div>

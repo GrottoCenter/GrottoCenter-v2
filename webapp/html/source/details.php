@@ -187,31 +187,32 @@ if ($_SESSION['home_page'] == "overview") {
     }
     
     function closeDirections() {
-      mySite.overview.clearGDir();
+      mySite.overview.clearDirections();
       hideId('directions_div');
     }
     
     function openDirections(address, bFromThisPlace, category, id, locale) {
-      if (address != "") {
-        var marker = mySite.overview.getMarker(id, category);
-        if (marker.country == "<?php echo select_default; ?>" || marker.address == "" || marker.city == "") {
-          var markerAddress = marker.getLatLng().lat() + "," + marker.getLatLng().lng();
-        } else {
-          if (marker.region == "") {
-            var markerAddress = marker.address + "," + marker.city + "," + marker.country;
-          } else {
-            var markerAddress = marker.address + "," + marker.city + "," + marker.region + "," + marker.country;
-          }
+        var markerAddress;
+        if (address != "") {
+            var marker = mySite.overview.getMarker(id, category);
+            if (marker.country == "<?php echo select_default; ?>" || marker.address == "" || marker.city == "") {
+                markerAddress = marker.getPosition().lat() + "," + marker.getPosition().lng();
+            } else {
+                if (marker.region == "") {
+                    markerAddress = marker.address + "," + marker.city + "," + marker.country;
+                } else {
+                    markerAddress = marker.address + "," + marker.city + "," + marker.region + "," + marker.country;
+                }
+            }
+            var from = address;
+            var to = address;
+            if (bFromThisPlace) {
+                from = markerAddress;
+            } else {
+                to = markerAddress;
+            }
+            mySite.overview.setDirections(from, to, locale);
         }
-        var from = address;
-        var to = address;
-        if (bFromThisPlace) {
-          from = markerAddress;
-        } else {
-          to = markerAddress;
-        }
-        mySite.overview.setDirections(from, to, locale);
-      }
     }
     
     function advancedSearch() {
