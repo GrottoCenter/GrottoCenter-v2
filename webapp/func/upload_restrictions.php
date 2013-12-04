@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 // Allowed file types
 $upload_restrictions_ext_array = array("add_avatar" => array(".png",".gif",".jpg",".jpeg"),
                                         "add_logo" => array(".png",".gif",".jpg",".jpeg"),
                                         "add_attachment" => array(".zip", ".rar", ".7z", ".tar", ".gz", ".bz2"),
-                                        "add_topo" => array(".png",".gif",".jpg",".jpeg",".tiff",".bmp")); //,".pdf"
+                                        "add_topo" => array(".png",".gif",".jpg",".jpeg",".tiff",".bmp",".pdf"));
 // Max size in octets
 $upload_restrictions_size_array = array("add_avatar" => 30000,
                                         "add_logo" => 30000,
                                         "add_attachment" => 500000,
-                                        "add_topo" => 500000);
+                                        "add_topo" => 10000000);
 ?>
