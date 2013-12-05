@@ -126,7 +126,7 @@ $frame = "overview";
       dragstarted = false;
       basicZoom = 4;
       //Set up BGForWMS list
-      BGForWMS = [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.TERRAIN];
+      BGForWMS = [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.TERRAIN];
         //Create the geocoder
         geocoder = new google.maps.Geocoder();
 <?php if (isset($_SESSION['user_default_lat']) && isset($_SESSION['user_default_lng']) && isset($_SESSION['user_default_zoom'])) { ?>
