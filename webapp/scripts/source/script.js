@@ -1076,8 +1076,8 @@ function c(a, b) {
 //Capture the coordinates of the user
 function doChallengeCoordinates(oLat, oLng, marker) {
   if (marker != undefined) {
-    oLat.value = marker.getPoint().lat();
-    oLng.value = marker.getPoint().lng();
+    oLat.value = marker.getPosition().lat();
+    oLng.value = marker.getPosition().lng();
   } else {
     oLat.value = 0;
     oLng.value = 0;
