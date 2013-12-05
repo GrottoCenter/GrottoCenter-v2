@@ -116,13 +116,14 @@ $frame = "overview";
         allMarkers, allLines, idForShownLines, typeForShownLines, caversLayer, entriesLayer, grottosLayer, linksLayer, mousePosnIsFrozen,
         mouseLatLng, doResetEnvironement, userConnected, counterForAfterLoad, callBackFunction, clusteringLimit, categoryVisibility,
         existingMarkers, lockedMarkers, existingLines, doAbort, debug, mapControl, WMS, BGForWMS, LAYERS, layersOpacity, marker_elevation,
-        elevation_handler, GCinfoWindow;//, clip;
+        elevation_handler, GCinfoWindow, dragstarted;//, clip;
     
     function loadMap() {
       var latLng, dragzoomOpts, gLatLng, basicZoom, defaultZoom, options;
       if (debug) {
           console.log("loadMap");
       }
+      dragstarted = false;
       basicZoom = 4;
       //Set up BGForWMS list
       BGForWMS = [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.TERRAIN];
@@ -164,7 +165,7 @@ $frame = "overview";
         google.maps.event.addListener(map, 'rightclick', function(e) {
             map.set('disableDoubleClickZoom', true);
         });
-        
+
         google.maps.event.addListener(map, 'infowindowopen', mapOnInfowindowOpen);
         //Add layers
     		layersOpacity = 0.4;
@@ -1013,9 +1014,11 @@ $frame = "overview";
           overSwitchLines(id, category, false);
         });
         google.maps.event.addListener(marker, "dragstart", function () {
+            dragstarted = true;
             GCinfoWindow.close();
         });
         google.maps.event.addListener(marker, "dragend", function () {
+            dragstarted = false;
             GCinfoWindow.setContent(infoWindow);
             GCinfoWindowOpen(marker);
           if (mySite.filter.recieveLocation != undefined) {
@@ -1037,7 +1040,7 @@ $frame = "overview";
     
 		function mapOnInfowindowOpen(opts) {
 			var id, iwDOM, strOpts, sHTML;
-      mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
+            mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
 			strOpts = "";
 			if (opts != undefined && typeof(opts) == 'string' && opts != '') {
 				strOpts = '&' + opts + '=true';
@@ -2051,7 +2054,7 @@ $frame = "overview";
       resetVars();
       userConnected = isUserConnected();
       google.maps.event.addListener(map, 'idle', function() {
-          if (!isInfoWindowOpen()) {
+          if (!isInfoWindowOpen() && !dragstarted) {
               loadMarkers();
           }
        });
