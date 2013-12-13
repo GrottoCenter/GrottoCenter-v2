@@ -655,7 +655,7 @@ if ($allowed_to_lock) {
       if (sDest == undefined) {
         sDest = "";
       }
-      limitLength(oObject, 4000);
+      limitLength(oObject, 20000);
       displayLength(oObject, sDest);
     }
     
@@ -1107,7 +1107,7 @@ if ($allowed_to_lock) {
                     <?php if ($edition) { ?>
                       <label for="body<?php echo $local_cat.$array[$i]["Id"]; ?>"><convert>#label=345<convert><!--Décrivez l'accès à cette entrée--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat.$array[$i]["Id"]; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>');"><?php echo $array[$i]["Body"];?></textarea><br />
-                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                       <input type="hidden" id="oldbody" name="oldbody" value="<?php echo $array[$i]["Body"];?>" /><!--htmlentities(-->
                     <?php } else {
                       echo getRef(replaceLinks(nl2br($array[$i]["Body"]))); //htmlentities(
@@ -1151,7 +1151,7 @@ if ($allowed_to_lock) {
                     <div class="sub_content">
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=345<convert><!--Décrivez l'accès à cette entrée--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat; ?>');"></textarea><br />
-                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                     </div>
                     <input type="hidden" id="new_category<?php echo $local_cat; ?>" name="new_category" value="<?php echo $local_cat; ?>" />
                     <?php echo getLicenseAlert(); ?>
@@ -1302,7 +1302,7 @@ if ($allowed_to_lock) {
                     <?php   } ?>
                       <label for="body<?php echo $local_cat.$array[$i]["Id"]; ?>"><convert>#label=352<convert><!--Décrivez votre parcours dans la cavité--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat.$array[$i]["Id"]; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>');"><?php echo $array[$i]["Body"];?></textarea><br />
-                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                       <input type="hidden" id="oldbody" name="oldbody" value="<?php echo $array[$i]["Body"];?>" /> <!-- //htmlentities(-->
                       <input type="hidden" id="oldtitle" name="oldtitle" value="<?php echo $array[$i]["Title"];?>" />
                     <?php } else { 
@@ -1366,7 +1366,7 @@ if ($allowed_to_lock) {
                     <?php } ?>
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=352<convert><!--Décrivez votre parcours dans la cavité--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat; ?>');"></textarea><br />
-                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                     </div>
                     <input type="hidden" id="new_category<?php echo $local_cat; ?>" name="new_category" value="<?php echo $local_cat; ?>" />
                     <?php echo getLicenseAlert(); ?>
@@ -1892,7 +1892,7 @@ if ($allowed_to_lock) {
                     <?php if ($edition) { ?>
                       <label for="body<?php echo $local_cat.$array[$i]["Id"]; ?>"><convert>#label=595<convert><!--Décrivez l'historique de cette cavité--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat.$array[$i]["Id"]; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>');"><?php echo $array[$i]["Body"];?></textarea><br />
-                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                       <input type="hidden" id="oldbody" name="oldbody" value="<?php echo $array[$i]["Body"];?>" /> <!--//htmlentities(-->
                     <?php } else {
                       echo getRef(replaceLinks(nl2br($array[$i]["Body"]))); // <!--htmlentities(-->
@@ -1935,7 +1935,7 @@ if ($allowed_to_lock) {
                     <div class="sub_content">
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=595<convert><!--Décrivez l'historique de cette cavité--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat; ?>');"></textarea><br />
-                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                     </div>
                     <input type="hidden" id="new_category<?php echo $local_cat; ?>" name="new_category" value="<?php echo $local_cat; ?>" />
                     <?php echo getLicenseAlert(); ?>
@@ -2045,7 +2045,7 @@ if ($allowed_to_lock) {
                     <?php if ($edition) { ?>
                       <label for="body<?php echo $local_cat.$array[$i]["Id"]; ?>"><convert>#label=592<convert><!--Listez les references bibliographiques--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat.$array[$i]["Id"]; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>');"><?php echo $array[$i]["Body"];?></textarea><br />
-                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                       <input type="hidden" id="oldbody" name="oldbody" value="<?php echo $array[$i]["Body"];?>" /> <!--htmlentities(-->
                     <?php } else {
                       echo getRef(replaceLinks(nl2br($array[$i]["Body"]))); //<!--htmlentities(-->
@@ -2089,7 +2089,7 @@ if ($allowed_to_lock) {
                     <div class="sub_content">
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=592<convert><!--Listez les references bibliographiques--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat; ?>');"></textarea><br />
-                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.
+                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                     </div>
                     <input type="hidden" id="new_category<?php echo $local_cat; ?>" name="new_category" value="<?php echo $local_cat; ?>" />
                     <?php echo getLicenseAlert(); ?>
@@ -2285,7 +2285,7 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
 <?php         } ?> 
                       <label for="body<?php echo $local_cat.$array[$i]["Id"]; ?>"><convert>#label=366<convert><!--Votre commentaire--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat.$array[$i]["Id"]; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>');"><?php echo $array[$i]["Body"];?></textarea><br />
-                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.<br /><br />
+                      <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.<br /><br />
                       <table border="0" cellspacing="1" cellpadding="0" class="form_tbl" style="width:100%;">
                         <tr><th colspan="2"><?php echo getHelpTopic($helpId['votes'], "<convert>#label=23<convert>"); ?></th></tr>
                         <tr><td class="label">
@@ -2393,7 +2393,7 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
 <?php 		} ?>
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=366<convert><!--Votre commentaire--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat; ?>');"></textarea><br />
-                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 4 000.<br /><br />
+                      <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.<br /><br />
                       
                       <table border="0" cellspacing="1" cellpadding="0" class="form_tbl" style="width:100%;">
                         <tr><th colspan="2"><?php echo getHelpTopic($helpId['votes'], "<convert>#label=23<convert>"); ?></th></tr>
