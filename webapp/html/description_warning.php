@@ -125,10 +125,11 @@ switch($_SESSION['language']) {
     unter Tage an die anerkannten Regeln hälts und dein Hobby vorzugsweise
     im Rahmen eines entsprechenden Vereines ausübst.</i></p>
     
-    <p><i>Die Seite <?php echo $_SESSION['Application_name']; ?> und ihre
-    Betreiber können in keinem Falle für eine unsachgemäße Ausübung (und 
-    damit verbundene Unfälle) der Höhlenforschung verantwortlich gemacht
-    werden.</i></p>
+    <p><i>Die Webseite <?php echo $_SESSION['Application_name']; ?>, dessen 
+    Vertreter und die Mitwirkenden lehnen jede Verantwortung ab für 
+    Unfälle und Schäden die durch unfachgemässe Ausübung der 
+    Höhlenforschung in den auf der Webseite präsentierten Höhlen vorkommen 
+    könnten.</i></p>
     
     <p><i>Dem Neuling in Sachen Höhlenforschung  raten wir dringend, 
     sich mit einem Verein in Verbindung zu setzen. In Deutschland findest
