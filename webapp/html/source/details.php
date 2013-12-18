@@ -455,10 +455,13 @@ if ($_SESSION['home_page'] == "overview") {
             <?php }?>
           </li>
         </ul>
-        <div style="text-align: center; border-bottom: 1px solid rgb(128, 128, 128);">
-            <a href="http://www.cds46.fr/" target="_blank"><img src="../images/icons/cds46.jpg" alt="CDS 46 Lot" /></a>
-            <a href="http://cdspeleo11.free.fr/" target="_blank"><img src="../images/icons/cds11.jpg" alt="CDS 11 Aude" /></a>
-            <a href="http://www.gsbm.fr/" target="_blank"><img src="../images/icons/gsbm.jpg" alt="Groupe Speleo Bagnols Marcoule" /></a>
+        <div style="text-align: center;">
+            <a href="http://www.cds46.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/cds46.jpg" alt="CDS 46 Lot" /></a>
+            <a href="http://cdspeleo11.free.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/cds11.jpg" alt="CDS 11 Aude" /></a>
+            <a href="http://www.gsbm.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gsbm.jpg" alt="Groupe Speleo Bagnols Marcoule" /></a>
+        </div>
+        <div style="text-align: center;">
+            <a href="http://www.speleo-lausanne.ch/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gsl.png" alt="Groupe Speleo Lausanne et environs" /></a>
         </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -482,7 +485,7 @@ if ($_SESSION['home_page'] == "overview") {
                 <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
             </form>
         <?php } else {?>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="margin-left: 28px;">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="TJEU7C2TZ356Y">
                 <input type="image" id="donate_button" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
