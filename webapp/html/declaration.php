@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 //http://www.commentcamarche.net/php/phpvar.php3
@@ -129,7 +129,7 @@
   $FAQPages = array("Fr" => array("home" => 13),"En" => array("home" => 14),"Es" => array("home" => 19));
   
   define ("LEADER_GROUP_ID", 5, true);
-  define ("ENTRY_COUNT_MAX", 40, true);
+  define ("ENTRY_COUNT_MAX", 3000, true);
   define ("Max_detail_level", 1000, true);
   define ("Select_default", "00", true);
   define ("start_comment", "<!--", true);

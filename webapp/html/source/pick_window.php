@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -365,7 +365,7 @@ if ($exit) {
               'conditions' => array());
     }
     $length_page = 10;
-    $records_by_page_array = array(5, 10, 15, 20, 25, 30, 40, 50);
+    $records_by_page_array = array(5, 10, 15, 20, 25, 30, 40, 50, 300);
     $records_by_page = (isset($_POST['records_by_page'])) ? $_POST['records_by_page'] : 15;
     $filter_form = "automatic_form";
     $list_form = "result_form";
