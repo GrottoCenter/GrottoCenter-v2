@@ -462,6 +462,7 @@ if ($_SESSION['home_page'] == "overview") {
         </div>
         <div style="text-align: center;">
             <a href="http://www.speleo-lausanne.ch/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gsl.png" alt="Groupe Speleo Lausanne et environs" /></a>
+            <a href="http://www.groupe-speleo-vulcain.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/vulcain.gif" alt="Groupe spéléologique Vulcain" /></a>
         </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
