@@ -37,10 +37,8 @@ if ($refreshCache) {
   foreach ($langArray as $shortLang => $largeLang) {
   	convertFiles($shortLang, $ConvertedFilesArray);
   }
-  if ($_SESSION['Application_host'] == 'localhost') {
-    //Refresh the JS cache
-    refreshJSCache();
-  }
+  //Refresh the JS cache
+  refreshJSCache();
 } else {
   convertFiles($_SESSION['language'], $ConvertedFilesArray);
 }
