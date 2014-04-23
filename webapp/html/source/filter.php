@@ -316,19 +316,19 @@ if ($_SESSION['home_page'] == "overview") {
       <form id="visibilityFrom" name="visibilityFrom" method="post" action="" onsubmit="JavaScript:return false;">
         <input class="input1" style="border:0px none;" type="checkbox" id="entry" name="entry" onclick="visibilityOnClick(this.id, this.checked);" />
         <label for="entry">
-          <img src="../images/icons/entry2.png" alt="<convert>#label=384<convert>" style="height:9pt;margin:0px 3px;" /> <b>(<?php echo countByCategory("entry"); ?>) <convert>#label=384<convert><!--Entrées--></b>
+          <img src="../images/icons/bullet_entry.png" alt="<convert>#label=384<convert>" /> <b>(<?php echo countByCategory("entry"); ?>) <convert>#label=384<convert><!--Entrées--></b>
         </label><br />
         <input class="input1" style="border:0px none;" type="checkbox" id="grotto" name="grotto" onclick="visibilityOnClick(this.id, this.checked);" />
         <label for="grotto">
-          <img src="../images/icons/grotto1.png" alt="<convert>#label=386<convert>" style="height:9pt;" /> <b>(<?php echo countByCategory("grotto"); ?>) <convert>#label=386<convert><!--Clubs--></b>
+          <img src="../images/icons/bullet_grotto.png" alt="<convert>#label=386<convert>" /> <b>(<?php echo countByCategory("grotto"); ?>) <convert>#label=386<convert><!--Clubs--></b>
         </label><br />
         <input class="input1" style="border:0px none;" type="checkbox" id="caver" name="caver" onclick="visibilityOnClick(this.id, this.checked);" />
         <label for="caver">
-          <img src="../images/icons/caver2.png" alt="<convert>#label=385<convert>" style="height:9pt;" /> <b>(<?php echo countByCategory("caver"); ?>) <convert>#label=385<convert><!--Spéléos--></b>
+          <img src="../images/icons/bullet_caver.png" alt="<convert>#label=385<convert>" /> <b>(<?php echo countByCategory("caver"); ?>) <convert>#label=385<convert><!--Spéléos--></b>
         </label><br />
         <input class="input1" style="border:0px none;" type="checkbox" id="link" name="link" onclick="visibilityOnClick(this.id, this.checked);" />
         <label for="link">
-          <img src="../images/icons/linkIcon.png" alt="<convert>#label=175<convert>" style="height:9pt;" /> <b><convert>#label=175<convert><!--Liens--></b>
+          <img src="../images/icons/linkIcon.png" alt="<convert>#label=175<convert>" style="height:14px;" /> <b><convert>#label=175<convert><!--Liens--></b>
         </label><br />
         <input class="input1" style="border:0px none;" type="checkbox" id="advanced" name="advanced" onclick="visibilityOnClick(this.id, this.checked);" />
         <b><a href="JavaScript:openFilterPopUp();" title="<convert>#label=629<convert>"><convert>#label=629<convert><!--Filtre avancé...--></a></b><br />

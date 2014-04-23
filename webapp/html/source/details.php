@@ -377,28 +377,28 @@ if ($_SESSION['home_page'] == "overview") {
 								<span title="<convert>#label=384<convert>">
 									<input type="checkbox" class="input1" style="border:0px none;" id="search_entries" name="search_entries" checked="checked" onclick="JavaScript:goSearch(this.form);" />
 									<label for="search_entries">
-										<img src="../images/icons/entry2.png" alt="<convert>#label=384<convert>" style="height:9pt;margin:0px 3px;" /><!-- <convert>#label=384<convert>Entrées-->
+										<img src="../images/icons/bullet_entry.png" alt="<convert>#label=384<convert>" /><!-- <convert>#label=384<convert>Entrées-->
 									</label>
 								</span>
 							</td><td>
 								<span title="<convert>#label=119<convert>">
 									<input type="checkbox" class="input1" style="border:0px none;" id="search_caves" name="search_caves" checked="checked" onclick="JavaScript:goSearch(this.form);" />
 									<label for="search_caves">
-										<img src="../images/icons/bullet_cave.png" alt="<convert>#label=119<convert>" style="height:9pt;margin:0px 3px;" /><!-- <convert>#label=119<convert>Réseau-->
+										<img src="../images/icons/bullet_cave.png" alt="<convert>#label=119<convert>" /><!-- <convert>#label=119<convert>Réseau-->
 									</label>
 								</span>
 							</td></tr><tr><td style="width:31px;">
 								<span title="<convert>#label=386<convert>">
 									<input type="checkbox" class="input1" style="border:0px none;" id="search_grottoes" name="search_grottoes" checked="checked" onclick="JavaScript:goSearch(this.form);" />
 									<label for="search_grottoes">
-										<img src="../images/icons/grotto1.png" alt="<convert>#label=386<convert>" style="height:9pt;" /><!-- <convert>#label=386<convert>Clubs-->
+										<img src="../images/icons/bullet_grotto.png" alt="<convert>#label=386<convert>" /><!-- <convert>#label=386<convert>Clubs-->
 									</label>
 								</span>
 							</td><td>
 								<span title="<convert>#label=385<convert>">
 									<input type="checkbox" class="input1" style="border:0px none;" id="search_cavers" name="search_cavers" checked="checked" onclick="JavaScript:goSearch(this.form);" />
 									<label for="search_cavers">
-										<img src="../images/icons/caver2.png" alt="<convert>#label=385<convert>" style="height:9pt;" /><!-- <convert>#label=385<convert>Spéléologues-->
+										<img src="../images/icons/bullet_caver.png" alt="<convert>#label=385<convert>" /><!-- <convert>#label=385<convert>Spéléologues-->
 									</label>
 								</span>
 							</td></tr>

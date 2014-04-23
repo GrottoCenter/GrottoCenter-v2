@@ -976,8 +976,6 @@ $frame = "overview";
                     "caversurname": caverSurname,
                     "caverlogin": caverLogin,
                     "icon": object.image,
-                    //BS "shape": ???,
-                    "shadow": object.shadow,
                     "address": address,
                     "city": city,
                     "region": region,
@@ -1072,65 +1070,35 @@ $frame = "overview";
       switch (category) {
           case "entry":
             if (icon_type === "m") {
-                image.url = "../images/icons/entry2.png";
-                image.scaledSize = new google.maps.Size(10.67, 21.33); //16,32
-                        //tinyIcon.iconAnchor = new google.maps.Point(4, 21.33);//6,32
-                        //tinyIcon.infoWindowAnchor = new google.maps.Point(5.33, 1);//8,2
-                shadow.scaledSize = new google.maps.Size(18, 21.33); //27,32
-                shadow.url = "../images/icons/entry2_shadow.png";
+                image = "../images/icons/entry2.png";
             } else {
-                image.url = "../images/icons/entry2_clust.png";
-                image.scaledSize = new google.maps.Size(17.34, 28);
-                shadow.url = "../images/icons/entry2_clust_shadow.png";
-                shadow.scaledSize = new google.maps.Size(26.67, 20);
-              //tinyIcon.iconAnchor = new google.maps.Point(8.67, 28);
-              //tinyIcon.infoWindowAnchor = new google.maps.Point(7.33, 2.5);
+                image = "../images/icons/entry2_clust.png";
             }
             break;          
           case "caver":
             if (icon_type === "m") {
-                image.scaledSize = new google.maps.Size(21.33, 20.67); //32,31
-                shadow.url = "../images/icons/caver2_shadow.png";
-                shadow.scaledSize = new google.maps.Size(28, 21.33); //42,32
-              //tinyIcon.iconAnchor = new google.maps.Point(13.33, 21.33);//20,32
-              //tinyIcon.infoWindowAnchor = new google.maps.Point(18, 8);//14, 1
               if (isConnected) {
                 if (isReferent) {
-                    image.url = "../images/icons/refcaver2_connected.png";
+                    image = "../images/icons/refcaver2_connected.png";
                 } else {
-                    image.url = "../images/icons/caver2_connected.png";
+                    image = "../images/icons/caver2_connected.png";
                 }
               } else {
                 if (isReferent) {
-                    image.url = "../images/icons/refcaver2.png";
+                    image = "../images/icons/refcaver2.png";
                 } else {
-                    image.url = "../images/icons/caver2.png";
+                    image = "../images/icons/caver2.png";
                 }
               }
             } else {
-                image.scaledSize = new google.maps.Size(28, 27.13);
-                shadow.scaledSize = new google.maps.Size(36, 21.33);
-                //tinyIcon.iconAnchor = new google.maps.Point(14, 28);
-                //tinyIcon.infoWindowAnchor = new google.maps.Point(23.63, 10.5);
-                image.url = "../images/icons/caver2_clust.png";
-                shadow.url = "../images/icons/caver2_clust_shadow.png";
+                image = "../images/icons/caver2_clust.png";
             }
             break;
           case "grotto":
             if (icon_type === "m") {
-                image.scaledSize = new google.maps.Size(21.33, 21.33);//32,32
-                shadow.scaledSize = new google.maps.Size(26.67, 21.33);//40,32
-                //tinyIcon.iconAnchor = new google.maps.Point(10.67, 21.33);//16,32
-                //tinyIcon.infoWindowAnchor = new google.maps.Point(14.67, 3.33);//22,5
-                image.url = "../images/icons/grotto1.png";
-                shadow.url = "../images/icons/grotto1_shadow.png";
+                image = "../images/icons/grotto1.png";
             } else {
-                image.scaledSize = new google.maps.Size(28, 28);
-                shadow.scaledSize = new google.maps.Size(36, 19.33);
-                //tinyIcon.iconAnchor = new google.maps.Point(14, 28);
-                //tinyIcon.infoWindowAnchor = new google.maps.Point(14.67, 3.33);
-                image.url = "../images/icons/grotto1_clust.png";
-                shadow.url = "../images/icons/grotto1_clust_shadow.png";
+                image = "../images/icons/grotto1_clust.png";
             }
             break;
       }
@@ -1867,8 +1835,7 @@ $frame = "overview";
           title: titleHere, 
           draggable: true, 
           bouncy: true, 
-          icon:object.image, 
-          shadow:object.shadow
+          icon:object.image
       });
       google.maps.event.addListener(marker_user, "dragstart", function () {
         GCinfoWindow.close();
