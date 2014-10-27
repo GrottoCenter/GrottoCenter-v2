@@ -465,6 +465,9 @@ if ($_SESSION['home_page'] == "overview") {
             <a href="http://www.groupe-speleo-vulcain.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/vulcain.gif" alt="Groupe spéléologique Vulcain" /></a>
             <a href="http://www.saint-ex.ch/" target="_blank" style="border-bottom: none;"><img src="../images/icons/st-exupery.png" alt="Groupe de spéléologique St.-Exupéry" /></a>
         </div>
+        <div style="text-align: center;">
+            <a href="http://gsispeleo.wix.com/gsispeleo" target="_blank" style="border-bottom: none;"><img src="../images/icons/gsi.png" alt="Groupe Spéléo Indépendant" /></a>
+        </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">
