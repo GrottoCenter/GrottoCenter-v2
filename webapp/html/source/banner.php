@@ -147,7 +147,7 @@ if ($_SESSION['home_page'] == "overview") {
 ?>
         </td>
         <td class="bannerCell2" rowspan="3">
-          <img onclick="JavaScript:titleOnClick();" src="../favicon.png" alt="" style="width:60px;height:60px;cursor:help;margin-right:5px;margin-bottom:-7px;" />
+          <img onclick="JavaScript:titleOnClick();" src="../logo.svg" alt="Logo" style="width:60px;height:auto;cursor:help;margin-right:5px;margin-bottom:2px;" />
         </td>
         <td class="bannerCell2" rowspan="3">
   				<div onclick="JavaScript:titleOnClick();" class="h1">

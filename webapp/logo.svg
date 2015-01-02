@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="195.56165"
+   height="126.35812"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\Users\urien\Desktop\GrottoCenter-master\GrottoCenter-master\webapp\160-103.png"
+   inkscape:export-xdpi="73.362915"
+   inkscape:export-ydpi="73.362915">
+  <metadata
+     id="metadata2991">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2989" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="851"
+     id="namedview2987"
+     showgrid="false"
+     inkscape:zoom="1.93991"
+     inkscape:cx="-66.026196"
+     inkscape:cy="92.807813"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3792"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="g3792"
+     transform="translate(-240.21979,-160.58178)">
+    <path
+       style="fill:#056598"
+       d="m 240.50061,274.68497 0.28082,-12.25493 97.5,0 97.50001,0 0,12 0,12 -97.78083,0.25493 -97.78082,0.25493 z"
+       id="path3799"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="C:\Users\urien\Desktop\GrottoCenter-master\GrottoCenter-master\webapp\favicon1.png"
+       inkscape:export-xdpi="14.957487"
+       inkscape:export-ydpi="14.957487" />
+    <path
+       style="fill:#059865"
+       d="m 240.25061,238.44032 0,-12.5 10.75,-0.006 c 19.55455,-0.0101 23.86133,-2.9574 29.21763,-19.99443 4.50708,-14.33589 8.37853,-21.34301 16.03237,-29.01774 11.13641,-11.16679 24.92045,-16.52792 42,-16.33536 11.77619,0.13277 22.26742,3.3829 32.16995,9.96608 12.00882,7.98345 18.55529,17.23933 24.33814,34.41106 6.30814,18.7315 8.26596,20.19808 27.99192,20.96834 l 13,0.50762 0,12.00001 0,12 -11.1609,0.28192 c -30.09117,0.76008 -46.26965,-10.22812 -50.92876,-34.59012 -6.99772,-20.75806 -19.06089,-30.65108 -36.91035,-30.66689 -20.18345,1.49633 -31.08441,13.08202 -34.08861,28.62861 -6.63234,28.2621 -29.2645,36.75869 -51.59505,36.84648 l -10.81634,0 0,-12.5 z"
+       id="path3797"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccssssssscccsccccccc"
+       inkscape:export-filename="C:\Users\urien\Desktop\GrottoCenter-master\GrottoCenter-master\webapp\favicon1.png"
+       inkscape:export-xdpi="14.957487"
+       inkscape:export-ydpi="14.957487" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#9a140c;fill-rule:evenodd;stroke:none"
+       id="path3811"
+       sodipodi:cx="-214.70068"
+       sodipodi:cy="33.817123"
+       sodipodi:rx="23.970184"
+       sodipodi:ry="24.485672"
+       d="m -205.20615,56.300071 c -12.15558,5.356456 -26.26047,-0.367238 -31.50416,-12.784227 -5.24368,-12.416989 0.35951,-26.825213 12.51509,-32.181669 12.15558,-5.3564551 26.26047,0.367238 31.50416,12.784228 5.17843,12.262467 -0.21738,26.502019 -12.12853,32.007184"
+       transform="matrix(1.0105304,0,0,1.0105304,554.96241,188.01684)"
+       sodipodi:start="1.1635332"
+       sodipodi:end="7.4290874"
+       sodipodi:open="true"
+       inkscape:export-filename="C:\Users\urien\Desktop\GrottoCenter-master\GrottoCenter-master\webapp\favicon1.png"
+       inkscape:export-xdpi="14.957487"
+       inkscape:export-ydpi="14.957487" />
+  </g>
+</svg>
