@@ -421,15 +421,7 @@ if ($_SESSION['home_page'] == "overview") {
           <li class ="sub_menu">
       	    <a href="contact_<?php echo $_SESSION['language']; ?>.php?type=message" target="filter"><convert>#label=312<convert><!--Contacter votre administrateur/modérateur--></a>
       	  </li>
-          <li class ="sub_menu">
-            <a href="contact_<?php echo $_SESSION['language']; ?>.php?type=message&amp;subject=bad_content" target="filter"><convert>#label=313<convert><!--Signaler du contenu hors-charte--></a>
-          </li>
-          <li class ="sub_menu"> 
-            <a href="contact_<?php echo $_SESSION['language']; ?>.php?type=message&amp;subject=restore_element" target="filter"><convert>#label=314<convert><!--Demander la restauration d'un élément--></a>
-          </li>
-          <!--<li class ="sub_menu"> 
-            <iframe src="http://www.google.com/talk/service/badge/Show?tk=<convert>#label=576<convert>&amp;w=251&amp;h=18&amp;linkcolor=34558A&amp;fontfamily=arial&amp;fontsize=12" allowtransparency="true" frameborder="0" height="18" width="251"></iframe>
-          </li>-->
+         
           <li class ="sub_menu"> 
             <?php 
             $blogURL = "http://blog-" . strtolower($_SESSION['language']) . ".grottocenter.org";
@@ -446,6 +438,9 @@ if ($_SESSION['home_page'] == "overview") {
           </li>
           <li class ="sub_menu"> 
             <a href="http://www.wikicaves.org" target="_blank">Wikicaves</a>
+          </li>
+		  <li class ="sub_menu"> 
+            <a href="https://github.com/GrottoCenter/GrottoCenter/" target="_blank">Grottocenter - Github</a>
           </li>
           <li class ="sub_menu"> 
             <?php if (strtolower($_SESSION['language']) == "fr") {?>
