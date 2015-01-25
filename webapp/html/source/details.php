@@ -467,6 +467,8 @@ if ($_SESSION['home_page'] == "overview") {
         </div>
         <div style="text-align: center;">
             <a href="http://speleocaf73.canalblog.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/speleocaf73.jpg" alt="CAF Albertville Speleo Club" /></a>
+			<a href="http://www.aravisexplo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/aravisexplo.png" alt="Aravis Explo" /></a>
+			<a href="hhttp://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
         </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
