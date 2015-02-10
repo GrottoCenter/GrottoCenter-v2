@@ -470,6 +470,10 @@ if ($_SESSION['home_page'] == "overview") {
 			<a href="http://www.aravisexplo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/aravisexplo.png" alt="Aravis Explo" /></a>
 			<a href="hhttp://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
         </div>
+		 <div style="text-align: center;">
+            <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.jpg" alt="Section Spéléo du CAF de Lille" /></a>
+			
+        </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">
