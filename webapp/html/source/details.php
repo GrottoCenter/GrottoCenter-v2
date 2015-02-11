@@ -468,11 +468,10 @@ if ($_SESSION['home_page'] == "overview") {
         <div style="text-align: center;">
             <a href="http://speleocaf73.canalblog.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/speleocaf73.jpg" alt="CAF Albertville Speleo Club" /></a>
 			<a href="http://www.aravisexplo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/aravisexplo.png" alt="Aravis Explo" /></a>
-			<a href="hhttp://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
+			<a href="http://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
         </div>
-		 <div style="text-align: center;">
-            <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.PNG" alt="Section Spéléo du CAF de Lille" /></a>
-			
+	    <div style="text-align: center;">
+            <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.png" alt="Section Spéléo du CAF de Lille" /></a>
         </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
