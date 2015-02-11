@@ -471,7 +471,7 @@ if ($_SESSION['home_page'] == "overview") {
 			<a href="hhttp://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
         </div>
 		 <div style="text-align: center;">
-            <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.jpg" alt="Section Spéléo du CAF de Lille" /></a>
+            <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.PNG" alt="Section Spéléo du CAF de Lille" /></a>
 			
         </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
