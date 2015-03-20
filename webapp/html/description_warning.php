@@ -179,9 +179,18 @@ switch($_SESSION['language']) {
 
 <?php
   break;
-  case 'Pt':
+  case 'Nl':
 ?>
-
+    <p><i>Deze site en de informatie hierin gegeven is niet bedoeld om het bezoek voor niet-speleologen te vergemakkelijken. De <b>gevaren</b> verbonden aan de grotten zijn niet noodzakelijkerwijs gemeld en de vermelde informatie is niet iedere keer gecontroleerd.</i></p>
+    
+    <p><i>Speleologie is een discipline met vele facetten: culturele, wetenschappelijke en sportieve.  Een grotbezoek  vereist vaak een fysiek engagement, een gedegen kennis van speleologisch technieken en is ook <b>niet vrij van risico's</b>.</i></p>
+    
+    <p><i>Deze risico’s, alhoewel nooit volledig uit te sluiten, kunnen worden beperkt door het strikt toepassen van  veiligheidsregels en het volgen van degelijke opleidingen verzorgd door de verschillende nationale speleologische federaties van de European Speleological Federation. 
+In ieder geval is <?php echo $_SESSION['Application_name']; ?> en haar team niet aansprakelijk voor een slechte praktijk van de speleologie.
+    </i></p>
+    
+    <p><i>De beginner die wil kennis maken met ondergrondse exploratie wordt dringend verzocht om contact op te nemen met een speleologie federatie of een speleologie club. Voor België – Vlaanderen : www.speleovvs.be en voor Nederland : www.speleo.nl.  De contactgegevens voor andere landen zijn te verkrijgen bij de European Speleological Federation op http://www.eurospeleo.eu/en/ en de IUS (International Union of Speleologie) of bij <?php echo $_SESSION['Application_name']; ?>.
+    </i></p>
 <?php
   break;
   case 'Ro':
