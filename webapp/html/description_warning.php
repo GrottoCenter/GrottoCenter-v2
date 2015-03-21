@@ -193,9 +193,15 @@ In ieder geval is <?php echo $_SESSION['Application_name']; ?> en haar team niet
     </i></p>
 <?php
   break;
-  case 'Ro':
+  case 'Ca':
 ?>
-
+    <p><i>Aquest lloc, encara que pugui contenir informació detallada de coves, no va ésser dissenyat per facilitar la visita a cap persona no espeleòloga. Els perills que hi pugui haver en les coves no estan necessàriament informats i la informació continguda no està sent verificada contínuament.</i></p>
+    
+    <p><i>L'espeleologia és una disciplina amb moltes facetes: cultural, ciència i esport. En relació a aquest últim, molt habitualment es necessita bona forma física. També, aquesta disciplina no està excempta de riscos, inclús, de grans riscos. Aquests riscos, si bé no poden ésser eliminats completament, es redueixen en gran mesura si es segueixen les normes, fet que es compleix quan es practica en el marc d'un club d'espeleologia.</i></p>
+    
+    <p><i>En qualsevol cas <?php echo $_SESSION['Application_name']; ?> i el seu equip no es fan responsables de cap tipus de mala pràctica en l'espeleologia.</i></p>
+    
+    <p><i>Es suggereix amb èmfasi als aprenents que vulguin iniciar-se ens les exploracions subterrànies que contactin amb un club d'espeleologia. Els noms i la informació de contacte es pot trobar, entre altres, a la IUS (International Union of Speleology), a <?php echo $_SESSION['Application_name']; ?> o a la FCE (Federació Catalana d'Espeleologia).</i></p>
 <?php
   break;
   case 'He':

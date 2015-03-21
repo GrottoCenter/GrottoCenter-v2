@@ -96,6 +96,7 @@ switch($_SESSION['language']) {
       <li>Norbert Weber : traducteur Français-Allemand.</li>
       <li>Vanyo Gyorev : traducteur Bulgare.</li>
       <li>Ivan Herbots : traducteur Néerlandais.</li>
+      <li>Francesc B. Ricart : traducteur Catalan.</li>
     </ul>
     <p>Si tu désires apporter ta pierre à l'édifice, n'hésite pas à prendre contact avec nous !</p>
     <p>Un grand merci à toutes ces personnes et à toutes celles qui ont participé
@@ -224,6 +225,7 @@ switch($_SESSION['language']) {
       <li>Norbert Weber : German translation.</li>
       <li>Vanyo Gyorev : Bulgarian translation.</li>
       <li>Ivan Herbots : Dutch translation.</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>If you want to make your bit, feel free to contact us!</p>
     <p>A big thank to those people and all those who participated
@@ -354,6 +356,7 @@ switch($_SESSION['language']) {
       <li>Norbert Weber : Traductor Alemán.</li>
       <li>Vanyo Gyorev : Traductor Búlgaro.</li>
       <li>Ivan Herbots : Traductor Holandés.</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>Si deseas participar a la construcción de <?php echo $_SESSION['Application_name']; ?>,
     no dudes en ponerte en contacto con nosotros!</p>
@@ -480,6 +483,7 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
       <li>Norbert Weber : Übersetzung Deutsch</li>
       <li>Vanyo Gyorev : Übersetzung Bulgarisch</li>
       <li>Ivan Herbots : Übersetzung Niederländisch.</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>Wenn du uns helfen möchtest, schreib doch bitte eine Email, wir würden uns freuen!</p>
     <p>Ein großes Dankeschön an alle diese Leute und auch an die, die anderweitig zum Projekt beitragen!</p>
@@ -617,6 +621,7 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
       <li>Norbert Weber : превод на Немски език.</li>
       <li>Vanyo Gyorev : превод на Български език.</li>
       <li>Ivan Herbots : Dutch translation.</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>Ако желаете да се включите, не се колебайте да се свържете с нас!</p>
     <p>Големи благодарности на тези хора, както и всички онези, които участват и допринасят за проекта!</p>
@@ -665,9 +670,108 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
 
 <?php
   break;
-  case 'Ro':
+  case 'Ca':
 ?>
-
+<h2>Hola! Benvingut a GROTTOCENTER!</h2>
+<div>
+  <div id="about_s" onclick="JavaScript:switchMe('about');" class="div_switcher_c">
+    <ul>
+      <li><span class="title">Què és GROTTOCENTER?</span></li>
+    </ul>
+  </div>
+  <div id="about" style="display:none;visibility:hidden;" class="content" >
+    <p>GROTTOCENTER és una base de dades comunitària per a espeleòlegs basada en un sistema semblant a les wikipèdies. Els espeleòlegs omplen la base de dades pels espeleòlegs.<br>
+    Es pot afegir qualsevol cova natural interessant!</p>
+  </div>
+  
+  <div id="howto_s" onclick="JavaScript:switchMe('howto');" class="div_switcher_c">
+    <ul>
+      <li><span class="title">Com utilitzar GROTTOCENTER?</span></li>
+    </ul>
+  </div>
+  <div id="howto" style="display:none;visibility:hidden;" class="content" >
+    <p>La navegació es fa a través d'un mapa incrustat de Google. Els espeleòlegs estan representats amb cascos vermells <img src="../images/icons/caver2.png" alt="" />, les entrades en paquets grocs <img src="../images/icons/entry2.png" alt="" /> i les coves en cases blaves <img src="../images/icons/grotto1.png" alt="" />. Navigation is through an embeded Google-Map. 
+    <br />
+    Clicant a qualsevol d'aquests pictogrames apareixerà una finestra d'informació que mostrarà les seves propietats (massís, longitud, profunditat, etc.).<br />
+    Per les "entrades" (paquets grocs), la finestra d'informació et permet accedir a la fitxa detallada que conté:</p>
+    <ul>
+      <li>una descripció de l'accés a la cova</li>
+      <li>una descripció de la cova</li>
+      <li>una descripció de l'equipament i les cordes necessàries</li>
+      <li>una referència cap a qualsevol vincle a un lloc web associat</li>
+      <li>alguns comentaris (d'espeleòlegs) amb una evaluació de l'estètica, etc.</li>
+    </ul>
+  </div>
+  
+  <div id="why_s" onclick="JavaScript:switchMe('why');" class="div_switcher_c">
+    <ul>
+      <li><span class="title">Perquè tets una de les claus en el projecte GROTTOCENTER?</span></li>
+    </ul>
+  </div>
+  <div id="why" style="display:none;visibility:hidden;" class="content" >
+    <p>GROTTOCENTER creix amb les contribucions dels espeleòlegs (per tant, les teves), i nosaltres comptem amb tu per ajudar-nos a completar i depurar aquesta base de dades. Pots accedir al menú de creació/modificació amb el panell que apareix a mà dreta després d'haver accedit amb el teu usuari.<br />
+    Et recordem que pots afegir a GROTTOCENTER qualsevol cova interessant!<br />
+    Gràcies.</p>
+  </div>
+  
+  <div id="who_s" onclick="JavaScript:switchMe('who');" class="div_switcher_c">
+    <ul>
+      <li><span class="title">Qui som?</span></li>
+    </ul>
+  </div>
+  <div id="who" style="display:none;visibility:hidden;" class="content" >
+    <p>Aquí hi ha el "GrottoTeam", ordenat alfabèticament per nom:</p>
+    <ul>
+      <li>Nathan Boinet: assessor d'ergonomia i analista funcional, tester</li>
+      <li>Thomas Cabothiau: assessor d'ergonomia i analista funcional</li>
+      <li>Barbara Guzman: assessora d'ergonomia i traductora d'Anglès a Espanyol</li>
+      <li>Stéphane Lips: assessor d'ergonomia i analista de funcional, tester</li>
+      <li>Clément Ronzon: dissenyador, assessor d'ergonomia i analista de funcional i traductor d'Anglès a Francès</li>
+      <li>Vincent Routhieau: assessor d'ergonomia i analista funcional, tester</li>
+      <li>Benjamin Soufflet : desenvolupador, administrador de sistemes</li>
+      <li>Norbert Weber : traducció a l'Alemany</li>
+      <li>Vanyo Gyorev : traducció al Búlgar</li>
+      <li>Ivan Herbots : traducció al holandès</li>
+      <li>Francesc B. Ricart : traducció al Català</li>
+    </ul>
+    <p>Si vols posar el teu gra de sorra, si et plau, contacta'ns!</p>
+    <p>Un gran agraïment a tota aquella gent que han participat i contribuït en el projecte!</p>
+  </div>
+  
+  <div id="license_s" onclick="JavaScript:switchMe('license');" class="div_switcher_c">
+    <ul>
+      <li><span class="title">Quins són els termes d'utilització de les dades?</span></li>
+    </ul>
+  </div>
+  <div id="license" style="display:none;visibility:hidden;" class="content" >
+    <p>GROTTOCENTER ha estat dissenyat en un esperit totalment apolític. El lloc conté elements que constitueixen un treball protegit pels tractats internacionals.</p>
+    <p><?php echo getLicense(1); ?></p>
+  </div>
+  
+  <div id="sensitive_s" onclick="JavaScript:switchMe('sensitive');" class="div_switcher_c">
+    <ul>
+      <li><span class="title">Com afegir una cosa 'sensible'?</span></li>
+    </ul>
+  </div>
+  <div id="sensitive" style="display:none;visibility:hidden;" class="content" >
+    <p>Si desitges registrar una cova 'sensible' tens dues opcions que depenen del grau de protecció que desitgis aplicar-li.</p>
+    <ul><li>La cova és fàcilment accessible i només vols evitar massificacions per gent no provinent del món de l'espeleologia.<br />
+    En aquest cas, escull l'opció 'Registrada (cova sensible i/o d'accés regulat).' quan afegeixis l'entrada.<br />
+    En aquest sentit, la cova només apareix per als usuaris registrats que estan connectats.</li>
+    <li>La cova és 'molt sensible' (concrecions, arqueologia, paleontologia, etc.) i és molt important evitar l'accés a gent no espeleòloga.<br />
+    En aquest cas, escull l'opció 'Registrada (cova sensible i/o d'accés regulat).' quan afegeixis l'entrada, i a més a més, es recomana distorsionar les coordinades de la cova dintre d'un radi d'1km al voltant de la cova. Llavors, s'ha d'especificar a la fitxa detallada que la cova no està situada amb exactitud i no s'han d'indicar les dades d'accés real a la cova.<br />
+    En aquest sentit, els espeleòlegs que desitgin visitar aquesta cova hauran de contactar necessàriament amb la persona/organització relativa per aquesta cova. Aquesta opció està reservada a casos excepcionals.</li></ul>
+  </div>
+  
+  <div id="warning_s" onclick="JavaScript:switchMe('warning');" class="div_switcher_c">
+    <ul>
+      <li><span class="title" style="color:red;">Avís</span></li>
+    </ul>
+  </div>
+  <div id="warning" style="display:none;visibility:hidden;" class="content" >
+    <?php include("description_warning.php"); ?>
+  </div>
+</div>
 <?php
   break;
   case 'He':
@@ -756,6 +860,7 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
       <li>Norbert Weber : German translation.</li>
       <li>Vanyo Gyorev : Bulgarian translation.</li>
       <li>Ivan Herbots : Dutch translation.</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>If you want to make your bit, feel free to contact us!</p>
     <p>A big thank to those people and all those who participated
