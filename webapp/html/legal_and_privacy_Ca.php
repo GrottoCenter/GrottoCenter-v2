@@ -21,99 +21,68 @@
     <link rel="stylesheet" type="text/css" href="../css/global_p.css" media="print" />
   </head>
   <body>
-    <h1>Legal and Privacy Statement</h1>
+    <h1>Informació legal</h1>
     <div>
-      <h2>Legality</h2>
-      <p>This site is intended to collect and provide information about caving and cavers.<br />
-      The information provided on this site are not contractual and can be modified.</p>
-      <p>This site contains text, logos and images that can be protected by copyright or other intellectual property rights.</p>
-      <p>No responsibility will be taken by <?php echo $_SESSION['Application_name']; ?> for the links to other sites from this web site.</p>
+      <h2>Legalitat</h2>
+      <p>Aquest lloc està destinat a recopilar i proporcionar informació sobre espeleologia i espeleòlegs.</p>
+      <p>La informació proporcionada en aquest lloc no són contractuals i poden ser modificats.</p>
+      <p>Aquest lloc conté text, logotips i imatges que poden ser protegits per drets d'autor o altres drets de propietat intellectual.</p>
+      <p>GrottoCenter no aceptarà cap responsabilitat per als enllaços a altres llocs d'aquest lloc web.</p>
     </div>
     <div>
-      <h2>Collection and use of personal information</h2>
-      <h3>Contribution rules</h3>
-      <p>You agree not to post any abusive, libelous, threatening, xenophobic or 
-      to incite hatred, or any other material that may violate any applicable laws.<br />
-      Doing so may lead you to be banned immediately and permanently (and your
-      Internet service provider will be informed). The IP address and time of
-      each message is recorded to aid in enforcing these conditions.</p>
+      <h2>Obtenció i utilització d'informació personal</h2>
+      <h3>Normes per contribuir-hi</h3>
+      <p>Vostè està d'acord en no publicar material abusiu, difamatori, amenaçador, xenòfob o incitar a l'odi, o qualsevol altre tipus que pugui violar qualsevol llei aplicable.<br />
+      Fer això provocarà que siguis immediata i permanentment prohibit (i el proveïdor de serveis d'Internet serà informat). L'adreça IP i l'hora de cada missatge es guarda per ajudar a complir aquestes normes.</p>
     </div>
     <div>
-      <h3>Moderation and responsibility of the team <?php echo $_SESSION['Application_name']; ?></h3>
-      <p>The moderation team will attempt to keep order in the site, and if necessary, 
-      remove or edit any generally objectionable messages as quickly as possible.</p>
+      <h3>La moderació i la responsabilitat de l'equip GrottoCenter</h3>
+      <p>L'equip de moderació intentarà mantenir l'ordre en el lloc web, i si cal, eliminar o editar qualsevol missatge desagradable tan aviat com sigui possible.</p>
       
-      <p>When you join <?php echo $_SESSION['Application_name']; ?>, you agree that
-      the webmaster, administrator and moderators of this site have the right to
-      delete, edit, move or lock any topic at any time. However, despite all their
-      efforts, it is impossible for them to review all messages.</p>
+      <p>Quan s'uneix a GrottoCenter, vostè està d'acord amb que el webmaster, administrador i moderadors del lloc tenen el dret d'eliminar, editar, moure o tancar qualsevol tema en qualsevol moment. No obstant això, malgrat tots els seus esforços, és impossible per a ells revisar tots els missatges.</p>
       
-      <p>Messages posted on this site express the views and opinions of their respective 
-      authors, and not the administrators, moderators or webmaster (except for 
-      posts by these people) and you agree that those can not therefore be held 
-      responsible in the event of a message does not respect the rules of use of 
-      the site, and not yet moderate.<br />
-      A contact section is available, and allow anyone to report any "out of rules" content.</p>
+      <p>Els missatges publicats en aquest lloc expressen el punt de vista i opinions dels seus respectius autors i no la dels administradors, moderadors o el webmaster (excepte en missatges publicats per ells mateixos) i estàs d'acord en que no es pot, per tant, fer-los responsables dels missatges que no compleixen les normes de funcionament del lloc web, i que encara no hagin estat moderats.<br />
+      Hi ha disponible una secció de contacte, i permet a qualsevol persona informar de qualsevol contingut "fora de les normes".</p>
     </div>
     <div>
-      <h3>Collection and use of personal information</h3>
-      <p>These information are collected by <?php echo $_SESSION['Application_name']; ?> 
-      for administrative purposes, for the proper functioning of the community, and to offer 
-      you the opportunity to mark your individuality within the community <?php echo $_SESSION['Application_name']; ?> -
-      no commercial use would be made, and these information will never be transferred 
-      or sold to any third party, commercial or not.</p>
+      <h3>Obtenció i utilització de la informació personal</h3>
+      <p>Aquestes dades són recollides per GrottoCenter per a fins administratius, per al bon funcionament de la comunitat, i per oferir-li la oportunitat de marcar la seva individualitat dins la comunitat GrottoCenter - garantint que serà sense cap ús comercial, i aquestes dades mai seran transferides o venudes a tercers, comercials o no.</p>
       
-      <p>When you register, some personal information are collected by 
-      <?php echo $_SESSION['Application_name']; ?>. The mandatory information 
-      collected during registration are as follows and may have to evolve :
+      <p>Quan es registri, GrottoCenter recollirà algunes dades personals. La informació obligatòria recollida durant el registre és la següent i pot donar-se el cas que aquesta sigui ampliada:
       </p>
       <ul>
-        <li>your username (nickname)</li>
-        <li>a valid e-mail address</li>
+        <li>el seu nom d'usuari (nick)</li>
+        <li>una adreça d'e-mail vàlida</li>
       </ul>
       
-      <p><?php echo $_SESSION['Application_name']; ?> can allow you to fill a few
-      optional personal information through your user profile :
+      <p>Opcionalment, GrottoCenter li pot permetre omplir altres dades personals a través del seu perfil d'usuari:
       </p>
       <ul>
-        <li>your direction</li>
-        <li>your hobbies</li>
-        <li>your birth date</li>
-        <li>etc.</li>
+        <li>la seva direcció</li>
+        <li>les seves aficions</li>
+        <li>la seva data de naixement</li>
+        <li>etcètera</li>
       </ul>
     </div>
     <div>
-      <h3>CNIL: access to your personal data</h3>
-      <p>For information on the protection of personal data, you can consult the 
-      "Commission Informatique et Liberté" website (<a href="http://www.cnil.fr" target="_blank">www.cnil.fr</a>).</p>
+      <h3>CNIL: l'accés a les seves dades personals</h3>
+      <p>Per obtenir informació sobre la protecció de dades de caràcter personal, podeu consultar el lloc web "Comissió Informàtica i Llibertat" (www.cnil.fr).</p>
       
-      <p>In all cases, and in accordance with the French legislation and more particularly 
-      the law of January 6, 1978 Science and freedom, you have a right of access, rectification, 
-      opposition and suppression on these data that you can exercise at any time, 
-      editing or deleting your profile by clicking on "Manage account", shown in the "Tools" menu 
-      after identification.</p>
+      <p>En tots els casos, i d'acord amb la legislació francesa i en particular la llei de 6 gener 1978, Ciència i la llibertat, té el dret d'accés, rectificació, oposició i supressió d'aquestes dades que podrà exercir en qualsevol moment, l'edició o esborrar el seu perfil fent clic a "Administrar compte", que es mostra en el menú "Eines", després de la identificació.</p>
       
-      <p>If you have any questions or problems, please contact the administrator.</p>
+      <p>Si té qualsevol pregunta o problema, si us plau, posi's en contacte amb l'administrador.</p>
       
-      <p>These information will be disclosed to any third party without your consent,
-      in accordance with this Legal And Privacy Statement, which is deemed to be approved during registration.</p>
+      <p>Aquesta informació es proporcionarà a tercers sense el vostre consentiment, d'acord amb aquesta Declaració legal i de privacitat, que es considerarà autoritzada durant el registre.</p>
       
-      <p>The webmaster, administrator and moderators can not be held responsible 
-      for any hacking attempt led to the access and dissemination of these data, 
-      and will do their utmost to make the people respect the terms of this Legal And Privacy Statement.</p>
+      <p>El webmaster, administrador i moderadors no poden ser considerats responsables per qualsevol atac al sistema portat a l'accés i la difusió d'aquestes dades, i farà tot el possible perquè les persones respectin els termes d'aquesta Declaració legal i privacitat.</p>
     </div>
     <div>
-      <h2>Modification of this Legal And Privacy Statement</h2>
-      <p><?php echo $_SESSION['Application_name']; ?> reserves the right to amend this Legal And Privacy Statement at any time.
-      Any changes to the rules of <?php echo $_SESSION['Application_name']; ?> on the protection of privacy 
-      will be integrated into the present Legal And Privacy Statement, and renowned known and accepted.
-      This Legal And Privacy Statement applies to all services provided by <?php echo $_SESSION['Application_name']; ?>.</p>
+      <h2>La modificació d'aquesta Declaració Legal i de Privacitat</h2>
+      <p>GrottoCenter es reserva el dret de modificar aquesta Declaració legal i de privacitat en qualsevol moment. Qualsevol canvi en les regles de GrottoCenter sobre la protecció de la privacitat s'integraran en el present Avís Legal i de Privacitat, i reconeguts conegudes i acceptades. Aquesta Declaració Legal i de Orivacitat s'aplica a tots els serveis prestats per GrottoCenter.</p>
     </div>
     <div>
-      <h2>Tacit acceptance of these terms</h2>
-      <p>The visitor of <?php echo $_SESSION['Application_name']; ?>, anonymous or registered, 
-      recognizes, by its use of various services offered by the site, have read 
-      and accepted these conditions.</p>
+      <h2>L'acceptació tàcita d'aquests termes</h2>
+      <p>El visitant de GrottoCenter, anònim o registrat, reconeix, pel seu ús dels diferents serveis que ofereix el lloc, haver llegit i acceptat aquestes condicions.</p>
     </div>
 <?php
 $virtual_page = "legal_and_privacy/Fr";
