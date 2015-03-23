@@ -89,14 +89,14 @@ switch($_SESSION['language']) {
       <li>Nathan Boinet : conseiller en ergonomie et concepteur fonctionnel, qualifieur</li>
       <li>Thomas Cabothiau : conseiller en ergonomie et fonctionnel</li>
       <li>Barbara Guzman : conseillère en ergonomie et traductrice Français-Espagnol</li>
+      <li>Vanyo Gyorev : traducteur Bulgare.</li>
+      <li>Ivan Herbots : traducteur Néerlandais.</li>
       <li>Stéphane Lips : conseiller en ergonomie et fonctionnel, qualifieur</li>
+      <li>Francesc B. Ricart : traducteur Catalan.</li>
       <li>Clément Ronzon : développeur, designer, concepteur fonctionnel et traducteur Anglais-Français</li>
       <li>Vincent Routhieau : conseiller en ergonomie, concepteur fonctionnel, qualifieur</li>
       <li>Benjamin Soufflet : développeur, administrateur système</li>
       <li>Norbert Weber : traducteur Français-Allemand.</li>
-      <li>Vanyo Gyorev : traducteur Bulgare.</li>
-      <li>Ivan Herbots : traducteur Néerlandais.</li>
-      <li>Francesc B. Ricart : traducteur Catalan.</li>
     </ul>
     <p>Si tu désires apporter ta pierre à l'édifice, n'hésite pas à prendre contact avec nous !</p>
     <p>Un grand merci à toutes ces personnes et à toutes celles qui ont participé
@@ -218,14 +218,14 @@ switch($_SESSION['language']) {
       <li>Nathan Boinet: ergonomics advisor and functional analyst, tester</li>
       <li>Thomas Cabothiau: ergonomics advisor and functional advisor</li>
       <li>Barbara Guzman: ergonomics advisor and English-Spanish translations</li>
+      <li>Vanyo Gyorev : Bulgarian translation.</li>
+      <li>Ivan Herbots : Dutch translation.</li>
       <li>Stéphane Lips: ergonomics advisor and functional advisor, tester</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
       <li>Clément Ronzon: designer, ergonomics and functional analyst, English-French translations</li>
       <li>Vincent Routhieau: ergonomics advisor, functional analyst, tester</li>
       <li>Benjamin Soufflet : developer, system administrator</li>
       <li>Norbert Weber : German translation.</li>
-      <li>Vanyo Gyorev : Bulgarian translation.</li>
-      <li>Ivan Herbots : Dutch translation.</li>
-      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>If you want to make your bit, feel free to contact us!</p>
     <p>A big thank to those people and all those who participated
@@ -349,14 +349,14 @@ switch($_SESSION['language']) {
       <li>Nathan Boinet : Consultor de diseño, funcionalidad y de ergonomía, así como probador.</li>
       <li>Thomas Cabothiau : Consultor de diseño, funcionalidad y de ergonomía, así como probador.</li>
       <li>Barbara Guzman : Traductor Francés-Español.</li>
+      <li>Vanyo Gyorev : Traductor Búlgaro.</li>
+      <li>Ivan Herbots : Traductor Holandés.</li>
       <li>Stéphane Lips : Consultor de diseño, funcionalidad y de ergonomía, así como probador.</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
       <li>Clément Ronzon : Diseñador del código, funcionalidad, ergonomía, y traductor Francés-Inglés.</li>
       <li>Vincent Routhieau : Consultor de diseño, funcionalidad y de ergonomía, así como probador.</li>
       <li>Benjamin Soufflet : Diseñador del código, administrador del sistema.</li>
       <li>Norbert Weber : Traductor Alemán.</li>
-      <li>Vanyo Gyorev : Traductor Búlgaro.</li>
-      <li>Ivan Herbots : Traductor Holandés.</li>
-      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>Si deseas participar a la construcción de <?php echo $_SESSION['Application_name']; ?>,
     no dudes en ponerte en contacto con nosotros!</p>
@@ -476,14 +476,14 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
       <li>Nathan Boinet : Programmierung und Beratung in Sachen Ergonomie</li>
       <li>Thomas Cabothiau : Berater Funktion und Ergonomie</li>
       <li>Barbara Guzman : Beratung sowie Übersetzung Französisch-Spanisch</li>
+      <li>Vanyo Gyorev : Übersetzung Bulgarisch</li>
+      <li>Ivan Herbots : Übersetzung Niederländisch.</li>
       <li>Stéphane Lips : Beratung</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
       <li>Clément Ronzon : Entwicklung, Design, Übersetzung Französisch-Englisch</li>
       <li>Vincent Routhieau : Beratung</li>
       <li>Benjamin Soufflet : Entwicklung, Systemadministrator</li>
       <li>Norbert Weber : Übersetzung Deutsch</li>
-      <li>Vanyo Gyorev : Übersetzung Bulgarisch</li>
-      <li>Ivan Herbots : Übersetzung Niederländisch.</li>
-      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>Wenn du uns helfen möchtest, schreib doch bitte eine Email, wir würden uns freuen!</p>
     <p>Ein großes Dankeschön an alle diese Leute und auch an die, die anderweitig zum Projekt beitragen!</p>
@@ -614,14 +614,14 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
       <li>Nathan Boinet: консултант ергономичност, функционален анализатор и тестер.</li>
       <li>Thomas Cabothiau: ергономичност, функционален анализатор и тестер.</li>
       <li>Barbara Guzman: ергономичност и преводач от Английски на Испански език.</li>
+      <li>Vanyo Gyorev : превод на Български език.</li>
+      <li>Ivan Herbots : Dutch translation.</li>
       <li>Stéphane Lips: ергономичност, функционален анализатор и тестер.</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
       <li>Clément Ronzon: дизайнер, ергономичност и функционален анализатор, превод от Английски на Френски език.</li>
       <li>Vincent Routhieau: ергономичност, функционален анализатор и тестер.</li>
       <li>Benjamin Soufflet : програмист, системен администратор</li>
       <li>Norbert Weber : превод на Немски език.</li>
-      <li>Vanyo Gyorev : превод на Български език.</li>
-      <li>Ivan Herbots : Dutch translation.</li>
-      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>Ако желаете да се включите, не се колебайте да се свържете с нас!</p>
     <p>Големи благодарности на тези хора, както и всички онези, които участват и допринасят за проекта!</p>
@@ -690,7 +690,7 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
     </ul>
   </div>
   <div id="howto" style="display:none;visibility:hidden;" class="content" >
-    <p>La navegació es fa a través d'un mapa incrustat de Google. Els espeleòlegs estan representats amb cascos vermells <img src="../images/icons/caver2.png" alt="" />, les entrades en paquets grocs <img src="../images/icons/entry2.png" alt="" /> i les coves en cases blaves <img src="../images/icons/grotto1.png" alt="" />. Navigation is through an embeded Google-Map. 
+    <p>La navegació es fa a través d'un mapa incrustat de Google. Els espeleòlegs estan representats amb cascos vermells <img src="../images/icons/caver2.png" alt="" />, les entrades en paquets grocs <img src="../images/icons/entry2.png" alt="" /> i les coves en cases blaves <img src="../images/icons/grotto1.png" alt="" />. La navegació es fa a través d'un mapa incrustat de Google. 
     <br />
     Clicant a qualsevol d'aquests pictogrames apareixerà una finestra d'informació que mostrarà les seves propietats (massís, longitud, profunditat, etc.).<br />
     Per les "entrades" (paquets grocs), la finestra d'informació et permet accedir a la fitxa detallada que conté:</p>
@@ -705,7 +705,7 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
   
   <div id="why_s" onclick="JavaScript:switchMe('why');" class="div_switcher_c">
     <ul>
-      <li><span class="title">Perquè tets una de les claus en el projecte GROTTOCENTER?</span></li>
+      <li><span class="title">Perquè tu ets una de les claus en el projecte GROTTOCENTER?</span></li>
     </ul>
   </div>
   <div id="why" style="display:none;visibility:hidden;" class="content" >
@@ -724,15 +724,15 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
     <ul>
       <li>Nathan Boinet: assessor d'ergonomia i analista funcional, tester</li>
       <li>Thomas Cabothiau: assessor d'ergonomia i analista funcional</li>
+      <li>Vanyo Gyorev : traducció al Búlgar</li>
       <li>Barbara Guzman: assessora d'ergonomia i traductora d'Anglès a Espanyol</li>
+      <li>Ivan Herbots : traducció al holandès</li>
       <li>Stéphane Lips: assessor d'ergonomia i analista de funcional, tester</li>
+      <li>Francesc B. Ricart : traducció al Català</li>
       <li>Clément Ronzon: dissenyador, assessor d'ergonomia i analista de funcional i traductor d'Anglès a Francès</li>
       <li>Vincent Routhieau: assessor d'ergonomia i analista funcional, tester</li>
       <li>Benjamin Soufflet : desenvolupador, administrador de sistemes</li>
       <li>Norbert Weber : traducció a l'Alemany</li>
-      <li>Vanyo Gyorev : traducció al Búlgar</li>
-      <li>Ivan Herbots : traducció al holandès</li>
-      <li>Francesc B. Ricart : traducció al Català</li>
     </ul>
     <p>Si vols posar el teu gra de sorra, si et plau, contacta'ns!</p>
     <p>Un gran agraïment a tota aquella gent que han participat i contribuït en el projecte!</p>
@@ -853,14 +853,14 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
       <li>Nathan Boinet: ergonomics advisor and functional analyst, tester</li>
       <li>Thomas Cabothiau: ergonomics advisor and functional advisor</li>
       <li>Barbara Guzman: ergonomics advisor and English-Spanish translations</li>
+      <li>Vanyo Gyorev : Bulgarian translation.</li>
+      <li>Ivan Herbots : Dutch translation.</li>
       <li>Stéphane Lips: ergonomics advisor and functional advisor, tester</li>
+      <li>Francesc B. Ricart : Catalan translation.</li>
       <li>Clément Ronzon: designer, ergonomics and functional analyst, English-French translations</li>
       <li>Vincent Routhieau: ergonomics advisor, functional analyst, tester</li>
       <li>Benjamin Soufflet : developer, system administrator</li>
       <li>Norbert Weber : German translation.</li>
-      <li>Vanyo Gyorev : Bulgarian translation.</li>
-      <li>Ivan Herbots : Dutch translation.</li>
-      <li>Francesc B. Ricart : Catalan translation.</li>
     </ul>
     <p>If you want to make your bit, feel free to contact us!</p>
     <p>A big thank to those people and all those who participated
