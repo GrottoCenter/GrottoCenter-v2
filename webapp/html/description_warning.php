@@ -144,9 +144,29 @@ switch($_SESSION['language']) {
     </b></p-->
 <?php
   break;
-  case 'Pl':
+  case 'It':
 ?>
-
+    <p><i>This site, although it may contain detailed information on caves,
+     was not designed to facilitate the visit for none caver people.
+     <b>Dangers</b> are not necessarily reported and information mentioned is
+     not everytime verified.</i></p>
+    
+    <p><i>Caving is a discipline with many facets: cultural,
+     science and sports. In the latter capacity, it often requires a physical 
+     commitment. It is also not free of risks, and even <b>major risks</b>.
+     These risks, if they can not be completely eliminated, are
+     at least greatly reduced by a practice in the rules, practice
+     which is fully understood when under a caving club (grotto).</i></p>
+    
+    <p><i><?php echo $_SESSION['Application_name']; ?>, its representatives and 
+    its contributors cannot be held liable for a bad practice of caving, or for 
+    any accident or deterioration that might occur in the caves displayed on this web site.</i></p>
+    
+    <p><i>The novice who would engage in underground exploration <b>is 
+    urged to contact a caving club</b>. The names and contact information can be
+    obtained among other to the IUS (International Union of Speleology), to 
+    <?php echo $_SESSION['Application_name']; ?> or to his national federation.
+    </i></p>
 <?php
   break;
   case 'Ar':
