@@ -190,15 +190,7 @@ if (false) {
                 <li><convert>#label=941<convert></li><!-- Le projet avance grâce aux clubs et aux CDS qui deviennent nos partenaires. -->
             </ul>
         </div>
-        <div class="home_news" style="height:auto;">
-            <p><convert>#label=932<convert></p><!-- Par décision du Conseil d’Administration de l'association Wikicaves en date du 12 mai 2013 la licence du site http://www.grottocenter.org a été modifiée de CC-BY-NC à CC-BY-SA. -->
-            <p><convert>#label=933<convert></p><!-- Cette décision a été motivée par notre volonté de : -->
-            <ul>
-                <li><convert>#label=934<convert></li><!-- Permettre un rapprochement avec d’autres projets opensource grâce à l’utilisation de licences compatibles -->
-                <li><convert>#label=935<convert></li><!-- Inciter les utilisateurs des données présentes dans Grottocenter, à partager à leur tour leur travail, sous la même licence. Ainsi les données spéléologiques deviendront petit à petit plus facilement accessibles. -->
-            </ul>
-            <p><convert>#label=936<convert></p><!-- Si vous avez inséré dans Grottocenter des informations qui relèvent du droit d’auteur et si vous ne souhaitez pas que ces informations restent dans le site sous cette nouvelle licence merci de nous contacter. -->
-        </div>
+       
       </td></tr>
 <?php
 //CRO 2011-10-12
