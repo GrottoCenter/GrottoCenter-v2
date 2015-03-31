@@ -144,9 +144,29 @@ switch($_SESSION['language']) {
     </b></p-->
 <?php
   break;
-  case 'Pl':
+  case 'It':
 ?>
-
+    <p><i>This site, although it may contain detailed information on caves,
+     was not designed to facilitate the visit for none caver people.
+     <b>Dangers</b> are not necessarily reported and information mentioned is
+     not everytime verified.</i></p>
+    
+    <p><i>Caving is a discipline with many facets: cultural,
+     science and sports. In the latter capacity, it often requires a physical 
+     commitment. It is also not free of risks, and even <b>major risks</b>.
+     These risks, if they can not be completely eliminated, are
+     at least greatly reduced by a practice in the rules, practice
+     which is fully understood when under a caving club (grotto).</i></p>
+    
+    <p><i><?php echo $_SESSION['Application_name']; ?>, its representatives and 
+    its contributors cannot be held liable for a bad practice of caving, or for 
+    any accident or deterioration that might occur in the caves displayed on this web site.</i></p>
+    
+    <p><i>The novice who would engage in underground exploration <b>is 
+    urged to contact a caving club</b>. The names and contact information can be
+    obtained among other to the IUS (International Union of Speleology), to 
+    <?php echo $_SESSION['Application_name']; ?> or to his national federation.
+    </i></p>
 <?php
   break;
   case 'Ar':
@@ -179,14 +199,29 @@ switch($_SESSION['language']) {
 
 <?php
   break;
-  case 'Pt':
+  case 'Nl':
 ?>
-
+    <p><i>Deze site en de informatie hierin gegeven is niet bedoeld om het bezoek voor niet-speleologen te vergemakkelijken. De <b>gevaren</b> verbonden aan de grotten zijn niet noodzakelijkerwijs gemeld en de vermelde informatie is niet iedere keer gecontroleerd.</i></p>
+    
+    <p><i>Speleologie is een discipline met vele facetten: culturele, wetenschappelijke en sportieve.  Een grotbezoek  vereist vaak een fysiek engagement, een gedegen kennis van speleologisch technieken en is ook <b>niet vrij van risico's</b>.</i></p>
+    
+    <p><i>Deze risico’s, alhoewel nooit volledig uit te sluiten, kunnen worden beperkt door het strikt toepassen van  veiligheidsregels en het volgen van degelijke opleidingen verzorgd door de verschillende nationale speleologische federaties van de European Speleological Federation. 
+In ieder geval is <?php echo $_SESSION['Application_name']; ?> en haar team niet aansprakelijk voor een slechte praktijk van de speleologie.
+    </i></p>
+    
+    <p><i>De beginner die wil kennis maken met ondergrondse exploratie wordt dringend verzocht om contact op te nemen met een speleologie federatie of een speleologie club. Voor België – Vlaanderen : www.speleovvs.be en voor Nederland : www.speleo.nl.  De contactgegevens voor andere landen zijn te verkrijgen bij de European Speleological Federation op http://www.eurospeleo.eu/en/ en de IUS (International Union of Speleologie) of bij <?php echo $_SESSION['Application_name']; ?>.
+    </i></p>
 <?php
   break;
-  case 'Ro':
+  case 'Ca':
 ?>
-
+    <p><i>Aquest lloc, encara que pugui contenir informació detallada de coves, no va ésser dissenyat per facilitar la visita a cap persona no espeleòloga. Els perills que hi pugui haver en les coves no estan necessàriament informats i la informació continguda no està sent verificada contínuament.</i></p>
+    
+    <p><i>L'espeleologia és una disciplina amb moltes facetes: cultural, ciència i esport. En relació a aquest últim, molt habitualment es necessita bona forma física. També, aquesta disciplina no està excempta de riscos, inclús, de grans riscos. Aquests riscos, si bé no poden ésser eliminats completament, es redueixen en gran mesura si es segueixen les normes, fet que es compleix quan es practica en el marc d'un club d'espeleologia.</i></p>
+    
+    <p><i>En qualsevol cas <?php echo $_SESSION['Application_name']; ?> i el seu equip no es fan responsables de cap tipus de mala pràctica en l'espeleologia.</i></p>
+    
+    <p><i>Es suggereix amb èmfasi als aprenents que vulguin iniciar-se ens les exploracions subterrànies que contactin amb un club d'espeleologia. Els noms i la informació de contacte es pot trobar, entre altres, a la IUS (International Union of Speleology), a <?php echo $_SESSION['Application_name']; ?> o a la FCE (Federació Catalana d'Espeleologia).</i></p>
 <?php
   break;
   case 'He':

@@ -1137,7 +1137,7 @@ if ($_SESSION['home_page'] != "overview") {
           <input type="button" class="button1" id="remove" name="remove" value="<convert>#label=428<convert>" onclick="JavaScript:entryRemove();" /><!--Retirer de ma liste-->
         </td></tr><tr><td class="field" colspan="2">
           <input type="hidden" id="e_list" name="e_list" />
-          <input type="submit" class="button1" id="save_list_entries" name="save_list_entries" value="Enregistrer" onclick="JavaScript:entrySubmit();" />
+          <input type="submit" class="button1" id="save_list_entries" name="save_list_entries" value="<convert>#label=76<convert>" onclick="JavaScript:entrySubmit();" />
         </td></tr><tr><td class="field" colspan="2">  
           <input type="button" class="button1" id="cancel" name="cancel" onclick="JavaScript:backToMenu();" value="<convert>#label=77<convert>" /><!--Annuler-->
         </td></tr>
@@ -1203,7 +1203,7 @@ if ($_SESSION['home_page'] != "overview") {
           <input type="button" class="button1" id="remove" name="remove" value="<convert>#label=428<convert>" onclick="JavaScript:grottoRemove();" />
         </td></tr><tr><td class="field" colspan="2">
           <input type="hidden" id="g_list" name="g_list" />
-          <input type="submit" class="button1" id="save_list_grottos" name="save_list_grottos" value="Enregistrer" onclick="JavaScript:grottoSubmit();" />
+          <input type="submit" class="button1" id="save_list_grottos" name="save_list_grottos" value="<convert>#label=76<convert>" onclick="JavaScript:grottoSubmit();" />
         </td></tr><tr><td class="field" colspan="2">
           <input type="button" class="button1" id="cancel" name="cancel" onclick="JavaScript:backToMenu();" value="<convert>#label=77<convert>" /><!--Annuler-->
         </td></tr>
