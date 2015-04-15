@@ -911,122 +911,100 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
   case 'Nl':
 ?>
 
-<h2>Hi! Welcome on <?php echo $_SESSION['Application_name']; ?>!</h2>
+<h2>Hallo! Welkom bij <?php echo $_SESSION['Application_name']; ?></h2>
 <div>
   <div id="about_s" onclick="JavaScript:switchMe('about');" class="div_switcher_c">
     <ul>
-      <li><span class="title">What is <?php echo $_SESSION['Application_name']; ?>?</span></li>
+      <li><span class="title">Wat is <?php echo $_SESSION['Application_name']; ?>?</span></li>
     </ul>
   </div>
   <div id="about" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> is a comunity database for
-    cavers based on a wiki-like system. Cavers fill the databes for cavers.<br />
-    Any interesting natural cavity can be added in the database!</p>
+    <p><?php echo $_SESSION['Application_name']; ?> is een gegevensbank voor speleologen, gebaseerd op een wiki systeem. Speleologen vullen de data aan voor gebruik door andere speleologen.<br />
+    Iedere intereressante natuurlijke holte kan zijn plaats vinden in de gegevensbank.</p>
   </div>
   
   <div id="howto_s" onclick="JavaScript:switchMe('howto');" class="div_switcher_c">
     <ul>
-      <li><span class="title">How to use <?php echo $_SESSION['Application_name']; ?>?</span></li>
+      <li><span class="title">Hoe <?php echo $_SESSION['Application_name']; ?> gebruiken?</span></li>
     </ul>
   </div>
   <div id="howto" style="display:none;visibility:hidden;" class="content" >
-    <p>Navigation is through an embeded Google-Map. 
-    Cavers are represented by red helmets <img src="../images/icons/caver2.png" alt="" />,
-    entries by yellow packs <img src="../images/icons/entry2.png" alt="" /> and 
-    grottoes by blue houses <img src="../images/icons/grotto1.png" alt="" />.<br />
-    By clicking on any of those pictograms, an info-window appears showing its
-    properties (massif, length, depth, etc.).<br />
-    For the "entries" (yellow packs), the info-window allow you to access to
-    a detailed sheet containing:</p>
+    <p>Navigatie gebeurdt via een Google-Map. Op de map worden de Speleologen aangeduid door rode helmen, inzendingen van grotgegevens door gele packs en de grotten worden door blauwe huizen aangeduid.<br />
+    Door op deze pictogrammen te klikken verschijnt een informatievenster met de eigenschappen zoals massief, ontwikkeling, diepte etc. <br />
+    Voor de grotgegevens (de gele packs) krijg je een inforatievenster dat toegang geeft tot een gedetailleerd informatieblad met gegevens over</p>
     <ul>
-      <li>a description of the access to the cave</li>
-      <li>a cave description</li>
-      <li>a description of rigging and ropes needs</li>
-      <li>a reference to any linked web site</li>
-      <li>some comments (by cavers) with an evaluation of aestetics etc.</li>
+      <li>een beschrijving van de toegang tot de grot</li>
+      <li>een beschrijving van de grot</li>
+      <li>een lijst van uitrusting en touwen </li>
+      <li>een referentie naar andere weblinks</li>
+      <li>de opmerkingen van speleologen over de grot, zoals het moois dat er zien is etc;</li>
     </ul>
   </div>
   
   <div id="why_s" onclick="JavaScript:switchMe('why');" class="div_switcher_c">
     <ul>
-      <li><span class="title">Why are you a key in the <?php echo $_SESSION['Application_name']; ?>'s project?</span></li>
+      <li><span class="title">Waarom ben JIJ belangrijk voor het <?php echo $_SESSION['Application_name']; ?> project?</span></li>
     </ul>
   </div>
   <div id="why" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> works with caver's contributions 
-    (so your's), and we count on you to help us complete and rely this database.
-    You can access to the creation/modification menu with the left-hand panel
-    after you signed in.<br />
-    We remind you that you can add any interesting cave to <?php echo $_SESSION['Application_name']; ?>!<br />
-    Thanks.</p>
+    <p><?php echo $_SESSION['Application_name']; ?> wordt gebouwd met de bijdragen van de speleologen zelf. We zijn dus afhankelijk van jullie hulp om deze gegevensbank verder uit te breiden.Je kan het creatie/modificatie menu bereiken in het linkerpaneel nadat je je aangemeld hebt.<br />
+    We willen eraan herinneren dat je iedere interessante grot aan <?php echo $_SESSION['Application_name']; ?> kan toegevoegen!<br />
+    Dank je wel!</p>
   </div>
   
   <div id="who_s" onclick="JavaScript:switchMe('who');" class="div_switcher_c">
     <ul>
-      <li><span class="title">Who are we?</span></li>
+      <li><span class="title">Wie zijn wij?</span></li>
     </ul>
   </div>
   <div id="who" style="display:none;visibility:hidden;" class="content" >
-    <p>Here is the "GrottoTeam", alphabetically by name:</p>
+    <p>Hier is het "GROTTO Team", alfabetisch op naam</p>
     <ul>
-      <li>Nathan Boinet: ergonomics advisor and functional analyst, tester</li>
-      <li>Thomas Cabothiau: ergonomics advisor and functional advisor</li>
-      <li>Barbara Guzman: ergonomics advisor and English-Spanish translations</li>
-      <li>Vanyo Gyorev : Bulgarian translation.</li>
+      <li>Nathan Boinet: ergonomisch adviseur en functional analyst, tester</li>
+      <li>Thomas Cabothiau: ergonomisch adviseur en functioneen adviseur</li>
+      <li>Barbara Guzman: ergonomisch adviseur en Engels-Spaans vertaling</li>
+      <li>Vanyo Gyorev : Bulgaarse vertaling.</li>
       <li>Ivan Herbots : Dutch translation.</li>
-      <li>Stéphane Lips: ergonomics advisor and functional advisor, tester</li>
+      <li>Stéphane Lips: ergonomisch adviseur aen functioneel adviseur, tester</li>
       <li>Francesc B. Ricart : Catalan translation.</li>
-      <li>Clément Ronzon: designer, ergonomics and functional analyst, English-French translations</li>
-      <li>Vincent Routhieau: ergonomics advisor, functional analyst, tester</li>
-      <li>Benjamin Soufflet : developer, system administrator</li>
-      <li>Norbert Weber : German translation.</li>
-      <li>Italian cavers : Italian translation.</li>
+      <li>Clément Ronzon: designer, ergonomics and functional analyst, Engels- Frans vertaling</li>
+      <li>Vincent Routhieau: ergonomisch adviseur, functioneel analyst, tester</li>
+      <li>Benjamin Soufflet : developer, systeem administrator</li>
+      <li>Norbert Weber : Duitse veratling.</li>
+      <li>Italian cavers : Italiaanse vertaling.</li>
     </ul>
-    <p>If you want to make your bit, feel free to contact us!</p>
-    <p>A big thank to those people and all those who participated
-     and contributed to the project!</p>
+    <p>Als jij een bijdrage wil leveren, voel je vrij om met ons contact op te nemen!</p>
+    <p>Een grote DANK U aan deze medewerkers en allen die aan het project meewerkten/werken</p>
   </div>
   
   <div id="license_s" onclick="JavaScript:switchMe('license');" class="div_switcher_c">
     <ul>
-      <li><span class="title">What are the term of use of the data?</span></li>
+      <li><span class="title">Wat zijn de voorwaarden voor het gebruik van de gegevens?</span></li>
     </ul>
   </div>
   <div id="license" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> was designed in a spirit
-    totally apolitical. The site contains elements that constitute a work
-    protected by international treaties.</p>
+    <p><?php echo $_SESSION['Application_name']; ?> is op geen enkel wijze verbonden met politiek en heeft ook geen intenties in die richting. De website bevat elementen die door internationale verdragen beschermd zijn.</p>
     <p><?php echo getLicense(1); ?></p>
   </div>
   
   <div id="sensitive_s" onclick="JavaScript:switchMe('sensitive');" class="div_switcher_c">
     <ul>
-      <li><span class="title">How to add a sensitive cavity?</span></li>
+      <li><span class="title">Hoe een gevoelige grot toevoegen?</span></li>
     </ul>
   </div>
   <div id="sensitive" style="display:none;visibility:hidden;" class="content" >
-    <p>If you want to register a "sensitive" cavity there are two options
-    depending on the degree of protection desired.</p>
-    <ul><li>The cavity is easily accessible and you just whant to  <b>avoid
-    overcrowding</b> by non-caver people.<br />
-    In this case, just chosse the option <b>"Registered (sensitive cave and/or
-    regulated access)."</b> when adding the entry.<br />
-    In this way the cavity appears only to registered users who are connected.</li>
-    <li>The cavity is <b>very sensitive (concretions, archeology, paleontology, etc.)</b>
-    and it is essential to avoid access for non-caver people.<br />
-    In this case, chosse the option "Registered (sensitive cave and/or
-    regulated access).", and it is recommended to <b>distort the coordinates</b> of
-    the cavity within a radius of 1 km around its real place and <b>specify</b> in
-    the detailed sheet that the cavity is not pointing its exact location and
-    should not indicate access.<br />
-    In this way the cavers that wish to visit that cave will necessarily
-    contact with right peolple/organization concerned by this cavity. This option
-    is reserved for exceptional cases.</li></ul>
+    <p>Als je een gevoelige grot wil toevoegen heb je twee mogelijkheden afhankelijk van de gewenste bescherming.</p>
+    <ul><li>De grot is gemakkelijk toegankelijk en je wil over-bezoek door niet-speleologen vermijden.<br />
+    In dit geval kies in menu Ingangen, Nieuw, Aanmaken/Wijzigen de mogelijkheid "Geregistreerd (gevoelige grot/of gereglementeerde toegang) als je de grot toevoegt.<br />
+    Op deze manier is de grot enkel zichtbaar voor aangemelde gebruikers.</li>
+    <li>De grot wordt als zeer gevoelig beschouwd  (concreties, archeologie, paleontology, etc.) en de toegang door niet-speleologen is uitgesloten.<br />
+    In dit geval kies in menu Ingangen, Nieuw, de mogelijkheid "Geregistreerd (gevoelige grot/of gereglementeerde toegang) EN geef slechts benaderende coordinaten die bijvoorbeeld een afwijking hebben van 1 km en specifieer in de gedetailleerde beschrijving dat de opgegeven coordinaten slechts benaderend zijn. Ook vermeldt je geen toegangsmogelijkheden.<br />
+    De speleologen die de grot willen bezoeken kunnen contact opnemen met de individuele speleologen of clubs die de toegang tot de grot beheren. Deze mogelijkheid is voorbehouden voor de buitengewone gevallen van gevoelige grot.</li></ul>
   </div>
   
   <div id="warning_s" onclick="JavaScript:switchMe('warning');" class="div_switcher_c">
     <ul>
-      <li><span class="title" style="color:red;">Warning</span></li>
+      <li><span class="title" style="color:red;">Waarschuwing</span></li>
     </ul>
   </div>
   <div id="warning" style="display:none;visibility:hidden;" class="content" >
