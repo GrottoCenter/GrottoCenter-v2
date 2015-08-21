@@ -404,7 +404,7 @@ if ($_SESSION['home_page'] == "overview") {
 							</td></tr>
 						</table>
           </td></tr><tr><td style="margin:0;padding:0;" colspan="2">
-            <select class="input1" style="width:100%" name="result" id="result" size="5" disabled="disabled" onclick="JavaScript:selectOnClick(event, this);"><!-- ondblclick="JavaScript:selectOnClick(event, this, event);"-->
+            <select class="input1" style="width:100%" name="result" id="result" size="10" disabled="disabled" onclick="JavaScript:selectOnClick(event, this);"><!-- ondblclick="JavaScript:selectOnClick(event, this, event);"-->
               <option></option>
             </select>
           </td></tr></table>
