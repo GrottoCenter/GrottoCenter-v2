@@ -59,7 +59,6 @@ if (!$isPublic && !USER_IS_CONNECTED) {
     include("../func/loader_func.php");
     include("properties_".$_SESSION['language'].".php");
     $entryName = getEntryName($id);
-    $geoportail_active = ($entry_specific_data[0]['Country'] == 'FR');
     $noChangePossibleError = '<div class="error">'.getTopBubble()."<convert>#label=339<convert><!--Cette fiche--> <convert>#label=49<convert><!--est en cours de modification par un autre utilisateur, veuillez essayer plus tard !-->".getBotBubble().'</div>';
     $deletionWarning = '<div class="warning">'.getTopBubble()."<convert>#label=732<convert><!--Votre contribution--> <convert>#label=610<convert><!--a été supprimée avec succès !-->".getBotBubble().'</div>';
     $saveWarning = '<div class="warning">'.getTopBubble()."<convert>#label=732<convert><!--Votre contribution--> <convert>#label=733<convert><!--a été enregistrée avec succès !-->".getBotBubble().'</div>';
@@ -108,7 +107,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
             $aestheticism = limitValue($aestheticism, 0, 10);
             $caving = limitValue($caving, 0, 10);
             $approach = limitValue($approach, 0, 10);
-            
+
             //Relevance of the contribution
             $smallStr = false;
             if($chcat == "rigging" || $chcat == "bibliography") {
@@ -117,7 +116,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
             $caverRelevance = getScore($body." ".$title,$oldBody." ".$oldTitle,true,$smallStr);
             $contribRelevance = getScore($body." ".$title,"",false,$smallStr);
             updateCaverRelevance($caverRelevance, $_SESSION['user_id']);
-            
+
             //Querry
             $sql = "UPDATE `".$_SESSION['Application_host']."`.`T_".$chcat."` SET ";
             $sql .= "Locked = 'NO', ";
@@ -151,10 +150,10 @@ if (!$isPublic && !USER_IS_CONNECTED) {
             $sql .= "Date_reviewed = Now() ";
             $sql .= "WHERE `Id` = ".$chid;
             $req = execSQL($sql, $frame, __FILE__, __FUNCTION__);
-            
+
             //Tracker
             trackAction("edit_".$chcat, $chid, "T_".$chcat);
-            
+
             if ($chcat == "rigging" || $chcat == "description") {
               $sql = "UPDATE `".$_SESSION['Application_host']."`.`J_entry_".$chcat."` SET ";
               $sql .= "Id_entry = ".returnDefault($id, 'id')." ";
@@ -163,12 +162,12 @@ if (!$isPublic && !USER_IS_CONNECTED) {
             }
             $save_failed = false;
           }
-          
+
           // Cancel the modifications
           if (isset($_POST['cancel'])) {
             backOver($chcat, $chid);
           }
-          
+
           // Take Over
           $is_change = (!isset($_POST['cancel']) && !isset($_POST['save']) && ($chid != "") && ($chcat != "")); // isset($_GET['chcat']);
           if ($is_change) {
@@ -178,7 +177,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
           $type = "";
         }
       }
-      
+
       if ($type == "lock") {
         // Get the parameters
         $status = (isset($_GET['status'])) ? $_GET['status'] : '';
@@ -199,7 +198,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
           $type = "";
         }
       }
-        
+
       if ($type == "delete") {
         $contributionDeleted = false;
         // Get the parameters
@@ -214,7 +213,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
           if (takeOver($dcat,$did) && $did != "") {
             //Tracker
             trackAction("delete_".$dcat, $did, "T_".$dcat);
-            
+
             // Delete the content
             $sql = "DELETE FROM `".$_SESSION['Application_host']."`.`T_".$dcat."` ";
             $sql .= "WHERE `Id` = ".$did;
@@ -236,7 +235,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
           $type = "";
         }
       }
-        
+
       // Save the new content
       if (isset($_POST['new'])){
         $ncat = (isset($_POST['new_category']) ? $_POST['new_category'] : '');
@@ -264,7 +263,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
           $aestheticism = limitValue($aestheticism, 0, 10);
           $caving = limitValue($caving, 0, 10);
           $approach = limitValue($approach, 0, 10);
-          
+
           //Relevance of the contribution
           $smallStr = false;
           if($ncat == "rigging" || $ncat == "bibliography") {
@@ -273,7 +272,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
           $contribRelevance = getScore($body." ".$title,"",false,$smallStr);
           $caverRelevance = $contribRelevance;
           updateCaverRelevance($caverRelevance, $_SESSION['user_id']);
-            
+
           //Querry
           $sql = "INSERT INTO `".$_SESSION['Application_host']."`.`T_".$ncat."` ( ";
           $sql .= "Relevance, ";
@@ -340,16 +339,16 @@ if (!$isPublic && !USER_IS_CONNECTED) {
           $sql .= ") ";
           $req = execSQL($sql, $frame, __FILE__, __FUNCTION__);
           $nid = $req['mysql_insert_id'];
-          
+
           //Tracker
           trackAction("insert_".$ncat, $nid, "T_".$ncat);
-          
+
           //Update the entry contribution flag
           $sql = "UPDATE `".$_SESSION['Application_host']."`.`T_entry` ";
           $sql .= "SET Has_contributions = 'YES' ";
           $sql .= "WHERE Id = ".$id;
           $req = execSQL($sql, $frame, __FILE__, __FUNCTION__);
-          
+
           //Send an e-mail to the answered person
           if ($id_answered != "" && $ncat == "comment") {
             $get_answered_sql = "SELECT * FROM `".$_SESSION['Application_host']."`.`T_comment` WHERE Id = ".$id_answered;
@@ -358,7 +357,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
               alertForCommentReply($id_answered, $nid, $category, $id);
             }
           }
-          
+
           if ($ncat == "rigging" || $ncat == "description") {
             $sql = "INSERT INTO `".$_SESSION['Application_host']."`.`J_entry_".$ncat."` (Id_entry, Id_".$ncat.") VALUES ( ";
             $sql .= returnDefault($id, 'id').", ";
@@ -371,7 +370,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
       }
       $contributionSaved = (!$save_failed && (isset($_POST['save']) || isset($_POST['new'])));
     }
-    
+
     if ($contributionSaved) {
       if ($caverRelevance < 0) {
         $scoreMessage = '<div class="error">';
@@ -386,7 +385,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
       }
       $scoreMessage .= abs($caverRelevance)." <convert>#label=756<convert>".getBotBubble().'</div>';
     }
-    
+
     function getLicenseAlert()
     {
       $alert = "<div class=\"notes\" style=\"margin:5px;\">";
@@ -400,7 +399,7 @@ if (!$isPublic && !USER_IS_CONNECTED) {
       $alert .= "</div>";
       return $alert;
     }
-    
+
     //Get the values to display :
     $locations = getLocation($category, $id);
     $topographies = getTopography($category, $id);
@@ -490,7 +489,7 @@ if (isset($_POST['print'])) {
         mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
       }
     }
-    
+
     function infoHistoAe() {
       /*
       var sMessage = "<title>- Intérêt -</title>\n";
@@ -502,7 +501,7 @@ if (isset($_POST['print'])) {
       var sMessage = "<convert>#label=323<convert>";
       popUpMsg(sMessage);
     }
-    
+
     function infoHistoCa() {
       /*
       var sMessage = "<title>- Progression -</title>\n";
@@ -514,7 +513,7 @@ if (isset($_POST['print'])) {
       var sMessage = "<convert>#label=324<convert>";
       popUpMsg(sMessage);
     }
-    
+
     function infoHistoAp() {
       /*
       var sMessage = "<title>- Accès -</title>\n";
@@ -526,7 +525,7 @@ if (isset($_POST['print'])) {
       var sMessage = "<convert>#label=325<convert>";
       popUpMsg(sMessage);
     }
-    
+
     function infoRadar() {
       /*
       var sMessage = "<title>- Synthèse -</title>\n";
@@ -541,7 +540,7 @@ if (isset($_POST['print'])) {
       var sMessage = "<convert>#label=326<convert>";
       popUpMsg(sMessage);
     }
-    
+
     function infoRadarUser() {
       /*
       var sMessage = "<title>- Notes -</title>\n";
@@ -555,7 +554,7 @@ if (isset($_POST['print'])) {
       var sMessage = "<convert>#label=327<convert>";
       popUpMsg(sMessage);
     }
-    
+
     function editElement(sCategory, iId) {
       switch(sCategory) {
         case "description":
@@ -575,9 +574,9 @@ if (isset($_POST['print'])) {
         break;
       }
     }
-    
+
     var openedForm;
-    
+
     function replyElement(sCategory, iId) {
       var oForm = document.forms["new_" + sCategory + "_form"];
       if (sCategory == "comment") {
@@ -587,7 +586,7 @@ if (isset($_POST['print'])) {
       }
       addElement(sCategory);
     }
-    
+
     function addElement(sCategory) {
       if (openedForm) {
         hideId(openedForm);
@@ -596,7 +595,7 @@ if (isset($_POST['print'])) {
       showId(openedForm);
       document.location.href = "#new_" + sCategory + "_anchor";
     }
-    
+
     function cancelElement(sCategory) {
       var oForm = document.forms["new_" + sCategory + "_form"];
       if (sCategory == "comment") {
@@ -606,7 +605,7 @@ if (isset($_POST['print'])) {
       }
       hideId("new_" + sCategory);
     }
-    
+
     function deleteElement(sCategory, iId) {
       switch(sCategory) {
         case "description":
@@ -624,8 +623,8 @@ if (isset($_POST['print'])) {
         break;
       }
     }
-    
-    
+
+
 <?php
 if ($allowed_to_lock) {
 ?>
@@ -640,7 +639,7 @@ if ($allowed_to_lock) {
 <?php
 }
 ?>
-    
+
     function badContent(sCategory, sName) {
       var url;
       /*if (mySite) {
@@ -650,7 +649,7 @@ if ($allowed_to_lock) {
       url = "contact_<?php echo $_SESSION['language']; ?>.php?type=message&subject=bad_content&category=" + encodeURI(encodeURIComponent(sCategory)) + "&name=" + encodeURI(encodeURIComponent(sName));
       openWindow(url, '', 700, 525);
     }
-    
+
     function bodyOnKeyUp(oObject, sDest) {
       if (sDest == undefined) {
         sDest = "";
@@ -658,11 +657,11 @@ if ($allowed_to_lock) {
       limitLength(oObject, 20000);
       displayLength(oObject, sDest);
     }
-    
+
     function refresh() {
       self.location.href = "file_<?php echo $_SESSION['language']; ?>.php?category=<?php echo $category; ?>&id=<?php echo $id; ?>";
     }
-    
+
     function saveOnClick(subCat) {
       alert("<convert>#label=484<convert>");
       if (subCat == "rigging") {
@@ -685,7 +684,7 @@ if ($allowed_to_lock) {
         }
       }
     }
-    
+
     function switchDiv(sId, bShow) {
       if (bShow) {
         hideId(sId + "_s");
@@ -695,23 +694,23 @@ if ($allowed_to_lock) {
         showId(sId + "_s");
       }
     }
-    
+
     function sendToAFriend(sLocation) {
       var eMail = "mailto:";
       eMail = eMail + "?subject=<?php echo $_SESSION['Application_name']; ?> <convert>#label=322<convert>." ;//Un ami vous recommande cette fiche descriptive
       eMail = eMail + "&body=" + encodeURIComponent(sLocation) ;
       document.location.href = eMail;
     }
-    
+
     function printThis(sLocation) {
       openPrintForm(sLocation);
     }
-    
+
     function openUriDiv(sLocation) {
       xtdGetElementById("uriForGuest").value = sLocation;
       showId("uriDiv");
     }
-    
+
     function openPrintForm(sLocation) {
       var sMessage = "<h1><convert>#label=520<convert> \"<?php echo $entryName; ?>\"</h1>"; //Imprimer la fiche ""
       sMessage = sMessage + "<h2><convert>#label=521<convert><!--Veuillez choisir les sections à imprimer--> :</h2>\n";
@@ -731,10 +730,10 @@ if ($allowed_to_lock) {
       sMessage = sMessage + "</form>\n";
       popUpMsg(sMessage,"<?php echo $_SESSION['Application_title']; ?> <convert>#label=520<convert> <?php echo $entryName; ?>","toolbar=no,menubar=yes,scrollbars=yes"); //,"<convert>#label=520<convert>","toolbar=no,menubar=yes,scrollbars=yes"); //Imprimer la page
     }
-    
+
     function loadMap() {
         var point = new google.maps.LatLng(<?php echo getMapParams($id); ?>);
-        
+
         var map = new google.maps.Map(xtdGetElementById("map"),{
             center: point,
             zoom: 10,
@@ -754,13 +753,13 @@ if ($allowed_to_lock) {
       		    map.panTo(point);
         });
         var marker = new google.maps.Marker({
-            position: point, 
-            map: map, 
-            draggable: false, 
+            position: point,
+            map: map,
+            draggable: false,
             bouncy: false,
         });
 
-        
+
         /*var map = new GMap2(xtdGetElementById("map"));
         map.addMapType(G_PHYSICAL_MAP);
         var point = new GLatLng(<?php echo getMapParams($id); ?>);
@@ -770,7 +769,7 @@ if ($allowed_to_lock) {
         var marker = new GMarker(point);
         map.addOverlay(marker);*/
     }
-    
+
     function concatFieldsByName(sName,sSeparator) {
       var fieldArray = document.getElementsByName(sName);
       var concatText = "";
@@ -783,23 +782,23 @@ if ($allowed_to_lock) {
       }
       return concatText.substring(0, concatText.length - sSeparator.length);
     }
-    
+
     function addLine(oContainer, oSource) {
       var sourceCopy = oSource.cloneNode(true);
       oContainer.appendChild(sourceCopy);
     }
-    
+
     function insertLine(oSource, oLine) {
       var oContainer = oLine.parentNode;
       var sourceCopy = oSource.cloneNode(true);
       oContainer.insertBefore(sourceCopy, oLine);
     }
-    
+
     function removeLine(oLine) {
       var oContainer = oLine.parentNode;
       oContainer.removeChild(oLine);
     }
-    
+
     function moveLineUp(oLine) {
       if (oLine.previousSibling.previousSibling) {
           var oContainer = oLine.parentNode;
@@ -809,7 +808,7 @@ if ($allowed_to_lock) {
           //oContainer.removeChild(oLine);
       }
     }
-    
+
     function moveLineDown(oLine) {
       if (oLine.nextSibling) {
           var oContainer = oLine.parentNode;
@@ -819,19 +818,19 @@ if ($allowed_to_lock) {
           //oContainer.removeChild(oLine.nextSibling);
       }
     }
-    
+
     //Implementation
     function addOnClick(sRigContId) {
       var oContainer = xtdGetElementById(sRigContId);//.firstChild.nextSibling;
       var oSource = xtdGetElementById("rigging_source");//.firstChild.nextSibling.firstChild;
       addLine(oContainer, oSource);
     }
-    
+
     function insertOnClick(oLine) {
       var oSource = xtdGetElementById("rigging_source");//.firstChild.nextSibling.firstChild;
       insertLine(oSource, oLine);
     }
-    
+
     function triggerAction(e) {
       var firingobj = getTargetNode(e);
       if (firingobj) {
@@ -851,7 +850,7 @@ if ($allowed_to_lock) {
         }
       }
     }
-    
+
     //Show Hide toolbox on hover:
     /*function getContainerTable(oNode) {
       while (oNode.parentNode) {
@@ -862,12 +861,12 @@ if ($allowed_to_lock) {
       }
       return false;
     }
-    
+
     function showTools(id, x, y) {
       //setNodePosition(id, x, y);
       showId(id);
     }
-    
+
     function containerOnOver(e) {
       var id, firingObj, mousePosition;
       if (firingObj = getContainerTable(getTargetNode(e))) {
@@ -881,7 +880,7 @@ if ($allowed_to_lock) {
         //}
       }
     }
-    
+
     function containerOnOut(e) {
       var id, firingObj;
       if (firingObj = getContainerTable(getTargetNode(e))) {
@@ -892,9 +891,9 @@ if ($allowed_to_lock) {
         toolsHandler = setTimeout('hideId("' + id + '");', hideOffset);
       }
     }*/
-    
+
     //onmouseover="JavaScript:containerOnOver();" onmouseout="JavaScript:containerOnOut();"
-    
+
     /*var elementFocused = undefined;
     function setFocus(){
       elementFocused = this;
@@ -902,10 +901,10 @@ if ($allowed_to_lock) {
     function unsetFocus(){
       elementFocused = undefined;
     }*/
-    
+
     <?php echo getCDataTag(false); ?>
     </script>
-<?php 
+<?php
 //ob_start();
 ?>
     <link rel="stylesheet" type="text/css" href="../css/global.css" />
@@ -958,7 +957,18 @@ if ($allowed_to_lock) {
         <h1><?php echo $entryName; ?></h1>
 <?php if (!isset($_POST['print'])) { ?>
         <div onclick="JavaScript:infoRadar();" class="radar"><img src="../images/gen/getChart.php?type=radar&amp;data=<?php echo getAvgAestheticism($id); ?>|<?php echo getAvgCaving($id); ?>|<?php echo getAvgApproach($id); ?>&amp;label=<convert>#label=328<convert>|<convert>#label=329<convert>|<convert>#label=330<convert>" alt="image" /></div>
-        <div id="mailto"><a href="JavaScript:sendToAFriend(thisLocation);" title="<convert>#label=331<convert>"><img src="../images/icons/mail.png" alt="" /> <convert>#label=332<convert><!--Envoyer l'adresse de cette page à un ami.--><!--Envoyer à un ami--></a> | <a href="JavaScript:printThis(thisLocation);" title="<convert>#label=525<convert>"><img src="../images/icons/printer.png" alt="" /> <convert>#label=525<convert><!--Imprimer--></a> | <a href="JavaScript:openUriDiv(thisLocation);" title="<convert>#label=672<convert>"><img src="../images/icons/uri.png" alt="" /> <convert>#label=672<convert><!--Lien (URL)--></a><?php if ($geoportail_active) { ?> | <a href="JavaScript:openWindow('geoportail_<?php echo $_SESSION['language']; ?>.php?z=17&amp;lang=<?php echo $_SESSION['language']; ?>&amp;id=<?php echo $id; ?>', '', 828, 625);" title="Geoportail"><img src="../images/icons/geoportail.png" alt="Geoportail" /> Geoportail</a><?php } ?></div>
+        <div id="mailto">
+          <a href="JavaScript:sendToAFriend(thisLocation);" title="<convert>#label=331<convert>">
+            <img src="../images/icons/mail.png" alt="" /> <convert>#label=332<convert><!--Envoyer l'adresse de cette page à un ami.--><!--Envoyer à un ami--></a>
+         | <a href="JavaScript:printThis(thisLocation);" title="<convert>#label=525<convert>">
+            <img src="../images/icons/printer.png" alt="" /> <convert>#label=525<convert><!--Imprimer--></a>
+         | <a href="JavaScript:openUriDiv(thisLocation);" title="<convert>#label=672<convert>">
+            <img src="../images/icons/uri.png" alt="" /> <convert>#label=672<convert><!--Lien (URL)--></a>
+         | <a href="http://tools.wmflabs.org/geohack/geohack.php?language=<?php echo $_SESSION['language']; ?>&amp;params=<?php echo $entry_specific_data[0]['Latitude'] ?>;<?php echo $entry_specific_data[0]['Longitude'] ?>" title="Geohack" target="_blank">
+            <img src="../images/icons/geohack.png" alt="GeoHack" /> GeoHack</a>
+         | <a href="http://www.openstreetmap.org/?lat=<?php echo $entry_specific_data[0]['Latitude'] ?>&amp;lon=<?php echo $entry_specific_data[0]['Longitude'] ?>&amp;zoom=17&amp;layers=M" title="Open Street Map" target="_blank">
+            <img src="../images/icons/openstreetmap.png" alt="OpenStreetMap" /> OpenStreetMap</a>
+        </div>
 <?php } ?>
         <div id="uriDiv" style="position:absolute;top:105px;left:50%;display:none;visibility:hidden;width:300px;white-space:nowrap;"><input type="text" class="input1" name="uriForGuest" id="uriForGuest" value="" /> <b><a href="JavaScript:hideId('uriDiv');" title="<convert>#label=371<convert>">X</a><!-- Fermer --></b></div>
         </div>
@@ -1101,7 +1111,7 @@ if ($allowed_to_lock) {
                     <?php echo getTopBubble(); ?>
                     <convert>#label=530<convert><!--Indiquez ici comment accèder à cette entrée depuis l'extérieur.<br />
                     Ex: Entrer dans le hameau de Chougeat puis prendre le premier chemin à droite, l'entrée se situe 200m après un grand virage, dans les bois en direction du Nord ...-->
-                    <?php echo getBotBubble(); ?> 
+                    <?php echo getBotBubble(); ?>
                   </div><?php } ?>
                   <div class="sub_content">
                     <?php if ($edition) { ?>
@@ -1146,7 +1156,7 @@ if ($allowed_to_lock) {
                       <?php echo getTopBubble(); ?>
                       <convert>#label=530<convert><!--Indiquez ici comment accèder à cette entrée depuis l'extérieur.<br />
                       Ex: Entrer dans le hameau de Chougeat puis prendre le premier chemin à droite, l'entrée se situe 200m après un grand virage, dans les bois en direction du Nord ...-->
-                      <?php echo getBotBubble(); ?> 
+                      <?php echo getBotBubble(); ?>
                     </div>
                     <div class="sub_content">
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=345<convert><!--Décrivez l'accès à cette entrée--> :</label><br />
@@ -1260,7 +1270,7 @@ if ($allowed_to_lock) {
                     <?php echo getTopBubble(); ?>
                     <convert>#label=531<convert><!--Décrivez dans cette section le(s) chemin(s) que vous avez emprunté à l'intérieur de la cavité en entrant, ou en sortant, par cette entrée.<br />
                     Ex : P20 puis patte d'oie à gauche, escalade 1m50 puis descendre dans les blocs sur la droite de la salle ...-->
-                    <?php echo getBotBubble(); ?> 
+                    <?php echo getBotBubble(); ?>
                   </div><?php } ?>
                   <div class="sub_title">
 <?php
@@ -1305,7 +1315,7 @@ if ($allowed_to_lock) {
                       <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.
                       <input type="hidden" id="oldbody" name="oldbody" value="<?php echo $array[$i]["Body"];?>" /> <!-- //htmlentities(-->
                       <input type="hidden" id="oldtitle" name="oldtitle" value="<?php echo $array[$i]["Title"];?>" />
-                    <?php } else { 
+                    <?php } else {
                       echo getRef(replaceLinks(nl2br($array[$i]["Body"]))); //htmlentities(
                           } ?>
                   </div>
@@ -1343,7 +1353,7 @@ if ($allowed_to_lock) {
                       <?php echo getTopBubble(); ?>
                       <convert>#label=531<convert><!--Décrivez dans cette section le(s) chemin(s) que vous avez emprunté à l'intérieur de la cavité en entrant, ou en sortant, par cette entrée.<br />
                       Ex : P20 puis patte d'oie à gauche, escalade 1m50 puis descendre dans les blocs sur la droite de la salle ...-->
-                      <?php echo getBotBubble(); ?> 
+                      <?php echo getBotBubble(); ?>
                     </div>
                     <div class="sub_title">
                       <label for="title<?php echo $local_cat; ?>"><convert>#label=348<convert><!--Donnez un titre à votre description (-->300 <convert>#label=349<convert><!--carac. max.)--> :</label><br />
@@ -1437,7 +1447,7 @@ if ($allowed_to_lock) {
                     <?php if($allowed_to_lock){ ?><a href="JavaScript:lockElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>,'<?php echo $array[$i]["Locked"];?>');" title="<convert>#label=341<convert>" class="nothing"><?php } ?><img src="../images/icons/locker_<?php echo $array[$i]["Locked"];?>.png" class="icon" alt="<convert>#label=340<convert> : <?php echo $array[$i]["Locked"]; ?>" /><?php if($allowed_to_lock){ ?></a><?php } ?>
 <?php
                 if ($array[$i]["Locked"] == "NO") {
-?>                    
+?>
                     <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
                     <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
 <?php
@@ -1476,19 +1486,19 @@ if ($allowed_to_lock) {
                     <?php echo getTopBubble(); ?>
                     <convert>#label=532<convert><!--Listez ici les obstacles nécessitant l'installation de dispositifs de sécurité, ainsi que la quantité de ces dispositifs.<br />
                     Ex : --><br />
-                    <table border="1px" cellspacing="0px">              
-                      <tr>                                                    
+                    <table border="1px" cellspacing="0px">
+                      <tr>
                         <th><convert>#label=356<convert><!--Obstacles--></th>
                         <th><convert>#label=358<convert><!--Cordes--></th>
                         <th><convert>#label=359<convert><!--Amarrages--></th>
-                        <th><convert>#label=357<convert><!--Observations--></th>                       
-                      </tr>                        
+                        <th><convert>#label=357<convert><!--Observations--></th>
+                      </tr>
                       <tr>
                         <convert>#label=533<convert>
                         <!--td>P33 de l'entrée</td>
                         <td>50m</td>
                         <td>2S en Y, descendre de 10m, 2S en Y décalés sur la gauche,descente de 10m, 1S frac, decsendre de de 10m, 1 Dév (S ou AN), descendre de 20m</td>
-                        <td>Bien rester sur la gauche du puit, à l'écart des embruns.</td-->                        
+                        <td>Bien rester sur la gauche du puit, à l'écart des embruns.</td-->
                       </tr>
                     </table>
                     <?php echo getBotBubble(); ?>
@@ -1516,7 +1526,7 @@ if ($allowed_to_lock) {
                     </h3>
                   </div>
                   <div class="sub_content">
-<?php       if ($edition) { 
+<?php       if ($edition) {
               if ($countEntries > 1) {
                 $sql_exits = getSqlExits($id, $local_cat, $exit_id);
 ?>
@@ -1625,19 +1635,19 @@ if ($allowed_to_lock) {
                       <?php echo getTopBubble(); ?>
                       <convert>#label=532<convert><!--Listez ici les obstacles nécessitant l'installation de dispositifs de sécurité, ainsi que la quantité de ces dispositifs.<br />
                       Ex : --><br />
-                      <table border="1px" cellspacing="0px">              
-                        <tr>                                                    
+                      <table border="1px" cellspacing="0px">
+                        <tr>
                           <th><convert>#label=356<convert><!--Obstacles--></th>
                           <th><convert>#label=358<convert><!--Cordes--></th>
                           <th><convert>#label=359<convert><!--Amarrages--></th>
-                          <th><convert>#label=357<convert><!--Observations--></th>                       
-                        </tr>                        
+                          <th><convert>#label=357<convert><!--Observations--></th>
+                        </tr>
                         <tr>
                           <convert>#label=533<convert>
                           <!--td>P33 de l'entrée</td>
                           <td>50m</td>
                           <td>2S en Y, descendre de 10m, 2S en Y décalés sur la gauche,descente de 10m, 1S frac, decsendre de de 10m, 1 Dév (S ou AN), descendre de 20m</td>
-                          <td>Bien rester sur la gauche du puit, à l'écart des embruns.</td-->                        
+                          <td>Bien rester sur la gauche du puit, à l'écart des embruns.</td-->
                         </tr>
                       </table>
                       <?php echo getBotBubble(); ?>
@@ -1853,7 +1863,7 @@ if ($allowed_to_lock) {
                     <?php if($allowed_to_lock){ ?><a href="JavaScript:lockElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>,'<?php echo $array[$i]["Locked"];?>');" title="<convert>#label=341<convert>" class="nothing"><?php } ?><img src="../images/icons/locker_<?php echo $array[$i]["Locked"];?>.png" class="icon" alt="<convert>#label=340<convert> : <?php echo $array[$i]["Locked"]; ?>" /><?php if($allowed_to_lock){ ?></a><?php } ?><!--Verrouillé-->
 <?php
                 if ($array[$i]["Locked"] == "NO") {
-?>                    
+?>
                     <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
                     <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
 <?php
@@ -1886,7 +1896,7 @@ if ($allowed_to_lock) {
                   <?php if ($edition) { ?><div class="info">
                     <?php echo getTopBubble(); ?>
                     <convert>#label=594<convert><!--Dans cette section vous pouvez résumer l'historique de la cavité.<br />Ex : Découverte en 1850 par Mr Dupont, les explorations se sont arrêtées sur le colmatage, qui a été désobstrué quelques dizaines d'années plus tard …-->
-                    <?php echo getBotBubble(); ?> 
+                    <?php echo getBotBubble(); ?>
                   </div><?php } ?>
                   <div class="sub_content">
                     <?php if ($edition) { ?>
@@ -1930,7 +1940,7 @@ if ($allowed_to_lock) {
                     <div class="info">
                       <?php echo getTopBubble(); ?>
                       <convert>#label=594<convert><!--Dans cette section vous pouvez résumer l'historique de la cavité.<br />Ex : Découverte en 1850 par Mr Dupont, les explorations se sont arrêtées sur le colmatage, qui a été désobstrué quelques dizaines d'années plus tard …-->
-                      <?php echo getBotBubble(); ?> 
+                      <?php echo getBotBubble(); ?>
                     </div>
                     <div class="sub_content">
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=595<convert><!--Décrivez l'historique de cette cavité--> :</label><br />
@@ -2005,7 +2015,7 @@ if ($allowed_to_lock) {
                     <?php if($allowed_to_lock){ ?><a href="JavaScript:lockElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>,'<?php echo $array[$i]["Locked"];?>');" title="<convert>#label=341<convert>" class="nothing"><?php } ?><img src="../images/icons/locker_<?php echo $array[$i]["Locked"];?>.png" class="icon" alt="<convert>#label=340<convert> : <?php echo $array[$i]["Locked"]; ?>" /><?php if($allowed_to_lock){ ?></a><?php } ?><!--Verrouillé-->
 <?php
                 if ($array[$i]["Locked"] == "NO") {
-?>                    
+?>
                     <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
                     <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
 <?php
@@ -2039,7 +2049,7 @@ if ($allowed_to_lock) {
                     <?php echo getTopBubble(); ?>
                     <convert>#label=591<convert><!--<ul><li>Pour les livres : NOM, Prénom (à répéter). Titre. Mention d'édition. Lieu de publication : éditeur, année d'édition. Nombre de pages. (Titre de la collection, n° de la collection)
                     ISBN</li><li>Pour les sites internet :  NOM, Prénom. Nom du site [en ligne]. Lieu de publication : éditeur, (date de consultation). Disponibilité et accès.</li></ul>-->
-                    <?php echo getBotBubble(); ?> 
+                    <?php echo getBotBubble(); ?>
                   </div><?php } ?>
                   <div class="sub_content">
                     <?php if ($edition) { ?>
@@ -2084,7 +2094,7 @@ if ($allowed_to_lock) {
                       <?php echo getTopBubble(); ?>
                       <convert>#label=591<convert><!--<ul><li>Pour les livres : NOM, Prénom (à répéter). Titre. Mention d'édition. Lieu de publication : éditeur, année d'édition. Nombre de pages. (Titre de la collection, n° de la collection)
                       ISBN</li><li>Pour les sites internet :  NOM, Prénom. Nom du site [en ligne]. Lieu de publication : éditeur, (date de consultation). Disponibilité et accès.</li></ul>-->
-                      <?php echo getBotBubble(); ?> 
+                      <?php echo getBotBubble(); ?>
                     </div>
                     <div class="sub_content">
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=592<convert><!--Listez les references bibliographiques--> :</label><br />
@@ -2200,7 +2210,7 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
                     <?php if($allowed_to_lock){ ?><a href="JavaScript:lockElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>,'<?php echo $array[$i]["Locked"];?>');" title="<convert>#label=341<convert>" class="nothing"><?php } ?><img src="../images/icons/locker_<?php echo $array[$i]["Locked"];?>.png" class="icon" alt="<convert>#label=340<convert> : <?php echo $array[$i]["Locked"]; ?>" /><?php if($allowed_to_lock){ ?></a><?php } ?>
 <?php
                 if ($array[$i]["Locked"] == "NO" && ($my_comment || allowAccess(comment_delete_all))) {
-?>                    
+?>
                     <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
                     <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
 <?php
@@ -2268,7 +2278,7 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
                     <h3 id="<?php echo $local_cat.$array[$i]["Id"]; ?>_title"><?php if ($edition) { ?><input type="text" class="input1" name="title" id="title<?php echo $local_cat.$array[$i]["Id"]; ?>" value="<?php } ?><?php echo $array[$i]["Title"];?><?php if ($edition) { ?>" /><?php } ?></h3>
                   </div>
                   <div class="sub_content">
-<?php       if ($edition) { 
+<?php       if ($edition) {
               if ($countEntries > 1) {
                 $sql_exits = getSqlExits($id, $local_cat, $exit_id);
 ?>
@@ -2282,7 +2292,7 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
                         echo getOptions($sql_exits, $msg, $selected, $comparedCol, $textCol);
 ?>
                       </select><br /><br />
-<?php         } ?> 
+<?php         } ?>
                       <label for="body<?php echo $local_cat.$array[$i]["Id"]; ?>"><convert>#label=366<convert><!--Votre commentaire--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat.$array[$i]["Id"]; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>');"><?php echo $array[$i]["Body"];?></textarea><br />
                       <span id="length_display_<?php echo $local_cat.$array[$i]["Id"]; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.<br /><br />
@@ -2394,7 +2404,7 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
                       <label for="body<?php echo $local_cat; ?>"><convert>#label=366<convert><!--Votre commentaire--> :</label><br />
                       <textarea class="input1" id="body<?php echo $local_cat; ?>" name="body" rows="6" cols="" onkeyup="JavaScript:bodyOnKeyUp(this,'length_display_<?php echo $local_cat; ?>');"></textarea><br />
                       <span id="length_display_<?php echo $local_cat; ?>">0</span> <convert>#label=238<convert><!--caractères sur--> 20 000.<br /><br />
-                      
+
                       <table border="0" cellspacing="1" cellpadding="0" class="form_tbl" style="width:100%;">
                         <tr><th colspan="2"><?php echo getHelpTopic($helpId['votes'], "<convert>#label=23<convert>"); ?></th></tr>
                         <tr><td class="label">
