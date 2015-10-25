@@ -964,7 +964,7 @@ if ($allowed_to_lock) {
             <img src="../images/icons/printer.png" alt="" /> <convert>#label=525<convert><!--Imprimer--></a>
          | <a href="JavaScript:openUriDiv(thisLocation);" title="<convert>#label=672<convert>">
             <img src="../images/icons/uri.png" alt="" /> <convert>#label=672<convert><!--Lien (URL)--></a>
-         | <a href="http://tools.wmflabs.org/geohack/geohack.php?language=<?php echo $_SESSION['language']; ?>&amp;params=<?php echo $entry_specific_data[0]['Latitude'] ?>;<?php echo $entry_specific_data[0]['Longitude'] ?>" title="Geohack" target="_blank">
+         | <a href="http://tools.wmflabs.org/geohack/geohack.php?language=<?php echo $_SESSION['language']; ?>&amp;params=<?php echo $entry_specific_data[0]['Latitude'] ?>;<?php echo $entry_specific_data[0]['Longitude'] ?>&amp;pagename=<?php echo urlencode($entry_specific_data[0]['Name']) ?>" title="Geohack" target="_blank">
             <img src="../images/icons/geohack.png" alt="GeoHack" /> GeoHack</a>
          | <a href="http://www.openstreetmap.org/?lat=<?php echo $entry_specific_data[0]['Latitude'] ?>&amp;lon=<?php echo $entry_specific_data[0]['Longitude'] ?>&amp;zoom=17&amp;layers=M" title="Open Street Map" target="_blank">
             <img src="../images/icons/openstreetmap.png" alt="OpenStreetMap" /> OpenStreetMap</a>
