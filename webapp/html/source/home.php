@@ -46,7 +46,7 @@ if (false) {
       $new_cavers[] .= $newCaversArray[$i]['Nickname'];
     }
     $newCaversStr = implode(", ", array_unique($new_cavers));
-  	
+
   	$sql = "SELECT CONCAT(Nickname,' (',Relevance,' pts)') AS Result FROM `".$_SESSION['Application_host']."`.`T_caver` ORDER BY Relevance DESC, Nickname ASC LIMIT 0,10";
   	$bestCaversArray = getDataFromSQL($sql, __FILE__, $frame, __FUNCTION__);
   	$best_cavers = array();
@@ -57,7 +57,7 @@ if (false) {
 }
     $records_by_page = 20;
     $max_length = 40;
-    
+
     $sql = "SELECT ";
     $sql .= "IFNULL(contrib.Id_entry,contrib.Id) AS `0`, ";
     $sql .= "CASE contrib.Category ";
@@ -93,7 +93,7 @@ if (false) {
     }
     $sql .= "ORDER BY IFNULL(contrib.Date_reviewed, contrib.Date_inscription) DESC, contrib.Title ASC ";
     $sql .= "LIMIT ".$records_by_page;
-		
+
     $columns_params = array(
 			0 => "[hidden]|[hidden]Id",
 			1 => "[hidden]|<convert>#label=235<convert>",
@@ -107,7 +107,7 @@ if (false) {
 			9 => "[hidden]|<convert>#label=682<convert>",
 			10 => "[hidden]|<convert>#label=723<convert>"
 		);
-    
+
     $category = "entry";
     //$entry_file_link = $_SESSION['Application_url']."/html/file_".$_SESSION['language'].".php?lang=".$_SESSION['language']."&amp;check_lang_auto=false&amp;category=".$category."&amp;id=<Id>";
     $entry_file_link = "javascript:detailMarker(event,'entry','<Id>','".$_SESSION['language']."',true);";
@@ -150,11 +150,11 @@ if (false) {
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
     //USES FUNCTION switchDOM
-    
+
     function load() {
       mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
     }
-    
+
     function switchMe(sId) {
       switchDOM(sId);
       var element = xtdGetElementById(sId+"_s");
@@ -164,7 +164,7 @@ if (false) {
         element.className = "div_switcher_c";
       }
     }
-    
+
     <?php echo getCDataTag(false); ?>
     </script>
   </head>
@@ -190,7 +190,6 @@ if (false) {
                 <li><convert>#label=941<convert></li><!-- Le projet avance grâce aux clubs et aux CDS qui deviennent nos partenaires. -->
             </ul>
         </div>
-       
       </td></tr>
 <?php
 //CRO 2011-10-12
