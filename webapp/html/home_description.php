@@ -44,13 +44,13 @@ switch($_SESSION['language']) {
   </div>
   <div id="howto" style="display:none;visibility:hidden;" class="content" >
     <p>La navigation se fait par l'intermédiaire de l'outil google-map. 
-    Les spéléologue sont représentés par des casques rouges 
+    Les spéléologue sont représentés par 
     <img src="../images/icons/caver2.png" alt="" />, les entrées des cavités 
-    par des kits jaunes <img src="../images/icons/entry2.png" alt="" /> et les club par
-    des maisons bleues <img src="../images/icons/grotto1.png" alt="" />.<br />
+    par <img src="../images/icons/entry2.png" alt="" /> et les club par
+    <img src="../images/icons/grotto1.png" alt="" />.<br />
     En cliquant sur un des pictogrammes, tu fais apparaître une bulle qui contient ses 
     propriétés (massif, développement, profondeur, etc.).<br />
-    Pour les objets « Entrées » (les kits jaunes), la bulle permet d'accéder à la 
+    Pour les objets « Entrées » (marqueur bleu), la bulle permet d'accéder à la 
     fiche détaillée qui contient entre autre :</p>
     <ul>
       <li>la description de l'accès</li>
@@ -176,19 +176,17 @@ switch($_SESSION['language']) {
   </div>
   <div id="howto" style="display:none;visibility:hidden;" class="content" >
     <p>Navigation is through an embeded Google-Map. 
-    Cavers are represented by red helmets <img src="../images/icons/caver2.png" alt="" />,
-    entries by yellow packs <img src="../images/icons/entry2.png" alt="" /> and 
-    grottoes by blue houses <img src="../images/icons/grotto1.png" alt="" />.<br />
-    By clicking on any of those pictograms, an info-window appears showing its
-    properties (massif, length, depth, etc.).<br />
-    For the "entries" (yellow packs), the info-window allow you to access to
-    a detailed sheet containing:</p>
+    Cavers are represented by <img src="../images/icons/caver2.png" alt="" />,
+    entries by <img src="../images/icons/entry2.png" alt="" /> and 
+    grottoes by <img src="../images/icons/grotto1.png" alt="" />.<br />
+    By clicking on any of those pictograms, an info-window appears showing its properties (mountain range, length, depth, etc.).<br />
+    For the "entries" (blue marker), the info-window allows you to access a detailed sheet containing :</p>
     <ul>
       <li>a description of the access to the cave</li>
       <li>a cave description</li>
-      <li>a description of rigging and ropes needs</li>
+      <li>a description of rigging and necessary ropes</li>
       <li>a reference to any linked web site</li>
-      <li>some comments (by cavers) with an evaluation of aestetics etc.</li>
+      <li>some comments (by cavers) which may  include  a rating  for aesthetics ; ease of  move etc.</li>
     </ul>
   </div>
   
@@ -198,11 +196,8 @@ switch($_SESSION['language']) {
     </ul>
   </div>
   <div id="why" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> works with caver's contributions 
-    (so your's), and we count on you to help us complete and rely this database.
-    You can access to the creation/modification menu with the left-hand panel
-    after you signed in.<br />
-    We remind you that you can add any interesting cave to <?php echo $_SESSION['Application_name']; ?>!<br />
+    <p><?php echo $_SESSION['Application_name']; ?> works with cavers contributions (such as yours), and we count on you to help us complete and improve this database as much as possible. You can access the create/modify menu with the left-hand panel after you have signed in.<br />
+    We would like to remind you that you can add ANY interesting cave to the <?php echo $_SESSION['Application_name']; ?> database !<br />
     Thanks.</p>
   </div>
   
@@ -238,9 +233,8 @@ switch($_SESSION['language']) {
     </ul>
   </div>
   <div id="license" style="display:none;visibility:hidden;" class="content" >
-    <p><?php echo $_SESSION['Application_name']; ?> was designed in a spirit
-    totally apolitical. The site contains elements that constitute a work
-    protected by international treaties.</p>
+    <p><?php echo $_SESSION['Application_name']; ?> was designed in a totally non political spirit.
+    The site contains elements that constitute works protected by international treaties.</p>
     <p><?php echo getLicense(1); ?></p>
   </div>
   
