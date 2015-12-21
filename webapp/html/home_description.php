@@ -166,7 +166,7 @@ switch($_SESSION['language']) {
   <div id="about" style="display:none;visibility:hidden;" class="content" >
     <p><?php echo $_SESSION['Application_name']; ?> is a comunity database for
     cavers based on a wiki-like system. Cavers fill the databes for cavers.<br />
-    Any interesting natural cavity can be added in the database!</p>
+    Any interesting natural cave can be added in the database!</p>
   </div>
   
   <div id="howto_s" onclick="JavaScript:switchMe('howto');" class="div_switcher_c">
@@ -194,7 +194,7 @@ switch($_SESSION['language']) {
   
   <div id="why_s" onclick="JavaScript:switchMe('why');" class="div_switcher_c">
     <ul>
-      <li><span class="title">Why are you a key in the <?php echo $_SESSION['Application_name']; ?>'s project?</span></li>
+      <li><span class="title">Why you are a key in the <?php echo $_SESSION['Application_name']; ?> project</span></li>
     </ul>
   </div>
   <div id="why" style="display:none;visibility:hidden;" class="content" >
@@ -208,7 +208,7 @@ switch($_SESSION['language']) {
   
   <div id="who_s" onclick="JavaScript:switchMe('who');" class="div_switcher_c">
     <ul>
-      <li><span class="title">Who are we?</span></li>
+      <li><span class="title">Who we are</span></li>
     </ul>
   </div>
   <div id="who" style="display:none;visibility:hidden;" class="content" >
@@ -234,7 +234,7 @@ switch($_SESSION['language']) {
   
   <div id="license_s" onclick="JavaScript:switchMe('license');" class="div_switcher_c">
     <ul>
-      <li><span class="title">What are the term of use of the data?</span></li>
+      <li><span class="title">Terms of use of the data</span></li>
     </ul>
   </div>
   <div id="license" style="display:none;visibility:hidden;" class="content" >
@@ -246,26 +246,26 @@ switch($_SESSION['language']) {
   
   <div id="sensitive_s" onclick="JavaScript:switchMe('sensitive');" class="div_switcher_c">
     <ul>
-      <li><span class="title">How to add a sensitive cavity?</span></li>
+      <li><span class="title">How to add a sensitive cave</span></li>
     </ul>
   </div>
   <div id="sensitive" style="display:none;visibility:hidden;" class="content" >
-    <p>If you want to register a "sensitive" cavity there are two options
+    <p>If you want to register a "sensitive" cave there are two options
     depending on the degree of protection desired.</p>
-    <ul><li>The cavity is easily accessible and you just whant to  <b>avoid
+    <ul><li>The cave is easily accessible and you just whant to  <b>avoid
     overcrowding</b> by non-caver people.<br />
     In this case, just chosse the option <b>"Registered (sensitive cave and/or
     regulated access)."</b> when adding the entry.<br />
-    In this way the cavity appears only to registered users who are connected.</li>
-    <li>The cavity is <b>very sensitive (concretions, archeology, paleontology, etc.)</b>
+    In this way the cave appears only to registered users who are connected.</li>
+    <li>The cave is <b>very sensitive (concretions, archeology, paleontology, etc.)</b>
     and it is essential to avoid access for non-caver people.<br />
     In this case, chosse the option "Registered (sensitive cave and/or
     regulated access).", and it is recommended to <b>distort the coordinates</b> of
-    the cavity within a radius of 1 km around its real place and <b>specify</b> in
-    the detailed sheet that the cavity is not pointing its exact location and
+    the cave within a radius of 1 km around its real place and <b>specify</b> in
+    the detailed sheet that the cave is not pointing its exact location and
     should not indicate access.<br />
     In this way the cavers that wish to visit that cave will necessarily
-    contact with right peolple/organization concerned by this cavity. This option
+    contact with right peolple/organization concerned by this cave. This option
     is reserved for exceptional cases.</li></ul>
   </div>
   
@@ -635,19 +635,19 @@ aufbauend auf dem Prinzip von Wikipedia.<br />
   </div>
   <div id="sensitive" style="display:none;visibility:hidden;" class="content" >
     <p>Se vuoi aggiungere una grotta "sensibile" ci sono due opzioni, dipende dal grado di protezione che si desidera dare</p>
-    <ul><li>The cavity is easily accessible and you just whant to  <b>avoid
+    <ul><li>The cave is easily accessible and you just whant to  <b>avoid
     overcrowding</b> by non-caver people.<br />
     In this case, just chosse the option <b>"Registered (sensitive cave and/or
     regulated access)."</b> when adding the entry.<br />
-    In this way the cavity appears only to registered users who are connected.</li>
+    In this way the cave appears only to registered users who are connected.</li>
     <li>La grotta è molto sensibile (concrezioni, archeologia, paleontologia, ecc) è necessario evitare l'accesso ai non speleologi<br />
     In this case, chosse the option "Registered (sensitive cave and/or
     regulated access).", and it is recommended to <b>distort the coordinates</b> of
-    the cavity within a radius of 1 km around its real place and <b>specify</b> in
-    the detailed sheet that the cavity is not pointing its exact location and
+    the cave within a radius of 1 km around its real place and <b>specify</b> in
+    the detailed sheet that the cave is not pointing its exact location and
     should not indicate access.<br />
     In this way the cavers that wish to visit that cave will necessarily
-    contact with right peolple/organization concerned by this cavity. This option
+    contact with right peolple/organization concerned by this cave. This option
     is reserved for exceptional cases.</li></ul>
   </div>
   
