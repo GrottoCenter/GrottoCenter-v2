@@ -60,7 +60,7 @@ include("declaration.php");
     function signUpNow() {
       mySite.filter.location.href = "connection_<?php echo $_SESSION['language']; ?>.php?type=new";
     }
-    
+
     function arrowOnClick() {
       var oDiv = xtdGetElementById('arrow');
       if (oDiv.className == "arrow_right") {
@@ -69,7 +69,7 @@ include("declaration.php");
         switchDetails(false);
       }
     }
-    
+
     function switchDetails(doClose) {
       var oDiv = xtdGetElementById('arrow');
       var oBody = xtdGetElementById('body');
@@ -83,15 +83,15 @@ include("declaration.php");
         mySite.detailsSizeRestore();
       }
     }
-    
+
 <?php
 if ($_SESSION['home_page'] == "overview") {
 ?>
-      
+
     function goOnClick(oForm) {
       goSearch(oForm);
     }
-    
+
     function goSearch(oForm) {
       var oSelect = oForm.result;
       var value = oForm.search_str.value;
@@ -131,7 +131,7 @@ if ($_SESSION['home_page'] == "overview") {
         resetSelect(oSelect, true);
       }
     }
-    
+
     function resetSelect(oSelect, bResults) {
       emptySelect(oSelect);
       if (bResults) {
@@ -143,14 +143,14 @@ if ($_SESSION['home_page'] == "overview") {
       }
       oSelect.disabled = true;
     }
-    
+
     function waitSelect(oSelect) {
       emptySelect(oSelect);
       oSelect.options[0] = new Option("<convert>#label=721<convert>");//Recherche en cours...
       oSelect.style.color = "#808080";
       oSelect.disabled = true;
     }
-    
+
     function selectOnClick(e, oSelect) {
       var marker = getSelectedArray(oSelect);
       document.body.focus();
@@ -162,7 +162,7 @@ if ($_SESSION['home_page'] == "overview") {
         }
       }
     }
-    
+
     function getSelectedArray(oSelect) {
       if (!oSelect.disabled) {
         if (oSelect.selectedIndex != -1) {
@@ -179,18 +179,18 @@ if ($_SESSION['home_page'] == "overview") {
       }
       return false;
     }
-    
+
     function resetListDiv(divId) {
       var oNode = xtdGetElementById(divId);
       var oContainer = oNode.parentNode;
       oContainer.removeChild(oNode);
     }
-    
+
     function closeDirections() {
       mySite.overview.clearDirections();
       hideId('directions_div');
     }
-    
+
     function openDirections(address, bFromThisPlace, category, id, locale) {
         var markerAddress;
         if (address != "") {
@@ -214,7 +214,7 @@ if ($_SESSION['home_page'] == "overview") {
             mySite.overview.setDirections(from, to, locale);
         }
     }
-    
+
     function advancedSearch() {
     }
 
@@ -234,7 +234,7 @@ if ($_SESSION['home_page'] == "overview") {
         }
       }
     }
-      
+
 <?php
     include("../scripts/events.js");
 }
@@ -258,11 +258,11 @@ if (!USER_IS_CONNECTED) {
 <?php
 }
 ?>
-      
+
       <div id="list_div" style="width:100%"></div>
-      
+
       <div id="details_div" style="width:100%"></div>
-          
+
 <?php
 if ($_SESSION['home_page'] == "overview") {
 	$display_conv = ($show_coords_conv) ? '' : 'display:none;visibility:hidden;';
@@ -277,13 +277,13 @@ if ($_SESSION['home_page'] == "overview") {
             <li class ="sub_menu">
               <a href="JavaScript:switchConverter(true,'temperature_converter');"><convert>#label=262<convert><!--Convertir des températures--></a>
             </li>
-            <li class ="sub_menu"> 
+            <li class ="sub_menu">
               <a href="JavaScript:switchConverter(true,'coords_converter');"><convert>#label=263<convert><!--Convertir des coordonnées--></a>
             </li>
           </ul>
           <?php echo getBotMenu(); ?>
         </div>
-            
+
 <?php
 if ($_SESSION['home_page'] == "overview") {
   $part = "html";
@@ -293,13 +293,13 @@ if ($_SESSION['home_page'] == "overview") {
 }
 ?>
       </div>
-      
+
       <div id="directions_div" style="display:none;visibility:hidden;">
         <?php echo getTopMenu(getCloseBtn("JavaScript:closeDirections();","<convert>#label=371<convert>").'<a href="JavaScript:window.print();" title="<convert>#label=525<convert>" class="nothing" style="display:block;float:right;text-align:right;margin-right:5px;"><img src="../images/icons/printer.png" alt="<convert>#label=525<convert>" style="border:0px none;" /></a>'.'<div class="frame_title" style="margin-right:46px;">'.setTitle("#", "details", "<convert>#label=166<convert>", 1).'</div><!--Itinéraire-->'); ?>
         <div id="directions"></div>
         <?php echo getBotMenu(); ?>
       </div>
-          
+
 <?php
 }
 if (false) {
@@ -421,28 +421,31 @@ if ($_SESSION['home_page'] == "overview") {
           <li class ="sub_menu">
       	    <a href="contact_<?php echo $_SESSION['language']; ?>.php?type=message" target="filter"><convert>#label=312<convert><!--Contacter votre administrateur/modérateur--></a>
       	  </li>
-         
-          <li class ="sub_menu"> 
-            <?php 
+
+          <li class ="sub_menu">
+            <?php
             $blogURL = "http://blog-" . strtolower($_SESSION['language']) . ".grottocenter.org";
             if (!in_array(strtolower($_SESSION['language']), array("fr", "en"))) {
                 $blogURL = "http://blog-en.grottocenter.org";
             }?>
             <a href="<?php echo $blogURL;?>" target="_blank"><convert>#label=927<convert><!--Blog--></a>
           </li>
-          <li class ="sub_menu"> 
+          <li class ="sub_menu">
             <a href="https://www.facebook.com/GrottoCenter" target="_blank"><convert>#label=930<convert><!--Facebook--></a>
           </li>
           <li class ="sub_menu">
             <a href="../phpBB3/viewforum.php?f=<?php echo $FAQPages[$_SESSION['language']]['home']; ?>" target="_blank"><convert>#label=315<convert><!--FAQ--></a>
           </li>
-          <li class ="sub_menu"> 
+          <li class ="sub_menu">
             <a href="http://www.wikicaves.org" target="_blank">Wikicaves</a>
           </li>
-		  <li class ="sub_menu"> 
+          <li class ="sub_menu"> 
             <a href="https://github.com/GrottoCenter/GrottoCenter/" target="_blank">Grottocenter - Github</a>
           </li>
-          <li class ="sub_menu"> 
+          <li class ="sub_menu">
+            <a href="JavaScript:openBats('<?php echo $_SESSION['language']; ?>');"><convert>#label=942<convert><!--Bats--></a>
+          </li>
+          <li class ="sub_menu">
             <?php if (strtolower($_SESSION['language']) == "fr") {?>
               <a href="http://fr.wikicaves.org/partners-partenaires" target="_blank">Partenaires :</a>
             <?php } else {?>

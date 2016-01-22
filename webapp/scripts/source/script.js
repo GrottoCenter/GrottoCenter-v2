@@ -1501,6 +1501,13 @@ function openLegalNPrivacy(sLanguage) {
   openWindow(loadLocation, "", undefined, undefined, getOptions("regular"));
 }
 
+
+function openBats(sLanguage) {
+  var loadLocation;
+  loadLocation = "bats_" + sLanguage + ".php";
+  //window.open(loadLocation, "", getOptions("regular"));
+  openWindow(loadLocation, "", undefined, undefined, getOptions("regular"));
+}
 function openInBlank(e, url) {
 	oNode = getTargetNode(e);
 	if (oNode != undefined) {
