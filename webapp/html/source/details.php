@@ -439,7 +439,7 @@ if ($_SESSION['home_page'] == "overview") {
           <li class ="sub_menu">
             <a href="http://www.wikicaves.org" target="_blank">Wikicaves</a>
           </li>
-          <li class ="sub_menu"> 
+          <li class ="sub_menu">
             <a href="https://github.com/GrottoCenter/GrottoCenter/" target="_blank">Grottocenter - Github</a>
           </li>
           <li class ="sub_menu">
@@ -470,11 +470,12 @@ if ($_SESSION['home_page'] == "overview") {
         </div>
         <div style="text-align: center;">
             <a href="http://speleocaf73.canalblog.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/speleocaf73.jpg" alt="CAF Albertville Speleo Club" /></a>
-			<a href="http://www.aravisexplo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/aravisexplo.png" alt="Aravis Explo" /></a>
-			<a href="http://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
+            <a href="http://www.aravisexplo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/aravisexplo.png" alt="Aravis Explo" /></a>
+            <a href="http://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
         </div>
-	    <div style="text-align: center;">
+        <div style="text-align: center;">
             <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.png" alt="Section Spéléo du CAF de Lille" /></a>
+            <a href="http://g-a-s-o-i-l.blogspot.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gasoil.png" alt="Groupement Associatif de Spéléologues d'Orgnac-L'Aven, Issirac et Labastide-de-Virac" /></a>
         </div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
