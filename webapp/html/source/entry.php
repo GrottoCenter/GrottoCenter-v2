@@ -1059,14 +1059,14 @@ function microtime_float()
 		      	<convert>#label=100<convert><!--Région-->
 	      	</label>
         </td><td class="field">
-		      <input class="input1" type="text" id="n_entry_region" name="n_entry_region" value="<?php echo $region; ?>"  size="15" maxlength="32" />
+		      <input class="input1" type="text" id="n_entry_region" name="n_entry_region" value="<?php echo $region; ?>"  size="15" maxlength="64" />
 		      <i><convert>#label=665<convert><!--Ex : Rhône (69)--></i>
 		    </td></tr><tr><td width="170" class="label">
 		      <label for="n_entry_city">
 		      	<convert>#label=101<convert><!--Ville-->
 	      	</label>
         </td><td class="field">
-		      <input class="input1" type="text" id="n_entry_city" name="n_entry_city" value="<?php echo $city; ?>"  size="15" maxlength="32" />
+		      <input class="input1" type="text" id="n_entry_city" name="n_entry_city" value="<?php echo $city; ?>"  size="15" maxlength="64" />
 		    </td></tr><!--<tr><td width="170" class="label">
 					<label for="n_entry_address">
 		      	<convert>#label=102<convert>--><!--Adresse-->
