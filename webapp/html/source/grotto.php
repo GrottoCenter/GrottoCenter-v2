@@ -21,7 +21,7 @@
 include("../conf/config.php");
 include("../func/function.php");
 include("declaration.php");
-if (!allowAccess(grotto_view_all)){ 
+if (!allowAccess(grotto_view_all)){
   exit();
 }
 $frame = "filter";
@@ -46,13 +46,13 @@ $frame = "filter";
     $parameters = "";
     $locked = false;
     $helpId = array("logo" => 7, "edit" => 8);
-    
+
     if (isset($_GET['back'])) {
     	$backPage = (isset($_GET['back'])) ? $_GET['back'] : '';
     } else {
       $backPage = "grotto";
     }
-    
+
     if (allowAccess(grotto_delete_all)) {
       //Delete the element
       if (isset($_POST['delete'])){
@@ -71,7 +71,7 @@ $frame = "filter";
         }
         $type = "menu";
       }
-      
+
       //Open Deleting window
       if ($type == "delete") {
         $did = (isset($_GET['did'])) ? $_GET['did'] : '';
@@ -86,7 +86,7 @@ $frame = "filter";
         }
       }
     }
-  
+
     if (allowAccess(grotto_edit_all)) {
       //Save the new user's parameters :
       if ($type == "edit") {
@@ -219,7 +219,7 @@ $frame = "filter";
           }
         }
       }
-  	  
+
   	  if ($type == "logo") {
         $id = (isset($_GET['id'])) ? $_GET['id'] : '';
         if (takeOver("grotto",$id) && $id != "") {
@@ -260,7 +260,7 @@ if (false) {
     var doCancel = true;
     var namesArray = new Array();
 <?php include("../scripts/events.js"); ?>
-      
+
 <?php
 switch ($type) {
 	case "menu":
@@ -268,14 +268,14 @@ switch ($type) {
     function menuBeforeLoad() {
       parent.setFilterSize(400,"px");
     }
-    
+
     function menuOnLoad() {
       mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
       var oHtml = document.getElementsByTagName('HTML')[0];
       parent.setFilterSizeTight(oHtml);
       <?php if (isset($_POST['delete'])) { ?> reload(false); <?php } ?>
     }
-    
+
     function grottoEdit(oForm) {
       var oRadio = oForm.radio_list;
       var grottoId = getRadioValue(oRadio);
@@ -284,7 +284,7 @@ switch ($type) {
         self.location.href = "grotto_<?php echo $_SESSION['language']; ?>.php?type=edit&id=" + grottoId;
       }
     }
-    
+
     function grottoLogo(oForm) {
       var oRadio = oForm.radio_list;
       var grottoId = getRadioValue(oRadio);
@@ -298,13 +298,13 @@ switch ($type) {
       //self.location.href = "grotto_<?php echo $_SESSION['language']; ?>.php?type=menu";
       oForm.submit();
     }
-    
+
     function grottoDelete(oForm) {
       var oRadioArray = oForm.radio_list;
       var grottoId = getRadioValue(oRadioArray);
       deleteMarker("grotto", grottoId, "<?php echo $_SESSION['language']; ?>");
     }
-  
+
     function grottoOnClick(e, id) {
       var category = "grotto";
       openMe(id, category, false);
@@ -326,11 +326,11 @@ switch ($type) {
 	case "logo":
 ?>
     function logoOnLoad() {
-      
+
     }
-    
+
     function logoBeforeLoad() {
-    
+
     }
 <?php
 	break;
@@ -344,7 +344,7 @@ switch ($type) {
         parent.setFilterSize(25);
       }
     }
-      
+
     function newOnLoad(hasFailed) {
       var oForm = document.new_grotto;
       mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
@@ -366,7 +366,7 @@ switch ($type) {
         reload(false);
       }
     }
-      
+
     function selectOnClick(e, oSelect) {
       var Id = oSelect.options[oSelect.selectedIndex].value;
       document.body.focus();
@@ -374,7 +374,7 @@ switch ($type) {
       openMe(Id, Category, false);
       detailMarker(e, Category, Id, '<?php echo $_SESSION['language']; ?>', false);
   	}
-  	
+
   	function entryRemove() {
       var oForm = document.new_grotto;
       var oOptions = oForm.e_myList.options;
@@ -385,7 +385,7 @@ switch ($type) {
         }
       }
     }
-  
+
   	function entryAdd() {
       var windowName, url;
       windowName = "<convert>#label=612<convert>";//Choisissez une ou plusieurs entrées à ajouter
@@ -393,19 +393,19 @@ switch ($type) {
       url = "pick_window_<?php echo $_SESSION['language']; ?>.php?type=entry&callback=addEntry";
       openWindow(url, windowName, 690, 520);
   	}
-  	
+
   	function addEntry(oForm) {
       var uForm = document.new_grotto;
       addOptionsFromSelection(oForm, uForm.e_myList);
     }
-      
+
     /*function cityOnFocus(cityField, suggestBoxId) {
       var oForm = document.new_grotto;
       // Uses the geoNames library
       postalCodeLookup(suggestBoxId, oForm.n_grotto_postal, oForm.n_grotto_country, cityField);
       // Uses the geoNames library
     }*/
-    
+
     function newSubmit(event) {
       var oForm = document.new_grotto;
       var rightSource = toAbsURL(rightPic);
@@ -425,9 +425,9 @@ switch ($type) {
         doCancel = false;
       }
     }
-    
+
     var address_level;
-      
+
     function newShowMe(byCoords) {
       address_level = 4; //Address = 4, City = 3, Region = 2, Country = 1
       var oForm = document.new_grotto;
@@ -445,7 +445,7 @@ switch ($type) {
       }
       <?php } ?>
     }
-    
+
     function showMarker(gLatLng) {
       if (gLatLng) {
         showMe(gLatLng, "grotto", false);
@@ -463,7 +463,7 @@ switch ($type) {
             showMarker(geocoderResult[0].geometry.location);
         }
     }
-    
+
     function moveMarker(gLatLng) {
       if (gLatLng) {
         moveMarkerTo('<?php echo $id; ?>', 'grotto', gLatLng.lat(), gLatLng.lng());
@@ -482,30 +482,30 @@ switch ($type) {
             moveMarker(geocoderResult[0].geometry.location);
         }
     }
-    
+
     function recieveLocation(lat, lng) {
       setLocations(lat, lng);
       newShowMe(true);
     }
-    
+
     function setLocations(lat, lng) {
       var oForm = document.new_grotto;
       oForm.n_grotto_latitude.value = lat;
       oForm.n_grotto_longitude.value = lng;
     }
-    
+
     function checkThisName(oObject, namePic) {
       checkName(oObject, namePic, "grotto", "<?php echo $name; ?>", namesArray, false); //put the last parameter to false
       displayCloseNames(oObject, getMatchingValues(oObject.value, namesArray, "<?php echo $name; ?>"), '<convert>#label=844<convert>'); //Noms existants déjà en base :
     }
-      
+
     function newOnBeforeUnload(event) {
       if (doCancel) {
         var msg = "<convert>#label=92<convert>";//Les modifications seront perdues !
         stopUnload(event, msg);
       }
     }
-      
+
     function newOnUnload(hasFailed) {
       parent.overview.showId("reload");
       mySite.details.switchDetails(false);
@@ -535,7 +535,7 @@ switch ($type) {
     function grottoNew() {
       self.location.href = "grotto_<?php echo $_SESSION['language']; ?>.php?type=edit";
     }
-      
+
     function newCancel() {
       doCancel = false;
       self.location.href = "<?php echo $backPage; ?>_<?php echo $_SESSION['language']; ?>.php?type=menu<?php echo $parameters; ?>";
@@ -840,7 +840,7 @@ switch ($type) {
 	      		<img src="../images/icons/FlagRequired.gif" alt="*" /><convert>#label=144<convert><!--Nom du club--><sup>1</sup>
 	      	</label>
 	      </td><td class="field">
-      		<input class="input1" type="text" id="n_grotto_name" name="n_grotto_name" value="<?php echo $name; ?>" size="15" maxlength="36" onkeyup="JavaScript:checkThisName(this, 'name_pic');" />
+      		<input class="input1" type="text" id="n_grotto_name" name="n_grotto_name" value="<?php echo $name; ?>" size="40" maxlength="100" onkeyup="JavaScript:checkThisName(this, 'name_pic');" />
       		<img class="status1" name="name_pic" id="name_pic" src="../images/icons/wrong.png" alt="image" />
       	</td></tr><tr><td width="170" class="label">
 		      <label for="n_grotto_country">
@@ -857,7 +857,7 @@ switch ($type) {
 		      	<convert>#label=100<convert><!--Région-->
 		      </label>
 	      </td><td class="field">
-      	  <input class="input1" type="text" id="n_grotto_region" name="n_grotto_region" value="<?php echo $region; ?>"  size="15" maxlength="32" />
+      	  <input class="input1" type="text" id="n_grotto_region" name="n_grotto_region" value="<?php echo $region; ?>"  size="25" maxlength="32" />
       	  <i><convert>#label=665<convert><!--Ex : Rhône (69)--></i>
 		    </td></tr><tr><td width="170" class="label">
           <label for="n_grotto_postal">
@@ -870,14 +870,14 @@ switch ($type) {
 		      	<convert>#label=101<convert><!--Ville-->
           </label>
 	      </td><td class="field">
-      	  <input class="input1" type="text" id="n_grotto_city" name="n_grotto_city" value="<?php echo $city; ?>"  size="15" maxlength="32" /><!-- onfocus="JavaScript:cityOnFocus(this,'suggestBoxElement');" onblur="JavaScript:closeSuggestBox();"-->
+      	  <input class="input1" type="text" id="n_grotto_city" name="n_grotto_city" value="<?php echo $city; ?>"  size="40" maxlength="32" /><!-- onfocus="JavaScript:cityOnFocus(this,'suggestBoxElement');" onblur="JavaScript:closeSuggestBox();"-->
       	  <!--span style="position:absolute;top:20px;left:0px;z-index:25;visibility:hidden;" id="suggestBoxElement"></span-->
 		    </td></tr><tr><td width="170" class="label">
           <label for="n_grotto_address">
 		      	<convert>#label=102<convert><!--Adresse-->
           </label>
 	      </td><td class="field">
-      	  <input class="input1" type="text" id="n_grotto_address" name="n_grotto_address" value="<?php echo $address; ?>" size="20" maxlength="128" />
+      	  <input class="input1" type="text" id="n_grotto_address" name="n_grotto_address" value="<?php echo $address; ?>" size="40" maxlength="128" />
 		    </td></tr><tr><td width="170" class="label">
           <label for="n_grotto_locate">
 		      	<convert>#label=107<convert><!--Indiquer sa position sur la carte--><sup>2</sup>
@@ -889,7 +889,7 @@ switch ($type) {
 		      	<convert>#label=146<convert><!--E-mail de contact--><sup>3</sup>
           </label>
 	      </td><td class="field">
-      	  <input class="input1" type="text" id="n_grotto_contact" name="n_grotto_contact" value="<?php echo $contact; ?>" size="20" maxlength="40" onkeyup="JavaScript:checkMail(this, 'mail_pic');" />
+      	  <input class="input1" type="text" id="n_grotto_contact" name="n_grotto_contact" value="<?php echo $contact; ?>" size="40" maxlength="40" onkeyup="JavaScript:checkMail(this, 'mail_pic');" />
       	  <img class="status1" name="mail_pic" id="mail_pic" src="../images/icons/wrong.png" alt="image" />
 		    </td></tr><tr><td width="170" class="label">
 		      <label for="n_grotto_birth">
