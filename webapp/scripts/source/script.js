@@ -89,7 +89,7 @@ function logOff(sMessage) {
   }
 }*/
 
-function ltrim(str) { 
+function ltrim(str) {
 	for(var k = 0; k < str.length && isWhitespace(str.charAt(k)); k++);
 	return str.substring(k, str.length);
 }
@@ -374,19 +374,19 @@ function findElementPosY(obj) {
 
 function getResponseText(sURL) {
   var xhr_object;
-  xhr_object = null; 
-  if (window.XMLHttpRequest) { // Firefox 
-    xhr_object = new XMLHttpRequest(); 
+  xhr_object = null;
+  if (window.XMLHttpRequest) { // Firefox
+    xhr_object = new XMLHttpRequest();
   } else {
-    if (window.ActiveXObject) {// Internet Explorer 
-      xhr_object = new ActiveXObject("Microsoft.XMLHTTP"); 
-    } else { // XMLHttpRequest non supporté par le navigateur 
-      alert("XMLHTTPRequest error !"); 
+    if (window.ActiveXObject) {// Internet Explorer
+      xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
+    } else { // XMLHttpRequest non supporté par le navigateur
+      alert("XMLHTTPRequest error !");
       return;
     }
   }
-  xhr_object.open("GET", sURL, false); 
-  xhr_object.send(null); 
+  xhr_object.open("GET", sURL, false);
+  xhr_object.send(null);
   if (xhr_object.readyState === 4) {
     return xhr_object.responseText;
   }
@@ -688,6 +688,7 @@ function checkName(oObject, sTargetId, sCategory, sName, namesArray, bUnicity) {
     case "request":
     case "file":
     case "entry":
+    case "grotto":
       reg = new RegExp("^[^|/\\\"\\s\\\\#&+¨]{1}[^|/\\\"\\\\#&+¨]{0,98}[^|/\\\"\\s\\\\#&+¨]{1}$", "ig");
       break;
     case "author":
@@ -1021,7 +1022,7 @@ function decToBin(dec) {
     rest = temp - result * 2;
     bin = rest + bin;
   }
-  return bin; 
+  return bin;
 }
 
 function binToDec(bin) {
@@ -1095,8 +1096,8 @@ function openMe(id, category, setZoom, gLatLng, goClose) {
 }
 
 function implode(glue, pieces) {
-    // Joins array elements placing glue string between items and return one string  
-    // 
+    // Joins array elements placing glue string between items and return one string
+    //
     // version: 909.322
     // discuss at: http://phpjs.org/functions/implode
     // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
@@ -1252,7 +1253,7 @@ function goToDefaultPosition(lat, lng, level) {
 }
 
 function fillSelect(list, oList) {
-  var i, j; 
+  var i, j;
   j = 0;
   for (i = 0; i < list.length; i = i + 1) {
     if (list[i].Text != undefined) {
@@ -1850,10 +1851,10 @@ function insertTag(oObject, sOTag, sCTag) {
     firstPos = oObject.selectionStart;
     secondPos = oObject.selectionEnd + sOTag.length;
     contenuScrollTop = oObject.scrollTop;
-    
+
     oObject.value = oObject.value.slice(0, firstPos) + sOTag + oObject.value.slice(firstPos);
     oObject.value = oObject.value.slice(0, secondPos) + sCTag + oObject.value.slice(secondPos);
-    
+
     oObject.selectionStart = firstPos + sOTag.length;
     oObject.selectionEnd = secondPos;
     oObject.focus();
@@ -1978,7 +1979,7 @@ function alertObject(obj) {
   for(var property in obj)
   {
       //Add the name and value of the child object
-      string += property + ': '+ obj[property] + ''+ '\n';           
+      string += property + ': '+ obj[property] + ''+ '\n';
   }
   alert(string);
 }
