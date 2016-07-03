@@ -1495,17 +1495,26 @@ function getOptions(type) {
   return options;
 }
 
+// open the Legal and Privacy page
 function openLegalNPrivacy(sLanguage) {
   var loadLocation;
-  loadLocation = "legal_and_privacy_" + sLanguage + ".php";
+  loadLocation = "https://wiki.grottocenter.org/wiki/GrottoCenter:" + sLanguage + "/Legal_and_Privacy_Statement";
   //window.open(loadLocation, "", getOptions("regular"));
   openWindow(loadLocation, "", undefined, undefined, getOptions("regular"));
 }
 
+// open the Help page
+function openHelp(sLanguage) {
+  var loadLocation;
+  loadLocation = "https://wiki.grottocenter.org/wiki/GrottoCenter:" + sLanguage + "/User_Guide";
+  //window.open(loadLocation, "", getOptions("regular"));
+  openWindow(loadLocation, "", undefined, undefined, getOptions("regular"));
+}
 
+// open the Bats page
 function openBats(sLanguage) {
   var loadLocation;
-  loadLocation = "bats_" + sLanguage + ".php";
+  loadLocation = "https://wiki.grottocenter.org/wiki/GrottoCenter:" + sLanguage + "/bats";
   //window.open(loadLocation, "", getOptions("regular"));
   openWindow(loadLocation, "", undefined, undefined, getOptions("regular"));
 }

@@ -434,7 +434,7 @@ if ($_SESSION['home_page'] == "overview") {
             <a href="https://www.facebook.com/GrottoCenter" target="_blank"><convert>#label=930<convert><!--Facebook--></a>
           </li>
           <li class ="sub_menu">
-            <a href="../phpBB3/viewforum.php?f=<?php echo $FAQPages[$_SESSION['language']]['home']; ?>" target="_blank"><convert>#label=315<convert><!--FAQ--></a>
+            <a href="JavaScript:openHelp('<?php echo $_SESSION['language']; ?>');"><convert>#label=315<convert><!--FAQ--></a>
           </li>
           <li class ="sub_menu">
             <a href="http://www.wikicaves.org" target="_blank">Wikicaves</a>
