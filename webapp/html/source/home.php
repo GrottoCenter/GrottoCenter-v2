@@ -213,6 +213,16 @@ if (false) {
       echo "</div>";
     }
 ?>
+
+<!-- Windows French and English Blogs-->
+<h4>Community</h4>
+<iframe frameborder="0" height="200" width="100%"
+src="http://ag0p85pls00984bsg1fkeb3bkqkq4832-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=http://www.gstatic.com/sites-gadgets/rss-sites/rss_sites.xml&amp;container=enterprise&amp;view=home&amp;lang=fr&amp;country=ALL&amp;sanitize=0&amp;v=94af6509c613e505&amp;libs=core:setprefs:settitle&amp;mid=197&amp;parent=http://fr.wikicaves.org/actuality-actualite#up_bg_color=%23fff&amp;up_font_family=Sans+Serif&amp;up_items_to_show=3&amp;up_font_size=12&amp;up_display=1&amp;up_title_color=%2300c&amp;up_snippet=1&amp;up_txt_color=%23000&amp;up_rss_feed_url=http://blog-fr.grottocenter.org//feeds/posts/default&amp;st=e%3DAIHE3cBPYn3Oa8sAGdXI%252B6HCHZn5VWq6psN9uX3CxiAOqGxc00xDsCJKgeyIB0l2CRRi2TGF89aDMQm4rC42xWEjwutcVfXzmjQBTm%252Bru3hXlE%252F4xBV1Yz25xRRwdjAd4Xgu6uX%252BfldV%26c%3Denterprise&amp;rpctoken=4022344176915052636"></iframe>
+<br>
+<hr id="hr">
+<br>
+<iframe frameborder="0" height="200" width="100%"
+src="http://ag0p85pls00984bsg1fkeb3bkqkq4832-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=http://www.gstatic.com/sites-gadgets/rss-sites/rss_sites.xml&amp;container=enterprise&amp;view=canvas&amp;lang=en&amp;country=ALL&amp;sanitize=0&amp;v=94af6509c613e505&amp;libs=core:setprefs:settitle&amp;mid=209&amp;parent=http://en.wikicaves.org/actuality-actualite#up_bg_color=%23fff&amp;up_font_family=Sans+Serif&amp;up_items_to_show=3&amp;up_font_size=12&amp;up_display=1&amp;up_title_color=%2300c&amp;up_snippet=1&amp;up_txt_color=%23000&amp;up_rss_feed_url=http://blog-en.grottocenter.org//feeds/posts/default&amp;st=e%3DAIHE3cCGHpZiG%252BqlfoC6v9ItV66vPNsgHPQYHvCBWB6%252F5l2a4smx0u7ChQ5LcrMJEZqAOBMNXa%252BfogAahya5sYiWSWHBO5r%252FYVovYGHNh7%252BgJk4%252BCjkEpzxtfKu9kiZG3zCF3jnmpSWg%26c%3Denterprise&amp;rpctoken=2122435038328814347"></iframe>
 				</div>
 			</td></tr>
 <?php } } ?>
