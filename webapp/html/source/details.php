@@ -453,6 +453,9 @@ if ($_SESSION['home_page'] == "overview") {
             <?php }?>
           </li>
         </ul>
+		<div style="text-align: center;">
+		    <a href="http://caves.or.id/" target="_blank" style="border-bottom: none;"><img src="../images/icons/iss.png" alt="Indonesian Speleological Society" /></a>
+		</div>
         <div style="text-align: center;">
             <a href="http://www.cds46.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/cds46.jpg" alt="CDS 46 Lot" /></a>
             <a href="http://cdspeleo11.free.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/cds11.jpg" alt="CDS 11 Aude" /></a>
