@@ -454,6 +454,7 @@ if ($_SESSION['home_page'] == "overview") {
           </li>
         </ul>
         <div style="text-align: center;">
+            <a href="http://speleoubs.be/" target="_blank" style="border-bottom: none;"><img src="../images/icons/ubs.gif" alt="Union Belge de Spéléologie" /></a>	
             <a href="http://caves.or.id/" target="_blank" style="border-bottom: none;"><img src="../images/icons/iss.png" alt="Indonesian Speleological Society" /></a>
         </div>
         <div style="text-align: center;">
