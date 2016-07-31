@@ -453,6 +453,10 @@ if ($_SESSION['home_page'] == "overview") {
             <?php }?>
           </li>
         </ul>
+      </div>
+      <div class ="menu" id="help_menu">
+        <?php echo getTopMenu('<div class="frame_title" style="margin-right:0px;">'.setTitle("#", "details", "<convert>#label=673<convert>", 1).'</div><!--Partners menu-->'); ?>
+
         <div style="text-align: center;">
             <a href="http://speleoubs.be/" target="_blank" style="border-bottom: none;"><img src="../images/icons/ubs.gif" alt="Union Belge de Spéléologie" /></a>	
             <a href="http://caves.or.id/" target="_blank" style="border-bottom: none;"><img src="../images/icons/iss.png" alt="Indonesian Speleological Society" /></a>
