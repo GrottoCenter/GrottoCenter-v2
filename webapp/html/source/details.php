@@ -455,7 +455,8 @@ if ($_SESSION['home_page'] == "overview") {
         </ul>
         <div style="text-align: center;">
             <a href="http://caves.or.id/" target="_blank" style="border-bottom: none;"><img src="../images/icons/iss.png" alt="Indonesian Speleological Society" /></a>
-        </div>
+       	    <a href="http://bgcave.org/bg/" target="_blank" style="border-bottom: none;"><img src="../images/icons/bulgarian-caving-society.jpg" alt="Bulgarian Caving Society" /></a>
+	</div>
         <div style="text-align: center;">
             <a href="http://www.cds46.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/cds46.jpg" alt="CDS 46 Lot" /></a>
             <a href="http://cdspeleo11.free.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/cds11.jpg" alt="CDS 11 Aude" /></a>
@@ -479,7 +480,8 @@ if ($_SESSION['home_page'] == "overview") {
         <div style="text-align: center;">
             <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.png" alt="Section Spéléo du CAF de Lille" /></a>
             <a href="http://g-a-s-o-i-l.blogspot.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gasoil.png" alt="Groupement Associatif de Spéléologues d'Orgnac-L'Aven, Issirac et Labastide-de-Virac" /></a>
-        </div>
+            <a href="http://speleo.kg/" target="_blank" style="border-bottom: none;"><img src="../images/icons/fund-of-preservation-and-exploration-of-caves.jpg" alt="Fund of Preservation and Exploration of Caves" /></a>
+	</div>
         <?php if (strtolower($_SESSION['language']) == "fr") {?>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">
