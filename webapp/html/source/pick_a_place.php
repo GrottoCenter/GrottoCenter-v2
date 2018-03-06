@@ -40,12 +40,12 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
 		<link rel="stylesheet" type="text/css" href="../css/global.css" />
     <link rel="stylesheet" type="text/css" href="../css/global_p.css" media="print" />
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=<?php echo $_SESSION['language']; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Google_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
     //Gona need functions: getTargetNode
     var map, geocoder, marker_user, GCinfoWindow;
-    
+
     function loadMap() {
       var gLatLng, basicZoom, defaultZoom;
       basicZoom = 10;
@@ -72,21 +72,21 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
         GCinfoWindow = new google.maps.InfoWindow();
         google.maps.event.addListener(map, 'click', function (object) {
           mapOnLeftClick(object.latLng);
-        });			
+        });
 
   		showMarkerUser(gLatLng, "<?php echo $category; ?>");
     }
-    
+
     function getCoordsByDirection(sDirection, callback) {
       if (sDirection != undefined) {
         geocoder.geocode({address: sDirection}, callback);
       }
     }
-    
+
     function mapOnLeftClick(GLatLng) {
       updateDisplay(GLatLng);
     }
-    
+
     function updateDisplay(geocoderResult) {
         if (geocoderResult[0]) {
             showMarkerUser(geocoderResult[0].geometry.location, "<?php echo $category; ?>");
@@ -110,16 +110,16 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
         map.setZoom(13);
       }
     }
-    
+
     function setMarkerUser(category, point) {
       var object, titleHere;
       object = createIcon(category, false, "m");
       titleHere = getTitleTemp();
       marker_user = new google.maps.Marker({
-          position: point, 
-          title: titleHere, 
-          draggable: true, 
-          bouncy: true, 
+          position: point,
+          title: titleHere,
+          draggable: true,
+          bouncy: true,
           icon: object.image,
           shadow: object.shadow});
       google.maps.event.addListener(marker_user, "dragstart", function () {
@@ -134,13 +134,13 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
       });
       marker_user.setMap(map);
     }
-    
+
     function updateLocation(latLng) {
       if (mySite.filter.recieveLocation != undefined) {
         mySite.filter.recieveLocation(latLng.lat(), latLng.lng());
       }
     }
-    
+
     function createIcon(category, isConnected, icon_type) {
         var image = {}, shadow = {};
       if (isConnected === undefined || isConnected === "false") {
@@ -163,7 +163,7 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
           image.url = "../images/icons/entry2_clust.png";
           shadow.url = "../images/icons/entry2_clust_shadow.png";
         }
-        break;          
+        break;
       case "caver":
         if (icon_type === "m") {
             image.scaledSize = new google.maps.Size(21.33, 20.67);//32,31
@@ -205,11 +205,11 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
       }
       return {image: image, shadow: shadow};
     }
-    
+
     function getTitleTemp() {
       return "<convert>#label=126<convert>"; //Faites glisser le marqueur ...
     }
-    
+
     function openRGCInfoWindow(latLng, marker) {
       if (latLng) {
         geocoder.geocode({location: latLng}, function(addresses, status) {
@@ -230,7 +230,7 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
         });
       }
     }
-    
+
     function getClientLatLng() {
       if (google.loader.ClientLocation) {
         return new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude);
@@ -238,12 +238,12 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
         return undefined;
       }
     }
-    
+
     function loadContext() {
       mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
       loadMap();
     }
-    
+
     google.setOnLoadCallback(loadContext, true);
 
     <?php echo getCDataTag(false); ?>

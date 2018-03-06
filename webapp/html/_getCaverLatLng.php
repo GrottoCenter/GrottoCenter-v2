@@ -54,7 +54,7 @@ include("declaration.php");
       v\:* {behavior:url(#default#VML);}
     </style>
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=<?php echo $_SESSION['language']; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Google_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
     var map, geocoder, nameArray, idArray, latArray, lngArray, index, counter;
@@ -63,20 +63,20 @@ include("declaration.php");
     latArray = new Array();
     lngArray = new Array();
     index = 0;
-    
+
     function loadMap() {
         map = new google.maps.Map(document.getElementById("map"));
         //Create the geocoder
         geocoder = new google.maps.Geocoder();
     }
-    
+
     function loadAddresses() {
       geocoder.getLatLng(nameArray[index], addRows);
     }
-    
+
     function checkCavers() {
     }
-    
+
     function addRows(latLng) {
       var row, cell_id, cell_name, cell_lat, cell_lng, table;
       table = document.getElementById('table');
@@ -118,12 +118,12 @@ include("declaration.php");
         checkCavers();
       }
     }
-    
+
     function loadContext() {
       loadMap();
       loadAddresses();
     }
-    
+
     function unload() {
       google.maps.Unload();
       isLoaded = false;

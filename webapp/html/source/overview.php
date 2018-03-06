@@ -42,7 +42,7 @@ $frame = "overview";
   	unset($_SESSION['entry_filter']);
   	unset($_SESSION['grotto_filter']);
   	unset($_SESSION['caver_filter']);
-  	
+
   	function getOverviewLayers($enabled)
     {
       $sql = "SELECT ";
@@ -98,7 +98,7 @@ $frame = "overview";
       v\:* {behavior:url(#default#VML);}
     </style>
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=<?php echo $_SESSION['language']; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Google_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
     <script type="text/javascript" src="../scripts/gmap-wms.js?v3"></script>
     <!-- <script type="text/javascript" src="../scripts/dragzoom.js"></script> -->
     <script type="text/javascript" src="../scripts/GCMap.js"></script>
@@ -117,7 +117,7 @@ $frame = "overview";
         mouseLatLng, doResetEnvironement, userConnected, counterForAfterLoad, callBackFunction, clusteringLimit, categoryVisibility,
         existingMarkers, lockedMarkers, existingLines, doAbort, debug, mapControl, WMS, BGForWMS, LAYERS, layersOpacity, marker_elevation,
         elevation_handler, GCinfoWindow, dragstarted;//, clip;
-    
+
     function loadMap() {
       var latLng, dragzoomOpts, gLatLng, basicZoom, defaultZoom, options;
       if (debug) {
@@ -159,7 +159,7 @@ $frame = "overview";
           mapOnMouseMove(event);
         });
         google.maps.event.addListener(map, 'click', function (event) {
-            map.set('disableDoubleClickZoom', false);  
+            map.set('disableDoubleClickZoom', false);
             mapOnLeftClick(event);
         });
         google.maps.event.addListener(map, 'rightclick', function(e) {
@@ -231,7 +231,7 @@ $frame = "overview";
   		    map.fitBounds(bounds);
   		  });
   		  // [END region_getplaces]
-  		  
+
   		  // Bias the SearchBox results towards places that are within the bounds of the
   		  // current map's viewport.
   		  google.maps.event.addListener(map, 'bounds_changed', function() {
@@ -239,23 +239,23 @@ $frame = "overview";
   		    searchBox.setBounds(bounds);
   		  });
 
-  		google.maps.LatLng.prototype.kmTo = function(a){ 
-  		    var e = Math, ra = e.PI/180; 
-  		    var b = this.lat() * ra, c = a.lat() * ra, d = b - c; 
-  		    var g = this.lng() * ra - a.lng() * ra; 
-  		    var f = 2 * e.asin(e.sqrt(e.pow(e.sin(d/2), 2) + e.cos(b) * e.cos 
-  		    (c) * e.pow(e.sin(g/2), 2))); 
-  		    return f * 6378.137; 
+  		google.maps.LatLng.prototype.kmTo = function(a){
+  		    var e = Math, ra = e.PI/180;
+  		    var b = this.lat() * ra, c = a.lat() * ra, d = b - c;
+  		    var g = this.lng() * ra - a.lng() * ra;
+  		    var f = 2 * e.asin(e.sqrt(e.pow(e.sin(d/2), 2) + e.cos(b) * e.cos
+  		    (c) * e.pow(e.sin(g/2), 2)));
+  		    return f * 6378.137;
   		};
 
-  		google.maps.Polyline.prototype.inM = function(n){ 
-  		    var a = this.getPath(n), len = a.getLength(), dist = 0; 
-  		    for (var i=0; i < len-1; i++) { 
-  		       dist += a.getAt(i).kmTo(a.getAt(i+1)); 
+  		google.maps.Polyline.prototype.inM = function(n){
+  		    var a = this.getPath(n), len = a.getLength(), dist = 0;
+  		    for (var i=0; i < len-1; i++) {
+  		       dist += a.getAt(i).kmTo(a.getAt(i+1));
   		    }
-  		    return dist*1000; 
+  		    return dist*1000;
   		};
-  		  		  
+
     }
 
     function loadContextMenu() {
@@ -272,9 +272,9 @@ $frame = "overview";
         if (allowAccess(grotto_edit_all)) { ?>
             menuItems.push({className:'context_menu_item', eventName:'addGrotto', label:"<convert>#label=406<convert>"});
         <?php } ?>
-        
+
         contextMenuOptions.menuItems=menuItems;
-        
+
         //create the ContextMenu object
     	var contextMenu=new ContextMenu(map, contextMenuOptions);
 
@@ -282,7 +282,7 @@ $frame = "overview";
     	google.maps.event.addListener(map, 'rightclick', function(mouseEvent){
     		contextMenu.show(mouseEvent.latLng);
     	});
-    	
+
     	//	listen for the ContextMenu 'menu_item_selected' event
     	google.maps.event.addListener(contextMenu, 'menu_item_selected', function(latLng, eventName){
     		//	latLng is the position of the ContextMenu
@@ -314,7 +314,7 @@ $frame = "overview";
         var IFmap = GCinfoWindow.getMap();
         return (IFmap !== null && typeof IFmap !== "undefined");
     }
-    
+
     function setLayersOpacity(opacity) {
       var index, currentMapType;
       mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
@@ -331,7 +331,7 @@ $frame = "overview";
       map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
       map.setMapTypeId(currentMapType);
     }
-    
+
     /*BS function setControlRelationship() {
       //Create control relationships
       mapControl = new google.maps.HierarchicalMapTypeControl();
@@ -347,7 +347,7 @@ $frame = "overview";
       mapControl.addRelationship(google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID, undefined, true);
       map.addControl(mapControl);
     }*/
-    
+
     function loadExtraLayers(opacity) {
       LAYERS = new Object();
       //Set up WMS
@@ -385,18 +385,18 @@ $frame = "overview";
           style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
       });
     }
-    
+
     function loadFromXML() {
       mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
       startBusy();
       resetVars();
       loadMarkers();
     }
-    
+
     function handleErrors() {
       alert("<convert>#label=392<convert>");//Aucune localité correspondant au point de départ ou d'arrivée n'a pu être trouvé.\nCela peut être dû au fait que l'une des adresses est relativement nouvelle ou incorrecte.
     }
-    
+
     function mapOnMouseMove(event) {
         latlng = event.latLng;
       mouseLatLng = latlng;
@@ -408,11 +408,11 @@ $frame = "overview";
         drawMeasurementLine(event, false);
       }
     }
-    
+
     function showMouseElevation(latLng) {
       setupElevationMarker(latLng.lat, latLng.lng);
     }
-    
+
     function mapOnLeftClick(event) {
         if (debug) {
     		console.log("Click!");
@@ -431,7 +431,7 @@ $frame = "overview";
           loadMarkers();
       }
     }
-    
+
     function lineOnClick(oLine) {
       if (mySite.openedInfoWindowId === oLine.id1 && mySite.openedInfoWindowType === oLine.cat1) {
         openMe(oLine.id2, oLine.cat2, false);
@@ -439,10 +439,10 @@ $frame = "overview";
         openMe(oLine.id1, oLine.cat1, false);
       }
     }
-    
+
     function setNearMeList() {
       return;
-      var oSelect = mySite.filter.xtdGetElementById('markersNearMeSelect'); 
+      var oSelect = mySite.filter.xtdGetElementById('markersNearMeSelect');
       if (oSelect && allMarkers) {
         var list = getListForSelect(allMarkers, "<convert>#label=34<convert>");//Alias
         emptySelect(oSelect);
@@ -450,7 +450,7 @@ $frame = "overview";
         sortSelect(oSelect);
       }
     }
-    
+
     function setVisibilityFilter() {
       var oForm;
       if (mySite.filter) {
@@ -467,11 +467,11 @@ $frame = "overview";
         }
       }
     }
-    
+
     function setCategoryVisibility(sCategory, bIsVisible) {
       categoryVisibility[sCategory] = bIsVisible;
     }
-    
+
     function getCategoryVisibility(sCategory) {
       if (categoryVisibility != undefined) {
         return categoryVisibility[sCategory];
@@ -479,16 +479,16 @@ $frame = "overview";
         return false;
       }
     }
-    
+
     function setClusteringLimit(iValue) {
       clusteringLimit = iValue;
       reload();
     }
-    
+
     function getClusteringLimit() {
       return clusteringLimit;
     }
-    
+
 
     function drawMeasurementLine(event, doEndMeasurement) {
       var posn, mouseLatLng;
@@ -503,8 +503,8 @@ $frame = "overview";
           } else {
           mouseLatLng = getMouseLatLng();
           posn = new google.maps.LatLng(mouseLatLng.lat, mouseLatLng.lng);
-      } 
-      
+      }
+
       if (!lineStarted) {
         if (measurementLine) {
           clearMeasurementLine(true);
@@ -526,29 +526,29 @@ $frame = "overview";
       }
       return true;
     }
-    
+
     function measurementLineOver() {
       is_over_measurement_line = true;
       enableEditingMeasurement();
     }
-    
+
     function measurementLineOut() {
       is_over_measurement_line = false;
       setTimeout('disableEditingMeasurement()', 500);
     }
-    
+
     function enableEditingMeasurement() {
       if (measurementLine) {
         measurementLine.setEditable(true);
       }
     }
-    
+
     function disableEditingMeasurement() {
       if (!is_over_measurement_line && measurementLine) {
         measurementLine.setEditable(false);
       }
     }
-    
+
     function clearMeasurementLine(doResetDisplay) {
       if (measurementLine) {
         if (measurement_handler_updated) {
@@ -568,14 +568,14 @@ $frame = "overview";
         }
       }
     }
-    
+
     function displayMeasurement() {
       if (measurementLine) {
         mySite.banner.document.measurement.measure.style.color = "black";
         mySite.banner.document.measurement.measure.value = Math.round(measurementLine.inM() * 10) / 10;
       }
     }
-    
+
     function setMouseInputs(latlng) {
       if (mySite.banner) {
         if (mySite.banner.document.measurement) {
@@ -584,11 +584,11 @@ $frame = "overview";
         }
       }
     }
-    
+
     function freezeMousePsn(doFreeze) {
       mousePosnIsFrozen = doFreeze;
     }
-    
+
     function resetVars() {
       allMarkers = [];
       allMarkers.length = 0;
@@ -603,7 +603,7 @@ $frame = "overview";
         typeForShownLines = "";
       }
     }
-    
+
     function loadMarkers() {
       loadVars();
       if (doResetEnvironement) {
@@ -612,7 +612,7 @@ $frame = "overview";
         doResetEnvironement = false;
       }
     }
-    
+
     function loadVars() {
 			var postObj;
       counterForAfterLoad = 0;
@@ -685,10 +685,10 @@ $frame = "overview";
         synchroAfterLoad(true);
       }
     }
-    
+
     function getAjaxObj(sCategory) {
         var bounds, southWest, northEast, isNotMaxZoom, getVars, stdArray, i, url, data, currentMapType;
-    	/* Code from http://googlemapsbook.com/chapter7/ */          	
+    	/* Code from http://googlemapsbook.com/chapter7/ */
         //create the boundary for the data to provide
     	//initial filtering
     	bounds = map.getBounds();
@@ -722,7 +722,7 @@ $frame = "overview";
 		$.cookie('<?php echo TOKEN_NAME; ?>',t);
 		return {"url":url, "data":data};
     }
-    
+
     function abortLoading() {
       if (debug) {
         console.log("Start Aborting");
@@ -733,7 +733,7 @@ $frame = "overview";
       setAbort("link", true);
       //synchroAfterLoad(true);
     }
-    
+
     function cancelAbortLoading() {
       if (debug) {
         console.log("Cancel Aborting");
@@ -743,15 +743,15 @@ $frame = "overview";
       setAbort("grotto", false);
       setAbort("link", false);
     }
-    
+
     function setAbort(sCategory, bValue) {
       doAbort[sCategory] = bValue;
     }
-    
+
     function getAbort(sCategory) {
       return doAbort[sCategory];
     }
-    
+
     function setupEntriesLayer(xmlData, httpResponseStatusCode) {
         //BS
         entriesLayer = [];
@@ -792,7 +792,7 @@ $frame = "overview";
         synchroAfterLoad();
       }
     }
-    
+
     function setupCaversLayer(xmlData, httpResponseStatusCode) {
         //BS
         caversLayer = [];
@@ -836,7 +836,7 @@ $frame = "overview";
         synchroAfterLoad();
       }
     }
-    
+
     function setupGrottosLayer(xmlData, httpResponseStatusCode) {
         //BS
         grottosLayer = [];
@@ -875,7 +875,7 @@ $frame = "overview";
         synchroAfterLoad();
       }
     }
-    
+
     function setupLinksLayer(xmlData, httpResponseStatusCode) {
         //BS
         linksLayer = [];
@@ -960,7 +960,7 @@ $frame = "overview";
       }
       addMarkers(myMarkers, category);
     }
-  
+
     function createMarker(posn, category, id, address, city, region, country, massifId, caveId, name, caverName, caverSurname, caverLogin, inscriptionDate, reviewedDate, isConnected, isReferent, icon_type) {
       var object, options, marker, connected, clustered, infoURL, infoWindow, loadingHTMLMsg;
       object = createIconOptions(category, isConnected, isReferent, icon_type);
@@ -1003,7 +1003,7 @@ $frame = "overview";
             GCinfoWindowOpen(marker);
         }
       });
-			
+
       if (icon_type === "m") {
         google.maps.event.addListener(marker, 'mouseover', function () {
           overSwitchLines(id, category, true);
@@ -1035,7 +1035,7 @@ $frame = "overview";
         GCinfoWindow.open(map, anchor);
         mapOnInfowindowOpen();
     }
-    
+
 		function mapOnInfowindowOpen(opts) {
 			var id, iwDOM, strOpts, sHTML;
             mySite.setSessionTimer("<?php echo USER_IS_CONNECTED; ?>");
@@ -1054,11 +1054,11 @@ $frame = "overview";
 				}
 			}
 		}
-		
+
 		function infowindowReload(oButton) {
 			mapOnInfowindowOpen(oButton.getAttribute('name'));
 		}
-		
+
     function createIconOptions(category, isConnected, isReferent, icon_type) {
       var image = {}, shadow = {};
       if (isConnected === undefined || isConnected === "false") {
@@ -1074,7 +1074,7 @@ $frame = "overview";
             } else {
                 image = "../images/icons/entry2_clust.png";
             }
-            break;          
+            break;
           case "caver":
             if (icon_type === "m") {
               if (isConnected) {
@@ -1104,7 +1104,7 @@ $frame = "overview";
       }
       return {image: image, shadow: shadow};
     }
-    
+
     function setupLines(layer) {
       if (debug) {
         console.log("Entering : setupLines");
@@ -1141,7 +1141,7 @@ $frame = "overview";
       }
       addLines(allLines);
     }
-    
+
     function createLine(posn1, posn2, cat1, cat2, id1, id2, color, weight, opacity) {
         var line;
         line = new google.maps.Polyline({
@@ -1168,7 +1168,7 @@ $frame = "overview";
         });
         return line;
     }
-    
+
     function addLines(linesArray) {
       if (debug) {
         console.log("Entering : addLines");
@@ -1188,7 +1188,7 @@ $frame = "overview";
       synchroAfterLoad();
       return;
       //BS
-      
+
       /*
       var i, existings, overlaysToAdd, addedOverlays;
       removeLines(linesArray);
@@ -1215,7 +1215,7 @@ $frame = "overview";
       synchroAfterLoad();
       */
     }
-    
+
     function removeLines(linesArray, removeAll) {
       if (debug) {
         console.log("Entering : removeLines");
@@ -1228,7 +1228,7 @@ $frame = "overview";
       existingLines = [];
       return;
       //BS
-      
+
       /*
       var i, existings, overlaysToRemove, removedOverlays;
       existings = existingLines;
@@ -1255,7 +1255,7 @@ $frame = "overview";
       existingLines = existings.diff(removedOverlays);
       */
     }
-    
+
     function addMarkers(markersArray, category) {
       if (debug) {
         console.log("Entering : addMarkers");
@@ -1292,7 +1292,7 @@ $frame = "overview";
       existingMarkers[category] = existingMarkers[category].unique(); //Line added on 10 sept. 09
       synchroAfterLoad();*/
     }
-    
+
     function removeMarkers(markersArray, category, removeAll) {
       if (debug) {
         console.log("Entering : removeMarkers");
@@ -1305,7 +1305,7 @@ $frame = "overview";
       existingMarkers[category] = [];
       return;
       //BS
-      
+
       /*
       var i, existings, protects, overlaysToRemove, removedOverlays;
       existings = existingMarkers[category];
@@ -1336,7 +1336,7 @@ $frame = "overview";
       existingMarkers[category] = existingMarkers[category].unique();
       */
     }
-    
+
     function synchroAfterLoad(passThrough) {
       if (debug) {
           console.log("Entering : synchroAfterLoad");
@@ -1367,12 +1367,12 @@ $frame = "overview";
         stopBusy();
       }
     }
-		
+
     function infoRadar() {
       var sMessage = "<convert>#label=326<convert>";
       popUpMsg(sMessage);
     }
-		
+
     function getDirectionsForm(bFromThisPlace) {
       var innerLine, sValue, id, iwDOM;
 			id = 'GC_IW_LOADING';
@@ -1393,7 +1393,7 @@ $frame = "overview";
       xtdGetElementById('GC_IW_directions').innerHTML = innerLine;
       xtdGetElementById('GC_IW_address').focus();
     }
-    
+
     function setDirections(fromAddress, toAddress, locale) {
         var directionsRequest = {
                 origin: fromAddress,
@@ -1410,14 +1410,14 @@ $frame = "overview";
             }
         });
     }
-    
+
     function clearDirections() {
       if (directionsDisplay) {
           directionsDisplay.setMap(null);
           $("#directions").hide();
       }
     }
-    
+
     function initDirections() {
       if (!directionsService) {
         directionsService = new google.maps.DirectionsService();
@@ -1425,7 +1425,7 @@ $frame = "overview";
         directionsDisplay.setPanel(xtdGetElementById("directions"));
       }
     }
-    
+
     function getMarkersByName(strName) {
       var markersArray, value, i, title;
       markersArray = [];
@@ -1438,7 +1438,7 @@ $frame = "overview";
       }
       return markersArray;
     }
-    
+
     function getMarkersByName2(strName, forCavers, forEntries, forGrottoes) {
       var markersArray, value, i, title;
       markersArray = [];
@@ -1464,7 +1464,7 @@ $frame = "overview";
       }
       return markersArray;
     }
-      
+
     function getMarkersOnCriteria(markers, sCaracteristic, sCriteria, sValue) {
       var markersArray, i;
       markersArray = [];
@@ -1507,20 +1507,20 @@ $frame = "overview";
       }
       return markersArray;
     }
-    
+
     function getMarkersByCategory(category) {
       var markersArray;
       markersArray = getMarkersOnCriteria(allMarkers, "category", "==", category);
       return markersArray;
     }
-    
+
     function getMarkersByCountry(category, country) {
       var markersOfCategory, markersArray;
       markersOfCategory = getMarkersByCategory(category);
       markersArray = getMarkersOnCriteria(markersOfCategory, "country", "==", country);
       return markersArray;
     }
-    
+
     function getMarkersByMassif(category, country, massif) {
       var markersOfCountry, markersArray;
       markersOfCountry = getMarkersByCountry(category, country);
@@ -1529,7 +1529,7 @@ $frame = "overview";
         return markersArray;
       }
     }
-    
+
     function getMarkersByCave(category, country, massif, cave) {
       var markersOfMassif, markersArray;
       markersOfMassif = getMarkersByMassif(category, country, massif);
@@ -1538,21 +1538,21 @@ $frame = "overview";
         return markersArray;
       }
     }
-    
+
     function getNewMarkers(dStartDate, dEndDate) {
       var markersArrayTemp, markersArray;
       markersArrayTemp = getMarkersOnCriteria(allMarkers, "inscriptionDate", ">=", dStartDate);
       markersArray = getMarkersOnCriteria(markersArrayTemp, "inscriptionDate", "<=", dEndDate);
       return markersArray;
     }
-    
+
     function getReviewedMarkers(dStartDate, dEndDate) {
       var markersArrayTemp, markersArray;
       markersArrayTemp = getMarkersOnCriteria(allMarkers, "reviewedDate", ">=", dStartDate);
       markersArray = getMarkersOnCriteria(markersArrayTemp, "reviewedDate", "<=", dEndDate);
       return markersArray;
     }
-    
+
     function showMarkers(markersArray, doSetFilter) {
       var i;
       if (doSetFilter === undefined) {
@@ -1567,7 +1567,7 @@ $frame = "overview";
             }
   		}
     }
-    
+
     function showMarker(markerId, markerCategory, doSetFilter) {
       var marker;
       if (doSetFilter === undefined) {
@@ -1579,7 +1579,7 @@ $frame = "overview";
         setFilterCheckbox(marker.category, marker.id, true);
       }
     }
-    
+
     function hideMarkers(markersArray, doSetFilter) {
         var i;
         if (doSetFilter === undefined) {
@@ -1593,7 +1593,7 @@ $frame = "overview";
             }
         }
     }
-    
+
     function hideMarker(markerId, markerCategory, doSetFilter) {
       var marker;
       if (doSetFilter === undefined) {
@@ -1606,7 +1606,7 @@ $frame = "overview";
         setFilterCheckbox(marker.category, marker.id, false);
       }
     }
-    
+
     function switchLines(id, category, status) {
       if (id !== 0) {
         if (getCategoryVisibility("link") !== true) {
@@ -1625,7 +1625,7 @@ $frame = "overview";
     		}
       }
     }
-      
+
     function overSwitchLines(id, category, status) {
       if (getCategoryVisibility("link") === true) {
         if (status) {
@@ -1636,14 +1636,14 @@ $frame = "overview";
         }
       }
     }
-    
+
     function hideLines() {
       var i;
       for (i = 0; i < allLines.length; i = i + 1) {
           allLines[i].setVisible(false);
       }
     }
-    
+
     function showLines(id, category) {
       var markersArray, marker, linesArray, i;
       markersArray = [];
@@ -1657,7 +1657,7 @@ $frame = "overview";
       }
       showMarkers(markersArray, true);
     }
-    
+
     function getLines(id, category) {
       var linesArray, i;
       linesArray = [];
@@ -1668,7 +1668,7 @@ $frame = "overview";
       }
       return linesArray;
     }
-    
+
     function getMarker(id, category) {
       var i;
       for (i = 0; i < allMarkers.length; i = i + 1) {
@@ -1677,7 +1677,7 @@ $frame = "overview";
         }
       }
     }
-    
+
     function fireInfowindow(id, category) {
       var marker, width, height, offset, connected, clustered, infoWindow;
       marker = getMarker(id, category);
@@ -1694,7 +1694,7 @@ $frame = "overview";
 		GCinfoWindowOpen(marker);
         mySite.openedInfoWindowId = id;
         mySite.openedInfoWindowType = category;
-      } 
+      }
     }
 
     function freeMarker(id, category) {
@@ -1707,7 +1707,7 @@ $frame = "overview";
         goCloseToMarker(id, category, "freeMarker(" + id + ", '" + category + "');");
       }
     }
-    
+
     function blockMarker(id, category) {
       var marker;
       marker = lockedMarkers[category][lockedMarkers[category].length-1];//getMarker(id, category);
@@ -1748,7 +1748,7 @@ $frame = "overview";
         setFilterCheckbox(category, id, true);
       }
     }
-    
+
     function goCloseToMarker(id, category, callBack) {
       var sURL, latLngPlace;
       sURL = "webservices/getCoordsJson.php";
@@ -1778,7 +1778,7 @@ $frame = "overview";
 			}, 'json');
       //setMaxZoomCenter(latLngPlace);
     }
-    
+
     /*function setMaxZoomCenter(latlng) {
       map.getCurrentMapType().getMaxZoomAtLatLng(latlng, function(response) {
         if (response && response['status'] == G_GEO_SUCCESS) {
@@ -1794,17 +1794,17 @@ $frame = "overview";
         marker.setPosition(new google.maps.LatLng(lat, lng));
       }
     }
-    
+
     function getCoordsByDirection(sDirection, callback) {
       if (sDirection != undefined) {
           geocoder.geocode({address: sDirection}, callback);
       }
     }
-    
+
     function getTitleTemp() {
       return "<convert>#label=126<convert>"; //Faites glisser le marqueur ...
     }
-    
+
     function openRGCInfoWindow(latLng, marker) {
       if (latLng) {
         geocoder.geocode({location: latLng}, function(addresses, status) {
@@ -1824,17 +1824,17 @@ $frame = "overview";
         });
       }
     }
-    
+
     function setMarkerUser(category, point) {
       var object, titleHere;
       object = createIconOptions(category, false, false, "m");
       titleHere = getTitleTemp();
       marker_user = new google.maps.Marker({
-          position: point, 
-          map: map, 
-          title: titleHere, 
-          draggable: true, 
-          bouncy: true, 
+          position: point,
+          map: map,
+          title: titleHere,
+          draggable: true,
+          bouncy: true,
           icon:object.image
       });
       google.maps.event.addListener(marker_user, "dragstart", function () {
@@ -1867,14 +1867,14 @@ $frame = "overview";
         map.setZoom(13);
       }
     }
-    
+
     function removeAddress() {
       if (marker_user != undefined) {
         marker_user.setMap(null);
         marker_user = undefined;
       }
     }
-    
+
     function setupConvertMarker(lat, lng) {
       var infoWindow, point, titleHere;
       point = new google.maps.LatLng(lat, lng);
@@ -1894,7 +1894,7 @@ $frame = "overview";
       });
       openRGCInfoWindow(marker_converter.getPosition(), marker_converter);
     }
-    
+
     function resetConvertMarker() {
       if (marker_converter) {
         if (converter_handler) {
@@ -1904,7 +1904,7 @@ $frame = "overview";
         marker_converter = undefined;
       }
     }
-    
+
     function setupElevationMarker(lat, lng) {
       var infoWindow, point, titleHere, altUrl, infoWindow;
       altUrl = "altitude_<?php echo $_SESSION['language']; ?>.php?lat=" + lat + "&lng=" + lng;
@@ -1929,7 +1929,7 @@ $frame = "overview";
       GCinfoWindow.setContent(infoWindow);
       GCinfoWindowOpen(marker_elevation);
     }
-    
+
     function resetElevationMarker() {
       if (marker_elevation) {
         if (elevation_handler) {
@@ -1939,7 +1939,7 @@ $frame = "overview";
         marker_elevation = undefined;
       }
     }
-    
+
 		function goToDefaultPosition(lat, lng, zoom) {
 		  var mapMove_handler;
       mapMove_handler = google.maps.event.addListener(map, "moveend", function () {
@@ -1949,7 +1949,7 @@ $frame = "overview";
   		map.panTo(new google.maps.LatLng(lat, lng));
   		map.setZoom(zoom);
     }
-    
+
     function getClientLatLng() {
       if (google.loader.ClientLocation) {
         return new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude);
@@ -1957,11 +1957,11 @@ $frame = "overview";
         return undefined;
       }
     }
-    
+
     function refreshOverview() {
       eval("self.location.href = 'overview_<?php echo $_SESSION['language']; ?>.php';");
     }
-    
+
     function startBusy() {
       showId('waitingSign');
       /*if (map) {
@@ -1970,7 +1970,7 @@ $frame = "overview";
         map.disableScrollWheelZoom();
       }*/
     }
-    
+
     function stopBusy() {
       hideId('waitingSign');
       /*if (map) {
@@ -1979,20 +1979,20 @@ $frame = "overview";
         map.enableScrollWheelZoom();
       }*/
     }
-    
+
     function setCallBackfunction(sValue) {
       callBackFunction = sValue;
     }
-    
+
     function getCallBackfunction() {
       return callBackFunction;
     }
-    
+
     function containerResized() {
       //reload();
       loadFromXML();
     }
-    
+
     function loadContext() {
       /* Debug var */
 			debug = false;
@@ -2025,16 +2025,16 @@ $frame = "overview";
               loadMarkers();
           }
        });
-      
+
       isLoaded = true;
       //Hide the checkboxes
       //.blur();
     }
-    
+
     document.onkeyup=manageKey;
     //BS google.setOnLoadCallback(loadContext, true);
     google.maps.event.addDomListener(window, 'load', loadContext);
-    
+
 
     <?php echo getCDataTag(false); ?>
     </script>
