@@ -98,7 +98,7 @@ $frame = "overview";
       v\:* {behavior:url(#default#VML);}
     </style>
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Google_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Gmaps_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
     <script type="text/javascript" src="../scripts/gmap-wms.js?v3"></script>
     <!-- <script type="text/javascript" src="../scripts/dragzoom.js"></script> -->
     <script type="text/javascript" src="../scripts/GCMap.js"></script>

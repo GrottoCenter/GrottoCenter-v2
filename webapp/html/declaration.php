@@ -37,7 +37,7 @@
     $app_prop = appProp();
     $_SESSION['Application_host'] = $app_prop['Host'];
   }
-  
+
   // Log the user out
   $logout_user_now = (isset($_GET['logout'])) ? ($_GET['logout'] == "true") : false;
   if ($logout_user_now) {
@@ -61,7 +61,7 @@
       $thrown = throwSessions();
     }
   }
-  
+
   //Set the language into a session variable
   $lang_user_now = (isset($_GET['lang'])) ? $_GET['lang'] : '';
 	if (isset($_GET['lang']))	{
@@ -97,16 +97,16 @@
       header("location:".$parentName."?check_lang_auto=false&lang=".$language.$url_parameters);
       exit();
   }
-  
+
   //Set the home page session variable
   $_SESSION['home_page'] = (isset($_SESSION['home_page'])) ? $_SESSION['home_page'] : "home";
   $_SESSION['home_page'] = (isset($_GET['home_page'])) ? urldecode($_GET['home_page']) : $_SESSION['home_page'];
-  
+
   //Set the filter page session variable
   $_SESSION['filter_page'] = (isset($_SESSION['filter_page'])) ? $_SESSION['filter_page'] : "filter_".$_SESSION['language'].".php";
   $_SESSION['filter_page'] = (isset($_GET['home_page'])) ? "filter_".$_SESSION['language'].".php" : $_SESSION['filter_page'];
   $_SESSION['filter_page'] = (isset($_GET['filter_page'])) ? urldecode($_GET['filter_page']) : $_SESSION['filter_page'];
-  
+
   // Remove the lock status when unloading an editor page
   $cancel_user_now = (isset($_GET['cancel'])) ? ($_GET['cancel'] == "True") : false;
   if ($cancel_user_now) {
@@ -116,18 +116,18 @@
       backOver($ccat,$cid);
     }
   }
-  
+
   //Get the user's rights
   $user_id_for_rights = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
   $_SESSION['user_rights'] = (isset($_SESSION['user_rights'])) ? $_SESSION['user_rights'] : getUserRights($user_id_for_rights);
 
 	//Show the coords converter if needed
 	$_SESSION['show_converter'] = (isset($_GET['c'])) ? true : ((isset($_SESSION['show_converter'])) ? $_SESSION['show_converter'] : false);
-	
+
   define ("USER_IS_CONNECTED", userIsConnected(), true);
-  
+
   $FAQPages = array("Fr" => array("home" => 13),"En" => array("home" => 14),"Es" => array("home" => 19));
-  
+
   define ("LEADER_GROUP_ID", 5, true);
   define ("ENTRY_COUNT_MAX", 3000, true);
   define ("Max_detail_level", 1000, true);
@@ -138,14 +138,15 @@
   define ("Contact_for_registered", "1", true);
   define ("Contact_for_everybody", "2", true);
   define ("Google_key","ABQIAAAABppewhix0m2aGtrxzFsM1hTUoYxFMVJ0pZ8eIP2qT6O2FCqTDBSrYiCqarW5lo9hEXEt4pCtZ6bVVA", true); //GMaps API Key for grottocenter.org
+  define ("Gmaps_key","AIzaSyBRyV3Tza4n1JUQ0U1l3YdGAhepVy2TGhU", true)
   //define ("Google_key", "ABQIAAAA_X2bDeJ9Hz-baUkItUM1WRQODwNLvymVen2-L56iEshlhUPpFBShcyTJURuPJ0Mx3AIa8-nTBRJBXg", true); //GMaps API Key for localhost
   define ("Geoportal_key", "2228631060319443257", true);//Geoportal API Key for grottocenter.org
   //define ("Geoportal_key", "", true);//Geoportal API Key for localhost
   define ("Analytics_key", "UA-4684361-2", true);//Analytics API Key for grottocenter.org
   //define ("Analytics_key", "", true);//Analytics API Key for localhost
-  
+
 	require("cst_declaration.php");
-	
+
   //rights :
   /*$sql = "SELECT Name, Id FROM `".$_SESSION['Application_host']."`.`T_right` ";
   $data = getDataFromSQL($sql, __FILE__, '', __FUNCTION__);

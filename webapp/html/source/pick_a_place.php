@@ -40,7 +40,7 @@ $longitude = (isset($_GET['lng'])) ? $_GET['lng'] : "";
 		<link rel="stylesheet" type="text/css" href="../css/global.css" />
     <link rel="stylesheet" type="text/css" href="../css/global_p.css" media="print" />
     <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Google_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Gmaps_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>
     //Gona need functions: getTargetNode
