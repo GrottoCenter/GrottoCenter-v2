@@ -430,8 +430,8 @@ if (!$isPublic && !USER_IS_CONNECTED) {
   	$defaultBibliography = ($bibliographies['Count']>0) ? $checkedAttribute : "";
   	$defaultComment = "";
 ?>
-    <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Gmaps_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3.26&libraries=places&key=<?php echo Gmaps_key; ?>&language=<?php echo $_SESSION['language']; ?>"></script>
     <!--script type="text/javascript" src="../scripts/classeGCTest.js"></script-->
     <script type="text/javascript">
     <?php echo getCDataTag(true); ?>

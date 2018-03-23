@@ -33,7 +33,7 @@ function getElevation($lat, $lng, $source)
 	$msg = "";
 	switch ($source) {
 		case "gmaps":
-			$url = "http://maps.google.com/maps/api/elevation/xml?locations=".$lat.",".$lng."&sensor=false";
+			$url = "https://maps.google.com/maps/api/elevation/xml?locations=".$lat.",".$lng."&sensor=false";
 			if(!$dom = @domxml_open_file($url)) {
 				die("Error opening xml file");
 			}

@@ -25,7 +25,7 @@ include("declaration.php");
 <?php echo getDoctype(false)."\n"; ?>
 <html <?php echo getHTMLTagContent(); ?>>
   <head>
-  <script src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>" type="text/javascript"></script>
+  <script src="https://www.google.com/jsapi?key=<?php echo Google_key; ?>" type="text/javascript"></script>
 <?php
   	include("application_".$_SESSION['language'].".php");
   	include("mailfunctions_".$_SESSION['language'].".php");

@@ -115,11 +115,11 @@ foreach($languagesArray as $shortLang => $largeLang) {
     $xml .= '<title>'.$title.'</title>';
 		if ($data[$i]['Latitude'] != "" && $data[$i]['Longitude'] != "") {
 			if ($data[$i]['Category'] == $labelArray[625]) { //Entree
-				$staticUriImg = "http://maps.google.com/maps/api/staticmap?maptype=terrain&amp;amp;zoom=09&amp;amp;sensor=false&amp;amp;markers=icon:http://www.grottocenter.org/images/icons/entry2.png|".$data[$i]['Latitude'].",".$data[$i]['Longitude']."&amp;amp;size=300x250";
+				$staticUriImg = "https://maps.google.com/maps/api/staticmap?maptype=terrain&amp;amp;zoom=09&amp;amp;sensor=false&amp;amp;markers=icon:http://www.grottocenter.org/images/icons/entry2.png|".$data[$i]['Latitude'].",".$data[$i]['Longitude']."&amp;amp;size=300x250";
 			} else {
-				$staticUriImg = "http://maps.google.com/maps/api/staticmap?maptype=terrain&amp;amp;zoom=09&amp;amp;sensor=false&amp;amp;markers=icon:http://www.grottocenter.org/images/icons/grotto1.png|".$data[$i]['Latitude'].",".$data[$i]['Longitude']."&amp;amp;size=300x250";
+				$staticUriImg = "https://maps.google.com/maps/api/staticmap?maptype=terrain&amp;amp;zoom=09&amp;amp;sensor=false&amp;amp;markers=icon:http://www.grottocenter.org/images/icons/grotto1.png|".$data[$i]['Latitude'].",".$data[$i]['Longitude']."&amp;amp;size=300x250";
 			}
-			$staticUriA = "http://maps.google.com/maps?hl=".strtolower($shortLang)."&amp;amp;q=".$data[$i]['Latitude'].",".$data[$i]['Longitude'];
+			$staticUriA = "https://maps.google.com/maps?hl=".strtolower($shortLang)."&amp;amp;q=".$data[$i]['Latitude'].",".$data[$i]['Longitude'];
 			$description .= '&lt;div&gt;&lt;a href="'.$staticUriA.'"&gt;&lt;img src="'.$staticUriImg.'" border="0" alt="IMG" /&gt;&lt;/a&gt;&lt;/div&gt;';
 		}
     $xml .= '<link>'.$url.'</link>';

@@ -26,7 +26,7 @@ $frame = 'home';
 <?php echo getDoctype(false)."\n"; ?>
 <html <?php echo getHTMLTagContent(); ?>>
   <head>
-  <script type="text/javascript" src="http://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi?key=<?php echo Google_key; ?>"></script>
   <script type="text/javascript" charset="UTF-8" src="<?php echo getScriptJS(__FILE__); ?>"></script>
 <?php
   	include("application_".$_SESSION['language'].".php");
