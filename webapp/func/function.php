@@ -282,7 +282,7 @@ function set_quotes(&$item, $key, $quote)
 }
 
 /*Deprecated, use implode() !!! */
-function concat_WS($array, $separator) 
+function concat_WS($array, $separator)
 {
   $concat = "";
   for ($i=0;$i<count($array);$i++) {
@@ -340,7 +340,7 @@ function convertYN($valueYN,$Yes,$No)
     return $Yes;
   } else {
     return $No;
-  }  
+  }
 }
 
 /*function throwSessions()
@@ -494,7 +494,7 @@ function getReferentCavers($leader_group_id)
   $array = getDataFromSQL($sql, __FILE__, "function", __FUNCTION__);
   $leaders = array();
   for ($i=0;$i<=$array['Count'];$i++) {
-    $leaders[] .= $array[$i]['Id_caver']; 
+    $leaders[] .= $array[$i]['Id_caver'];
   }
   return array_unique($leaders);
 }
@@ -600,7 +600,7 @@ function trackAction($type, $id, $names)
   $main_separator = "_";
   $type_array = explode($main_separator,$type);
   $mail_subject = "Tracker : ";
-	
+
 	$sql = "SELECT * ";
 	$sql .= "FROM `".$_SESSION['Application_host']."`.`".$tableName."` ";
 	$sql .= "WHERE `".$column_id."` = ".$id;
@@ -931,7 +931,7 @@ function getCountryCodeByIP($gip_ip)
   fclose($handle);
   return $country;*/
   //Translate Ip to number
-  /*$ip2 = IPAddress2IPNumber($gip_ip);    
+  /*$ip2 = IPAddress2IPNumber($gip_ip);
   //Build the webservice's url
   $url = "/get-country/?ip=".$ip2."&user=guest&pass=guest";
   //Open the socket
@@ -1281,36 +1281,36 @@ function sendMail($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_email 
   }
   $reply_email = $from_email;
   $header_date = date("D, j M Y H:i:s");//-0600"); // avec offset horaire
-  
+
   //HTML Content
   $css = 'body
           {
             font-family: arial, sans-serif;
             font-size: 9pt;
-            background-color: white; 
+            background-color: white;
             color: black;
           }
-          
+
           a
           {
             text-decoration: none;
             color: #34558A;
             border-bottom: dotted 1px #458EFF;
           }
-          
+
           a:hover
           {
             color: #FFA713;
             border-bottom: dotted 1px #FFA713;
           }';
   $html_text_body = getDoctype(false).'<html '.getHTMLTagContent().'><head>'.getMetaTags().'<style type="text/css">'.$css.'</style><title>'.$subject.'</title></head><body>'.$mail_body.'</body></html>';
-  
+
   //TXT Content
   $plain_text_body = HTML2TxtMail($mail_body);
-  
+
   $mime_boundary = md5(uniqid(mt_rand()));
   $mime_boundary_header = chr(34).$mime_boundary.chr(34);
-  
+
   $mail_header = 'From: '.$from_email."\n";
   if ($add_cc_email != "") {
     $mail_header .= 'Cc: '.$add_cc_email."\n";
@@ -1325,17 +1325,17 @@ function sendMail($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_email 
   $mail_header .= '     boundary='.$mime_boundary."\n";
   $mail_header .= 'X-Mailer: PHP/'.phpversion()."\n" ;
   $mail_header .= 'Date: '.$header_date."\n";
-  
+
   //-----------------------------------------------
   // TXT
   //-----------------------------------------------
   $mail_body = 'This is a multi-part message in MIME format.'."\n\n";
-  
+
   $mail_body .= '--'.$mime_boundary."\n";
   $mail_body .= 'Content-Type: text/plain; charset=UTF-8'."\n";
   $mail_body .= 'Content-Transfer-Encoding: 8bit'."\n\n";
   $mail_body .= $plain_text_body."\n\n";
-  
+
   //-----------------------------------------------
   // HTML
   //-----------------------------------------------
@@ -1343,7 +1343,7 @@ function sendMail($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_email 
   $mail_body .= 'Content-Type: text/html; charset=UTF-8'."\n";
   $mail_body .= 'Content-Transfer-Encoding: 8bit'."\n\n";
   $mail_body .= $html_text_body."\n\n";
-  
+
   $mail_body .= '--'.$mime_boundary.'--'."\n";
   return mail($mail_dest,$mail_subject,$mail_body,$mail_header);
 }
@@ -1371,29 +1371,29 @@ function sendMail_bak($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_em
   $mail_header .= "Reply-To: $from_email \n"; // Adresse de retour
   $mail_header .= "X-Mailer: PHP/".phpversion()."\n" ;
   $mail_header .= "Date: $header_date";
-  
+
   //CSS
   $css = "body
           {
             font-family: arial, sans-serif;
             font-size: 9pt;
-            background-color: white; 
+            background-color: white;
             color: black;
           }
-          
+
           a
           {
             text-decoration: none;
             color: #34558A;
             border-bottom: dotted 1px #458EFF;
           }
-          
+
           a:hover
           {
             color: #FFA713;
             border-bottom: dotted 1px #FFA713;
           }";
-          
+
   //Format the mail
   $html_mail_body = "<html ".getHTMLTagContent()."><head><style type=\"text/css\">".$css."</style><title>".$subject."</title></head><body>".$mail_body."</body></html>";
   $mail_body = "\nThis message is in MIME format. Since your mail reader does not understand this format, some or all of this message may not be legible.\n--".$boundary."\nContent-Type: text/plain;charset=\"UTF-8\"\n\n".HTML2TxtMail($mail_body)."\n\n";
@@ -1403,30 +1403,30 @@ function sendMail_bak($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_em
 }
 
 function sendMail2($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_email = "", $send_a_copy = true)
-{ 
+{
   $mail_subject = "[".$_SESSION['Application_name']."]"." ".$subject;
   if ($from_email == "") {
     $from_email = $_SESSION['Application_mail'];
   }
   $reply_email = $from_email;
   $header_date = date("D, j M Y H:i:s");//-0600"); // avec offset horaire
-  
+
   //HTML Content
   $css = 'body
           {
             font-family: arial, sans-serif;
             font-size: 9pt;
-            background-color: white; 
+            background-color: white;
             color: black;
           }
-          
+
           a
           {
             text-decoration: none;
             color: #34558A;
             border-bottom: dotted 1px #458EFF;
           }
-          
+
           a:hover
           {
             color: #FFA713;
@@ -1435,12 +1435,12 @@ function sendMail2($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_email
   //$html_mail_body = '<html '.getHTMLTagContent().'><head><style type="text/css">'.$css.'</style><title>'.$subject.'</title></head><body>'.$mail_body.'</body></html>';
   $mail_body = "TEST";
   $html_mail_body = '<html '.getHTMLTagContent().'><head><title>'.$subject.'</title></head><body>'.$mail_body.'</body></html>';
-  
+
   //TXT Content
   $txt_mail_body = HTML2TxtMail($html_mail_body);
-  
+
   $pipe = '-----='.md5(uniqid(mt_rand()));
-  
+
   $mail_header = 'From: '.$from_email."\n";
   if ($add_cc_email != "") {
     $mail_header .= 'Cc: '.$add_cc_email."\n";
@@ -1454,17 +1454,17 @@ function sendMail2($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_email
   $mail_header .= 'Content-Type: multipart/alternative; boundary="'.$pipe.'"';
   $mail_header .= 'X-Mailer: PHP/'.phpversion()."\n" ;
   $mail_header .= 'Date: '.$header_date;
-  
+
   //-----------------------------------------------
   // TXT
   //-----------------------------------------------
   $mail_body = 'This is a multi-part message in MIME format.'."\n\n";
-  
+
   $mail_body .= '--'.$pipe.'--'."\n";
   $mail_body .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
   $mail_body .= 'Content-Transfer-Encoding: 8bit'."\n\n";
   $mail_body .= $txt_mail_body."\n\n";
-  
+
   //-----------------------------------------------
   // HTML
   //-----------------------------------------------
@@ -1472,9 +1472,9 @@ function sendMail2($mail_dest,$subject,$mail_body,$from_email = "",$add_cc_email
   $mail_body .= 'Content-Type: text/html; charset="UTF-8"'."\n";
   $mail_body .= 'Content-Transfer-Encoding: 8bit'."\n\n";
   $mail_body .= $html_mail_body."\n\n";
-  
+
   $mail_body .= '--'.$pipe.'--'."\n";
-  
+
   return mail($mail_dest,$mail_subject,$mail_body,$mail_header);
 }
 
@@ -1544,7 +1544,7 @@ function createImagedText($string="--", $font_size=5, $bgColorHex="ffffff", $fgC
   //default: --, 5pt, black text, white background
   $x_pos = 5;
   $y_pos = 5;
-  $w_array = array(1 => 5, 2 => 6, 3 => 7, 4 => 8, 5 => 9); 
+  $w_array = array(1 => 5, 2 => 6, 3 => 7, 4 => 8, 5 => 9);
   $h_array = array(1 => 7, 2 => 12, 3 => 11, 4 => 13, 5 => 13);
   $bgRed = hexdec(substr($bgColorHex, 0, 2));
   $bgGreen = hexdec(substr($bgColorHex, 2, 2));
@@ -1553,7 +1553,7 @@ function createImagedText($string="--", $font_size=5, $bgColorHex="ffffff", $fgC
   $fgGreen = hexdec(substr($fgColorHex, 2, 2));
   $fgBlue = hexdec(substr($fgColorHex, -2));
   $width = strlen($string)*$w_array[$font_size]+2*$x_pos;
-  $height = $h_array[$font_size]+2*$y_pos; 
+  $height = $h_array[$font_size]+2*$y_pos;
   $im = imagecreate($width, $height);
   $bgColor = imagecolorallocate($im, $bgRed, $bgGreen, $bgBlue);
   imagecolortransparent($im, $bgColor);
@@ -1588,7 +1588,7 @@ function deleteOldImages()
   $session_maxlifetime = ini_get('session.gc_maxlifetime'); //session.gc_maxlifetime is the life time of the server's session (session.cache_expire is for the cookies one)
   if ($d = opendir($path)) {
     while (false !== ($file = readdir($d))) {
-      $file_ext = strtolower(getFileExtension($file)); 
+      $file_ext = strtolower(getFileExtension($file));
       if ($file != '.' && $file != '..' && $file_ext == $ext) {
         if (time() - getFilemtime($path.'/'.$file) > $session_maxlifetime) {
           if ($unlinked = @unlink($path."/".$file)) {
@@ -1631,21 +1631,21 @@ function getLicensePicture($imgType, $title="")
   $imgSrc = "";
   switch($imgType) {
     case 1:
-      $imgSource = "http://i.creativecommons.org/l/by-sa/3.0/88x31.png";
+      $imgSource = "https://licensebuttons.net/l/by-sa/3.0/88x31.png";
       break;
     case 2:
-      $imgSource = "http://creativecommons.org/images/public/somerights20.png";
+      $imgSource = "https://creativecommons.org/images/public/somerights20.png";
       break;
     case 3:
     case 4:
-      $imgSource = "http://i.creativecommons.org/l/by-sa/3.0/80x15.png";
+      $imgSource = "https://licensebuttons.net/l/by-sa/3.0/80x15.png";
       break;
   }
   switch($imgType) {
     case 1:
     case 2:
     case 3:
-      $licensePic = "<a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.".strtolower($_SESSION['language'])."\" class=\"nothing\" target=\"_blank\">";//rel=\"license\" 
+      $licensePic = "<a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.".strtolower($_SESSION['language'])."\" class=\"nothing\" target=\"_blank\">";//rel=\"license\"
       $licensePic .= " <img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"".$imgSource."\"/>";
       $licensePic .= "</a>";
       break;
@@ -1785,7 +1785,7 @@ function getMetaTags()
   $robotsTag = "<meta name=\"robots\" content=\"index, follow\" />\n";
   $contenttypeTag = "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />\n";
 	//$script_imagepngfix_Tag = "<script type=\"text/javascript\" src=\"../scripts/iepngfix/iepngfix_tilebg.js\"></script>\n";
-  
+
   $meta = "";
   $meta .= $contenttypeTag;
   $meta .= $languageTag;
@@ -1830,7 +1830,7 @@ function getHTMLTagContent()
   $ganalytics .= "  pageTracker._trackPageview();\n";
   //$ganalytics .= "//".end_comment."\n";
   $ganalytics .= "</script>\n";
-  
+
   return $ganalytics;
 }*/
 
@@ -1976,7 +1976,7 @@ function getDoctype($forFrame)
 
 function fact($n)
 {
-  if($n === 0) { 
+  if($n === 0) {
     return 1;
   } else {
     return $n*fact($n-1);
@@ -2071,7 +2071,7 @@ function getRef($text) {
 }
 
 function getCDataTag($isOpeningTag)
-{ 
+{
   if($isOpeningTag) {
     return "//<![CDATA[\n";
   } else {
@@ -2126,7 +2126,7 @@ function wd_spamScore($body, $smallStr=false, $words=NULL, $starters=NULL)
     $score = 0;
     // put our body in lower case for checking
     $body = strtolower($body);
-    
+
     // how many links are in the body ?
     $n = max(array(substr_count($body, "http"), substr_count($body, "href"), substr_count($body, "ftp")));
     if ($n > 2) {
@@ -2154,7 +2154,7 @@ function wd_spamScore($body, $smallStr=false, $words=NULL, $starters=NULL)
         // Less than 20 characters : -1 point
         $score--;
     }
-    
+
     // Keyword search
     if (empty($words)) {
         $words = array();
@@ -2168,7 +2168,7 @@ function wd_spamScore($body, $smallStr=false, $words=NULL, $starters=NULL)
         }
         $score -= $n;
     }
-    
+
     // Body starts with...
     if (empty($starters)) {
         $starters = array();
@@ -2185,7 +2185,7 @@ function wd_spamScore($body, $smallStr=false, $words=NULL, $starters=NULL)
         $score -= 10;
         break;
     }
-    
+
     if (!$smallStr) {
       // How many different words are used ?
       $count = str_word_count($body);
@@ -2193,7 +2193,7 @@ function wd_spamScore($body, $smallStr=false, $words=NULL, $starters=NULL)
           $score -= 5;
       }
     }
-    
+
     return $score;
 }
 
@@ -2628,7 +2628,7 @@ function getRowsFromSQL($sql, $columns_params, $links, $records_by_page, $filter
   }
   $sql .= " ".$group_by_clause;
 //echo '<!--' . $sql . '-->';
-  //Construction of headers  
+  //Construction of headers
   $order_by = (isset($values_array['by'])) ? $values_array['by'] : '';
   if ($order_by == "") {
     $order_by = $default_order;
@@ -2972,7 +2972,7 @@ function replaceLinks($text)
   $domain = '([a-z0-9]([-a-z0-9]*[a-z0-9]+)?)';
   $regex = '/(^| )('.$atom.'+'.'(\.'.$atom.'+)*'.'@'.'('.$domain.'{1,63}\.)+'.$domain.'{2,63})/';
   $text = preg_replace($regex, "\\1<a href=\"mailto:\\2\">\\2</a>", $text);
-  
+
   return $text;
 }
 
@@ -3084,7 +3084,7 @@ function explainSQL($sql)
     }
     mysql_free_result($req);
     close($connect_db);
-    $mail_body = "SQL : <br/>\n".$sql_temp."<br/>\n<table border=\"1\">".$returnColumn.$returnValue."</table>"; 
+    $mail_body = "SQL : <br/>\n".$sql_temp."<br/>\n<table border=\"1\">".$returnColumn.$returnValue."</table>";
     //echo start_comment.$mail_body.end_comment;
     sendMail("contact@grottocenter.org","Analyse SQL",$mail_body,"","",false);
   }
@@ -3126,11 +3126,11 @@ function getAddThisButton($language, $id)
   return $return;
 }
 
-function cleanString($string)  
-{  
-  // Replace other special chars  
+function cleanString($string)
+{
+  // Replace other special chars
   $specialCharacters = array('#' => '','$' => '','%' => '','&' => '','@' => '','.' => '','€' => '','+' => '','=' => '','§' => '','\\' => '','/' => '');
-  while (list($character, $replacement) = each($specialCharacters)) {  
+  while (list($character, $replacement) = each($specialCharacters)) {
     $string = str_replace($character, $replacement, $string);
   }
   $string = strtr($string, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝÑàáâãäåçèéêëìíîïðòóôõöùúûüýÿñ', 'AAAAAACEEEEIIIIOOOOOUUUUYNaaaaaaceeeeiiiioooooouuuuyyn');
@@ -3141,7 +3141,7 @@ function cleanString($string)
   $string = preg_replace('/[\-]+$/', '', $string);
   $string = preg_replace('/[\-]{2,}/', '-', $string);
   $string = strtolower($string);
-  return $string;  
+  return $string;
 }
 
 //http://www.asp-php.net/ressources/bouts_de_code.aspx?id=202
@@ -3285,7 +3285,7 @@ function endMetro($time_start, $msg)
 {
 	$time_end = microtime2float();
 	$time = $time_end - $time_start;
-	echo "<!--".$msg.": ".$time."-->"."\n";	
+	echo "<!--".$msg.": ".$time."-->"."\n";
 }
 /**USE:
 my_function()
