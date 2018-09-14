@@ -22,7 +22,7 @@
 $upload_restrictions_ext_array = array("add_avatar" => array(".png",".gif",".jpg",".jpeg"),
                                         "add_logo" => array(".png",".gif",".jpg",".jpeg"),
                                         "add_attachment" => array(".zip", ".rar", ".7z", ".tar", ".gz", ".bz2"),
-                                        "add_topo" => array(".png",".gif",".jpg",".jpeg",".tiff",".bmp",".pdf", ".svg", ".csv"));
+                                        "add_topo" => array(".png",".gif",".jpg",".jpeg",".tiff",".bmp",".pdf", ".svg", ".csv", ".gpx"));
 // Max size in octets
 $upload_restrictions_size_array = array("add_avatar" => 30000,
                                         "add_logo" => 30000,
