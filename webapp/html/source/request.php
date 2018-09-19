@@ -1490,7 +1490,7 @@ if ($isNew == "False") {
 		    </td><td class="field">
 		      <input class="input1" type="text" id="topo_filename" name="topo_filename" value="" size="15" maxlength="100" onkeyup="JavaScript:checkThisName(this);" />
     		  <img class="status1" name="name_pic" id="name_pic" src="../images/icons/wrong.png" alt="image" />
-		     	<input class="input1" type="file" id="filename" name="filename" value="<?php echo $_FILES['filename']; ?>" size="20" accept="image/*,application/pdf,.svg,.csv" />
+		     	<input class="input1" type="file" id="filename" name="filename" value="<?php echo $_FILES['filename']; ?>" size="20" accept="image/*,application/pdf,.svg,.csv,.gpx" />
           <input type="submit" class="button1" id="upload" name="upload" value="<convert>#label=586<convert>" /><!--Envoyer le fichier-->
           <input type="hidden" id="add_type" name="upload_type" value="add_topo" />
           <input type="hidden" id="target_name" name="target_name" value="u<?php echo $_sess_user_id; ?>_t<?php echo $topo_id; ?>_r<?php echo md5(uniqid(mt_rand())); ?>_" />
