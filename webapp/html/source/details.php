@@ -453,6 +453,10 @@ if ($_SESSION['home_page'] == "overview") {
             <?php }?>
           </li>
         </ul>
+	<div style="text-align: center;">
+            <a href="https://www.facebook.com/MoroccanExplorers/" target="_blank" style="border-bottom: none;"><img src="../images/icons/moroccan_explorers.PNG" alt="Moroccan Explorers" /></a>
+       	    <a href="https://grs28.jimdo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/logo_grs28.png" alt="GRS 28" /></a>
+	</div>
         <div style="text-align: center;">
             <a href="http://caves.or.id/" target="_blank" style="border-bottom: none;"><img src="../images/icons/iss.png" alt="Indonesian Speleological Society" /></a>
        	    <a href="http://bgcave.org/bg/" target="_blank" style="border-bottom: none;"><img src="../images/icons/bulgarian-caving-society.jpg" alt="Bulgarian Caving Society" /></a>
@@ -470,15 +474,15 @@ if ($_SESSION['home_page'] == "overview") {
         <div style="text-align: center;">
             <a href="http://scspales.eu/" target="_blank" style="border-bottom: none;"><img src="../images/icons/SCSPAles.jpg" alt="SCSP Alès" /></a>
             <a href="http://www.speleo-lausanne.ch/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gsl.png" alt="Groupe Speleo Lausanne et environs" /></a>
-            <a href="http://scmemises.cds74.org/" target="_blank" style="border-bottom: none;"><img src="../images/icons/scmemises.jpg" alt="Spéléo Club des Mémises" /></a>
+            <a href="https://sites.google.com/view/scmemises/accueil" target="_blank" style="border-bottom: none;"><img src="../images/icons/scmemises.jpg" alt="Spéléo Club des Mémises" /></a>
         </div>
         <div style="text-align: center;">
             <a href="http://speleocaf73.canalblog.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/speleocaf73.jpg" alt="CAF Albertville Speleo Club" /></a>
-            <a href="http://www.aravisexplo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/aravisexplo.png" alt="Aravis Explo" /></a>
-            <a href="http://asso-gclr.fr/joomla/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
+            <a href="http://clan.des.tritons.free.fr/blog/" target="_blank" style="border-bottom: none;"><img src="../images/icons/tritons.PNG" alt="Clan des Tritons" /></a>
+            <a href="http://asso-gclr.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gclr.jpg" alt="Groupe Chiroptère Languedoc Roussillon" /></a>
         </div>
         <div style="text-align: center;">
-            <a href="http://clubalpinlille.fr/speleo/presentation/present_speleo.php" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.png" alt="Section Spéléo du CAF de Lille" /></a>
+            <a href="http://clubalpinlille.fr/accueil/speleologie.html" target="_blank" style="border-bottom: none;"><img src="../images/icons/CAF-Lille.png" alt="Section Spéléo du CAF de Lille" /></a>
             <a href="http://g-a-s-o-i-l.blogspot.fr/" target="_blank" style="border-bottom: none;"><img src="../images/icons/gasoil.png" alt="Groupement Associatif de Spéléologues d'Orgnac-L'Aven, Issirac et Labastide-de-Virac" /></a>
             <a href="http://speleo.kg/" target="_blank" style="border-bottom: none;"><img src="../images/icons/fund-of-preservation-and-exploration-of-caves.jpg" alt="Fund of Preservation and Exploration of Caves" /></a>
 	</div>
