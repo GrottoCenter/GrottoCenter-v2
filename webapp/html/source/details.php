@@ -454,6 +454,9 @@ if ($_SESSION['home_page'] == "overview") {
           </li>
         </ul>
 	<div style="text-align: center;">
+            <a href="https://continent8expedition.wordpress.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/C8.PNG"Continent 8" /></a>
+ 	</div>	
+	<div style="text-align: center;">
             <a href="https://www.facebook.com/MoroccanExplorers/" target="_blank" style="border-bottom: none;"><img src="../images/icons/moroccan_explorers.PNG" alt="Moroccan Explorers" /></a>
        	    <a href="https://grs28.jimdo.com/" target="_blank" style="border-bottom: none;"><img src="../images/icons/logo_grs28.png" alt="GRS 28" /></a>
 	</div>
