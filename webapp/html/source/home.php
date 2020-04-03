@@ -55,7 +55,7 @@ if (false) {
     }
   	$bestCaversStr = implode(", ", array_unique($best_cavers));
 }
-    $records_by_page = 20;
+    $records_by_page = 100;
     $max_length = 40;
 
     $sql = "SELECT ";
