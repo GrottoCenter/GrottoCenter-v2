@@ -1,6 +1,7 @@
 User-Agent: *
-Disallow: /conf/
-Disallow: /css/
+Disallow: /
+Allow: /html/
+Allow: /sitemap.php
 Disallow: /func/
 Disallow: /html/source/
 Disallow: /html/webservices/
@@ -11,4 +12,4 @@ Disallow: /memo/
 Disallow: /html/file_Fr.php
 Disallow: /html/file_En.php
 Disallow: /html/file_Es.php
-Sitemap: http://www.grottocenter.org/sitemap.xml
+Sitemap: https://www.grottocenter.org/sitemap.php
