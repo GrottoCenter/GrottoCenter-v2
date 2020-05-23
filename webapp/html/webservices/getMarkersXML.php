@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 ClÃ©ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../../conf/session.php");
@@ -34,7 +34,7 @@ if (!$passed) {
   $sql = '';
 } else {
   //This script may require additional memory
-  ini_set('memory_limit',8388608 * 10);
+  ini_set('memory_limit',8388608 * 15);
 
   include("../../conf/config.php");
   include("../../func/function.php");
