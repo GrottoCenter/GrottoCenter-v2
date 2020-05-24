@@ -19,7 +19,7 @@
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 ob_start("ob_gzhandler");
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 date_default_timezone_set('Europe/Paris');
 include("session.php");
 
