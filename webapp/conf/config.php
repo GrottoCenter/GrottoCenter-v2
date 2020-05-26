@@ -39,7 +39,7 @@ function logDBToFile($content, $filename)
 }
 
 //on devrais tester aussi l'utilisation de $_SERVER['DOCUMENT_ROOT']
-function connect()
+function connect($only = false)
 {
   //global $host_db,$user_db,$password_db,$bdd_db;
   $host_db = "localhost"; // nom de votre serveur
@@ -47,7 +47,10 @@ function connect()
   $password_db = ""; // mot de passe de connexion � votre bdd
   $bdd_db = "grottoce"; // nom de votre bdd
   $connect_db = mysql_connect($host_db,$user_db,$password_db);
-$filename = "mysql";
+  if ($only) {
+      return $connect_db;
+  }
+/*$filename = "mysql";
 if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 	$IP = $_SERVER['HTTP_X_FORWARDED_FOR'] ;
 } elseif(isset($_SERVER['HTTP_CLIENT_IP'])) {
@@ -56,7 +59,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 	$IP = $_SERVER['REMOTE_ADDR'] ;
 }
 $content = "|".$IP."|".session_id()."|".__FUNCTION__."|".$connect_db;
-logDBToFile($content, $filename);
+logDBToFile($content, $filename);*/
   if (is_resource($connect_db)) {
     mysql_select_db($bdd_db,$connect_db);
     mysql_query("SET NAMES UTF8");
