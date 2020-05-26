@@ -1661,6 +1661,7 @@ function getLicensePicture($imgType, $title="")
 function returnDefault($val, $type)
 {
 	$val = strip_tags($val);
+    connect(true); // for mysql_real_escape_string
 	$val = mysql_real_escape_string($val);
   switch ($type) {
 		case "Name":
