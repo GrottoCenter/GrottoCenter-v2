@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Clément Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -68,25 +68,25 @@ include("declaration.php");
       case "entry":
         $sql = "SELECT DISTINCT ";
         $sql .= "T_entry.Id AS `0`, ";
-        $sql .= "T_entry.Name AS `1`, ";//Nom de la cavité
-        $sql .= "IF((T_topography.Id IS NOT NULL),'<convert>#label=626<convert>','<convert>#label=627<convert>') AS `2`, ";//Topographies
-        $sql .= "IF(T_entry.Has_contributions='YES','<convert>#label=626<convert>','<convert>#label=627<convert>') AS `3`, ";//Fiche détaillée
-        $sql .= "IFNULL(T_cave.Depth,T_single_entry.Depth) AS `4`, ";//Dénivellation
-        $sql .= "IFNULL(T_cave.Length,T_single_entry.Length) AS `5`, ";//Développement
+        $sql .= "T_entry.Name AS `1`, ";//Nom de la cavitÃ©
+//        $sql .= "IF((T_topography.Id IS NOT NULL),'<convert>#label=626<convert>','<convert>#label=627<convert>') AS `2`, ";//Topographies
+        $sql .= "IF(T_entry.Has_contributions='YES','<convert>#label=626<convert>','<convert>#label=627<convert>') AS `3`, ";//Fiche dÃ©taillÃ©e
+        $sql .= "IFNULL(T_cave.Depth,T_single_entry.Depth) AS `4`, ";//DÃ©nivellation
+        $sql .= "IFNULL(T_cave.Length,T_single_entry.Length) AS `5`, ";//DÃ©veloppement
         $sql .= "ROUND(T_entry.Latitude,5) AS `6`, ";//Latitude
         $sql .= "ROUND(T_entry.Longitude,5) AS `7`, ";//Longitude
 				$sql .= "T_country.".$_SESSION['language']."_name AS `8`, ";//Pays
-        $sql .= "T_entry.Region AS `9`, ";//Etat/Région
+        $sql .= "T_entry.Region AS `9`, ";//Etat/RÃ©gion
         $sql .= "T_entry.City AS `10`, ";//Commune
 //CRO 2011-10-12
 //        $sql .= "T_massif.Name AS `11`, ";//Massif
-        $sql .= "T_cave.Name AS `12`, ";//Réseau
-        $sql .= "T_type.".$_SESSION['language']."_type AS `13`, ";//Type de cavité
-        $sql .= "IF(IFNULL(T_cave.Is_diving,T_single_entry.Is_diving)='YES','<convert>#label=626<convert>','<convert>#label=627<convert>') AS `14`, ";//Plongée sout.
-        $sql .= "ROUND(V_entry_avg.Aestheticism,1) AS `15`, ";//Esthétisme (moy. sur 10)
-        $sql .= "ROUND(V_entry_avg.Caving,1) AS `16`, ";//Facilité de progression (moy. sur 10)
-        $sql .= "ROUND(V_entry_avg.Approach,1) AS `17`, ";//Facilité d'accès (moy. sur 10)
-        $sql .= "T_entry.Year_discovery AS `18` ";//Année de découverte
+        $sql .= "T_cave.Name AS `12`, ";//RÃ©seau
+        $sql .= "T_type.".$_SESSION['language']."_type AS `13`, ";//Type de cavitÃ©
+        $sql .= "IF(IFNULL(T_cave.Is_diving,T_single_entry.Is_diving)='YES','<convert>#label=626<convert>','<convert>#label=627<convert>') AS `14`, ";//PlongÃ©e sout.
+        $sql .= "ROUND(V_entry_avg.Aestheticism,1) AS `15`, ";//EsthÃ©tisme (moy. sur 10)
+        $sql .= "ROUND(V_entry_avg.Caving,1) AS `16`, ";//FacilitÃ© de progression (moy. sur 10)
+        $sql .= "ROUND(V_entry_avg.Approach,1) AS `17`, ";//FacilitÃ© d'accÃ¨s (moy. sur 10)
+        $sql .= "T_entry.Year_discovery AS `18` ";//AnnÃ©e de dÃ©couverte
         $sql .= "FROM `".$_SESSION['Application_host']."`.`T_entry` ";
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`J_cave_entry` ON J_cave_entry.Id_entry = T_entry.Id ";
 //CRO 2011-10-12
@@ -95,7 +95,7 @@ include("declaration.php");
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`T_cave` ON T_cave.Id = J_cave_entry.Id_cave ";
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`T_type` on T_type.Id = T_entry.Id_type ";
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`T_country` ON T_country.Iso = T_entry.Country ";
-        $sql .= "LEFT OUTER JOIN (SELECT T_topography.*, J_topo_cave.Id_cave, J_topo_cave.Id_entry ";
+/*        $sql .= "LEFT OUTER JOIN (SELECT T_topography.*, J_topo_cave.Id_cave, J_topo_cave.Id_entry ";
         $sql .= "FROM `".$_SESSION['Application_host']."`.`T_topography` ";
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`J_topo_cave` ON (T_topography.Id = J_topo_cave.Id_topography AND T_topography.Enabled = 'YES')) T_topography ";
         $sql .= "ON ((T_topography.Id_cave = J_cave_entry.Id_cave OR T_topography.Id_entry = T_entry.Id) ";
@@ -103,7 +103,7 @@ include("declaration.php");
         } else {
           $sql .= "AND T_topography.Is_public = 'YES' ";
         }
-        $sql .= ") ";
+        $sql .= ") ";*/
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`T_single_entry` ON T_single_entry.Id = T_entry.Id ";
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`V_entry_avg` ON T_entry.Id = V_entry_avg.Id_entry ";
         $category = $type;
@@ -126,7 +126,8 @@ include("declaration.php");
 				$columns_params = array(
 					0 => "[hidden]|[hidden]Id",
 					1 => "T_entry*Name|<convert>#label=613<convert>",
-					2 => "IF((T_topography*Id@IS@NOT@NULL),'<convert>#label=626<convert>','<convert>#label=627<convert>')|<convert>#label=815<convert>|<convert>#label=626<convert>;<convert>#label=627<convert>",
+//					2 => "IF((T_topography*Id@IS@NOT@NULL),'<convert>#label=626<convert>','<convert>#label=627<convert>')|<convert>#label=815<convert>|<convert>#label=626<convert>;<convert>#label=627<convert>",
+					2 => "[hidden]|[hidden]Topography",
 					3 => "IF(T_entry*Has_contributions='YES','<convert>#label=626<convert>','<convert>#label=627<convert>')|<convert>#label=614<convert>|<convert>#label=626<convert>;<convert>#label=627<convert>",
 					4 => "IFNULL(T_cave*Depth,T_single_entry*Depth)|<convert>#label=64<convert>",
 					5 => "IFNULL(T_cave*Length,T_single_entry*Length)|<convert>#label=68<convert>",
@@ -152,9 +153,9 @@ include("declaration.php");
         $sql .= "T_grotto.Id AS `0`, ";
         $sql .= "T_grotto.Name AS `1`, ";//Nom du club
         $sql .= "T_country.".$_SESSION['language']."_name AS `2`, "; //Pays
-        $sql .= "T_grotto.Region AS `3`, ";//Etat/Région
+        $sql .= "T_grotto.Region AS `3`, ";//Etat/RÃ©gion
         $sql .= "T_grotto.City AS `4`, ";//Commune
-        $sql .= "COUNT(J_grotto_caver.Id_caver) AS `5` ";//Nombre de spéléologues
+        $sql .= "COUNT(J_grotto_caver.Id_caver) AS `5` ";//Nombre de spÃ©lÃ©ologues
         $sql .= "FROM `".$_SESSION['Application_host']."`.`T_grotto` ";
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`T_country` ON T_country.Iso = T_grotto.Country ";
         $sql .= "LEFT OUTER JOIN `".$_SESSION['Application_host']."`.`J_grotto_caver` ON J_grotto_caver.Id_grotto = T_grotto.Id ";
@@ -181,7 +182,7 @@ include("declaration.php");
         $sql = "SELECT DISTINCT ";
         $sql .= "T_caver.Id AS `0`, ";
         $sql .= "T_caver.Nickname AS `1`, ";//Pseudo
-        $sql .= "T_caver.Surname AS `2`, ";//Prénom
+        $sql .= "T_caver.Surname AS `2`, ";//PrÃ©nom
         $sql .= "T_caver.Name AS `3`, ";//Nom
         if (USER_IS_CONNECTED) {
 					$columns_params[4] = "IF(T_caver*Contact_is_public@in@(1,2),T_caver*Contact,NULL)|<convert>#label=146<convert>";
@@ -193,10 +194,10 @@ include("declaration.php");
         $sql .= "T_country.".$_SESSION['language']."_name AS `5`, "; //Pays
         if (USER_IS_CONNECTED) {
 					$columns_params[6] = "IF(T_caver*Contact_is_public@in@(1,2),T_caver*Region,NULL)|<convert>#label=100<convert>";
-          $sql .= "IF(T_caver.Contact_is_public in (1,2),T_caver.Region,NULL) AS `6`, ";//Etat/Région
+          $sql .= "IF(T_caver.Contact_is_public in (1,2),T_caver.Region,NULL) AS `6`, ";//Etat/RÃ©gion
         } else {
 					$columns_params[6] = "IF(T_caver*Contact_is_public=1,T_caver*Region,NULL)|<convert>#label=100<convert>";
-          $sql .= "IF(T_caver.Contact_is_public in (2),T_caver.Region,NULL) AS `6`, ";//Etat/Région
+          $sql .= "IF(T_caver.Contact_is_public in (2),T_caver.Region,NULL) AS `6`, ";//Etat/RÃ©gion
         }
         if (USER_IS_CONNECTED) {
 					$columns_params[7] = "IF(T_caver*Contact_is_public@in@(1,2),T_caver*Postal_code,NULL)|<convert>#label=145<convert>[hidden]";
@@ -313,20 +314,20 @@ include("declaration.php");
     <?php echo getTopFrame(); ?>
     <?php echo getNoScript("<convert>#label=22<convert>","<convert>#label=23<convert>"); ?>
 		<?php echo getCloseBtn("home_".$_SESSION['language'].".php","<convert>#label=371<convert>"); ?>
-		<div class="frame_title"><?php echo setTitle("portlet_".$_SESSION['language'].".php?type=".$type, "home", "<convert>#label=607<convert>", 2); ?></div><!--Listes des éléments-->
+		<div class="frame_title"><?php echo setTitle("portlet_".$_SESSION['language'].".php?type=".$type, "home", "<convert>#label=607<convert>", 2); ?></div><!--Listes des Ã©lÃ©ments-->
 		<?php if (in_array($type,$mapCategories)) { ?>
     <div class="tab">
 		  <ul>
-			  <li <?php if($type == "entry") { ?>id="actif"<?php } ?>><?php if($type != "entry") { ?><a href="?type=entry"><?php } ?><span><img src="../images/icons/entry2.png" alt="" style="height:9pt;margin:0px 3px;border:0px none;" /> <convert>#label=48<convert><!--Cavités--></span><?php if($type != "entry") { ?></a><?php } ?></li>
+			  <li <?php if($type == "entry") { ?>id="actif"<?php } ?>><?php if($type != "entry") { ?><a href="?type=entry"><?php } ?><span><img src="../images/icons/entry2.png" alt="" style="height:9pt;margin:0px 3px;border:0px none;" /> <convert>#label=48<convert><!--CavitÃ©s--></span><?php if($type != "entry") { ?></a><?php } ?></li>
         <li <?php if($type == "grotto") { ?>id="actif"<?php } ?>><?php if($type != "grotto") { ?><a href="?type=grotto"><?php } ?><span><img src="../images/icons/grotto1.png" alt="" style="height:9pt;border:0px none;" /> <convert>#label=386<convert><!--Clubs--></span><?php if($type != "grotto") { ?></a><?php } ?></li>
-        <li <?php if($type == "caver") { ?>id="actif"<?php } ?>><?php if($type != "caver") { ?><a href="?type=caver"><?php } ?><span><img src="../images/icons/caver2.png" alt="" style="height:9pt;border:0px none;" /> <convert>#label=385<convert><!--Spéléos--></span><?php if($type != "caver") { ?></a><?php } ?></li>
+        <li <?php if($type == "caver") { ?>id="actif"<?php } ?>><?php if($type != "caver") { ?><a href="?type=caver"><?php } ?><span><img src="../images/icons/caver2.png" alt="" style="height:9pt;border:0px none;" /> <convert>#label=385<convert><!--SpÃ©lÃ©os--></span><?php if($type != "caver") { ?></a><?php } ?></li>
       </ul>
     </div>
     <?php } ?>
     <div>
       <form id="<?php echo $filter_form; ?>" name="<?php echo $filter_form; ?>" method="post" action="">
         <table border="0" cellspacing="0" cellpadding="0" id="filter_set">
-          <tr><td colspan="2"><convert>#label=601<convert><!--Pour rechercher une partie d'un mot utiliser le caractère *, ex: *erre pourrais retourner Pierre ou Terre etc.--></td></tr>
+          <tr><td colspan="2"><convert>#label=601<convert><!--Pour rechercher une partie d'un mot utiliser le caractÃ¨re *, ex: *erre pourrais retourner Pierre ou Terre etc.--></td></tr>
           <?php echo $filter_fields; ?>
         </table>
         <input type="hidden" name="current" value="" />
@@ -336,7 +337,7 @@ include("declaration.php");
         <input type="submit" name="reset_filter" class="button1" value="<convert>#label=603<convert>" onclick="JavaScript:resetForm(this.form);" /><!--Tout afficher-->
         <input type="button" name="reset" class="button1" value="<convert>#label=604<convert>" onclick="JavaScript:resetForm(this.form);" /><!--Effacer-->
         <?php if (in_array($type,$mapCategories)) { ?>
-        <input type="submit" name="overview_filter" class="button1" value="<convert>#label=646<convert>" /><!--Utiliser ces critères-->
+        <input type="submit" name="overview_filter" class="button1" value="<convert>#label=646<convert>" /><!--Utiliser ces critÃ¨res-->
         <?php } ?>
         <br /><select class="select2" name="records_by_page" id="records_by_page" onchange="JavaScript:this.form.submit();">
           <?php echo getOptionsFromArray($records_by_page_array,"",$records_by_page); ?>
@@ -351,14 +352,14 @@ include("declaration.php");
     <div>
       <form id="<?php echo $list_form; ?>" name="<?php echo $list_form; ?>" method="post" action="">
         <table border="0" cellspacing="1" cellpadding="0" id="result_table">
-          <?php if ($total_count > 0) { echo $rows; } else { ?><convert>#label=622<convert><!--Aucun résultat n'est disponible--><?php } ?>
+          <?php if ($total_count > 0) { echo $rows; } else { ?><convert>#label=622<convert><!--Aucun rÃ©sultat n'est disponible--><?php } ?>
         </table>
       </form>
     </div>
     <div class="navigator">
       <?php echo $navigator; ?>
     </div>
-    <convert>#label=605<convert><!--Nb total de résultats--> : <?php echo $total_count; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<convert>#label=606<convert><!--Nb total de pages--> : <?php echo $count_page; ?><br />
+    <convert>#label=605<convert><!--Nb total de rÃ©sultats--> : <?php echo $total_count; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<convert>#label=606<convert><!--Nb total de pages--> : <?php echo $count_page; ?><br />
     <?php echo getBotFrame(); ?>
 <?php
     $virtual_page = "home/".$_SESSION['language'];
