@@ -180,15 +180,12 @@ if (false) {
         <!--</div>-->
       </td></tr>
       <tr><td>
-        <h3><convert>#label=889<convert><!--Communiqués :--></h3>
-        <div class="home_news" style="height:auto;">
-            <strong><convert>#label=937<convert></strong><!-- Grottocenter vous intéresse ? Toutes les bonnes volontés sont les bienvenues. -->
-            <ul>
-                <li><convert>#label=938<convert></li><!-- Vous pouvez marquer votre soutien en devenant membre actif de l’association. -->
-                <li><convert>#label=939<convert></li><!-- Pour partager avec le plus grand nombre, nous recherchons des traducteurs. -->
-                <li><convert>#label=940<convert></li><!-- Grottocenter c’est aussi un logiciel qui a besoin de développeurs. -->
-                <li><convert>#label=941<convert></li><!-- Le projet avance grâce aux clubs et aux CDS qui deviennent nos partenaires. -->
-            </ul>
+        <h3><convert>#label=952<convert><!-- Migration vers Grottocenter 3 en cours --></h3>
+        <div class="home_news" style="height:auto;border: 3px solid #ec2e2e;background-color: #ec2e2e;color: white;font-size: 15px;">
+            <p><convert>#label=947<convert></p>
+            <p><convert>#label=948<convert></p>
+            <p><convert>#label=949<convert></p>
+            <p><convert>#label=950<convert></p>
         </div>
       </td></tr>
 <?php

@@ -678,22 +678,20 @@ switch ($type) {
         <div>
           <convert>#label=605<convert><!--Nb total de résultats--> : <?php echo $total_count; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<convert>#label=606<convert><!--Nb total de pages--> : <?php echo $count_page; ?><br />
         </div>
-        <div class="notes">
-          <?php echo getTopBubble(); ?>
-          <convert>#label=142<convert><!--Si le club que vous cherchez n'est pas dans--> <?php echo $_SESSION['Application_name']; ?>, <a href="JavaScript:grottoNew();"><convert>#label=143<convert><!--créez le--></a> !
-          <?php echo getBotBubble(); ?>
+        <div class="v3info">
+          <convert>#label=951<convert>
         </div>
 <?php
     if (allowAccess(grotto_edit_all)) {
 ?>
-        <input type="button" class="button1" id="edit_grotto" name="edit_grotto" value="<convert>#label=53<convert>" onclick="JavaScript:grottoEdit(this.form);" /><!--Modifier--><br />
-        <input type="button" class="button1" id="logo_grotto" name="logo_grotto" value="<convert>#label=683<convert>" onclick="JavaScript:grottoLogo(this.form);" /><!--Logo--><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span><br />
-        <input type="button" class="button1" id="new_grotto" name="new_grotto" value="<convert>#label=54<convert>" onclick="JavaScript:grottoNew();" /><!--Nouveau--><br />
+        <input type="button" disabled class="buttonDisabled" id="edit_grotto" name="edit_grotto" value="<convert>#label=53<convert>" onclick="JavaScript:grottoEdit(this.form);" /><!--Modifier--><br />
+        <input type="button" disabled class="buttonDisabled" id="logo_grotto" name="logo_grotto" value="<convert>#label=683<convert>" onclick="JavaScript:grottoLogo(this.form);" /><!--Logo--><span class="new_feature"><convert>#label=537<convert><!--Nouveau !--></span><br />
+        <input type="button" disabled class="buttonDisabled" id="new_grotto" name="new_grotto" value="<convert>#label=54<convert>" onclick="JavaScript:grottoNew();" /><!--Nouveau--><br />
 <?php
     }
     if (allowAccess(grotto_delete_all)) {
 ?>
-        <input type="button" class="button1" id="del_grotto" name="del_grotto" value="<convert>#label=55<convert>" onclick="JavaScript:grottoDelete(this.form);" /><!--Supprimer--><br />
+        <input type="button" disabled class="buttonDisabled" id="del_grotto" name="del_grotto" value="<convert>#label=55<convert>" onclick="JavaScript:grottoDelete(this.form);" /><!--Supprimer--><br />
 <?php
     }
 ?>

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -466,21 +466,19 @@ switch ($type) {
         <div>
           <convert>#label=605<convert><!--Nb total de résultats--> : <?php echo $total_count; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<convert>#label=606<convert><!--Nb total de pages--> : <?php echo $count_page; ?><br />
         </div>
-        <div class="notes">
-          <?php echo getTopBubble(); ?>
-          <convert>#label=549<convert><!--Si le massif que vous cherchez n'est pas dans--> <?php echo $_SESSION['Application_name']; ?>, <a href="JavaScript:massifNew();"><convert>#label=550<convert><!--créez le--></a> !
-          <?php echo getBotBubble(); ?>
+        <div class="v3info">
+          <convert>#label=951<convert>
         </div>
 <?php
     if (allowAccess(massif_edit_all)) {
 ?>
-        <input type="button" class="button1" id="edit_massif" name="edit_massif" value="<convert>#label=53<convert>" onclick="JavaScript:massifEdit(this.form);" /><!--Modifier--><br />
-        <input type="button" class="button1" id="new_massif" name="new_massif" value="<convert>#label=54<convert>" onclick="JavaScript:massifNew();" /><!--Nouveau--><br />
+        <input type="button" disabled class="buttonDisabled" id="edit_massif" name="edit_massif" value="<convert>#label=53<convert>" onclick="JavaScript:massifEdit(this.form);" /><!--Modifier--><br />
+        <input type="button" disabled class="buttonDisabled" id="new_massif" name="new_massif" value="<convert>#label=54<convert>" onclick="JavaScript:massifNew();" /><!--Nouveau--><br />
 <?php
     }
     if (allowAccess(massif_delete_all)) {
 ?>
-        <input type="button" class="button1" id="del_massif" name="del_massif" value="<convert>#label=55<convert>" onclick="JavaScript:massifDelete(this.form);" /><!--Supprimer--><br />
+        <input type="button" disabled class="buttonDisabled" id="del_massif" name="del_massif" value="<convert>#label=55<convert>" onclick="JavaScript:massifDelete(this.form);" /><!--Supprimer--><br />
 <?php
     }
 ?>
@@ -586,7 +584,7 @@ if ($isNew == "False") {
           <input type="hidden" id="e_list" name="e_list" />
           <input type="hidden" id="is_new" name="is_new" value="<?php echo $isNew; ?>" />
           <input type="hidden" id="massif_id" name="massif_id" value="<?php echo $id; ?>" />
-          <input class="button1" type="submit" id="save" name="save" value="<convert>#label=76<convert>" /><!--Valider-->
+          <input disabled class="buttonDisabled" type="submit" id="save" name="save" value="<convert>#label=76<convert>" /><!--Valider-->
         </td></tr><tr><td class="field" colspan="2">
           <input class="button1" onclick="JavaScript:newCancel();" type="button" id="cancel" name="cancel" value="<convert>#label=77<convert>" /><!--Annuler-->
         </td></tr><tr><td colspan="2">

@@ -1097,13 +1097,16 @@ $frame = "filter";
 <?php
     if (allowAccess(request_edit_mine)) {
 ?>
-        <input type="button" class="button1" id="edit_request" name="edit_request" value="<convert>#label=53<convert>" onclick="JavaScript:requestEdit(this.form);" /><!--Modifier--><br />
-        <input type="button" class="button1" id="new_request" name="new_request" value="<convert>#label=54<convert>" onclick="JavaScript:requestNew();" /><!--Nouveau--><br />
+        <div class="v3info">
+          <convert>#label=951<convert>
+        </div>
+        <input type="button" disabled class="buttonDisabled" id="edit_request" name="edit_request" value="<convert>#label=53<convert>" onclick="JavaScript:requestEdit(this.form);" /><!--Modifier--><br />
+        <input type="button" disabled class="buttonDisabled" id="new_request" name="new_request" value="<convert>#label=54<convert>" onclick="JavaScript:requestNew();" /><!--Nouveau--><br />
 <?php
     }
     if (allowAccess(request_delete_mine)) {
 ?>
-        <input type="button" class="button1" id="del_request" name="del_request" value="<convert>#label=55<convert>" onclick="JavaScript:requestDelete(this.form);" /><!--Supprimer--><br />
+        <input type="button" disabled class="buttonDisabled" id="del_request" name="del_request" value="<convert>#label=55<convert>" onclick="JavaScript:requestDelete(this.form);" /><!--Supprimer--><br />
 <?php
     }
 ?>
@@ -1331,7 +1334,7 @@ if ($isNew == "False") {
       		<input type="hidden" id="request_id" name="request_id" value="<?php echo $id; ?>" />
 <?php if ($read_write) {
         if (in_array($status_name, $draft_status_array)) { ?>
-	        <input class="button1" type="submit" id="save" name="save" value="<convert>#label=800<convert>" onclick="JavaScript:saveOnClick();" /> <!--Enregistrer le brouillon-->
+	        <input disabled class="buttonDisabled" type="submit" id="save" name="save" value="<convert>#label=800<convert>" onclick="JavaScript:saveOnClick();" /> <!--Enregistrer le brouillon-->
 <?php   }
         if (in_array($status_name, $submit_status_array) && $isNew != "True") { ?>
 	        <input class="button1" type="submit" id="send" name="send" value="<convert>#label=801<convert>" onclick="JavaScript:sendOnClick();" /> <!--Soumettre la demande au valideur-->
@@ -1356,13 +1359,8 @@ if ($isNew == "False") {
         </td><td class="field">
 	        <input class="button1" onclick="JavaScript:newCancel();" type="button" id="cancel" name="cancel" value="<convert>#label=77<convert>" /><!--Annuler-->
         </td></tr><tr><td colspan="2">
-          <div class="notes">
-            <?php echo getTopBubble(); ?>
-            <img src="../images/icons/FlagRequired.gif" alt="*" /><convert>#label=78<convert><!--Champs nécessaires.--><br />
-            <sup>1</sup> <convert>#label=793<convert><!--Le nom de la demande--> <convert>#label=874<convert><!--doit être composé de 2 à 100 caractères sauf--> <b>|</b> <b>/</b> <b>\</b> <b>"</b> <b>#</b> <b>&amp;</b> <b>+</b> <convert>#label=46<convert><!--et--> <b>¨</b><br />
-            <sup>2</sup> <convert>#label=817<convert><!--Le nom du fichier--> <convert>#label=874<convert><!--doit être composé de 2 à 100 caractères sauf--> <b>|</b> <b>/</b> <b>\</b> <b>"</b> <b>#</b> <b>&amp;</b> <b>+</b> <convert>#label=46<convert><!--et--> <b>¨</b><br />
-            <sup>3</sup> <convert>#label=827<convert><!--Le nom de l'auteur--> <convert>#label=875<convert><!--doit être composé de 2 à 70 caractères sauf--> <b>|</b> <b>/</b> <b>\</b> <b>"</b> <b>#</b> <b>&amp;</b> <b>+</b> <convert>#label=46<convert><!--et--> <b>¨</b><br />
-            <?php echo getBotBubble(); ?>
+          <div class="v3info">
+            <convert>#label=951<convert>
           </div>
         </td></tr>
       </table>

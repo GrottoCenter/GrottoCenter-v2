@@ -194,6 +194,21 @@ input.button1:hover
   color:#34558A;/*black;*/
 }
 
+input.buttonDisabled {
+    border: 1px solid grey;
+    color: grey;
+    background-color: lightgrey;
+}
+
+.v3info {
+    background-color: #ec2e2e;
+    margin: 5px 0;
+    padding: 5px;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
 select/*.select2*/
 {
   border: solid 1px #7F9DB9;

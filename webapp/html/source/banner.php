@@ -127,6 +127,7 @@ if ($_SESSION['home_page'] == "overview") {
     </script>
   </head>
   <body style="font-size:8pt;" onload="JavaScript:load();">
+    <div class="v3floating"><convert>#label=946<convert></div>
     <?php echo getTopFrame(); ?>
     <?php echo getNoScript("<convert>#label=22<convert>","<convert>#label=23<convert>"); ?>
   	<table class="table1" cellspacing="0" cellpadding="0">

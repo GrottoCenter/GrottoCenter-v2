@@ -127,3 +127,17 @@ div.banner_fse
   right: 9px;
   top:30px;
 }
+.v3floating {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    background-color: #ec2e2e;
+    max-width: 300px;
+    padding: 2px;
+    border-radius: 0 0 5px 5px;
+    color: white;
+    right: 0;
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+}

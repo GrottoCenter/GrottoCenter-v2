@@ -1209,10 +1209,8 @@ if ($_SESSION['home_page'] != "overview") {
         </td></tr>
 <?php //if ($_SESSION['home_page'] == "overview") { ?>
         <tr><td colspan="2">
-          <div class="notes">
-            <?php echo getTopBubble(); ?>
-            <convert>#label=434<convert><!--Si le club que vous cherchez n'est pas dans--> <?php echo $_SESSION['Application_name']; ?>, <a href="JavaScript:grottoNew();"><convert>#label=435<convert><!--crÃ©ez le--></a> !
-            <?php echo getBotBubble(); ?>
+          <div class="v3info">
+            <convert>#label=951<convert>
           </div>
         </td></tr>
 <?php //} ?>
