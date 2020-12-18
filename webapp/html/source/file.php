@@ -972,7 +972,7 @@ if ($allowed_to_lock) {
 <?php } ?>
         <div id="uriDiv" style="position:absolute;top:105px;left:50%;display:none;visibility:hidden;width:300px;white-space:nowrap;"><input type="text" class="input1" name="uriForGuest" id="uriForGuest" value="" /> <b><a href="JavaScript:hideId('uriDiv');" title="<convert>#label=371<convert>">X</a><!-- Fermer --></b></div>
         </div>
-      <div style="max-width: 400px;margin: auto;padding: 5px;border-radius: 5px;background-color: #ec2e2e;color: white;font-size: 15px;">
+      <div style="max-width: 450px;margin: auto;padding: 5px;border-radius: 5px;background-color: #eedba9; border: 2px solid #ec2e2e;font-size: 15px;">
         <convert>#label=945<convert>
       </div>
       <div id="body">

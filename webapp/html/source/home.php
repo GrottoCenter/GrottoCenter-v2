@@ -181,7 +181,7 @@ if (false) {
       </td></tr>
       <tr><td>
         <h3><convert>#label=952<convert><!-- Migration vers Grottocenter 3 en cours --></h3>
-        <div class="home_news" style="height:auto;border: 3px solid #ec2e2e;background-color: #ec2e2e;color: white;font-size: 15px;">
+        <div class="home_news" style="height:auto;border: 3px solid #ec2e2e;background-color: #eedba9;font-size: 15px;">
             <p><convert>#label=947<convert></p>
             <p><convert>#label=948<convert></p>
             <p><convert>#label=949<convert></p>
