@@ -448,8 +448,7 @@ if (!$banned) {
   }
 }
 ?>
-<iframe jsname="L5Fo6c" class="YMEQtf DnR2hf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" aria-label="Google Forms, Contact Wikicaves EN" src="https://docs.google.com/forms/d/e/1FAIpQLSfqRdI9a0uFmgE06kOvZWJe8Ly6T_CUcrqJwE6xT-6Zy0EdxA/viewform?embedded=true" style="height: 99%;min-width: 400px;" allowfullscreen=""></iframe>
-		<form id="login_user" name="login_user" method="post" action="" onsubmit="JavaScript:loginSubmit(event);" style="display: none;">
+		<form id="login_user" name="login_user" method="post" action="" onsubmit="JavaScript:loginSubmit(event);">
       <table border="0" cellspacing="1" cellpadding="0" class="form_tbl">
         <tr><th colspan="2"><?php echo getHelpTopic($helpId[$type], "<convert>#label=23<convert>"); ?></th></tr>
         <tr><td width="170" class="label">
