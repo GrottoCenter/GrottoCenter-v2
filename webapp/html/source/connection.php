@@ -448,7 +448,7 @@ if (!$banned) {
   }
 }
 ?>
-<iframe jsname="L5Fo6c" class="YMEQtf DnR2hf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" aria-label="Google Forms, Contact Wikicaves EN" src="https://docs.google.com/forms/d/e/1FAIpQLSfqRdI9a0uFmgE06kOvZWJe8Ly6T_CUcrqJwE6xT-6Zy0EdxA/viewform?embedded=true" style="height: 99%;width: 99%;" allowfullscreen=""></iframe>
+<iframe jsname="L5Fo6c" class="YMEQtf DnR2hf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" aria-label="Google Forms, Contact Wikicaves EN" src="https://docs.google.com/forms/d/e/1FAIpQLSfqRdI9a0uFmgE06kOvZWJe8Ly6T_CUcrqJwE6xT-6Zy0EdxA/viewform?embedded=true" style="height: 99%;min-width: 400px;" allowfullscreen=""></iframe>
 		<form id="login_user" name="login_user" method="post" action="" onsubmit="JavaScript:loginSubmit(event);" style="display: none;">
       <table border="0" cellspacing="1" cellpadding="0" class="form_tbl">
         <tr><th colspan="2"><?php echo getHelpTopic($helpId[$type], "<convert>#label=23<convert>"); ?></th></tr>
@@ -544,7 +544,7 @@ if (!$banned) {
 		<div class="error"><?php echo getTopBubble(); ?><convert>#label=62<convert><!--Erreur, veuillez recommencer !--><?php echo getBotBubble(); ?></div>
 <?php     } ?>
     <div class="info"><?php echo getTopBubble(); ?><convert>#label=689<convert><!--La casse (majuscules/minuscules) est prise en compte-->.<?php echo getBotBubble(); ?></div>
-  	<iframe jsname="L5Fo6c" class="YMEQtf DnR2hf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" aria-label="Google Forms, Contact Wikicaves EN" src="https://docs.google.com/forms/d/e/1FAIpQLSfqRdI9a0uFmgE06kOvZWJe8Ly6T_CUcrqJwE6xT-6Zy0EdxA/viewform?embedded=true" style="height: 99%;width: 99%;" allowfullscreen=""></iframe>
+  	<iframe jsname="L5Fo6c" class="YMEQtf DnR2hf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" aria-label="Google Forms, Contact Wikicaves EN" src="https://docs.google.com/forms/d/e/1FAIpQLSfqRdI9a0uFmgE06kOvZWJe8Ly6T_CUcrqJwE6xT-6Zy0EdxA/viewform?embedded=true" style="height: 99%;min-width: 400px;" allowfullscreen=""></iframe>
   	<form id="new_user" name="new_user" method="post" action="" onsubmit="JavaScript:newSubmit(event);" style="display:none;">
       <table border="0" cellspacing="1" cellpadding="0" width="460" class="form_tbl">
         <tr><th colspan="2"><?php echo getHelpTopic($helpId[$type], "<convert>#label=23<convert>"); ?></th></tr>
@@ -712,7 +712,7 @@ if (!$banned) {
 <?php
           }
 ?>
-<iframe jsname="L5Fo6c" class="YMEQtf DnR2hf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" aria-label="Google Forms, Contact Wikicaves EN" src="https://docs.google.com/forms/d/e/1FAIpQLSfqRdI9a0uFmgE06kOvZWJe8Ly6T_CUcrqJwE6xT-6Zy0EdxA/viewform?embedded=true" style="height: 99%;width: 99%;" allowfullscreen=""></iframe>
+<iframe jsname="L5Fo6c" class="YMEQtf DnR2hf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" aria-label="Google Forms, Contact Wikicaves EN" src="https://docs.google.com/forms/d/e/1FAIpQLSfqRdI9a0uFmgE06kOvZWJe8Ly6T_CUcrqJwE6xT-6Zy0EdxA/viewform?embedded=true" style="height: 99%;min-width: 400px;" allowfullscreen=""></iframe>
   	<form id="forgot_pwd" name="forgot_pwd" method="post" action="" onsubmit="JavaScript:forgotSubmit(event);" style="display:none;">
   	<table border="0" cellspacing="1" cellpadding="0" class="form_tbl">
         <tr><th colspan="2"><?php echo getHelpTopic($helpId[$type], "<convert>#label=23<convert>"); ?></th></tr>
