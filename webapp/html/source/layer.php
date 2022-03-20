@@ -509,7 +509,7 @@ switch ($type) {
 			    <?php echo getBotBubble(); ?></div>
 			  </td></tr><tr><td class="field">
 			    <input type="hidden" id="delete_id" name="delete_id" value="<?php echo $did; ?>" />
-          <input type="submit" class="button1" id="delete" name="delete" value="<convert>#label=55<convert>" /><!--Supprimer-->
+          <input type="submit" disabled class="buttonDisabled" id="delete" name="delete" value="<convert>#label=55<convert>" /><!--Supprimer-->
         </td></tr><tr><td class="field">
           <input class="button1" type="button" id="cancel" name="cancel" value="<convert>#label=77<convert>" onclick="JavaScript:newCancel();" /><!--Annuler-->
         </td></tr>
@@ -577,9 +577,9 @@ if ($isNew == "False") {
 } ?>
           </select>
         </td></tr><tr><td class="field" colspan="2">
-          <input type="button" class="button1" id="add" name="add" value="<convert>#label=74<convert>" onclick="JavaScript:entryAdd();" /><!--Ajouter à ma liste-->
+          <input type="button" disabled class="buttonDisabled" id="add" name="add" value="<convert>#label=74<convert>" onclick="JavaScript:entryAdd();" /><!--Ajouter à ma liste-->
         </td></tr><tr><td class="field" colspan="2">
-          <input type="button" class="button1" id="remove" name="remove" value="<convert>#label=73<convert>" onclick="JavaScript:entryRemove();" /><!--Retirer de ma liste-->
+          <input type="button" disabled class="buttonDisabled" id="remove" name="remove" value="<convert>#label=73<convert>" onclick="JavaScript:entryRemove();" /><!--Retirer de ma liste-->
         </td></tr><tr><td class="field" colspan="2">
           <input type="hidden" id="e_list" name="e_list" />
           <input type="hidden" id="is_new" name="is_new" value="<?php echo $isNew; ?>" />

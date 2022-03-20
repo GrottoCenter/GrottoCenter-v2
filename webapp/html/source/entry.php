@@ -963,13 +963,13 @@ function microtime_float()
 <?php
     if (allowAccess(entry_edit_all)) {
 ?>
-        <input type="button" class="button1" id="edit_entry" name="edit_entry" value="<convert>#label=53<convert>" onclick="JavaScript:entryEdit(this.form);" /><!--Modifier--><br />
-        <input type="button" class="button1" id="new_entry" name="new_entry" value="<convert>#label=54<convert>" onclick="JavaScript:entryNew();" /><!--Nouveau--><br />
+        <input type="button" disabled class="buttonDisabled" id="edit_entry" name="edit_entry" value="<convert>#label=53<convert>" onclick="JavaScript:entryEdit(this.form);" /><!--Modifier--><br />
+        <input type="button" disabled class="buttonDisabled" id="new_entry" name="new_entry" value="<convert>#label=54<convert>" onclick="JavaScript:entryNew();" /><!--Nouveau--><br />
 <?php
     }
     if (allowAccess(entry_delete_all)) {
 ?>
-        <input type="button" class="button1" id="del_entry" name="del_entry" value="<convert>#label=55<convert>" onclick="JavaScript:entryDelete(this.form);" /><!--Supprimer--><br />
+        <input type="button" disabled class="buttonDisabled" id="del_entry" name="del_entry" value="<convert>#label=55<convert>" onclick="JavaScript:entryDelete(this.form);" /><!--Supprimer--><br />
 <?php
     }
 ?>
@@ -1000,7 +1000,7 @@ function microtime_float()
   		    <?php echo getBotBubble(); ?></div>
   		  </td></tr><tr><td class="field">
   		    <input type="hidden" id="delete_id" name="delete_id" value="<?php echo $did; ?>" />
-          <input type="submit" class="button1" id="delete" name="delete" value="<convert>#label=55<convert>" /><!--Supprimer-->
+          <input type="submit" disabled class="buttonDisabled" id="delete" name="delete" value="<convert>#label=55<convert>" /><!--Supprimer-->
         </td></tr><tr><td class="field">
           <input class="button1" type="button" id="cancel" name="cancel" value="<convert>#label=77<convert>" onclick="JavaScript:newCancel();" /><!--Annuler-->
         </td></tr>

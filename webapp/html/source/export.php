@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
+ * @copyright Copyright (c) 2009-2012 Cl�ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -177,9 +177,9 @@ $helpId = array("export" => 17);
 ?>
           </select>
         </td></tr><tr><td class="field" colspan="2">
-          <input type="button" class="button1" id="add" name="add" value="<convert>#label=74<convert>" onclick="JavaScript:entryAdd();" /><!--    Ajouter à ma liste  /\-->
+          <input type="button" disabled class="buttonDisabled" id="add" name="add" value="<convert>#label=74<convert>" onclick="JavaScript:entryAdd();" /><!--    Ajouter à ma liste  /\-->
         </td></tr><tr><td class="field" colspan="2">
-          <input type="button" class="button1" id="remove" name="remove" value="<convert>#label=73<convert>" onclick="JavaScript:entryRemove();" /><!--\/  Retirer de ma liste    -->
+          <input type="button" disabled class="buttonDisabled" id="remove" name="remove" value="<convert>#label=73<convert>" onclick="JavaScript:entryRemove();" /><!--\/  Retirer de ma liste    -->
         </td></tr><tr><td width="170" class="label">
           <label for="file_format0">
   			    <convert>#label=768<convert><!--Format du ficher-->

@@ -1034,7 +1034,7 @@ if ($allowed_to_lock) {
 <?php if (!$is_change) { ?>
           <span class="generic_tools">
 <?php if (allowAccess(location_edit_all)) { ?>
-            <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a><!--Ajouter une fiche de localisation-->
+            <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a><!--Ajouter une fiche de localisation-->
 <?php } ?>
             <a href="JavaScript:refresh();" title="<convert>#label=334<convert>" class="nothing"><img src="../images/icons/refresh.png" class="icon" alt="<convert>#label=334<convert>" /></a><!--Actualiser la page-->
 <?php if ($array['Count']>0) { ?>
@@ -1081,12 +1081,12 @@ if ($allowed_to_lock) {
 <?php
                 if ($array[$i]["Locked"] == "NO") {
 ?>
-                    <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
-                    <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="iconDisabled" alt="<convert>#label=53<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>
 <?php
                   if (allowAccess(location_delete_all)) {
 ?>
-                    <a href="JavaScript:deleteElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="icon" alt="<convert>#label=55<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="iconDisabled" alt="<convert>#label=55<convert>" /></a>
 <?php
                   }
                 }
@@ -1403,7 +1403,7 @@ if ($allowed_to_lock) {
 <?php if (!$is_change) { ?>
           <span class="generic_tools">
 <?php if (allowAccess(rigging_edit_all)) { ?>
-            <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
+            <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>
 <?php } ?>
             <a href="JavaScript:refresh();" title="<convert>#label=334<convert>" class="nothing"><img src="../images/icons/refresh.png" class="icon" alt="<convert>#label=334<convert>" /></a><!--Actualiser la page-->
 <?php if ($array['Count']>0) { ?>
@@ -1451,18 +1451,18 @@ if ($allowed_to_lock) {
 <?php
                 if ($array[$i]["Locked"] == "NO") {
 ?>
-                    <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
-                    <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="iconDisabled" alt="<convert>#label=53<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>
 <?php
                   if (allowAccess(rigging_delete_all)) {
 ?>
-                    <a href="JavaScript:deleteElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="icon" alt="<convert>#label=55<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="iconDisabled" alt="<convert>#label=55<convert>" /></a>
 <?php
                   }
                 }
                 //if ($array['Count'] < $countEntries) {
 ?>
-                    <!--<a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>-->
+                    <!--<a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>-->
 <?php
                 //}
 ?>
@@ -1594,7 +1594,7 @@ if ($allowed_to_lock) {
                             </td><?php } ?>
                           </tr><?php } ?></tbody></table>
                       <?php if ($edition) { ?><div style="width:100%;">
-                        <span><img src="../images/icons/add.png" class="rigging_button" style="padding-left:5px;" title="<convert>#label=360<convert>" alt="<convert>#label=360<convert>" onclick="JavaScript:addOnClick('rc_<?php echo $localRigContId; ?>_rigging_container');" /></span>
+                        <span><img src="../images/icons/add.png" class="rigging_button iconDisabled" style="padding-left:5px;" title="<convert>#label=360<convert>" alt="<convert>#label=360<convert>" onclick="javascript:void(0);" /></span>
                       </div>
                       <?php echo getLicenseAlert(); ?>
                       <?php } ?>
@@ -1706,7 +1706,7 @@ if ($allowed_to_lock) {
                           </td>
                         </tr></tbody></table>
                     <div style="width:100%;">
-                      <span><img src="../images/icons/add.png" class="rigging_button" style="padding-left:5px;" title="<convert>#label=360<convert>" alt="<convert>#label=360<convert>" onclick="JavaScript:addOnClick('new_rigging_container');" /></span>
+                      <span><img src="../images/icons/add.png" class="rigging_button iconDisabled" style="padding-left:5px;" title="<convert>#label=360<convert>" alt="<convert>#label=360<convert>" onclick="javascript:void(0);" /></span>
                     </div>
                     <?php echo getLicenseAlert(); ?>
                     <input type="hidden" id="new_category<?php echo $local_cat; ?>" name="new_category" value="<?php echo $local_cat; ?>" />
@@ -1820,7 +1820,7 @@ if ($allowed_to_lock) {
 <?php if (!$is_change) { ?>
           <span class="generic_tools">
 <?php if (allowAccess(history_edit_all)) { ?>
-            <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a><!--Ajouter une fiche de localisation-->
+            <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a><!--Ajouter une fiche de localisation-->
 <?php } ?>
             <a href="JavaScript:refresh();" title="<convert>#label=334<convert>" class="nothing"><img src="../images/icons/refresh.png" class="icon" alt="<convert>#label=334<convert>" /></a><!--Actualiser la page-->
 <?php if ($array['Count']>0) { ?>
@@ -1867,12 +1867,12 @@ if ($allowed_to_lock) {
 <?php
                 if ($array[$i]["Locked"] == "NO") {
 ?>
-                    <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
-                    <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="iconDisabled" alt="<convert>#label=53<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>
 <?php
                   if (allowAccess(history_delete_all)) {
 ?>
-                    <a href="JavaScript:deleteElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="icon" alt="<convert>#label=55<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="iconDisabled" alt="<convert>#label=55<convert>" /></a>
 <?php
                   }
                 }
@@ -2127,7 +2127,7 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
 <?php if (!$is_change) { ?>
           <span class="generic_tools">
 <?php if (allowAccess(comment_edit_all)) { ?>
-            <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
+            <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>
 <?php } ?>
             <a href="JavaScript:refresh();" title="<convert>#label=334<convert>" class="nothing"><img src="../images/icons/refresh.png" class="icon" alt="<convert>#label=334<convert>" /></a><!--Actualiser la page-->
 <?php if ($array['Count']>0) { ?>
@@ -2214,18 +2214,18 @@ if ($comments['Count']>0 || allowAccess(comment_edit_all)) {
 <?php
                 if ($array[$i]["Locked"] == "NO" && ($my_comment || allowAccess(comment_delete_all))) {
 ?>
-                    <a href="JavaScript:editElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="icon" alt="<convert>#label=53<convert>" /></a>
-                    <a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=53<convert>" class="nothing"><img src="../images/icons/edit.png" class="iconDisabled" alt="<convert>#label=53<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>
 <?php
                   if (allowAccess(comment_delete_all)) {
 ?>
-                    <a href="JavaScript:deleteElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="icon" alt="<convert>#label=55<convert>" /></a>
+                    <a href="javascript:void(0);" title="<convert>#label=55<convert>" class="nothing"><img src="../images/icons/delete.png" class="iconDisabled" alt="<convert>#label=55<convert>" /></a>
 <?php
                   }
                 }
 ?>
-                    <a href="JavaScript:replyElement('<?php echo $local_cat; ?>',<?php echo $array[$i]["Id"]; ?>);" title="<convert>#label=342<convert>" class="nothing"><img src="../images/icons/reply.png" class="icon" alt="<convert>#label=342<convert>" /></a>
-                    <!--<a href="JavaScript:addElement('<?php echo $local_cat; ?>');" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="icon" alt="<convert>#label=54<convert>" /></a>-->
+                    <a href="javascript:void(0);" title="<convert>#label=342<convert>" class="nothing"><img src="../images/icons/reply.png" class="iconDisabled" alt="<convert>#label=342<convert>" /></a>
+                    <!--<a href="javascript:void(0);" title="<convert>#label=54<convert>" class="nothing"><img src="../images/icons/add.png" class="iconDisabled" alt="<convert>#label=54<convert>" /></a>-->
                   </div>
 <?php
               }

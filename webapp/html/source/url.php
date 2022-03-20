@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with GrottoCenter.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (c) 2009-2012 Clément Ronzon
+ * @copyright Copyright (c) 2009-2012 Clï¿½ment Ronzon
  * @license http://www.gnu.org/licenses/agpl.txt
  */
 include("../conf/config.php");
@@ -465,8 +465,8 @@ switch ($type) {
 <?php
     if (allowAccess(url_edit_all)) {
 ?>
-        <input type="button" class="button1" id="edit_url" name="edit_url" value="<convert>#label=53<convert>" onclick="JavaScript:urlEdit(this.form);" /><!--Modifier--><br />
-        <input type="button" class="button1" id="new_url" name="new_url" value="<convert>#label=54<convert>" onclick="JavaScript:urlNew();" /><!--Nouveau--><br />
+        <input type="button" disabled class="buttonDisabled" id="edit_url" name="edit_url" value="<convert>#label=53<convert>" onclick="JavaScript:urlEdit(this.form);" /><!--Modifier--><br />
+        <input type="button" disabled class="buttonDisabled" id="new_url" name="new_url" value="<convert>#label=54<convert>" onclick="JavaScript:urlNew();" /><!--Nouveau--><br />
 <?php
     }
     if (allowAccess(url_delete_all)) {
